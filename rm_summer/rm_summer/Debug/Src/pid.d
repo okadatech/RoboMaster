@@ -1,3 +1,3 @@
-Src/pid.o: ../Src/pid.c C:/stm32workspace/rm_summer/Inc/pid.h
+Src/pid.o: ../Src/pid.c ../Inc/pid.h
 
-C:/stm32workspace/rm_summer/Inc/pid.h:
+../Inc/pid.h:

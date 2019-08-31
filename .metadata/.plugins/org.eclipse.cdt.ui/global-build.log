@@ -1,0 +1,7 @@
+16:40:41 **** Incremental Build of configuration Debug for project rm_summer ****
+make -j4 all 
+arm-none-eabi-size   rm_summer.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17668	    120	   1304	  19092	   4a94	rm_summer.elf
+Finished building: default.size.stdout
+ 
