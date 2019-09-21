@@ -1,0 +1,10 @@
+00:24:22 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17684	     20	   2772	  20476	   4ffc	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+
+00:24:23 Build Finished. 0 errors, 0 warnings. (took 1s.468ms)
+
