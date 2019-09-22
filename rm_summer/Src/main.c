@@ -46,12 +46,14 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
+#include "math.h"
 #include "remote_controller.h"
 #include "wheel.h"
 #include "pid.h"
 #include "motor.h"
 #include "mecanum.h"
-#include "disp.h"
+//#include "disp.h"
+//#include "xprintf.h"
 #include "motor_fdb.h"
 /* USER CODE END Includes */
 
@@ -67,7 +69,19 @@ CAN_RxHeaderTypeDef canRxHeader;
 motor_fdb gimbalYawFdb, gimbalPitchFdb, loadMotorFdb;
 struct mecanum mecanum;
 _pid_t wheelPID[4], loadPID;
+int16_t target_yaw,target_pich;
+int16_t yaw_now,pich_now;
 float DBUFF[32];
+
+#ifdef __GNUC__
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#else
+#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#endif /* __GNUC__ */
+void __io_putchar(uint8_t ch) {
+HAL_UART_Transmit(&huart7, &ch, 1, 1);
+}
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -81,25 +95,20 @@ void initMecanum();
 void driveWheelTask();
 void initFriction();
 void initLoadPID();
+void Gimbal_Task();
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-void timerTask() { //call 500Hz
-	int fire = 0;
-	int16_t u[3];
-	driveWheelTask();
 
-	if (rc.sw2 == 1) {
-		fire = 1;
-	} else {
-		fire = 0;
-	}
-	DBUFF[1] = loadPID.error = -900.0f*fire - loadMotorFdb.rpm;
-	u[0] = 0;
-	u[1] = 0;
-	DBUFF[3] = u[2] = pidExecute(&loadPID);
-	driveGimbalMotors(u);
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
+
+void timerTask() { //call 500Hz
+	driveWheelTask();
+	Gimbal_Task();
+}
+float cnt;
 /* USER CODE END 0 */
 
 /**
@@ -142,6 +151,7 @@ int main(void)
   MX_UART8_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 0);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1); // friction wheel
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
   initFriction();
@@ -151,7 +161,7 @@ int main(void)
   initMecanum();
   HAL_UART_Receive_IT(&huart1, rcData, 18);
   HAL_TIM_Base_Start_IT(&htim6);
-  setDispUartHandler(&huart7);
+  setbuf(stdout, NULL);
   HAL_CAN_Start(&hcan1);
   HAL_CAN_Start(&hcan2);
   HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
@@ -160,6 +170,7 @@ int main(void)
   HAL_GPIO_WritePin(POWER_OUT2_GPIO_Port, POWER_OUT2_Pin, 1);
   HAL_GPIO_WritePin(POWER_OUT3_GPIO_Port, POWER_OUT3_Pin, 1);
   HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
+  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -170,15 +181,13 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-	  DBUFF[0] = rc.sw2;
-	  //DBUFF[1] = gimbalPitchFdb.rpm;
-	  DBUFF[2] = loadMotorFdb.rpm;
 
-	  for (int i = 0; i < 4; i++) {
-		  advancedDisp(DBUFF[i], 5);
-		  string(",");
-	  }
-	  dnl();
+
+	  printf("ch1=%d ch2=%d ch3=%d ch4=%d sw1=%d sw2=%d",rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.sw1,rc.sw2);
+	  //printf("M0=%f M1=%f M2=%f M3=%f",mecanum.wheel_rpm[0],mecanum.wheel_rpm[1],mecanum.wheel_rpm[2],mecanum.wheel_rpm[3]);
+	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
+	  printf("\r\n");
+
 
   }
   /* USER CODE END 3 */
@@ -244,17 +253,11 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-
-	static int cnt = 0;
 	static long unsigned int c = 0;
 	c++;
 	if (htim->Instance == htim6.Instance) {//500Hz
 		timerTask();
-		cnt++;
-		if (cnt >= 500) {//1Hz
-			HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
-			cnt = 0;
-		}
+		HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
 	}
 }
 
@@ -320,11 +323,6 @@ void driveWheelTask() {
 
 	mecanum_calculate(&mecanum);
 
-/*	DBUFF[0] = mecanum.wheel_rpm[0];
-	DBUFF[1] = mecanum.wheel_rpm[1];
-	DBUFF[2] = mecanum.wheel_rpm[2];
-	DBUFF[3] = mecanum.wheel_rpm[3];*/
-
 	int16_t u[4];
 	for (int i = 0; i < 4; i++) {
 		int error = mecanum.wheel_rpm[i] - wheelFdb[i].rpm;
@@ -377,6 +375,42 @@ void initLoadPID() {
 	loadPID.integralOutLimit = 10000.0f;
 	loadPID.differentialFilterRate = 0.9f;
 }
+
+
+void Gimbal_Task(){
+	int fire = 0;
+	int16_t u[4];
+	if (rc.sw2 == 1) {
+		fire = 1;
+	} else {
+		fire = 0;
+	}
+	DBUFF[1] = loadPID.error = -900.0f*fire - loadMotorFdb.rpm;
+	DBUFF[3] = u[2] = pidExecute(&loadPID);
+
+	target_yaw =(float) rc.ch1 / 660 * 70;
+	yaw_now=(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0);
+	if(fabs(target_yaw-yaw_now)>2){
+		u[0]=map(target_yaw-yaw_now, -180, 180, -30000, 30000);
+	}
+	else{
+	u[0]=0;
+	}
+
+	target_pich=(float) rc.ch2 / 660 * (-30);
+	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+24;
+	if(fabs(target_pich-pich_now)>2){
+		u[1]=map(target_pich-pich_now, -25, 15, -7000, 7000);
+	}
+	else{
+	u[1]=0;
+	}
+
+
+	u[3]=0;
+	driveGimbalMotors(u);
+}
+
 /* USER CODE END 4 */
 
 /**

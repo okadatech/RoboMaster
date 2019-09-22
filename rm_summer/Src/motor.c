@@ -30,6 +30,7 @@ void driveWheel(int16_t *u) {
 	}
 
 	HAL_CAN_AddTxMessage(&hcan2, &header, TxData, &TxMailbox);
+
 }
 
 void driveGimbalMotors(int16_t *u) {
@@ -43,11 +44,13 @@ void driveGimbalMotors(int16_t *u) {
 	header.DLC = 8;
 	//header.TransmitGlobalTime = DISABLE;
 
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 4; i++) {
+		if(i==2){
 		if (CaseMotor_MaxSpeed < u[i]) {
 			u[i] = CaseMotor_MaxSpeed - 1;
 		} else if (u[i] < -CaseMotor_MaxSpeed) {
 			u[i] = -CaseMotor_MaxSpeed + 1;
+		}
 		}
 		TxData[i * 2] = u[i] >> 8;
 		TxData[i * 2 + 1] = u[i] & 0xFF;

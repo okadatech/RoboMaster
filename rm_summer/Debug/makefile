@@ -41,7 +41,7 @@ all: rm_saramander.elf secondary-outputs
 
 # Tool invocations
 rm_saramander.elf: $(OBJS) $(USER_OBJS) ../STM32F427IIHx_FLASH.ld
-	arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

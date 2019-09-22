@@ -2158,3 +2158,442 @@
 2019-09-22 00:20:09,674 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.fpu.1469369864 uses a null category that is invalid in its context. The option was ignored.
 2019-09-22 00:20:09,677 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.floatabi.1427200588 uses a null category that is invalid in its context. The option was ignored.
 2019-09-22 00:20:35,402 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 01:19:42,450 [INFO] MainUpdater:2040 - connection check result : 10
+2019-09-22 01:19:42,450 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-09-22 01:19:42,716 [INFO] MicroXplorer:371 - Change Database Path : 
+2019-09-22 01:19:42,716 [INFO] MicroXplorer:401 - Change Database Version : DB.5.0.30
+2019-09-22 01:19:42,716 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-09-22 01:19:42,732 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 513445008 Bytes (864026624)
+2019-09-22 01:19:44,992 [INFO] MicroXplorer:371 - Change Database Path : 
+2019-09-22 01:19:44,992 [INFO] MicroXplorer:401 - Change Database Version : DB.5.0.30
+2019-09-22 01:19:44,992 [INFO] OpenFileManager:269 - Change cursor
+2019-09-22 01:19:44,992 [INFO] RulesReader:52 - Compatibility file has been processed (156 Rules)
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule SPDIFRX instance for mcu is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename Tracer Mode is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule SPDIFRX instance value for IP SPDIFRX is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule SPDIFRX instance for signal is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule SPDIFRX instance for project manager is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule SPDIFRX instance for project manager is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule ADC Scan  fix with FW F7 is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule ADC Scan  fix with FW F7 is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename AES DataEncryptionTypesList to Algorithm is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename TDESECB to CRYP_TDES_ECB is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename TDESCBC to CRYP_TDES_CBC is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename DESECB to CRYP_DES_ECB is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename DESCBC to CRYP_DES_CBC is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename AESECB to CRYP_AES_ECB is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename AESCBC to CRYP_AES_CBC is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename AESCTR to CRYP_AES_CTR is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename AESGCM to CRYP_AES_GCM is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Rename AESCCM to CRYP_AES_CCM is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule USART TxPinLevelInvertParam Mode is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule USART RxPinLevelInvertParam Mode is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule USART DataInvertParam Mode is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule USART SwapParam Mode is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule USART OverrunDisableParam Mode is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule USART DMADisableonRxErrorParam Mode is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule USART MSBFirstParam Mode is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Update MwName for USB_DEVICE is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule Change PWR_Regulator_Voltage_Scale Default Value for RCC  H7 family is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule UART/USART IPParameter rename Prescaler parameter to ClockPrescaler is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule UART/USART Prescaler rename Prescaler parameter to ClockPrescaler is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule TIM1CLockSelection is applicable
+2019-09-22 01:19:47,360 [INFO] Rule:205 - rule TIM15CLockSelection is applicable
+2019-09-22 01:19:47,376 [INFO] DbConfProperties:222 - Apply Compatibility (17/31 Rules)
+2019-09-22 01:19:47,423 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (48MHZClocksFreq_Value) has invalid value (84000000)
+2019-09-22 01:19:47,423 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2019-09-22 01:19:47,423 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (MCO2PinFreq_Value) has invalid value (168000000)
+2019-09-22 01:19:47,423 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RTCHSEDivFreq_Value) has invalid value (6000000)
+2019-09-22 01:19:47,815 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 455228200 Bytes (864026624)
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics BlueNRG-MS 1.0.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 1.1.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.1.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.2.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.2.1
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.3.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.3.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.0.1
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.3.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.4.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.4.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.1.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.4.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 3.0.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.2.0
+2019-09-22 01:19:47,862 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 4.0.0
+2019-09-22 01:19:48,018 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-09-22 01:19:48,018 [INFO] PinOutPanel:1367 - setPackage(STM32F427IIHx,UFBGA176)
+2019-09-22 01:19:48,382 [INFO] UtilMem:74 - Before build in PCC Used Memory: 596585488 Bytes (864026624)
+2019-09-22 01:19:48,497 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/ryouma/.stm32cubemx/plugins/power
+2019-09-22 01:19:48,497 [INFO] UtilMem:74 - After build in PCC Used Memory: 605500424 Bytes (864026624)
+2019-09-22 01:19:48,497 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,497 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:19:48,513 [INFO] Can:56 - Can Add PropertyChangeListener com.st.microxplorer.plugins.ip.can.Can@66c0a025
+2019-09-22 01:19:48,513 [INFO] Can:56 - Can Add PropertyChangeListener com.st.microxplorer.plugins.ip.can.Can@5b02e40a
+2019-09-22 01:19:48,513 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 01:19:48,528 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,528 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,544 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,544 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:19:48,544 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:19:48,544 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,560 [INFO] OpenFileManager:289 - Restore cursor
+2019-09-22 01:19:48,575 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,575 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,575 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,575 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:19:48,575 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:19:48,591 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,685 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 01:19:48,685 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,700 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,700 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,700 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:19:48,700 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:19:48,700 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:19:48,716 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 01:19:52,808 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 01:19:52,824 [INFO] Gpio:238 - dependency for GPIO [CAN1, CAN2, RCC, SPI5, SYS, TIM1, TIM12, UART7, UART8, USART1, USART6]
+2019-09-22 01:20:40,308 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 324841040 Bytes (864026624)
+2019-09-22 01:20:40,324 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:40,324 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:40,324 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:40,324 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:20:40,324 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:20:40,324 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:44,796 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 01:20:52,526 [INFO] MainUpdater:2040 - connection check result : 10
+2019-09-22 01:20:52,526 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-09-22 01:20:52,753 [INFO] MicroXplorer:371 - Change Database Path : 
+2019-09-22 01:20:52,753 [INFO] MicroXplorer:401 - Change Database Version : DB.5.0.30
+2019-09-22 01:20:52,753 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-09-22 01:20:52,753 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 525686232 Bytes (864026624)
+2019-09-22 01:20:52,753 [INFO] MicroXplorer:371 - Change Database Path : 
+2019-09-22 01:20:52,753 [INFO] MicroXplorer:401 - Change Database Version : DB.5.0.30
+2019-09-22 01:20:52,753 [INFO] OpenFileManager:269 - Change cursor
+2019-09-22 01:20:52,769 [INFO] RulesReader:52 - Compatibility file has been processed (156 Rules)
+2019-09-22 01:20:55,536 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (48MHZClocksFreq_Value) has invalid value (84000000)
+2019-09-22 01:20:55,536 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2019-09-22 01:20:55,536 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (MCO2PinFreq_Value) has invalid value (168000000)
+2019-09-22 01:20:55,536 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RTCHSEDivFreq_Value) has invalid value (6000000)
+2019-09-22 01:20:55,911 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 441759304 Bytes (864026624)
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics BlueNRG-MS 1.0.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 1.1.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.1.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.2.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.2.1
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.3.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.3.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.0.1
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.3.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.4.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.4.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.1.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.4.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 3.0.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.2.0
+2019-09-22 01:20:55,942 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 4.0.0
+2019-09-22 01:20:56,099 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-09-22 01:20:56,099 [INFO] PinOutPanel:1367 - setPackage(STM32F427IIHx,UFBGA176)
+2019-09-22 01:20:56,364 [INFO] UtilMem:74 - Before build in PCC Used Memory: 583116592 Bytes (864026624)
+2019-09-22 01:20:56,458 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/ryouma/.stm32cubemx/plugins/power
+2019-09-22 01:20:56,458 [INFO] UtilMem:74 - After build in PCC Used Memory: 591507248 Bytes (864026624)
+2019-09-22 01:20:56,458 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,458 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 01:20:56,473 [INFO] Can:56 - Can Add PropertyChangeListener com.st.microxplorer.plugins.ip.can.Can@7ac939e8
+2019-09-22 01:20:56,473 [INFO] Can:56 - Can Add PropertyChangeListener com.st.microxplorer.plugins.ip.can.Can@26714b11
+2019-09-22 01:20:56,473 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 01:20:56,489 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,489 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,489 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,489 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:20:56,489 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:20:56,489 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,505 [INFO] OpenFileManager:289 - Restore cursor
+2019-09-22 01:20:56,505 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,505 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,505 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,520 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:20:56,520 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:20:56,520 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,583 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 01:20:56,602 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,602 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,602 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,602 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:20:56,602 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 01:20:56,602 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 01:20:56,618 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 02:24:24,499 [INFO] MainUpdater:2040 - connection check result : 10
+2019-09-22 02:24:24,499 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-09-22 02:24:24,765 [INFO] MicroXplorer:371 - Change Database Path : 
+2019-09-22 02:24:24,780 [INFO] MicroXplorer:401 - Change Database Version : DB.5.0.30
+2019-09-22 02:24:24,780 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-09-22 02:24:24,780 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 503934080 Bytes (864026624)
+2019-09-22 02:24:24,780 [INFO] MicroXplorer:371 - Change Database Path : 
+2019-09-22 02:24:24,780 [INFO] MicroXplorer:401 - Change Database Version : DB.5.0.30
+2019-09-22 02:24:24,780 [INFO] OpenFileManager:269 - Change cursor
+2019-09-22 02:24:27,365 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (48MHZClocksFreq_Value) has invalid value (84000000)
+2019-09-22 02:24:27,365 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2019-09-22 02:24:27,365 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (MCO2PinFreq_Value) has invalid value (168000000)
+2019-09-22 02:24:27,365 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RTCHSEDivFreq_Value) has invalid value (6000000)
+2019-09-22 02:24:27,769 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 664483400 Bytes (864026624)
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics BlueNRG-MS 1.0.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 1.1.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.1.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.2.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.2.1
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.3.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.3.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.0.1
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.3.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.4.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.4.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.1.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.4.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 3.0.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.2.0
+2019-09-22 02:24:27,816 [INFO] ThirdParty:912 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 4.0.0
+2019-09-22 02:24:27,956 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-09-22 02:24:27,972 [INFO] PinOutPanel:1367 - setPackage(STM32F427IIHx,UFBGA176)
+2019-09-22 02:24:28,288 [INFO] UtilMem:74 - Before build in PCC Used Memory: 439363384 Bytes (864026624)
+2019-09-22 02:24:28,387 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/ryouma/.stm32cubemx/plugins/power
+2019-09-22 02:24:28,387 [INFO] UtilMem:74 - After build in PCC Used Memory: 447751992 Bytes (864026624)
+2019-09-22 02:24:28,387 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,387 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-09-22 02:24:28,402 [INFO] Can:56 - Can Add PropertyChangeListener com.st.microxplorer.plugins.ip.can.Can@8655d5e
+2019-09-22 02:24:28,402 [INFO] Can:56 - Can Add PropertyChangeListener com.st.microxplorer.plugins.ip.can.Can@42deff1
+2019-09-22 02:24:28,418 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 02:24:28,418 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,418 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,418 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,433 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 02:24:28,433 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 02:24:28,433 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,449 [INFO] OpenFileManager:289 - Restore cursor
+2019-09-22 02:24:28,449 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,449 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,449 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,449 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 02:24:28,449 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 02:24:28,449 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,512 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 02:24:28,512 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,512 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,512 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,512 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 02:24:28,512 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-09-22 02:24:28,512 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-09-22 02:24:28,543 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 02:24:37,659 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-09-22 13:38:48,409 [INFO] Activator:176 - 
+
+
+2019-09-22 13:38:48,409 [INFO] Activator:177 - !SESSION log4j initialized
+2019-09-22 15:28:43,255 [INFO] Activator:176 - 
+
+
+2019-09-22 15:28:43,255 [INFO] Activator:177 - !SESSION log4j initialized
+2019-09-22 19:09:04,239 [INFO] Activator:176 - 
+
+
+2019-09-22 19:09:04,242 [INFO] Activator:177 - !SESSION log4j initialized
+2019-09-22 21:59:26,653 [INFO] Activator:176 - 
+
+
+2019-09-22 21:59:26,657 [INFO] Activator:177 - !SESSION log4j initialized
