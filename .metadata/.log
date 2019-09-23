@@ -4303,3 +4303,115 @@ java.lang.Exception: The project description file (.project) for 'rm_saramander'
 
 !ENTRY org.eclipse.cdt.core 1 0 2019-09-23 15:05:23.601
 !MESSAGE Indexed 'rm_saramander' (31 sources, 118 headers) in 9.12 sec: 10,753 declarations; 44,301 references; 0 unresolved inclusions; 76 syntax errors; 54 unresolved names (0.098%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 15:18:37.525
+!MESSAGE Indexed 'rm_saramander' (31 sources, 48 headers) in 2.72 sec: 5,311 declarations; 35,398 references; 27 unresolved inclusions; 154 syntax errors; 4,376 unresolved names (9.7%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 15:25:43.377
+!MESSAGE Indexed 'rm_saramander' (33 sources, 81 headers) in 1.64 sec: 5,598 declarations; 20,828 references; 18 unresolved inclusions; 188 syntax errors; 6,911 unresolved names (21%)
+!SESSION 2019-09-23 15:27:58.761 -----------------------------------------------
+eclipse.buildId=Version 1.0.2
+java.version=1.8.0_202
+java.vendor=AdoptOpenJdk
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2019-09-23 15:28:08.296
+!MESSAGE Log4j initialized with config file C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-09-23 15:28:10.341
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-09-23 15:28:10.355
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-09-23 15:28:10.385
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-09-23 15:28:10.394
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-09-23 15:28:10.403
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-09-23 15:28:10.409
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-09-23 15:28:10.416
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-09-23 15:28:10.423
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2019-09-23 15:28:16.943
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.stlink 4 4 2019-09-23 15:40:08.622
+!MESSAGE ST-LINK GDB server failed to start (exit code = 4)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2019-09-23 15:40:08.653
+!MESSAGE Error in final launch sequence:
+
+ST-Linkデバイスの初期化エラー。
+理由: (4) ターゲットにデバイスが存在しません。
+!STACK 1
+org.eclipse.core.runtime.CoreException: ST-Linkデバイスの初期化エラー。
+理由: (4) ターゲットにデバイスが存在しません。
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:242)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:106)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:94)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:85)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2019-09-23 15:40:08.653
+!MESSAGE ST-Linkデバイスの初期化エラー。
+理由: (4) ターゲットにデバイスが存在しません。
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 15:45:30.816
+!MESSAGE Indexed 'rm_saramander' (33 sources, 45 headers) in 3.91 sec: 4,800 declarations; 34,889 references; 26 unresolved inclusions; 112 syntax errors; 3,825 unresolved names (8.8%)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2019-09-23 15:46:46.311
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1d0b97e3): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-exec-next 1
+Error message from debugger back end:
+Cannot find bounds of current function java.lang.Exception: Cannot find bounds of current function' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2019-09-23 15:46:46.311
+!MESSAGE Failed to execute MI command:
+-exec-next 1
+Error message from debugger back end:
+Cannot find bounds of current function
+!STACK 0
+java.lang.Exception: Cannot find bounds of current function
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2019-09-23 15:53:01.347
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@75c9f643): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-exec-next 1
+Error message from debugger back end:
+Cannot find bounds of current function java.lang.Exception: Cannot find bounds of current function' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2019-09-23 15:53:01.347
+!MESSAGE Failed to execute MI command:
+-exec-next 1
+Error message from debugger back end:
+Cannot find bounds of current function
+!STACK 0
+java.lang.Exception: Cannot find bounds of current function
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 15:54:28.412
+!MESSAGE Indexed 'rm_saramander' (33 sources, 45 headers) in 2.13 sec: 4,426 declarations; 29,016 references; 33 unresolved inclusions; 97 syntax errors; 3,041 unresolved names (8.3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 15:56:31.772
+!MESSAGE Indexed 'rm_saramander' (31 sources, 117 headers) in 2.23 sec: 10,604 declarations; 44,105 references; 0 unresolved inclusions; 76 syntax errors; 54 unresolved names (0.099%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 15:57:57.963
+!MESSAGE Indexed 'rm_saramander' (31 sources, 45 headers) in 2.24 sec: 4,768 declarations; 34,561 references; 23 unresolved inclusions; 112 syntax errors; 3,793 unresolved names (8.8%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 16:00:37.468
+!MESSAGE Indexed 'rm_saramander' (31 sources, 117 headers) in 1.97 sec: 10,604 declarations; 44,105 references; 0 unresolved inclusions; 76 syntax errors; 54 unresolved names (0.099%)
