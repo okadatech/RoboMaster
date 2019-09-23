@@ -1,0 +1,15 @@
+main.c:81:6:__io_putchar	16	static
+main.c:103:6:map	4	static
+main.c:266:6:HAL_UART_RxCpltCallback	16	static
+main.c:302:6:HAL_CAN_RxFifo0MsgPendingCallback	24	static
+main.c:337:6:driveWheelTask	24	static
+main.c:354:6:initPID	0	static
+main.c:366:6:initMecanum	0	static
+main.c:374:6:initFriction	8	static
+main.c:388:6:initLoadPID	0	static
+main.c:399:6:Gimbal_Task	24	static
+main.c:107:6:timerTask	8	static
+main.c:257:6:HAL_TIM_PeriodElapsedCallback	8	static
+main.c:441:6:_Error_Handler	0	static
+main.c:203:6:SystemClock_Config	88	static
+main.c:119:5:main	16	static
