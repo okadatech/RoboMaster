@@ -183,8 +183,10 @@ int main(void)
   /* USER CODE BEGIN 3 */
 
 
-	  printf("ch1=%d ch2=%d ch3=%d ch4=%d sw1=%d sw2=%d",rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.sw1,rc.sw2);
-	  //printf("M0=%f M1=%f M2=%f M3=%f",mecanum.wheel_rpm[0],mecanum.wheel_rpm[1],mecanum.wheel_rpm[2],mecanum.wheel_rpm[3]);
+	 /* printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
+			 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y,rc.mouse_press_l,rc.mouse_press_r
+			 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);*/
+	  printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
 	  printf("\r\n");
 
@@ -274,8 +276,25 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 		rc.ch3 -= 1024;
 		rc.ch4 = (((rcData[5] & 0x0F) << 7) | (rcData[4] >> 1));
 		rc.ch4 -= 1024;
+		rc.ch5 = (rcData[17]<<8) | rcData[16];
+		rc.ch5 = 1024-rc.ch5;
 		rc.sw1 = ((rcData[5] & 0x30) >> 4);
 		rc.sw2 = ((rcData[5] & 0xC0) >> 6);
+		rc.mouse_x = ((int16_t)rcData[6]) | ((int16_t)rcData[7] << 8);
+		rc.mouse_y = ((int16_t)rcData[8]) | ((int16_t)rcData[9] << 8);
+		rc.mouse_z = ((int16_t)rcData[10]) | ((int16_t)rcData[11] << 8);
+		rc.mouse_press_l = rcData[12];
+		rc.mouse_press_r = rcData[13];
+		rc.key_v = ((int16_t)rcData[14]);
+		rc.key_W =     (0b0000000000000001 & rc.key_v);
+		rc.key_S =     (0b0000000000000010 & rc.key_v)>>1;
+		rc.key_A =     (0b0000000000000100 & rc.key_v)>>2;
+		rc.key_D =     (0b0000000000001000 & rc.key_v)>>3;
+		rc.key_Shift = (0b0000000000010000 & rc.key_v)>>4;
+		rc.key_Ctrl =  (0b0000000000100000 & rc.key_v)>>5;
+		rc.key_Q =     (0b0000000001000000 & rc.key_v)>>6;
+		rc.key_E =     (0b0000000010000000 & rc.key_v)>>7;
+
 	}
 }
 

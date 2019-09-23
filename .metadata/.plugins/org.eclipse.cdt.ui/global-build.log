@@ -250,3 +250,334 @@ arm-none-eabi-size   rm_saramander.elf
   26832	    484	   2796	  30112	   75a0	rm_saramander.elf
 Finished building: default.size.stdout
  
+00:58:47 **** Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/can.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/can.d" -MT"Src/can.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/can.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29144	    484	   2796	  32424	   7ea8	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:00:13 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/can.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/can.d" -MT"Src/can.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/can.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:187:82: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+    printf("=%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d ",rcData[0],rcData[2],rcData[3],
+                                                                                 ~^
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29248	    484	   2796	  32528	   7f10	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:00:58 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:187:82: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+    printf("=%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d ",rcData[0],rcData[2],rcData[3],
+                                                                                 ~^
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29248	    484	   2796	  32528	   7f10	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:11:35 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:187:82: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+    printf("=%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d =%d ",(int)rcData[0],(int)rcData[2],(int)rcData[3],
+                                                                                 ~^
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29288	    484	   2812	  32584	   7f48	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:14:17 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29208	    484	   2812	  32504	   7ef8	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:15:15 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29208	    484	   2812	  32504	   7ef8	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:15:34 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29208	    484	   2812	  32504	   7ef8	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:17:43 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29216	    484	   2812	  32512	   7f00	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:18:52 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29216	    484	   2812	  32512	   7f00	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:21:50 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29288	    484	   2812	  32584	   7f48	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:30:04 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29344	    484	   2820	  32648	   7f88	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:32:20 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:186:11: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+    printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_l=%d m_r=%d W=%d S=%d W=%d A=%d"
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:187:38: note: format string is defined here
+      " D=%d Q=%d E=%d Shift=%d Ctrl=%d"
+                                     ~^
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29448	    484	   2820	  32752	   7ff0	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:32:40 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:186:139: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+    printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_l=%d m_r=%d W=%d S=%d W=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
+                                                                                                                                          ~^
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29448	    484	   2820	  32752	   7ff0	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:34:27 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29440	    484	   2820	  32744	   7fe8	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:36:57 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29432	    484	   2820	  32736	   7fe0	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:40:34 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29432	    484	   2820	  32736	   7fe0	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:42:22 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29256	    484	   2820	  32560	   7f30	rm_saramander.elf
+Finished building: default.size.stdout
+ 
+14:45:20 **** Incremental Build of configuration Debug for project rm_saramander ****
+make all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F427xx -c -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Og -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "rm_saramander.elf" @"objects.list"   -mcpu=cortex-m4 -T"../STM32F427IIHx_FLASH.ld" --specs=nosys.specs -Wl,-Map="rm_saramander.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: rm_saramander.elf
+ 
+arm-none-eabi-objdump -h -S  rm_saramander.elf  > "rm_saramander.list"
+Finished building: rm_saramander.list
+ 
+arm-none-eabi-objcopy  -O ihex  rm_saramander.elf  "rm_saramander.hex"
+Finished building: rm_saramander.hex
+ 
+arm-none-eabi-size   rm_saramander.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29224	    484	   2820	  32528	   7f10	rm_saramander.elf
+Finished building: default.size.stdout
+ 
