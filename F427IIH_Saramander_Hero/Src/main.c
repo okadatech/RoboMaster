@@ -72,6 +72,7 @@ void driveWheelTask();
 void initFriction();
 void initLoadPID();
 void Gimbal_Task();
+void fire_Task();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -83,8 +84,10 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
 void timerTask() { //call 500Hz
 	driveWheelTask();
 	Gimbal_Task();
+	fire_Task();
 }
-uint8_t cnt_tim;
+uint8_t cnt_tim,cnt_tim_fire;
+uint16_t sw1_cnt=1220;
 /* USER CODE END 0 */
 
 /**
@@ -172,7 +175,8 @@ int main(void)
 	 /* printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
 			 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y,rc.mouse_press_l,rc.mouse_press_r
 			 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);*/
-	  printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
+	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
+
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
 	  printf("\r\n");
 
@@ -312,7 +316,7 @@ void driveWheelTask() {
 
 	mecanum.speed.vx = (float) rc.ch4 / 660 * MAX_CHASSIS_VX_SPEED;
 	mecanum.speed.vy = -(float) rc.ch3 / 660 * MAX_CHASSIS_VX_SPEED;
-	mecanum.speed.vw = -(float) rc.ch1 / 660 * MAX_CHASSIS_VW_SPEED;
+	mecanum.speed.vw = -(float) rc.ch5 / 660 * MAX_CHASSIS_VW_SPEED;
 
 	mecanum_calculate(&mecanum);
 
@@ -352,11 +356,7 @@ void initFriction() {
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 1220);
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 1220);
 	HAL_Delay(5000);
-	for (int i = 1220; i < 1400; i++) {
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, i);
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, i);
-		HAL_Delay(30);
-	}
+
 }
 
 void initLoadPID() {
@@ -392,6 +392,22 @@ void Gimbal_Task(){
 
 	u[3]=0;
 	driveGimbalMotors(u);
+}
+
+void fire_Task(){
+	if(rc.sw1==1){
+		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, sw1_cnt);
+		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, sw1_cnt);
+		if(sw1_cnt>=1400){
+			sw1_cnt=1400;
+		}
+		else{sw1_cnt++;}
+	}
+	else{
+		sw1_cnt=1220;
+		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, sw1_cnt);
+		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, sw1_cnt);
+	}
 }
 
 /* USER CODE END 4 */
