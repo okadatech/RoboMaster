@@ -53,6 +53,18 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
+__uint8_t rcData[18];
+struct rc_info_t rc;
+wheel_fdb_t wheelFdb[4];
+uint8_t canRxData[8];
+CAN_RxHeaderTypeDef canRxHeader;
+motor_fdb gimbalYawFdb, gimbalPitchFdb, loadMotorFdb;
+struct mecanum mecanum;
+_pid_t wheelPID[4], loadPID;
+int16_t target_yaw,target_pich;
+int16_t yaw_now,pich_now;
+float DBUFF[32];
+
 #ifdef __GNUC__
 #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
 #else
@@ -79,6 +91,7 @@ void Gimbal_Task();
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+
 long map(long x, long in_min, long in_max, long out_min, long out_max) {
 	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }

@@ -3512,6 +3512,13 @@ Discarded input sections
  .group         0x0000000000000000        0xc Src/main.o
  .group         0x0000000000000000        0xc Src/main.o
  .group         0x0000000000000000        0xc Src/main.o
+ .group         0x0000000000000000        0xc Src/main.o
+ .group         0x0000000000000000        0xc Src/main.o
+ .group         0x0000000000000000        0xc Src/main.o
+ .group         0x0000000000000000        0xc Src/main.o
+ .group         0x0000000000000000        0xc Src/main.o
+ .group         0x0000000000000000        0xc Src/main.o
+ .group         0x0000000000000000        0xc Src/main.o
  .text          0x0000000000000000        0x0 Src/main.o
  .data          0x0000000000000000        0x0 Src/main.o
  .debug_macro   0x0000000000000000      0xa60 Src/main.o
@@ -3621,12 +3628,18 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x46 Src/mecanum.o
  .debug_macro   0x0000000000000000       0x3c Src/mecanum.o
  .debug_macro   0x0000000000000000       0x34 Src/mecanum.o
+ .debug_macro   0x0000000000000000       0x16 Src/mecanum.o
  .debug_macro   0x0000000000000000       0x52 Src/mecanum.o
  .debug_macro   0x0000000000000000       0x1f Src/mecanum.o
  .debug_macro   0x0000000000000000       0x43 Src/mecanum.o
  .debug_macro   0x0000000000000000       0x20 Src/mecanum.o
  .debug_macro   0x0000000000000000      0x1a3 Src/mecanum.o
  .debug_macro   0x0000000000000000      0x330 Src/mecanum.o
+ .debug_macro   0x0000000000000000       0x16 Src/mecanum.o
+ .debug_macro   0x0000000000000000       0x29 Src/mecanum.o
+ .debug_macro   0x0000000000000000       0x16 Src/mecanum.o
+ .debug_macro   0x0000000000000000       0x35 Src/mecanum.o
+ .debug_macro   0x0000000000000000       0x20 Src/mecanum.o
  .debug_macro   0x0000000000000000      0x1e1 Src/mecanum.o
  .debug_macro   0x0000000000000000       0x58 Src/mecanum.o
  .group         0x0000000000000000        0xc Src/motor.o
@@ -6359,7 +6372,7 @@ LOAD c:/st/stm32cubeide_1.0.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000000000f01       0x22 c:/st/stm32cubeide_1.0.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
 OUTPUT(rm_saramander.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x1f8a2
+.debug_info     0x0000000000000000    0x1f8a8
  .debug_info    0x0000000000000000     0x1231 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_info    0x0000000000001231     0x182e Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o
  .debug_info    0x0000000000002a5f     0x176f Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
@@ -6372,20 +6385,20 @@ OUTPUT(rm_saramander.elf elf32-littlearm)
  .debug_info    0x000000000000e9c6     0x1f0a Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
  .debug_info    0x00000000000108d0     0x165f Src/can.o
  .debug_info    0x0000000000011f2f      0xdc0 Src/gpio.o
- .debug_info    0x0000000000012cef     0x2bb0 Src/main.o
- .debug_info    0x000000000001589f      0xcbe Src/mecanum.o
- .debug_info    0x000000000001655d      0xea0 Src/motor.o
- .debug_info    0x00000000000173fd       0xfb Src/pid.o
- .debug_info    0x00000000000174f8     0x1208 Src/spi.o
- .debug_info    0x0000000000018700      0xe99 Src/stm32f4xx_hal_msp.o
- .debug_info    0x0000000000019599     0x15c0 Src/stm32f4xx_it.o
- .debug_info    0x000000000001ab59      0xfb2 Src/syscalls.o
- .debug_info    0x000000000001bb0b      0xd33 Src/system_stm32f4xx.o
- .debug_info    0x000000000001c83e     0x193f Src/tim.o
- .debug_info    0x000000000001e17d     0x1703 Src/usart.o
- .debug_info    0x000000000001f880       0x22 startup/startup_stm32f427xx.o
+ .debug_info    0x0000000000012cef     0x2bb6 Src/main.o
+ .debug_info    0x00000000000158a5      0xcbe Src/mecanum.o
+ .debug_info    0x0000000000016563      0xea0 Src/motor.o
+ .debug_info    0x0000000000017403       0xfb Src/pid.o
+ .debug_info    0x00000000000174fe     0x1208 Src/spi.o
+ .debug_info    0x0000000000018706      0xe99 Src/stm32f4xx_hal_msp.o
+ .debug_info    0x000000000001959f     0x15c0 Src/stm32f4xx_it.o
+ .debug_info    0x000000000001ab5f      0xfb2 Src/syscalls.o
+ .debug_info    0x000000000001bb11      0xd33 Src/system_stm32f4xx.o
+ .debug_info    0x000000000001c844     0x193f Src/tim.o
+ .debug_info    0x000000000001e183     0x1703 Src/usart.o
+ .debug_info    0x000000000001f886       0x22 startup/startup_stm32f427xx.o
 
-.debug_abbrev   0x0000000000000000     0x39e9
+.debug_abbrev   0x0000000000000000     0x39f8
  .debug_abbrev  0x0000000000000000      0x2ad Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_abbrev  0x00000000000002ad      0x30e Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o
  .debug_abbrev  0x00000000000005bb      0x3ad Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
@@ -6398,18 +6411,18 @@ OUTPUT(rm_saramander.elf elf32-littlearm)
  .debug_abbrev  0x00000000000019ce      0x30c Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
  .debug_abbrev  0x0000000000001cda      0x26c Src/can.o
  .debug_abbrev  0x0000000000001f46      0x1f3 Src/gpio.o
- .debug_abbrev  0x0000000000002139      0x3ee Src/main.o
- .debug_abbrev  0x0000000000002527      0x270 Src/mecanum.o
- .debug_abbrev  0x0000000000002797      0x240 Src/motor.o
- .debug_abbrev  0x00000000000029d7       0x9d Src/pid.o
- .debug_abbrev  0x0000000000002a74      0x220 Src/spi.o
- .debug_abbrev  0x0000000000002c94      0x1fc Src/stm32f4xx_hal_msp.o
- .debug_abbrev  0x0000000000002e90      0x23f Src/stm32f4xx_it.o
- .debug_abbrev  0x00000000000030cf      0x288 Src/syscalls.o
- .debug_abbrev  0x0000000000003357      0x1cd Src/system_stm32f4xx.o
- .debug_abbrev  0x0000000000003524      0x28a Src/tim.o
- .debug_abbrev  0x00000000000037ae      0x229 Src/usart.o
- .debug_abbrev  0x00000000000039d7       0x12 startup/startup_stm32f427xx.o
+ .debug_abbrev  0x0000000000002139      0x3fd Src/main.o
+ .debug_abbrev  0x0000000000002536      0x270 Src/mecanum.o
+ .debug_abbrev  0x00000000000027a6      0x240 Src/motor.o
+ .debug_abbrev  0x00000000000029e6       0x9d Src/pid.o
+ .debug_abbrev  0x0000000000002a83      0x220 Src/spi.o
+ .debug_abbrev  0x0000000000002ca3      0x1fc Src/stm32f4xx_hal_msp.o
+ .debug_abbrev  0x0000000000002e9f      0x23f Src/stm32f4xx_it.o
+ .debug_abbrev  0x00000000000030de      0x288 Src/syscalls.o
+ .debug_abbrev  0x0000000000003366      0x1cd Src/system_stm32f4xx.o
+ .debug_abbrev  0x0000000000003533      0x28a Src/tim.o
+ .debug_abbrev  0x00000000000037bd      0x229 Src/usart.o
+ .debug_abbrev  0x00000000000039e6       0x12 startup/startup_stm32f427xx.o
 
 .debug_loc      0x0000000000000000     0xa5dd
  .debug_loc     0x0000000000000000       0xfd Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
@@ -6509,7 +6522,7 @@ OUTPUT(rm_saramander.elf elf32-littlearm)
  .debug_ranges  0x0000000000000f48       0x38 Src/usart.o
  .debug_ranges  0x0000000000000f80       0x20 startup/startup_stm32f427xx.o
 
-.debug_macro    0x0000000000000000    0x2653a
+.debug_macro    0x0000000000000000    0x265d3
  .debug_macro   0x0000000000000000      0x39a Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_macro   0x000000000000039a      0xa60 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_macro   0x0000000000000dfa       0x88 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
@@ -6586,45 +6599,46 @@ OUTPUT(rm_saramander.elf elf32-littlearm)
  .debug_macro   0x0000000000022f7e      0x33b Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
  .debug_macro   0x00000000000232b9      0x34e Src/can.o
  .debug_macro   0x0000000000023607      0x344 Src/gpio.o
- .debug_macro   0x000000000002394b      0x3c8 Src/main.o
- .debug_macro   0x0000000000023d13      0x1e1 Src/main.o
- .debug_macro   0x0000000000023ef4       0x58 Src/main.o
- .debug_macro   0x0000000000023f4c      0x17f Src/mecanum.o
- .debug_macro   0x00000000000240cb       0x16 Src/mecanum.o
- .debug_macro   0x00000000000240e1      0x10e Src/mecanum.o
- .debug_macro   0x00000000000241ef       0x8d Src/mecanum.o
- .debug_macro   0x000000000002427c       0x16 Src/mecanum.o
- .debug_macro   0x0000000000024292       0x29 Src/mecanum.o
- .debug_macro   0x00000000000242bb       0x16 Src/mecanum.o
- .debug_macro   0x00000000000242d1       0x35 Src/mecanum.o
- .debug_macro   0x0000000000024306       0x20 Src/mecanum.o
- .debug_macro   0x0000000000024326      0x34e Src/motor.o
- .debug_macro   0x0000000000024674       0x1b Src/pid.o
- .debug_macro   0x000000000002468f      0x34e Src/spi.o
- .debug_macro   0x00000000000249dd      0x33a Src/stm32f4xx_hal_msp.o
- .debug_macro   0x0000000000024d17      0x344 Src/stm32f4xx_it.o
- .debug_macro   0x000000000002505b      0x243 Src/syscalls.o
- .debug_macro   0x000000000002529e       0x40 Src/syscalls.o
- .debug_macro   0x00000000000252de       0x94 Src/syscalls.o
- .debug_macro   0x0000000000025372       0x57 Src/syscalls.o
- .debug_macro   0x00000000000253c9      0x174 Src/syscalls.o
- .debug_macro   0x000000000002553d       0x10 Src/syscalls.o
- .debug_macro   0x000000000002554d       0x10 Src/syscalls.o
- .debug_macro   0x000000000002555d       0x10 Src/syscalls.o
- .debug_macro   0x000000000002556d       0x35 Src/syscalls.o
- .debug_macro   0x00000000000255a2      0x122 Src/syscalls.o
- .debug_macro   0x00000000000256c4       0x10 Src/syscalls.o
- .debug_macro   0x00000000000256d4      0x241 Src/syscalls.o
- .debug_macro   0x0000000000025915       0x1c Src/syscalls.o
- .debug_macro   0x0000000000025931       0x10 Src/syscalls.o
- .debug_macro   0x0000000000025941      0x189 Src/syscalls.o
- .debug_macro   0x0000000000025aca       0x16 Src/syscalls.o
- .debug_macro   0x0000000000025ae0       0x88 Src/syscalls.o
- .debug_macro   0x0000000000025b68      0x340 Src/system_stm32f4xx.o
- .debug_macro   0x0000000000025ea8      0x344 Src/tim.o
- .debug_macro   0x00000000000261ec      0x34e Src/usart.o
+ .debug_macro   0x000000000002394b      0x43f Src/main.o
+ .debug_macro   0x0000000000023d8a      0x1e1 Src/main.o
+ .debug_macro   0x0000000000023f6b       0x58 Src/main.o
+ .debug_macro   0x0000000000023fc3       0x16 Src/main.o
+ .debug_macro   0x0000000000023fd9       0x35 Src/main.o
+ .debug_macro   0x000000000002400e       0x16 Src/main.o
+ .debug_macro   0x0000000000024024       0x29 Src/main.o
+ .debug_macro   0x000000000002404d       0x22 Src/main.o
+ .debug_macro   0x000000000002406f       0x16 Src/main.o
+ .debug_macro   0x0000000000024085       0x20 Src/main.o
+ .debug_macro   0x00000000000240a5      0x17f Src/mecanum.o
+ .debug_macro   0x0000000000024224      0x10e Src/mecanum.o
+ .debug_macro   0x0000000000024332       0x8d Src/mecanum.o
+ .debug_macro   0x00000000000243bf      0x34e Src/motor.o
+ .debug_macro   0x000000000002470d       0x1b Src/pid.o
+ .debug_macro   0x0000000000024728      0x34e Src/spi.o
+ .debug_macro   0x0000000000024a76      0x33a Src/stm32f4xx_hal_msp.o
+ .debug_macro   0x0000000000024db0      0x344 Src/stm32f4xx_it.o
+ .debug_macro   0x00000000000250f4      0x243 Src/syscalls.o
+ .debug_macro   0x0000000000025337       0x40 Src/syscalls.o
+ .debug_macro   0x0000000000025377       0x94 Src/syscalls.o
+ .debug_macro   0x000000000002540b       0x57 Src/syscalls.o
+ .debug_macro   0x0000000000025462      0x174 Src/syscalls.o
+ .debug_macro   0x00000000000255d6       0x10 Src/syscalls.o
+ .debug_macro   0x00000000000255e6       0x10 Src/syscalls.o
+ .debug_macro   0x00000000000255f6       0x10 Src/syscalls.o
+ .debug_macro   0x0000000000025606       0x35 Src/syscalls.o
+ .debug_macro   0x000000000002563b      0x122 Src/syscalls.o
+ .debug_macro   0x000000000002575d       0x10 Src/syscalls.o
+ .debug_macro   0x000000000002576d      0x241 Src/syscalls.o
+ .debug_macro   0x00000000000259ae       0x1c Src/syscalls.o
+ .debug_macro   0x00000000000259ca       0x10 Src/syscalls.o
+ .debug_macro   0x00000000000259da      0x189 Src/syscalls.o
+ .debug_macro   0x0000000000025b63       0x16 Src/syscalls.o
+ .debug_macro   0x0000000000025b79       0x88 Src/syscalls.o
+ .debug_macro   0x0000000000025c01      0x340 Src/system_stm32f4xx.o
+ .debug_macro   0x0000000000025f41      0x344 Src/tim.o
+ .debug_macro   0x0000000000026285      0x34e Src/usart.o
 
-.debug_line     0x0000000000000000     0xfc27
+.debug_line     0x0000000000000000     0xfc98
  .debug_line    0x0000000000000000      0xaae Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_line    0x0000000000000aae      0xe17 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o
  .debug_line    0x00000000000018c5      0xae5 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
@@ -6637,20 +6651,20 @@ OUTPUT(rm_saramander.elf elf32-littlearm)
  .debug_line    0x0000000000007efd     0x11b5 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
  .debug_line    0x00000000000090b2      0x954 Src/can.o
  .debug_line    0x0000000000009a06      0x8b3 Src/gpio.o
- .debug_line    0x000000000000a2b9      0xb4d Src/main.o
- .debug_line    0x000000000000ae06      0x5cf Src/mecanum.o
- .debug_line    0x000000000000b3d5      0x8fe Src/motor.o
- .debug_line    0x000000000000bcd3       0x66 Src/pid.o
- .debug_line    0x000000000000bd39      0x8e6 Src/spi.o
- .debug_line    0x000000000000c61f      0x8a7 Src/stm32f4xx_hal_msp.o
- .debug_line    0x000000000000cec6      0x9c0 Src/stm32f4xx_it.o
- .debug_line    0x000000000000d886      0x737 Src/syscalls.o
- .debug_line    0x000000000000dfbd      0x8d1 Src/system_stm32f4xx.o
- .debug_line    0x000000000000e88e      0x999 Src/tim.o
- .debug_line    0x000000000000f227      0x97f Src/usart.o
- .debug_line    0x000000000000fba6       0x81 startup/startup_stm32f427xx.o
+ .debug_line    0x000000000000a2b9      0xbbe Src/main.o
+ .debug_line    0x000000000000ae77      0x5cf Src/mecanum.o
+ .debug_line    0x000000000000b446      0x8fe Src/motor.o
+ .debug_line    0x000000000000bd44       0x66 Src/pid.o
+ .debug_line    0x000000000000bdaa      0x8e6 Src/spi.o
+ .debug_line    0x000000000000c690      0x8a7 Src/stm32f4xx_hal_msp.o
+ .debug_line    0x000000000000cf37      0x9c0 Src/stm32f4xx_it.o
+ .debug_line    0x000000000000d8f7      0x737 Src/syscalls.o
+ .debug_line    0x000000000000e02e      0x8d1 Src/system_stm32f4xx.o
+ .debug_line    0x000000000000e8ff      0x999 Src/tim.o
+ .debug_line    0x000000000000f298      0x97f Src/usart.o
+ .debug_line    0x000000000000fc17       0x81 startup/startup_stm32f427xx.o
 
-.debug_str      0x0000000000000000    0xd6709
+.debug_str      0x0000000000000000    0xd67b2
  .debug_str     0x0000000000000000    0xd0a27 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
                                       0xd0e3a (size before relaxing)
  .debug_str     0x00000000000d0a27      0x7b3 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o
@@ -6675,29 +6689,29 @@ OUTPUT(rm_saramander.elf elf32-littlearm)
                                       0xd0ba1 (size before relaxing)
  .debug_str     0x00000000000d41e2       0x1b Src/gpio.o
                                       0xd026d (size before relaxing)
- .debug_str     0x00000000000d41fd      0xe53 Src/main.o
-                                      0xd22e1 (size before relaxing)
- .debug_str     0x00000000000d5050      0x308 Src/mecanum.o
+ .debug_str     0x00000000000d41fd     0x105d Src/main.o
+                                      0xd249a (size before relaxing)
+ .debug_str     0x00000000000d525a      0x1a7 Src/mecanum.o
                                        0x7c81 (size before relaxing)
- .debug_str     0x00000000000d5358       0x29 Src/motor.o
+ .debug_str     0x00000000000d5401       0x29 Src/motor.o
                                       0xd03df (size before relaxing)
- .debug_str     0x00000000000d5381        0xd Src/pid.o
+ .debug_str     0x00000000000d542a        0xd Src/pid.o
                                        0x2da8 (size before relaxing)
- .debug_str     0x00000000000d538e       0x17 Src/spi.o
+ .debug_str     0x00000000000d5437       0x17 Src/spi.o
                                       0xd06da (size before relaxing)
- .debug_str     0x00000000000d53a5       0x1b Src/stm32f4xx_hal_msp.o
+ .debug_str     0x00000000000d544e       0x1b Src/stm32f4xx_hal_msp.o
                                       0xd071f (size before relaxing)
- .debug_str     0x00000000000d53c0      0x151 Src/stm32f4xx_it.o
+ .debug_str     0x00000000000d5469      0x151 Src/stm32f4xx_it.o
                                       0xd0a73 (size before relaxing)
- .debug_str     0x00000000000d5511     0x1103 Src/syscalls.o
+ .debug_str     0x00000000000d55ba     0x1103 Src/syscalls.o
                                        0x88dc (size before relaxing)
- .debug_str     0x00000000000d6614       0x5a Src/system_stm32f4xx.o
+ .debug_str     0x00000000000d66bd       0x5a Src/system_stm32f4xx.o
                                       0xd0243 (size before relaxing)
- .debug_str     0x00000000000d666e       0x52 Src/tim.o
+ .debug_str     0x00000000000d6717       0x52 Src/tim.o
                                       0xd0e71 (size before relaxing)
- .debug_str     0x00000000000d66c0       0x1a Src/usart.o
+ .debug_str     0x00000000000d6769       0x1a Src/usart.o
                                       0xd0c79 (size before relaxing)
- .debug_str     0x00000000000d66da       0x2f startup/startup_stm32f427xx.o
+ .debug_str     0x00000000000d6783       0x2f startup/startup_stm32f427xx.o
                                          0x80 (size before relaxing)
 
 .comment        0x0000000000000000       0x7b
