@@ -4415,3 +4415,33 @@ java.lang.Exception: Cannot find bounds of current function
 
 !ENTRY org.eclipse.cdt.core 1 0 2019-09-23 16:00:37.468
 !MESSAGE Indexed 'rm_saramander' (31 sources, 117 headers) in 1.97 sec: 10,604 declarations; 44,105 references; 0 unresolved inclusions; 76 syntax errors; 54 unresolved names (0.099%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 16:21:40.650
+!MESSAGE Indexed 'rm_saramander' (34 sources, 51 headers) in 2.74 sec: 6,008 declarations; 36,260 references; 30 unresolved inclusions; 154 syntax errors; 4,863 unresolved names (10%)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2019-09-23 16:25:20.668
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@50af6f46): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-exec-next 1
+Error message from debugger back end:
+Cannot find bounds of current function java.lang.Exception: Cannot find bounds of current function' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2019-09-23 16:25:20.668
+!MESSAGE Failed to execute MI command:
+-exec-next 1
+Error message from debugger back end:
+Cannot find bounds of current function
+!STACK 0
+java.lang.Exception: Cannot find bounds of current function
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 16:25:49.760
+!MESSAGE Indexed 'rm_saramander' (42 sources, 104 headers) in 1.82 sec: 6,213 declarations; 23,211 references; 1 unresolved inclusions; 199 syntax errors; 7,306 unresolved names (20%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 16:31:44.262
+!MESSAGE Indexed 'rm_saramander' (31 sources, 117 headers) in 1.76 sec: 10,604 declarations; 44,097 references; 0 unresolved inclusions; 76 syntax errors; 54 unresolved names (0.099%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 16:35:41.678
+!MESSAGE Indexed 'F427IIH_RM_Saramander' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-09-23 16:35:43.342
+!MESSAGE Indexed 'F427IIH_RM_Saramander' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
