@@ -39,6 +39,10 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+const int yaw_MAX=70;
+const int yaw_magnification=30;
+const int pich_MAX=30;
+const int pich_magnification=80;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -160,6 +164,9 @@ int main(void)
   HAL_GPIO_WritePin(POWER_OUT3_GPIO_Port, POWER_OUT3_Pin, 1);
   HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
+
+  PC_mouse_x=0;
+  PC_mouse_y=0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -172,9 +179,10 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 
-	 /* printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
-			 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y,rc.mouse_press_l,rc.mouse_press_r
-			 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);*/
+	  //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
+	//		 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
+		//	 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
+	  printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
 
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
@@ -272,6 +280,21 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 		rc.key_Ctrl =  (0b0000000000100000 & rc.key_v)>>5;
 		rc.key_Q =     (0b0000000001000000 & rc.key_v)>>6;
 		rc.key_E =     (0b0000000010000000 & rc.key_v)>>7;
+
+		if(rc.sw2==2){
+			PC_mouse_x=0;
+			PC_mouse_y=0;
+		}
+		else{
+			if(rc.mouse_press_l==1){
+			PC_mouse_x=PC_mouse_x+rc.mouse_x;
+			PC_mouse_y=PC_mouse_y+rc.mouse_y;
+			if(PC_mouse_x>pich_MAX*pich_magnification){PC_mouse_x = pich_MAX*pich_magnification;}
+			if(PC_mouse_x<-1*pich_MAX*pich_magnification){PC_mouse_x = -1*pich_MAX*pich_magnification;}
+			if(PC_mouse_y>yaw_MAX*yaw_magnification){PC_mouse_y=pich_MAX*pich_magnification;}
+			if(PC_mouse_y<-1*yaw_MAX*yaw_magnification){PC_mouse_y=-1*yaw_MAX*yaw_magnification;}
+			}
+		}
 
 	}
 }
@@ -373,19 +396,22 @@ void initLoadPID() {
 void Gimbal_Task(){
 	int fire = 0;
 	int16_t u[4];
-	if (rc.sw2 == 1) {
+	if (rc.mouse_press_r == 1) {
 		fire = 1;
 	} else {
 		fire = 0;
 	}
-	DBUFF[1] = loadPID.error = -900.0f*fire - loadMotorFdb.rpm;
+	DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
 	DBUFF[3] = u[2] = pidExecute(&loadPID);
 
-	target_yaw =(float) rc.ch1 / 660 * 70;
+
+	if(rc.sw2==2){target_yaw=0;}
+	else{target_yaw =(float)PC_mouse_x / yaw_magnification;}
 	yaw_now=(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0);
 	u[0]=map(target_yaw-yaw_now, -180, 180, -30000, 30000);
 
-	target_pich=(float) rc.ch2 / 660 * (-30);
+	if(rc.sw2==2){target_pich=0;}
+	else{target_pich=(float)PC_mouse_y / pich_magnification;}
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+24;
 	u[1]=map(target_pich-pich_now, -30, 20, -15000, 15000);
 
@@ -395,7 +421,7 @@ void Gimbal_Task(){
 }
 
 void fire_Task(){
-	if(rc.sw1==1){
+	if(rc.sw2==1){
 		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, sw1_cnt);
 		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, sw1_cnt);
 		if(sw1_cnt>=1400){

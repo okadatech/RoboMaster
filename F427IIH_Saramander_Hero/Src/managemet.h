@@ -43,5 +43,8 @@ int16_t target_yaw,target_pich;
 int16_t yaw_now,pich_now;
 float DBUFF[32];
 
+int PC_mouse_x,PC_mouse_y;
+
+
 
 #endif /* MANAGEMET_H_ */
