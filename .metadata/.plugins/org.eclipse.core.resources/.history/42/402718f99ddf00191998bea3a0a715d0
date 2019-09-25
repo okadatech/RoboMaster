@@ -400,7 +400,7 @@ void Gimbal_Task(){
 	} else {
 		fire = 0;
 	}
-	DBUFF[1] = loadPID.error = -900.0f*fire*rc.sw1 - loadMotorFdb.rpm;
+	DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
 	DBUFF[3] = u[2] = pidExecute(&loadPID);
 
 

@@ -257,8 +257,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 		rc.ch1 -= 1024;
 		rc.ch2 = (((rcData[2] & 0x3F) << 5) | (rcData[1] >> 3));
 		rc.ch2 -= 1024;
-		rc.ch3 = (((rcData[4] & 0x01) << 10) | (rcData[3] << 2)
-				| (rcData[2] >> 6));
+		rc.ch3 = (((rcData[4] & 0x01) << 10) | (rcData[3] << 2) | (rcData[2] >> 6));
 		rc.ch3 -= 1024;
 		rc.ch4 = (((rcData[5] & 0x0F) << 7) | (rcData[4] >> 1));
 		rc.ch4 -= 1024;
@@ -289,10 +288,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 			if(rc.mouse_press_l==1){
 			PC_mouse_x=PC_mouse_x+rc.mouse_x;
 			PC_mouse_y=PC_mouse_y+rc.mouse_y;
-			if(PC_mouse_x>pich_MAX*pich_magnification){PC_mouse_x = pich_MAX*pich_magnification;}
-			if(PC_mouse_x<-1*pich_MAX*pich_magnification){PC_mouse_x = -1*pich_MAX*pich_magnification;}
-			if(PC_mouse_y>yaw_MAX*yaw_magnification){PC_mouse_y=pich_MAX*pich_magnification;}
-			if(PC_mouse_y<-1*yaw_MAX*yaw_magnification){PC_mouse_y=-1*yaw_MAX*yaw_magnification;}
+			if(PC_mouse_x > pich_MAX*pich_magnification){	PC_mouse_x = pich_MAX*pich_magnification;}
+			if(PC_mouse_x < -1*pich_MAX*pich_magnification){PC_mouse_x = -1*pich_MAX*pich_magnification;}
+			if(PC_mouse_y > yaw_MAX*yaw_magnification){		PC_mouse_y = pich_MAX*pich_magnification;}
+			if(PC_mouse_y < -1*yaw_MAX*yaw_magnification){	PC_mouse_y = -1*yaw_MAX*yaw_magnification;}
 			}
 		}
 
@@ -401,7 +400,7 @@ void Gimbal_Task(){
 	} else {
 		fire = 0;
 	}
-	DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
+	DBUFF[1] = loadPID.error = -900.0f*fire*rc.sw1 - loadMotorFdb.rpm;
 	DBUFF[3] = u[2] = pidExecute(&loadPID);
 
 
