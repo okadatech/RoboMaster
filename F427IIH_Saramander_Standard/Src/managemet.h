@@ -25,6 +25,7 @@
 //#include "disp.h"
 //#include "xprintf.h"
 #include "motor_fdb.h"
+#include "bsp_imu.h"
 
 #include "stdio.h"
 #include <stdlib.h>
@@ -42,6 +43,16 @@ _pid_t wheelPID[4], loadPID;
 int16_t target_yaw,target_pich;
 int16_t yaw_now,pich_now;
 float DBUFF[32];
+
+
+float IMU_pich;
+float IMU_yaw;
+float IMU_rol;
+
+float IMU_pich_set;
+float IMU_yaw_set;
+float IMU_rol_set;
+
 
 int PC_mouse_x,PC_mouse_y;
 

@@ -6546,3 +6546,48 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\ryouma\
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2019-09-29 17:57:40.765
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2019-10-04 01:11:01.864 -----------------------------------------------
+eclipse.buildId=Version 1.0.2
+java.version=1.8.0_202
+java.vendor=AdoptOpenJdk
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2019-10-04 01:11:14.609
+!MESSAGE Log4j initialized with config file C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-10-04 01:11:16.632
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-10-04 01:11:16.648
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-10-04 01:11:16.679
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-10-04 01:11:16.695
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-10-04 01:11:16.695
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-10-04 01:11:16.710
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-10-04 01:11:16.726
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-10-04 01:11:16.726
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2019-10-04 01:11:24.298
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-10-04 01:35:34.385
+!MESSAGE Indexed 'F427IIH_Saramander_Standard' (35 sources, 128 headers) in 4.47 sec: 9,801 declarations; 31,537 references; 3 unresolved inclusions; 213 syntax errors; 7,208 unresolved names (15%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-10-04 01:35:40.068
+!MESSAGE Indexed 'F427IIH_Saramander_Standard' (35 sources, 49 headers) in 2.67 sec: 5,081 declarations; 36,523 references; 31 unresolved inclusions; 112 syntax errors; 3,946 unresolved names (8.7%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-10-04 01:41:02.471
+!MESSAGE Indexed 'F427IIH_Saramander_Hero' (33 sources, 104 headers) in 3.15 sec: 7,466 declarations; 42,202 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)

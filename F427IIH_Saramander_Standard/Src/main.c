@@ -89,6 +89,12 @@ void timerTask() { //call 500Hz
 	driveWheelTask();
 	Gimbal_Task();
 	fire_Task();
+	mpu_get_data();
+	imu_ahrs_update();
+	imu_attitude_update();
+	IMU_pich=imu.pit-IMU_pich_set;
+	IMU_yaw=imu.yaw-IMU_yaw_set;
+	IMU_rol=imu.rol-IMU_rol_set;
 }
 uint8_t cnt_tim,cnt_tim_fire;
 uint16_t sw1_cnt=1220;
@@ -145,6 +151,9 @@ int main(void)
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_8, 1);
 
+  mpu_device_init();
+  init_quaternion();
+
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1); // friction wheel
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
   initFriction();
@@ -165,6 +174,10 @@ int main(void)
   HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
 
+  IMU_pich_set=imu.pit;
+  IMU_yaw_set=imu.yaw;
+  IMU_rol_set=imu.rol;
+
   PC_mouse_x=0;
   PC_mouse_y=0;
   /* USER CODE END 2 */
@@ -177,12 +190,17 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1){
+		  IMU_pich_set=imu.pit;
+		  IMU_yaw_set=imu.yaw;
+		  IMU_rol_set=imu.rol;
+	  }
 
-
+	   printf(" Roll: %8.3lf  Pitch: %8.3lf  Yaw: %8.3lf", IMU_rol, IMU_pich, IMU_yaw);
 	  //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
 	//		 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
 		//	 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
-	  printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
+	  //printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
 
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
@@ -372,12 +390,22 @@ void initMecanum() {
 }
 
 void initFriction() {
+	for(int i=0;i<3000;i++){
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 1500);
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 1500);
-	HAL_Delay(3000);
+	HAL_Delay(1);
+	mpu_get_data();
+	imu_ahrs_update();
+	imu_attitude_update();
+	}
+	for(int i=0;i<5000;i++){
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 1220);
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 1220);
-	HAL_Delay(5000);
+	HAL_Delay(1);
+	mpu_get_data();
+	imu_ahrs_update();
+	imu_attitude_update();
+	}
 
 }
 
