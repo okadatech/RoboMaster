@@ -196,9 +196,10 @@ int main(void)
 		  IMU_rol_set=imu.rol;
 	  }
 
-	   printf(" Roll: %8.3lf  Pitch: %8.3lf  Yaw: %8.3lf", IMU_rol, IMU_pich, IMU_yaw);
+	   printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
+	   printf(" target_Pitch:%d target_Yaw:%d", target_pich,target_yaw);
 	  //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
-	//		 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
+	   //	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
 		//	 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
 	  //printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
@@ -433,18 +434,27 @@ void Gimbal_Task(){
 
 
 	if(rc.sw2==2){target_yaw=0;}
-	else{target_yaw =(float)PC_mouse_x / yaw_magnification;}
+	else{
+		target_yaw =(float)PC_mouse_x / yaw_magnification;
+		if(target_yaw>70){target_yaw=70;}
+		if(target_yaw<-70){target_yaw=-70;}
+	}
 	yaw_now=(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0);
 	u[0]=map(target_yaw-yaw_now, -180, 180, -30000, 30000);
 
 	if(rc.sw2==2){target_pich=0;}
-	else{target_pich=(float)PC_mouse_y / pich_magnification;}
+	else{
+		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
+		if(target_pich>20){target_pich=20;}
+		if(target_pich<-30){target_pich=-30;}
+	}
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+24;
 	u[1]=map(target_pich-pich_now, -30, 20, -15000, 15000);
 
 
 	u[3]=0;
 	driveGimbalMotors(u);
+
 }
 
 void fire_Task(){
