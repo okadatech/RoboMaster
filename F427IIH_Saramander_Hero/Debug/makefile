@@ -32,6 +32,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 F427IIH_Saramander_Hero.list \
 
+OBJCOPY_HEX += \
+F427IIH_Saramander_Hero.hex \
+
 
 # All Target
 all: F427IIH_Saramander_Hero.elf secondary-outputs
@@ -52,12 +55,17 @@ F427IIH_Saramander_Hero.list: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+F427IIH_Saramander_Hero.hex: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "F427IIH_Saramander_Hero.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
 	-$(RM) *
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 .PHONY: all clean dependents
 .SECONDARY:
