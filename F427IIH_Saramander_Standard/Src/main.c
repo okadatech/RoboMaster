@@ -98,6 +98,7 @@ void timerTask() { //call 500Hz
 }
 uint8_t cnt_tim,cnt_tim_fire;
 uint16_t sw1_cnt=1220;
+uint8_t rc_SW1_temp;
 /* USER CODE END 0 */
 
 /**
@@ -198,9 +199,9 @@ int main(void)
 
 	   printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
 	   printf(" target_Pitch:%d target_Yaw:%d", target_pich,target_yaw);
-	  //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
-	   //	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
-		//	 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
+	 // printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
+	  // 	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
+	//		 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
 	  //printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
 
@@ -426,23 +427,38 @@ void Gimbal_Task(){
 	int16_t u[4];
 	if (rc.mouse_press_r == 1) {
 		fire = 1;
+		DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
+		DBUFF[3] = u[2] = pidExecute(&loadPID);
 	} else {
 		fire = 0;
+		if(rc.sw2==2){
+			DBUFF[1] = loadPID.error = 900.0f*1 - loadMotorFdb.rpm;
+			DBUFF[3] = u[2] = pidExecute(&loadPID);
+		}
+		else{
+			DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
+			DBUFF[3] = u[2] = pidExecute(&loadPID);
+		}
 	}
-	DBUFF[1] = loadPID.error = -900.0f*fire*rc.sw1 - loadMotorFdb.rpm;
-	DBUFF[3] = u[2] = pidExecute(&loadPID);
 
-
-	if(rc.sw2==2){target_yaw=0;}
+	if(rc.sw1==2){target_yaw=0;}
 	else{
-		target_yaw =(float)PC_mouse_x / yaw_magnification;
+		if(rc.sw1==1){
+			if(rc_SW1_temp==3){IMU_yaw_set=imu.yaw;}
+		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw;
 		if(target_yaw>70){target_yaw=70;}
 		if(target_yaw<-70){target_yaw=-70;}
+		}
+		else{
+			target_yaw=(float)PC_mouse_x / yaw_magnification;
+			if(target_yaw>70){target_yaw=70;}
+			if(target_yaw<-70){target_yaw=-70;}
+		}
 	}
 	yaw_now=(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0);
 	u[0]=map(target_yaw-yaw_now, -180, 180, -30000, 30000);
 
-	if(rc.sw2==2){target_pich=0;}
+	if(rc.sw1==2){target_pich=0;}
 	else{
 		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
 		if(target_pich>20){target_pich=20;}
@@ -454,7 +470,7 @@ void Gimbal_Task(){
 
 	u[3]=0;
 	driveGimbalMotors(u);
-
+	rc_SW1_temp=rc.sw1;
 }
 
 void fire_Task(){

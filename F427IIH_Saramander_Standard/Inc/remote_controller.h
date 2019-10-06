@@ -19,8 +19,8 @@ struct rc_info_t
   int16_t ch5;
 
   /* left and right lever information */
-  uint8_t sw1;
-  uint8_t sw2;
+  uint8_t sw1;  //right
+  uint8_t sw2;  //left
 
   //from PC
   int16_t mouse_x;
