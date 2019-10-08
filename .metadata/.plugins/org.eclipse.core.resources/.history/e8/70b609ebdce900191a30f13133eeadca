@@ -354,7 +354,7 @@ void driveWheelTask() {
 	mecanum.speed.vy = -(float) rc.ch3 / 660 * MAX_CHASSIS_VX_SPEED;
 
 	if(rc.sw1==1){
-		if(cnt_tim_omega<200 || cnt_tim_omega>600){
+		if(cnt_tim_omega<250){
 			mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;
 		}
 		else{
@@ -362,7 +362,7 @@ void driveWheelTask() {
 		}
 
 		cnt_tim_omega++;
-		if(cnt_tim_omega>800){cnt_tim_omega=0;}
+		if(cnt_tim_omega>500){cnt_tim_omega=0;}
 	}
 	else{
 		cnt_tim_omega=0;
