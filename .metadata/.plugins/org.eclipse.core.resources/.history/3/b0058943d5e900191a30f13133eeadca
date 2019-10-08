@@ -190,7 +190,7 @@ int main(void)
 	  }
 
 	   printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
-	   //printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
+	   printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
 	   printf(" target_Pitch:%d target_Yaw:%d", target_pich,target_yaw);
 	 // printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
 	  // 	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
