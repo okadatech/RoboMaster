@@ -31,9 +31,9 @@ TIM_HandleTypeDef htim12;
 /* TIM1 init function */
 void MX_TIM1_Init(void)
 {
-  TIM_MasterConfigTypeDef sMasterConfig ;
-  TIM_OC_InitTypeDef sConfigOC;
-  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig;
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
 
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 167;
@@ -84,7 +84,7 @@ void MX_TIM1_Init(void)
 /* TIM6 init function */
 void MX_TIM6_Init(void)
 {
-  TIM_MasterConfigTypeDef sMasterConfig;
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
 
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 10-1;
@@ -106,7 +106,7 @@ void MX_TIM6_Init(void)
 /* TIM12 init function */
 void MX_TIM12_Init(void)
 {
-  TIM_OC_InitTypeDef sConfigOC;
+  TIM_OC_InitTypeDef sConfigOC = {0};
 
   htim12.Instance = TIM12;
   htim12.Init.Prescaler = 83;

@@ -84,18 +84,7 @@ void fire_Task();
 long map(long x, long in_min, long in_max, long out_min, long out_max) {
 	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
-
-void timerTask() { //call 500Hz
-	driveWheelTask();
-	Gimbal_Task();
-	fire_Task();
-	mpu_get_data();
-	imu_ahrs_update();
-	imu_attitude_update();
-	IMU_pich=imu.pit-IMU_pich_set;
-	IMU_yaw=imu.yaw-IMU_yaw_set;
-	IMU_rol=imu.rol-IMU_rol_set;
-}
+void timerTask() ;
 uint8_t cnt_tim,cnt_tim_fire;
 uint16_t sw1_cnt=1220;
 uint8_t rc_SW1_temp;
@@ -153,7 +142,9 @@ int main(void)
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_8, 1);
 
   mpu_device_init();
+  mpu_offset_call();
   init_quaternion();
+
 
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1); // friction wheel
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
@@ -175,10 +166,11 @@ int main(void)
   HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
 
-  IMU_pich_set=imu.pit;
-  IMU_yaw_set=imu.yaw;
-  IMU_rol_set=imu.rol;
+  init_quaternion();
 
+  IMU_pich_set=((imu.pit)*(180.0/M_PI));
+  IMU_yaw_set=((imu.yaw)*(180.0/M_PI));
+  IMU_rol_set=((imu.rol)*(180.0/M_PI));
   PC_mouse_x=0;
   PC_mouse_y=0;
   /* USER CODE END 2 */
@@ -192,12 +184,13 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1){
-		  IMU_pich_set=imu.pit;
-		  IMU_yaw_set=imu.yaw;
-		  IMU_rol_set=imu.rol;
+		  IMU_pich_set=((imu.pit)*(180.0/M_PI));
+		  IMU_yaw_set=((imu.yaw)*(180.0/M_PI));
+		  IMU_rol_set=((imu.rol)*(180.0/M_PI));
 	  }
 
 	   printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
+	   printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
 	   printf(" target_Pitch:%d target_Yaw:%d", target_pich,target_yaw);
 	 // printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
 	  // 	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
@@ -421,6 +414,24 @@ void initLoadPID() {
 	loadPID.differentialFilterRate = 0.9f;
 }
 
+void timerTask() { //call 500Hz
+	driveWheelTask();
+	Gimbal_Task();
+	fire_Task();
+	mpu_get_data();
+	imu_ahrs_update();
+	imu_attitude_update();
+
+	IMU_pich=((imu.pit)*(180.0/M_PI))-IMU_pich_set;
+		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
+		if(IMU_pich< -90.0){IMU_pich=IMU_pich+180;}
+	IMU_yaw=((imu.yaw)*(180.0/M_PI))-IMU_yaw_set;
+		if(IMU_yaw>  180.0){IMU_yaw=IMU_yaw-360;}
+		if(IMU_yaw< -180.0){IMU_yaw=IMU_yaw+360;}
+	IMU_rol=((imu.rol)*(180.0/M_PI))-IMU_rol_set;
+		if(IMU_rol>  180.0){IMU_rol=IMU_rol-360;}
+		if(IMU_rol< -180.0){IMU_rol=IMU_rol+360;}
+}
 
 void Gimbal_Task(){
 	int fire = 0;
@@ -444,7 +455,7 @@ void Gimbal_Task(){
 	if(rc.sw1==2){target_yaw=0;}
 	else{
 		if(rc.sw1==1){
-			if(rc_SW1_temp==3){IMU_yaw_set=imu.yaw;}
+			if(rc_SW1_temp==3){IMU_yaw_set=((imu.yaw)*(180.0/M_PI));;}
 		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw;
 		if(target_yaw>70){target_yaw=70;}
 		if(target_yaw<-70){target_yaw=-70;}
