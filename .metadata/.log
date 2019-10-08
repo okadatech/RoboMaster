@@ -7122,3 +7122,28 @@ java.lang.Exception: Cannot execute this command while the selected thread is ru
 
 !ENTRY org.eclipse.cdt.core 1 0 2019-10-08 22:20:22.034
 !MESSAGE Indexed 'F427IIH_Saramander_Standard' (34 sources, 97 headers) in 1.97 sec: 5,991 declarations; 21,879 references; 1 unresolved inclusions; 186 syntax errors; 6,930 unresolved names (20%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.stlink 4 4 2019-10-08 23:48:52.414
+!MESSAGE ST-LINK GDB server failed to start (exit code = 1)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2019-10-08 23:48:52.454
+!MESSAGE Error in final launch sequence:
+
+ST-Linkデバイスの初期化エラー。
+理由: (1) デバイス接続に失敗しました。電源供給及びケーブル接続をチェックして下さい。
+!STACK 1
+org.eclipse.core.runtime.CoreException: ST-Linkデバイスの初期化エラー。
+理由: (1) デバイス接続に失敗しました。電源供給及びケーブル接続をチェックして下さい。
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:242)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:106)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:94)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:85)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2019-10-08 23:48:52.454
+!MESSAGE ST-Linkデバイスの初期化エラー。
+理由: (1) デバイス接続に失敗しました。電源供給及びケーブル接続をチェックして下さい。

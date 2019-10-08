@@ -86,6 +86,7 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
 }
 void timerTask() ;
 uint8_t cnt_tim,cnt_tim_fire;
+uint16_t cnt_tim_omega;
 uint16_t sw1_cnt=1220;
 uint8_t rc_SW1_temp;
 /* USER CODE END 0 */
@@ -192,12 +193,12 @@ int main(void)
 	   printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
 	   //printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
 	   printf(" target_Pitch:%d target_Yaw:%d", target_pich,target_yaw);
-	 // printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
-	  // 	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
+	  //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
+	  //	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
 	//		 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
 	  //printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
-
+	  printf(" ch5=%d vw=%f cnt=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
 	  printf("\r\n");
 
@@ -351,7 +352,22 @@ void driveWheelTask() {
 
 	mecanum.speed.vx = (float) rc.ch4 / 660 * MAX_CHASSIS_VX_SPEED;
 	mecanum.speed.vy = -(float) rc.ch3 / 660 * MAX_CHASSIS_VX_SPEED;
-	mecanum.speed.vw = -(float) rc.ch5 / 660 * MAX_CHASSIS_VW_SPEED;
+
+	if(rc.sw1==1){
+		if(cnt_tim_omega<250){
+			mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;
+		}
+		else{
+			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;
+		}
+
+		cnt_tim_omega++;
+		if(cnt_tim_omega>500){cnt_tim_omega=0;}
+	}
+	else{
+		cnt_tim_omega=0;
+		mecanum.speed.vw = -(float) rc.ch5 / 660 * MAX_CHASSIS_VW_SPEED;
+	}
 
 	mecanum_calculate(&mecanum);
 
@@ -362,6 +378,7 @@ void driveWheelTask() {
 		u[i] = (int16_t) pidExecute(&(wheelPID[i]));
 	}
 	driveWheel(u);
+
 }
 
 void initPID() {
@@ -385,18 +402,18 @@ void initMecanum() {
 }
 
 void initFriction() {
-	for(int i=0;i<3000;i++){
+	for(int i=0;i<300;i++){
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 1500);
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 1500);
-	HAL_Delay(1);
+	HAL_Delay(10);
 	mpu_get_data();
 	imu_ahrs_update();
 	imu_attitude_update();
 	}
-	for(int i=0;i<5000;i++){
+	for(int i=0;i<500;i++){
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 1220);
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 1220);
-	HAL_Delay(1);
+	HAL_Delay(10);
 	mpu_get_data();
 	imu_ahrs_update();
 	imu_attitude_update();
