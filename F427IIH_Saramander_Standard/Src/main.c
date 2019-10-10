@@ -167,11 +167,9 @@ int main(void)
   HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
 
-  init_quaternion();
-
-  IMU_pich_set=((imu.pit)*(180.0/M_PI));
-  IMU_yaw_set=((imu.yaw)*(180.0/M_PI));
-  IMU_rol_set=((imu.rol)*(180.0/M_PI));
+  IMU_pich_set=imu.pit;
+  IMU_yaw_set=imu.yaw;
+  IMU_rol_set=imu.rol;
   PC_mouse_x=0;
   PC_mouse_y=0;
   /* USER CODE END 2 */
@@ -185,9 +183,9 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1){
-		  IMU_pich_set=((imu.pit)*(180.0/M_PI));
-		  IMU_yaw_set=((imu.yaw)*(180.0/M_PI));
-		  IMU_rol_set=((imu.rol)*(180.0/M_PI));
+		  IMU_pich_set=imu.pit;
+		  IMU_yaw_set=imu.yaw;
+		  IMU_rol_set=imu.rol;
 	  }
 
 	   printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
@@ -355,7 +353,7 @@ void driveWheelTask() {
 
 	if(rc.sw1==1){
 		if(cnt_tim_omega<200 || cnt_tim_omega>600){
-			mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;
+			mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
 		}
 		else{
 			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;
@@ -439,13 +437,13 @@ void timerTask() { //call 500Hz
 	imu_ahrs_update();
 	imu_attitude_update();
 
-	IMU_pich=((imu.pit)*(180.0/M_PI))-IMU_pich_set;
+	IMU_pich=(imu.pit)-IMU_pich_set;
 		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
 		if(IMU_pich< -90.0){IMU_pich=IMU_pich+180;}
-	IMU_yaw=((imu.yaw)*(180.0/M_PI))-IMU_yaw_set;
+	IMU_yaw=(imu.yaw)-IMU_yaw_set;
 		if(IMU_yaw>  180.0){IMU_yaw=IMU_yaw-360;}
 		if(IMU_yaw< -180.0){IMU_yaw=IMU_yaw+360;}
-	IMU_rol=((imu.rol)*(180.0/M_PI))-IMU_rol_set;
+	IMU_rol=(imu.rol)-IMU_rol_set;
 		if(IMU_rol>  180.0){IMU_rol=IMU_rol-360;}
 		if(IMU_rol< -180.0){IMU_rol=IMU_rol+360;}
 }
@@ -472,7 +470,7 @@ void Gimbal_Task(){
 	if(rc.sw1==2){target_yaw=0;}
 	else{
 		if(rc.sw1==1){
-			if(rc_SW1_temp==3){IMU_yaw_set=((imu.yaw)*(180.0/M_PI));;}
+			if(rc_SW1_temp==3){IMU_yaw_set=imu.yaw;}
 		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw;
 		if(target_yaw>70){target_yaw=70;}
 		if(target_yaw<-70){target_yaw=-70;}
