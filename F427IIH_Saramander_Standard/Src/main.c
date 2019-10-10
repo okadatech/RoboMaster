@@ -182,6 +182,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
 	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1){
 		  IMU_pich_set=imu.pit;
 		  IMU_yaw_set=imu.yaw;
