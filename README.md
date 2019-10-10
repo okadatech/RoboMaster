@@ -3,10 +3,6 @@
 
 入ってるファイル
 
-・F427IIH_Saramander_Hero：ヒーロー用ソフト（デベロッパーボード利用）
-
-・F427IIH_Saramander_Standard：歩兵用ソフト（デベロッパーボード利用）
-
 ・rm_summer/rm_summer　　サマーキャンプにてもらった組み込み
 
 ・.metadata　　STM32CubeIDEでプロジェクトを作ると勝手にできるやつなので無視
