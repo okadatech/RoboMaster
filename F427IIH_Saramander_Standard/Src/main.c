@@ -354,10 +354,10 @@ void driveWheelTask() {
 
 	if(rc.sw1==1){
 		if(cnt_tim_omega<200 || cnt_tim_omega>600){
-			mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+			mecanum.speed.vw = -(float) (rc.ch5-110.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
 		}
 		else{
-			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;
+			mecanum.speed.vw = -(float) (rc.ch5+110.0) / 660.0 * MAX_CHASSIS_VW_SPEED;
 		}
 
 		cnt_tim_omega++;
@@ -491,7 +491,7 @@ void Gimbal_Task(){
 		if(target_pich>20){target_pich=20;}
 		if(target_pich<-30){target_pich=-30;}
 	}
-	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+24;
+	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+28;
 	u[1]=map(target_pich-pich_now, -30, 20, -15000, 15000);
 
 
