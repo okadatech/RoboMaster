@@ -293,7 +293,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 		rc.key_Q =     (0b0000000001000000 & rc.key_v)>>6;
 		rc.key_E =     (0b0000000010000000 & rc.key_v)>>7;
 
-		if(rc.sw2==2){
+		if(rc.sw1==2){
 			PC_mouse_x=0;
 			PC_mouse_y=0;
 		}
@@ -354,10 +354,10 @@ void driveWheelTask() {
 
 	if(rc.sw1==1){
 		if(cnt_tim_omega<200 || cnt_tim_omega>600){
-			mecanum.speed.vw = -(float) (rc.ch5-110.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+			mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
 		}
 		else{
-			mecanum.speed.vw = -(float) (rc.ch5+110.0) / 660.0 * MAX_CHASSIS_VW_SPEED;
+			mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;
 		}
 
 		cnt_tim_omega++;
