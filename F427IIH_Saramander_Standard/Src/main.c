@@ -293,13 +293,13 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 		rc.key_Q =     (0b0000000001000000 & rc.key_v)>>6;
 		rc.key_E =     (0b0000000010000000 & rc.key_v)>>7;
 
-		if(rc.sw1==2){
+		if(rc.sw2==2){
 			PC_mouse_x=0;
 			PC_mouse_y=0;
 		}
 		else{
 			if(rc.mouse_press_l==1){
-			PC_mouse_x=PC_mouse_x+rc.mouse_x;
+			PC_mouse_x=PC_mouse_x+rc.mouse_x*(-1);
 			PC_mouse_y=PC_mouse_y+rc.mouse_y;
 			if(PC_mouse_x > pich_MAX*pich_magnification){	PC_mouse_x = pich_MAX*pich_magnification;}
 			if(PC_mouse_x < -1*pich_MAX*pich_magnification){PC_mouse_x = -1*pich_MAX*pich_magnification;}
@@ -458,7 +458,7 @@ void Gimbal_Task(){
 		DBUFF[3] = u[2] = pidExecute(&loadPID);
 	} else {
 		fire = 0;
-		if(rc.sw2==2){
+		if(rc.sw1==2){
 			DBUFF[1] = loadPID.error = 900.0f*1 - loadMotorFdb.rpm;
 			DBUFF[3] = u[2] = pidExecute(&loadPID);
 		}
@@ -468,7 +468,7 @@ void Gimbal_Task(){
 		}
 	}
 
-	if(rc.sw1==2){target_yaw=0;}
+	if(rc.sw2==2){target_yaw=0;}
 	else{
 		if(rc.sw1==1){
 			if(rc_SW1_temp==3){IMU_yaw_set=imu.yaw;}
@@ -482,18 +482,26 @@ void Gimbal_Task(){
 			if(target_yaw<-70){target_yaw=-70;}
 		}
 	}
-	yaw_now=(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0);
-	u[0]=map(target_yaw-yaw_now, -180, 180, -30000, 30000);
 
-	if(rc.sw1==2){target_pich=0;}
+	yaw_now=(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0);
+
+	//u[0]=map(target_yaw-yaw_now, -180, 180, -30000, 30000);
+	u[0]=((target_yaw-yaw_now)*166.0)-(gimbalYawFdb.rpm*100.0);//param is not yet
+	if(u[0]>30000){u[0]=30000;}
+	if(u[0]<-30000){u[0]=-30000;}
+
+	if(rc.sw2==2){target_pich=0;}
 	else{
 		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
 		if(target_pich>20){target_pich=20;}
 		if(target_pich<-30){target_pich=-30;}
 	}
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+28;
-	u[1]=map(target_pich-pich_now, -30, 20, -15000, 15000);
 
+	//u[1]=map(target_pich-pich_now, -30, 20, -15000, 15000);
+	u[1]=((target_pich-pich_now)*500.0)-(gimbalPitchFdb.rpm*100.0);//param is not yet
+	if(u[1]>30000){u[1]=30000;}
+	if(u[1]<-30000){u[1]=-30000;}
 
 	u[3]=0;
 	driveGimbalMotors(u);
