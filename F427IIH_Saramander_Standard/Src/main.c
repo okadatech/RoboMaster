@@ -40,9 +40,9 @@
 /* USER CODE BEGIN PD */
 
 const int yaw_MAX=70;
-const int yaw_magnification=30;
+const int yaw_magnification=20;
 const int pich_MAX=30;
-const int pich_magnification=80;
+const int pich_magnification=50;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -301,10 +301,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 			if(rc.mouse_press_l==1){
 			PC_mouse_x=PC_mouse_x+rc.mouse_x*(-1);
 			PC_mouse_y=PC_mouse_y+rc.mouse_y;
-			if(PC_mouse_x > pich_MAX*pich_magnification){	PC_mouse_x = pich_MAX*pich_magnification;}
-			if(PC_mouse_x < -1*pich_MAX*pich_magnification){PC_mouse_x = -1*pich_MAX*pich_magnification;}
-			if(PC_mouse_y > yaw_MAX*yaw_magnification){		PC_mouse_y = pich_MAX*pich_magnification;}
-			if(PC_mouse_y < -1*yaw_MAX*yaw_magnification){	PC_mouse_y = -1*yaw_MAX*yaw_magnification;}
+			if(PC_mouse_y > pich_MAX*pich_magnification){	PC_mouse_y = pich_MAX*pich_magnification;}
+			if(PC_mouse_y < -1*pich_MAX*pich_magnification){PC_mouse_y = -1*pich_MAX*pich_magnification;}
+			if(PC_mouse_x > yaw_MAX*yaw_magnification){		PC_mouse_x = yaw_MAX*yaw_magnification;}
+			if(PC_mouse_x < -1*yaw_MAX*yaw_magnification){	PC_mouse_x = -1*yaw_MAX*yaw_magnification;}
 			}
 		}
 
@@ -459,7 +459,7 @@ void Gimbal_Task(){
 	} else {
 		fire = 0;
 		if(rc.sw1==2){
-			DBUFF[1] = loadPID.error = 900.0f*1 - loadMotorFdb.rpm;
+			DBUFF[1] = loadPID.error = 900.0f*2.0 - loadMotorFdb.rpm;
 			DBUFF[3] = u[2] = pidExecute(&loadPID);
 		}
 		else{
@@ -494,7 +494,7 @@ void Gimbal_Task(){
 	if(rc.sw2==2){target_pich=0;}
 	else{
 		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
-		if(target_pich>20){target_pich=20;}
+		if(target_pich>=30){target_pich=30;}
 		if(target_pich<-30){target_pich=-30;}
 	}
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+28;
