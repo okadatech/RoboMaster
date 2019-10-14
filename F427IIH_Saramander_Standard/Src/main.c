@@ -498,10 +498,10 @@ void Gimbal_Task(){
 		if(target_pich<-30){target_pich=-30;}
 	}
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+28;
-	if((target_pich-pich_now)>45){u[1]=20000;}
-	else if((target_pich-pich_now)<-45){u[1]=-20000;}
+	if((target_pich-pich_now)>45){u[1]=30000;}
+	else if((target_pich-pich_now)<-45){u[1]=-30000;}
 	else{
-		u[1]=map(target_pich-pich_now, -45, 45, -20000, 20000)-(gimbalPitchFdb.rpm*40.0);//param is not yet
+		u[1]=map(target_pich-pich_now, -45, 45, -30000, 30000)-(gimbalPitchFdb.rpm*40.0);//param is not yet
 		if(u[1]>30000){u[1]=30000;}
 		if(u[1]<-30000){u[1]=-30000;}
 	}
