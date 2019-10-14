@@ -693,6 +693,6 @@ void imu_attitude_update(void)
 
 	imu.rol = (atan2(2.0 * (q2q3 + q0q1), q0q0 - q1q1 - q2q2 + q3q3)*(180.0/M_PI))*(-1.0);
 	imu.pit = (asin(2.0 * (q0q2 - q1q3)))*(180.0/M_PI)*(-1.0);
-	imu.yaw = (atan2(2.0 * (q1q2 + q0q3), q0q0 + q1q1 - q2q2 - q3q3))*(180.0/M_PI)*(-1.0);
+	imu.yaw = (atan2(2.0 * (q1q2 + q0q3), q0q0 + q1q1 - q2q2 - q3q3))*(180.0/M_PI);
 }
 
