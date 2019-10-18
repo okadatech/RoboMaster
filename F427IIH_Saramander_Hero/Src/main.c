@@ -552,8 +552,9 @@ void fire_Task(){
 	if(rc.sw2==1){
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
-		if(sw1_cnt>=1400){
-			sw1_cnt=1400;
+		//max 1500
+		if(sw1_cnt>=1250){
+			sw1_cnt=1250;
 		}
 		else{sw1_cnt++;}
 	}

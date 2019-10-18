@@ -1,4 +1,4 @@
-myiic.c:66:6:IIC_Delay	8	static
+myiic.c:66:6:IIC_Delay	4	static,ignoring_inline_asm
 myiic.c:89:6:IIC_Init	8	static
 myiic.c:100:6:IIC_Start	8	static
 myiic.c:111:6:IIC_Stop	8	static

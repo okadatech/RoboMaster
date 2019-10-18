@@ -65,21 +65,21 @@ void SDA_IN()
 //MPU IIC 延时函数
 void IIC_Delay(void)
 {
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
-    __nop();
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");
 
     //for mpu6500 delay is very important!!!
     //for(u16 i = 0x01; i>0; i--);

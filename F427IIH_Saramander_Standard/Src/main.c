@@ -131,6 +131,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART6_UART_Init();
   MX_TIM2_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 0);
   HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, 1);
@@ -148,8 +149,8 @@ int main(void)
   init_quaternion();
 
 
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1); // friction wheel
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1); // friction wheel
+  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
   initFriction();
   initPID();
   initLoadPID();
@@ -438,16 +439,16 @@ void initMecanum() {
 
 void initFriction() {
 	for(int i=0;i<300;i++){
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 1500);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 1500);
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1500);
 	HAL_Delay(10);
 	mpu_get_data();
 	imu_ahrs_update();
 	imu_attitude_update();
 	}
 	for(int i=0;i<500;i++){
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 1220);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 1220);
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1220);
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1220);
 	HAL_Delay(10);
 	mpu_get_data();
 	imu_ahrs_update();
@@ -549,17 +550,18 @@ void Gimbal_Task(){
 
 void fire_Task(){
 	if(rc.sw2==1){
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, sw1_cnt);
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, sw1_cnt);
-		if(sw1_cnt>=1400){
-			sw1_cnt=1400;
+		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
+		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
+		//max 1500
+		if(sw1_cnt>=1250){
+			sw1_cnt=1250;
 		}
 		else{sw1_cnt++;}
 	}
 	else{
 		sw1_cnt=1220;
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, sw1_cnt);
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, sw1_cnt);
+		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
+		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
 	}
 }
 
