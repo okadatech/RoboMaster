@@ -77,6 +77,7 @@ void initFriction();
 void initLoadPID();
 void Gimbal_Task();
 void fire_Task();
+void fire_task_open();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -474,6 +475,7 @@ void timerTask() { //call 500Hz
 	mpu_get_data();
 	imu_ahrs_update();
 	imu_attitude_update();
+	fire_task_open();
 
 	IMU_pich=(imu.pit)-IMU_pich_set;
 		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
@@ -548,13 +550,34 @@ void Gimbal_Task(){
 	rc_SW1_temp=rc.sw1;
 }
 
+void fire_task_open(){
+	if(rc.key_Shift==1){
+		sConfigOC.Pulse = map(130,0,180,760,2240);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+
+		sConfigOC.Pulse = map(180,0,180,760,2240);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+	}
+	else{
+		sConfigOC.Pulse = map(0,0,180,760,2240);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+
+		sConfigOC.Pulse = map(50,0,180,760,2240);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+	}
+}
+
 void fire_Task(){
 	if(rc.sw2==1){
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
 		//max 1500
-		if(sw1_cnt>=1250){
-			sw1_cnt=1250;
+		if(sw1_cnt>=1400){
+			sw1_cnt=1400;
 		}
 		else{sw1_cnt++;}
 	}

@@ -77,6 +77,7 @@ void initFriction();
 void initLoadPID();
 void Gimbal_Task();
 void fire_Task();
+void fire_task_push();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -86,9 +87,10 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
 }
 void timerTask() ;
 uint8_t cnt_tim,cnt_tim_fire;
-uint16_t cnt_tim_omega;
+uint16_t cnt_tim_omega,cnt_tim_fire_task;
 uint16_t sw1_cnt=1220;
 uint8_t rc_SW1_temp;
+uint8_t fire = 0;
 /* USER CODE END 0 */
 
 /**
@@ -151,6 +153,8 @@ int main(void)
 
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1); // friction wheel
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
+
+
   initFriction();
   initPID();
   initLoadPID();
@@ -199,10 +203,9 @@ int main(void)
 	//		 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
 	  //printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
-	  printf(" ch5=%d vw=%f cnt=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega);
+	  printf(" ch5=%d vw=%f cnt=%d shift=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega,rc.key_Shift);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
 	  printf("\r\n");
-
 
   }
   /* USER CODE END 3 */
@@ -438,6 +441,20 @@ void initMecanum() {
 }
 
 void initFriction() {
+
+	  sConfigOC.Pulse = map(90,0,180,760,2240);
+	  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+	  sConfigOC.Pulse = map(90,0,180,760,2240);
+	  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
+	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+	  sConfigOC.Pulse = map(0,0,180,760,2240);
+	  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+	  sConfigOC.Pulse = map(0,0,180,760,2240);
+	  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+
 	for(int i=0;i<300;i++){
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1500);
@@ -487,23 +504,11 @@ void timerTask() { //call 500Hz
 }
 
 void Gimbal_Task(){
-	int fire = 0;
 	int16_t u[4];
 	if (rc.mouse_press_r == 1) {
-		fire = 1;
-		DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
-		DBUFF[3] = u[2] = pidExecute(&loadPID);
-	} else {
-		fire = 0;
-		if(rc.sw1==2){
-			DBUFF[1] = loadPID.error = 900.0f*2.0 - loadMotorFdb.rpm;
-			DBUFF[3] = u[2] = pidExecute(&loadPID);
-		}
-		else{
-			DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
-			DBUFF[3] = u[2] = pidExecute(&loadPID);
-		}
+		fire=1;
 	}
+	fire_task_push();
 
 	if(rc.sw2==2){target_yaw=0;}
 	else{
@@ -548,6 +553,44 @@ void Gimbal_Task(){
 	rc_SW1_temp=rc.sw1;
 }
 
+void fire_task_push(){
+
+	if(fire==1){
+
+	sConfigOC.Pulse = map(90,0,180,760,2240);
+	HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+
+	sConfigOC.Pulse = map(90,0,180,760,2240);
+	HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+
+	cnt_tim_fire_task++;
+	if(cnt_tim_fire_task>1000){
+		cnt_tim_fire_task=0;
+		fire=0;
+	}
+	}
+
+	if(rc.key_Shift==1){
+		sConfigOC.Pulse = map(130,0,180,760,2240);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+
+		sConfigOC.Pulse = map(180,0,180,760,2240);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+	}
+	else{
+		sConfigOC.Pulse = map(0,0,180,760,2240);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+
+		sConfigOC.Pulse = map(50,0,180,760,2240);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+	}
+}
 void fire_Task(){
 	if(rc.sw2==1){
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
