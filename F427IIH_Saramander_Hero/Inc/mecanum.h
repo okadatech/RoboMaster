@@ -43,12 +43,12 @@
 /* the deceleration ratio of chassis motor */
 #define MOTOR_DECELE_RATIO (1.0f / 19.0f)
 /* single 3508 motor maximum speed, unit is rpm */
-#define MAX_WHEEL_RPM 8500 //8347rpm = 3500mm/s
+#define MAX_WHEEL_RPM 8500/2.0 //8347rpm = 3500mm/s
 /* chassis maximum translation speed, unit is mm/s */
-#define MAX_CHASSIS_VX_SPEED 3300 //8000rpm
-#define MAX_CHASSIS_VY_SPEED 3300
+#define MAX_CHASSIS_VX_SPEED 3300/2.0 //8000rpm
+#define MAX_CHASSIS_VY_SPEED 3300/2.0
 /* chassis maximum rotation speed, unit is degree/s */
-#define MAX_CHASSIS_VW_SPEED 300 //5000rpm
+#define MAX_CHASSIS_VW_SPEED 300.0/2.0 //5000rpm
 
 #define MOTOR_ENCODER_ACCURACY 8192.0f
 

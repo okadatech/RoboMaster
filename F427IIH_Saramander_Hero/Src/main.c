@@ -40,9 +40,9 @@
 /* USER CODE BEGIN PD */
 
 const int yaw_MAX=70;
-const int yaw_magnification=30;
+const int yaw_magnification=20;
 const int pich_MAX=30;
-const int pich_magnification=80;
+const int pich_magnification=50;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -130,6 +130,7 @@ int main(void)
   MX_UART8_Init();
   MX_USART1_UART_Init();
   MX_USART6_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 0);
   HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, 1);
@@ -301,10 +302,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 			if(rc.mouse_press_l==1){
 			PC_mouse_x=PC_mouse_x+rc.mouse_x*(-1);
 			PC_mouse_y=PC_mouse_y+rc.mouse_y;
-			if(PC_mouse_x > pich_MAX*pich_magnification){	PC_mouse_x = pich_MAX*pich_magnification;}
-			if(PC_mouse_x < -1*pich_MAX*pich_magnification){PC_mouse_x = -1*pich_MAX*pich_magnification;}
-			if(PC_mouse_y > yaw_MAX*yaw_magnification){		PC_mouse_y = pich_MAX*pich_magnification;}
-			if(PC_mouse_y < -1*yaw_MAX*yaw_magnification){	PC_mouse_y = -1*yaw_MAX*yaw_magnification;}
+			if(PC_mouse_y > pich_MAX*pich_magnification){	PC_mouse_y = pich_MAX*pich_magnification;}
+			if(PC_mouse_y < -1*pich_MAX*pich_magnification){PC_mouse_y = -1*pich_MAX*pich_magnification;}
+			if(PC_mouse_x > yaw_MAX*yaw_magnification){		PC_mouse_x = yaw_MAX*yaw_magnification;}
+			if(PC_mouse_x < -1*yaw_MAX*yaw_magnification){	PC_mouse_x = -1*yaw_MAX*yaw_magnification;}
 			}
 		}
 
@@ -353,13 +354,48 @@ void driveWheelTask() {
 	mecanum.speed.vy = -(float) rc.ch3 / 660 * MAX_CHASSIS_VX_SPEED;
 
 	if(rc.sw1==1){
-		if(cnt_tim_omega<200 || cnt_tim_omega>600){
+		if(cnt_tim_omega<100){
 			mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
 		}
-		else{
-			mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;
+		else if(cnt_tim_omega<150){
+			mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
 		}
-
+		else if(cnt_tim_omega<200){
+			mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega==200){
+			mecanum.speed.vw = -(float) (rc.ch5-0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega<250){
+			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega<300){
+			mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega<400){
+			mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega<500){
+			mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega<550){
+			mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega<600){
+			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega==600){
+			mecanum.speed.vw = -(float) (rc.ch5+0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega<650){
+			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega<700){
+			mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
+		else if(cnt_tim_omega<=800){
+			mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
+		}
 		cnt_tim_omega++;
 		if(cnt_tim_omega>800){cnt_tim_omega=0;}
 	}
@@ -459,7 +495,7 @@ void Gimbal_Task(){
 	} else {
 		fire = 0;
 		if(rc.sw1==2){
-			DBUFF[1] = loadPID.error = 900.0f*1 - loadMotorFdb.rpm;
+			DBUFF[1] = loadPID.error = 900.0f*2.0 - loadMotorFdb.rpm;
 			DBUFF[3] = u[2] = pidExecute(&loadPID);
 		}
 		else{
@@ -483,10 +519,10 @@ void Gimbal_Task(){
 		}
 	}
 	yaw_now=(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0);
-	if((target_yaw-yaw_now)>70){u[0]=30000;}
-	else if((target_yaw-yaw_now)<-70){u[0]=-30000;}
+	if((target_yaw-yaw_now)>60){u[0]=30000;}
+	else if((target_yaw-yaw_now)<-60){u[0]=-30000;}
 	else{
-		u[0]=map(target_yaw-yaw_now, -70, 70, -30000, 30000)-(gimbalYawFdb.rpm*40.0);//param is not yet
+		u[0]=map(target_yaw-yaw_now, -60, 60, -30000, 30000)-(gimbalYawFdb.rpm*40.0);//param is not yet
 		if(u[0]>30000){u[0]=30000;}
 		if(u[0]<-30000){u[0]=-30000;}
 	}
@@ -494,14 +530,14 @@ void Gimbal_Task(){
 	if(rc.sw2==2){target_pich=0;}
 	else{
 		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
-		if(target_pich>20){target_pich=20;}
+		if(target_pich>=30){target_pich=30;}
 		if(target_pich<-30){target_pich=-30;}
 	}
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+28;
-	if((target_pich-pich_now)>45){u[1]=20000;}
-	else if((target_pich-pich_now)<-45){u[1]=-20000;}
+	if((target_pich-pich_now)>40){u[1]=30000;}
+	else if((target_pich-pich_now)<-40){u[1]=-30000;}
 	else{
-		u[1]=map(target_pich-pich_now, -45, 45, -20000, 20000)-(gimbalPitchFdb.rpm*40.0);//param is not yet
+		u[1]=map(target_pich-pich_now, -40, 40, -30000, 30000)-(gimbalPitchFdb.rpm*40.0);//param is not yet
 		if(u[1]>30000){u[1]=30000;}
 		if(u[1]<-30000){u[1]=-30000;}
 	}

@@ -54,6 +54,10 @@ float IMU_yaw_set;
 float IMU_rol_set;
 
 
+TIM_MasterConfigTypeDef sMasterConfig;
+TIM_OC_InitTypeDef sConfigOC;
+TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig;
+
 int PC_mouse_x,PC_mouse_y;
 
 

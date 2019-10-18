@@ -42,6 +42,11 @@ struct mecanum mecanum;
 _pid_t wheelPID[4], loadPID;
 int16_t target_yaw,target_pich;
 int16_t yaw_now,pich_now;
+
+TIM_MasterConfigTypeDef sMasterConfig;
+TIM_OC_InitTypeDef sConfigOC;
+TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig;
+
 float DBUFF[32];
 
 

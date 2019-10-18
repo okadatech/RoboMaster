@@ -14,4 +14,4 @@ bsp_imu.c:350:9:mpu_device_init	32	static
 bsp_imu.c:384:6:mpu_offset_call	16	static
 bsp_imu.c:417:6:init_quaternion	48	static
 bsp_imu.c:578:6:imu_ahrs_update	136	static
-bsp_imu.c:681:6:imu_attitude_update	32	static
+bsp_imu.c:681:6:imu_attitude_update	64	static
