@@ -201,3 +201,10 @@ arm-none-eabi-size   F427IIH_Saramander_Standard.elf
   52468	    508	   3268	  56244	   dbb4	F427IIH_Saramander_Standard.elf
 Finished building: default.size.stdout
  
+21:04:11 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
+make -j4 all 
+arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  52468	    508	   3268	  56244	   dbb4	F427IIH_Saramander_Standard.elf
+Finished building: default.size.stdout
+ 

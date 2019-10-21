@@ -7,6 +7,6 @@
 
 ・F427IIH_Saramander_Standard　歩兵用ソフト（デベロッパーボードを利用）
 
-・rm_summer/rm_summer　　サマーキャンプにてもらった組み込み
+・rm_saramander　　サマーキャンプにてもらった組み込みを少し書き換えたもの（開発停止中）
 
 ・.metadata　　STM32CubeIDEでプロジェクトを作ると勝手にできるやつなので無視

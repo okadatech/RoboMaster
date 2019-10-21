@@ -369,7 +369,7 @@ void driveWheelTask() {
 		else if(cnt_tim_omega<550) {mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
 		else if(cnt_tim_omega<600) {mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
 		else if(cnt_tim_omega==600){mecanum.speed.vw = -(float) (rc.ch5+  0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
-		else if(cnt_tim_omega<650) {mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<650) {mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
 		else if(cnt_tim_omega<700) {mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
 		else if(cnt_tim_omega<=800){mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
 		cnt_tim_omega++;
