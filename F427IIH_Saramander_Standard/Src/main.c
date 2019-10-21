@@ -192,7 +192,7 @@ int main(void)
 		  IMU_rol_set=imu.rol;
 	  }
 
-	   printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
+	  //printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
 	   //printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
 	   printf(" target_Pitch:%d target_Yaw:%d now_Pit:%d now_Yaw:%d", target_pich,target_yaw,pich_now,yaw_now);
 	  //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
@@ -200,7 +200,7 @@ int main(void)
 	//		 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
 	  //printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
-	  printf(" ch5=%d vw=%f cnt=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega);
+	  //printf(" ch5=%d vw=%f cnt=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
 	  printf("\r\n");
 
@@ -356,48 +356,20 @@ void driveWheelTask() {
 	mecanum.speed.vy = -(float) rc.ch3 / 660 * MAX_CHASSIS_VX_SPEED;
 
 	if(rc.sw1==1){
-		if(cnt_tim_omega<100){
-			mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<150){
-			mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<200){
-			mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega==200){
-			mecanum.speed.vw = -(float) (rc.ch5-0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<250){
-			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<300){
-			mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<400){
-			mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<500){
-			mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<550){
-			mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<600){
-			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega==600){
-			mecanum.speed.vw = -(float) (rc.ch5+0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<650){
-			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<700){
-			mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<=800){
-			mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
+		if(cnt_tim_omega<100)      {mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<150) {mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<200) {mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega==200){mecanum.speed.vw = -(float) (rc.ch5-  0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<250) {mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<300) {mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<400) {mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<500) {mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<550) {mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<600) {mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega==600){mecanum.speed.vw = -(float) (rc.ch5+  0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<650) {mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<700) {mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<=800){mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
 		cnt_tim_omega++;
 		if(cnt_tim_omega>800){cnt_tim_omega=0;}
 	}
@@ -522,10 +494,11 @@ void Gimbal_Task(){
 		}
 	}
 	yaw_now=(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0);
+
 	if((target_yaw-yaw_now)>60){u[0]=30000;}
 	else if((target_yaw-yaw_now)<-60){u[0]=-30000;}
 	else{
-		u[0]=map(target_yaw-yaw_now, -60, 60, -30000, 30000)-(gimbalYawFdb.rpm*40.0);//param is not yet
+		u[0]=map(target_yaw-yaw_now, -60, 60, -30000, 30000)-(gimbalYawFdb.rpm*50.0);
 		if(u[0]>30000){u[0]=30000;}
 		if(u[0]<-30000){u[0]=-30000;}
 	}
@@ -533,14 +506,14 @@ void Gimbal_Task(){
 	if(rc.sw2==2){target_pich=0;}
 	else{
 		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
-		if(target_pich>=30){target_pich=30;}
-		if(target_pich<-30){target_pich=-30;}
+		if(target_pich>=10){target_pich=10;}
+		if(target_pich<-28){target_pich=-28;}
 	}
-	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+28;
+	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+22;
 	if((target_pich-pich_now)>40){u[1]=30000;}
 	else if((target_pich-pich_now)<-40){u[1]=-30000;}
 	else{
-		u[1]=map(target_pich-pich_now, -40, 40, -30000, 30000)-(gimbalPitchFdb.rpm*40.0);//param is not yet
+		u[1]=map(target_pich-pich_now, -40, 40, -29000, 29000)-(gimbalPitchFdb.rpm*50.0);//param is not yet
 		if(u[1]>30000){u[1]=30000;}
 		if(u[1]<-30000){u[1]=-30000;}
 	}

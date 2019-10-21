@@ -358,48 +358,20 @@ void driveWheelTask() {
 	mecanum.speed.vy = -(float) rc.ch3 / 660 * MAX_CHASSIS_VX_SPEED;
 
 	if(rc.sw1==1){
-		if(cnt_tim_omega<100){
-			mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<150){
-			mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<200){
-			mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega==200){
-			mecanum.speed.vw = -(float) (rc.ch5-0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<250){
-			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<300){
-			mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<400){
-			mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<500){
-			mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<550){
-			mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<600){
-			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega==600){
-			mecanum.speed.vw = -(float) (rc.ch5+0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<650){
-			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<700){
-			mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
-		else if(cnt_tim_omega<=800){
-			mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
-		}
+		if(cnt_tim_omega<100)      {mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<150) {mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<200) {mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega==200){mecanum.speed.vw = -(float) (rc.ch5-  0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<250) {mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<300) {mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<400) {mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<500) {mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<550) {mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<600) {mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega==600){mecanum.speed.vw = -(float) (rc.ch5+  0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<650) {mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<700) {mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
+		else if(cnt_tim_omega<=800){mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
 		cnt_tim_omega++;
 		if(cnt_tim_omega>800){cnt_tim_omega=0;}
 	}
