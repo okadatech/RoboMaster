@@ -90,6 +90,9 @@ uint8_t cnt_tim,cnt_tim_fire;
 uint16_t cnt_tim_omega;
 uint16_t sw1_cnt=1220;
 uint8_t rc_SW1_temp;
+
+uint32_t RC_time;
+
 /* USER CODE END 0 */
 
 /**
@@ -196,7 +199,8 @@ int main(void)
 	  //printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
 	   //printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
 	   printf(" target_Pitch:%d target_Yaw:%d now_Pit:%d now_Yaw:%d", target_pich,target_yaw,pich_now,yaw_now);
-	  //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
+	   printf(" RC_time=%d",(int)RC_time);
+	   //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
 	  //	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
 	//		 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
 	  //printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
@@ -263,6 +267,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 		cnt_tim=0;
 		}
 		cnt_tim++;
+
+		RC_time++;
+		if(RC_time>10000){
+			NVIC_SystemReset();
+		}
 	}
 }
 
@@ -300,6 +309,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 		if ((abs(rc.ch5) > 660) ||(abs(rc.ch3) > 660) ||(abs(rc.ch4) > 660)){
 			NVIC_SystemReset();
 		  }
+		else{
+			 RC_time=0;
+		}
 
 		if(rc.sw2==2){
 			PC_mouse_x=0;

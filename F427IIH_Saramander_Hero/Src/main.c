@@ -91,6 +91,7 @@ uint16_t cnt_tim_omega,cnt_tim_fire_task;
 uint16_t sw1_cnt=1220;
 uint8_t rc_SW1_temp;
 uint8_t fire = 0;
+uint32_t RC_time;
 /* USER CODE END 0 */
 
 /**
@@ -265,6 +266,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 		cnt_tim=0;
 		}
 		cnt_tim++;
+
+		RC_time++;
+		if(RC_time>10000){
+			NVIC_SystemReset();
+		}
 	}
 }
 
@@ -298,6 +304,14 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 		rc.key_Ctrl =  (0b0000000000100000 & rc.key_v)>>5;
 		rc.key_Q =     (0b0000000001000000 & rc.key_v)>>6;
 		rc.key_E =     (0b0000000010000000 & rc.key_v)>>7;
+
+		if ((abs(rc.ch5) > 660) ||(abs(rc.ch3) > 660) ||(abs(rc.ch4) > 660)){
+					NVIC_SystemReset();
+		}
+		else{
+			RC_time=0;
+		}
+
 
 		if(rc.sw2==2){
 			PC_mouse_x=0;
