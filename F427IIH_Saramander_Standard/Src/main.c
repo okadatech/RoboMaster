@@ -149,6 +149,18 @@ int main(void)
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_8, 1);
+  sConfigOC.Pulse = map(90,0,180,500,2500);
+  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+  sConfigOC.Pulse = map(90,0,180,500,2500);
+  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+  sConfigOC.Pulse = map(20,0,180,500,2500);
+  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+  sConfigOC.Pulse = map(20,0,180,500,2500);
+  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
   mpu_device_init();
   mpu_offset_call();
@@ -542,20 +554,20 @@ void Gimbal_Task(){
 
 void fire_task_open(){
 	if(rc.key_Shift==1){
-		sConfigOC.Pulse = map(130,0,180,760,2240);
+		sConfigOC.Pulse = map(160,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
 
-		sConfigOC.Pulse = map(180,0,180,760,2240);
+		sConfigOC.Pulse = map(160,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 	}
 	else{
-		sConfigOC.Pulse = map(0,0,180,760,2240);
+		sConfigOC.Pulse = map(20,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
 
-		sConfigOC.Pulse = map(50,0,180,760,2240);
+		sConfigOC.Pulse = map(20,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 	}

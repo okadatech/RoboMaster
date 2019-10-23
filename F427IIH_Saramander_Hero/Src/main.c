@@ -78,6 +78,7 @@ void initLoadPID();
 void Gimbal_Task();
 void fire_Task();
 void fire_task_push();
+void fire_task_open();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -148,15 +149,25 @@ int main(void)
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_8, 1);
+  sConfigOC.Pulse = map(90,0,180,500,2500);
+  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+  sConfigOC.Pulse = map(90,0,180,500,2500);
+  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+  sConfigOC.Pulse = map(20,0,180,500,2500);
+  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+  sConfigOC.Pulse = map(20,0,180,500,2500);
+  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
   mpu_device_init();
   mpu_offset_call();
   init_quaternion();
 
-
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1); // friction wheel
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
-
 
   initFriction();
   initPID();
@@ -199,13 +210,14 @@ int main(void)
 
 	   printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
 	   //printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
-	   printf(" target_Pitch:%d target_Yaw:%d now_Pit:%d now_Yaw:%d", target_pich,target_yaw,pich_now,yaw_now);
+	   //printf(" target_Pitch:%d target_Yaw:%d now_Pit:%d now_Yaw:%d", target_pich,target_yaw,pich_now,yaw_now);
 	  //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
 	  //	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
 	//		 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
 	  //printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
-	  printf(" ch5=%d vw=%f cnt=%d shift=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega,rc.key_Shift);
+	  printf(" cnt_tim_fire_task=%d",cnt_tim_fire_task);
+	   //printf(" ch5=%d vw=%f cnt=%d shift=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega,rc.key_Shift);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
 	  printf("\r\n");
 
@@ -428,20 +440,6 @@ void initMecanum() {
 }
 
 void initFriction() {
-
-	  sConfigOC.Pulse = map(90,0,180,760,2240);
-	  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
-	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-	  sConfigOC.Pulse = map(90,0,180,760,2240);
-	  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
-	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
-	  sConfigOC.Pulse = map(0,0,180,760,2240);
-	  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
-	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
-	  sConfigOC.Pulse = map(0,0,180,760,2240);
-	  HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
-	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
-
 	for(int i=0;i<300;i++){
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1500);
@@ -478,6 +476,7 @@ void timerTask() { //call 500Hz
 	mpu_get_data();
 	imu_ahrs_update();
 	imu_attitude_update();
+	fire_task_open();
 
 	IMU_pich=(imu.pit)-IMU_pich_set;
 		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
@@ -541,41 +540,62 @@ void Gimbal_Task(){
 }
 
 void fire_task_push(){
-
 	if(fire==1){
+	if(cnt_tim_fire_task>0 && cnt_tim_fire_task<=150){
+		sConfigOC.Pulse = map(50,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+		sConfigOC.Pulse = map(90,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+	}
+	else if(cnt_tim_fire_task>150 && cnt_tim_fire_task<=400){
+		sConfigOC.Pulse = map(120,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+		sConfigOC.Pulse = map(90,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+	}
+	else if(cnt_tim_fire_task>400 && cnt_tim_fire_task<=500){
+		sConfigOC.Pulse = map(90,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+		sConfigOC.Pulse = map(90,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+	}
+	else if(cnt_tim_fire_task>500 && cnt_tim_fire_task<=570){
+		sConfigOC.Pulse = map(90,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+		sConfigOC.Pulse = map(110,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+	}
+	else if(cnt_tim_fire_task>570 && cnt_tim_fire_task<=640){
+		sConfigOC.Pulse = map(90,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+		sConfigOC.Pulse = map(90,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+	}
+	else{
+		sConfigOC.Pulse = map(90,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+		sConfigOC.Pulse = map(90,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+	}
 
-	sConfigOC.Pulse = map(90,0,180,760,2240);
-	HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-
-	sConfigOC.Pulse = map(90,0,180,760,2240);
-	HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 
 	cnt_tim_fire_task++;
-	if(cnt_tim_fire_task>1000){
+	if(cnt_tim_fire_task>640){
 		cnt_tim_fire_task=0;
 		fire=0;
 	}
-	}
-
-	if(rc.key_Shift==1){
-		sConfigOC.Pulse = map(130,0,180,760,2240);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
-
-		sConfigOC.Pulse = map(180,0,180,760,2240);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
-	}
-	else{
-		sConfigOC.Pulse = map(0,0,180,760,2240);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
-
-		sConfigOC.Pulse = map(50,0,180,760,2240);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 	}
 }
 void fire_Task(){
@@ -592,6 +612,26 @@ void fire_Task(){
 		sw1_cnt=1220;
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
+	}
+}
+void fire_task_open(){
+	if(rc.key_Shift==1){
+		sConfigOC.Pulse = map(160,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+
+		sConfigOC.Pulse = map(160,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+	}
+	else{
+		sConfigOC.Pulse = map(20,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+
+		sConfigOC.Pulse = map(20,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 	}
 }
 
