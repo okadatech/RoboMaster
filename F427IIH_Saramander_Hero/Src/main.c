@@ -135,6 +135,8 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
+  HAL_UART_Receive_IT(&huart1, rcData, 18);
+
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 0);
   HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, 1);
@@ -160,7 +162,6 @@ int main(void)
   initLoadPID();
   initCanFilter();
   initMecanum();
-  HAL_UART_Receive_IT(&huart1, rcData, 18);
   HAL_TIM_Base_Start_IT(&htim6);
   setbuf(stdout, NULL);
   HAL_CAN_Start(&hcan1);
@@ -500,7 +501,7 @@ void Gimbal_Task(){
 	if((target_yaw-yaw_now)>60){u[0]=30000;}
 	else if((target_yaw-yaw_now)<-60){u[0]=-30000;}
 	else{
-		u[0]=map(target_yaw-yaw_now, -60, 60, -30000, 30000)-(gimbalYawFdb.rpm*40.0);//param is not yet
+		u[0]=map(target_yaw-yaw_now, -60, 60, -30000, 30000)-(gimbalYawFdb.rpm*50.0);//param is not yet
 		if(u[0]>30000){u[0]=30000;}
 		if(u[0]<-30000){u[0]=-30000;}
 	}
@@ -512,10 +513,10 @@ void Gimbal_Task(){
 		if(target_pich<-30){target_pich=-30;}
 	}
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+28;
-	if((target_pich-pich_now)>40){u[1]=30000;}
-	else if((target_pich-pich_now)<-40){u[1]=-30000;}
+	if((target_pich-pich_now)>30){u[1]=30000;}
+	else if((target_pich-pich_now)<-30){u[1]=-30000;}
 	else{
-		u[1]=map(target_pich-pich_now, -40, 40, -30000, 30000)-(gimbalPitchFdb.rpm*40.0);//param is not yet
+		u[1]=map(target_pich-pich_now, -30, 30, -30000, 30000)-(gimbalPitchFdb.rpm*50.0);//param is not yet
 		if(u[1]>30000){u[1]=30000;}
 		if(u[1]<-30000){u[1]=-30000;}
 	}

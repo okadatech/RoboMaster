@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  16 .debug_macro  00025ff1  00000000  00000000  0003a9e0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   0000f100  00000000  00000000  000609d1  2**0
+ 17 .debug_line   0000f154  00000000  00000000  000609d1  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    000dcfa8  00000000  00000000  0006fad1  2**0
+ 18 .debug_str    000dcfa8  00000000  00000000  0006fb25  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  0014ca79  2**0
+ 19 .comment      0000007b  00000000  00000000  0014cacd  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00005a58  00000000  00000000  0014caf4  2**2
+ 20 .debug_frame  00005a58  00000000  00000000  0014cb48  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -16106,12 +16106,11 @@ void driveWheelTask() {
  8006d94:	7a9b      	ldrb	r3, [r3, #10]
  8006d96:	2b01      	cmp	r3, #1
  8006d98:	f040 8396 	bne.w	80074c8 <driveWheelTask+0x798>
-		if(cnt_tim_omega<100){
+		if(cnt_tim_omega<100)      {mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  8006d9c:	4bba      	ldr	r3, [pc, #744]	; (8007088 <driveWheelTask+0x358>)
  8006d9e:	881b      	ldrh	r3, [r3, #0]
  8006da0:	2b63      	cmp	r3, #99	; 0x63
  8006da2:	d838      	bhi.n	8006e16 <driveWheelTask+0xe6>
-			mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  8006da4:	4bb4      	ldr	r3, [pc, #720]	; (8007078 <driveWheelTask+0x348>)
  8006da6:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  8006daa:	4618      	mov	r0, r3
@@ -16154,13 +16153,11 @@ void driveWheelTask() {
  8006e10:	4b9c      	ldr	r3, [pc, #624]	; (8007084 <driveWheelTask+0x354>)
  8006e12:	61da      	str	r2, [r3, #28]
  8006e14:	e349      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega<150){
+		else if(cnt_tim_omega<150) {mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  8006e16:	4b9c      	ldr	r3, [pc, #624]	; (8007088 <driveWheelTask+0x358>)
  8006e18:	881b      	ldrh	r3, [r3, #0]
  8006e1a:	2b95      	cmp	r3, #149	; 0x95
  8006e1c:	d838      	bhi.n	8006e90 <driveWheelTask+0x160>
-			mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  8006e1e:	4b96      	ldr	r3, [pc, #600]	; (8007078 <driveWheelTask+0x348>)
  8006e20:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  8006e24:	4618      	mov	r0, r3
@@ -16203,13 +16200,11 @@ void driveWheelTask() {
  8006e8a:	4b7e      	ldr	r3, [pc, #504]	; (8007084 <driveWheelTask+0x354>)
  8006e8c:	61da      	str	r2, [r3, #28]
  8006e8e:	e30c      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega<200){
+		else if(cnt_tim_omega<200) {mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  8006e90:	4b7d      	ldr	r3, [pc, #500]	; (8007088 <driveWheelTask+0x358>)
  8006e92:	881b      	ldrh	r3, [r3, #0]
  8006e94:	2bc7      	cmp	r3, #199	; 0xc7
  8006e96:	d838      	bhi.n	8006f0a <driveWheelTask+0x1da>
-			mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  8006e98:	4b77      	ldr	r3, [pc, #476]	; (8007078 <driveWheelTask+0x348>)
  8006e9a:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  8006e9e:	4618      	mov	r0, r3
@@ -16252,13 +16247,11 @@ void driveWheelTask() {
  8006f04:	4b5f      	ldr	r3, [pc, #380]	; (8007084 <driveWheelTask+0x354>)
  8006f06:	61da      	str	r2, [r3, #28]
  8006f08:	e2cf      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega==200){
+		else if(cnt_tim_omega==200){mecanum.speed.vw = -(float) (rc.ch5-  0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  8006f0a:	4b5f      	ldr	r3, [pc, #380]	; (8007088 <driveWheelTask+0x358>)
  8006f0c:	881b      	ldrh	r3, [r3, #0]
  8006f0e:	2bc8      	cmp	r3, #200	; 0xc8
  8006f10:	d133      	bne.n	8006f7a <driveWheelTask+0x24a>
-			mecanum.speed.vw = -(float) (rc.ch5-0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  8006f12:	4b59      	ldr	r3, [pc, #356]	; (8007078 <driveWheelTask+0x348>)
  8006f14:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  8006f18:	4618      	mov	r0, r3
@@ -16298,13 +16291,11 @@ void driveWheelTask() {
  8006f74:	4b43      	ldr	r3, [pc, #268]	; (8007084 <driveWheelTask+0x354>)
  8006f76:	61da      	str	r2, [r3, #28]
  8006f78:	e297      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega<250){
+		else if(cnt_tim_omega<250) {mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  8006f7a:	4b43      	ldr	r3, [pc, #268]	; (8007088 <driveWheelTask+0x358>)
  8006f7c:	881b      	ldrh	r3, [r3, #0]
  8006f7e:	2bf9      	cmp	r3, #249	; 0xf9
  8006f80:	d838      	bhi.n	8006ff4 <driveWheelTask+0x2c4>
-			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  8006f82:	4b3d      	ldr	r3, [pc, #244]	; (8007078 <driveWheelTask+0x348>)
  8006f84:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  8006f88:	4618      	mov	r0, r3
@@ -16347,13 +16338,11 @@ void driveWheelTask() {
  8006fee:	4b25      	ldr	r3, [pc, #148]	; (8007084 <driveWheelTask+0x354>)
  8006ff0:	61da      	str	r2, [r3, #28]
  8006ff2:	e25a      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega<300){
+		else if(cnt_tim_omega<300) {mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  8006ff4:	4b24      	ldr	r3, [pc, #144]	; (8007088 <driveWheelTask+0x358>)
  8006ff6:	881b      	ldrh	r3, [r3, #0]
  8006ff8:	f5b3 7f96 	cmp.w	r3, #300	; 0x12c
  8006ffc:	d24e      	bcs.n	800709c <driveWheelTask+0x36c>
-			mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  8006ffe:	4b1e      	ldr	r3, [pc, #120]	; (8007078 <driveWheelTask+0x348>)
  8007000:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  8007004:	4618      	mov	r0, r3
@@ -16407,13 +16396,11 @@ void driveWheelTask() {
  8007090:	4084a000 	.word	0x4084a000
  8007094:	406f4000 	.word	0x406f4000
  8007098:	40590000 	.word	0x40590000
-		}
-		else if(cnt_tim_omega<400){
+		else if(cnt_tim_omega<400) {mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  800709c:	4bbe      	ldr	r3, [pc, #760]	; (8007398 <driveWheelTask+0x668>)
  800709e:	881b      	ldrh	r3, [r3, #0]
  80070a0:	f5b3 7fc8 	cmp.w	r3, #400	; 0x190
  80070a4:	d238      	bcs.n	8007118 <driveWheelTask+0x3e8>
-			mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  80070a6:	4bbd      	ldr	r3, [pc, #756]	; (800739c <driveWheelTask+0x66c>)
  80070a8:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  80070ac:	4618      	mov	r0, r3
@@ -16456,13 +16443,11 @@ void driveWheelTask() {
  8007112:	4ba5      	ldr	r3, [pc, #660]	; (80073a8 <driveWheelTask+0x678>)
  8007114:	61da      	str	r2, [r3, #28]
  8007116:	e1c8      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega<500){
+		else if(cnt_tim_omega<500) {mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  8007118:	4b9f      	ldr	r3, [pc, #636]	; (8007398 <driveWheelTask+0x668>)
  800711a:	881b      	ldrh	r3, [r3, #0]
  800711c:	f5b3 7ffa 	cmp.w	r3, #500	; 0x1f4
  8007120:	d238      	bcs.n	8007194 <driveWheelTask+0x464>
-			mecanum.speed.vw = -(float) (rc.ch5+400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  8007122:	4b9e      	ldr	r3, [pc, #632]	; (800739c <driveWheelTask+0x66c>)
  8007124:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  8007128:	4618      	mov	r0, r3
@@ -16505,14 +16490,12 @@ void driveWheelTask() {
  800718e:	4b86      	ldr	r3, [pc, #536]	; (80073a8 <driveWheelTask+0x678>)
  8007190:	61da      	str	r2, [r3, #28]
  8007192:	e18a      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega<550){
+		else if(cnt_tim_omega<550) {mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  8007194:	4b80      	ldr	r3, [pc, #512]	; (8007398 <driveWheelTask+0x668>)
  8007196:	881b      	ldrh	r3, [r3, #0]
  8007198:	f240 2225 	movw	r2, #549	; 0x225
  800719c:	4293      	cmp	r3, r2
  800719e:	d838      	bhi.n	8007212 <driveWheelTask+0x4e2>
-			mecanum.speed.vw = -(float) (rc.ch5+250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  80071a0:	4b7e      	ldr	r3, [pc, #504]	; (800739c <driveWheelTask+0x66c>)
  80071a2:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  80071a6:	4618      	mov	r0, r3
@@ -16555,13 +16538,11 @@ void driveWheelTask() {
  800720c:	4b66      	ldr	r3, [pc, #408]	; (80073a8 <driveWheelTask+0x678>)
  800720e:	61da      	str	r2, [r3, #28]
  8007210:	e14b      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega<600){
+		else if(cnt_tim_omega<600) {mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  8007212:	4b61      	ldr	r3, [pc, #388]	; (8007398 <driveWheelTask+0x668>)
  8007214:	881b      	ldrh	r3, [r3, #0]
  8007216:	f5b3 7f16 	cmp.w	r3, #600	; 0x258
  800721a:	d238      	bcs.n	800728e <driveWheelTask+0x55e>
-			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  800721c:	4b5f      	ldr	r3, [pc, #380]	; (800739c <driveWheelTask+0x66c>)
  800721e:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  8007222:	4618      	mov	r0, r3
@@ -16604,13 +16585,11 @@ void driveWheelTask() {
  8007288:	4b47      	ldr	r3, [pc, #284]	; (80073a8 <driveWheelTask+0x678>)
  800728a:	61da      	str	r2, [r3, #28]
  800728c:	e10d      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega==600){
+		else if(cnt_tim_omega==600){mecanum.speed.vw = -(float) (rc.ch5+  0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  800728e:	4b42      	ldr	r3, [pc, #264]	; (8007398 <driveWheelTask+0x668>)
  8007290:	881b      	ldrh	r3, [r3, #0]
  8007292:	f5b3 7f16 	cmp.w	r3, #600	; 0x258
  8007296:	d139      	bne.n	800730c <driveWheelTask+0x5dc>
-			mecanum.speed.vw = -(float) (rc.ch5+0.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  8007298:	4b40      	ldr	r3, [pc, #256]	; (800739c <driveWheelTask+0x66c>)
  800729a:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  800729e:	4618      	mov	r0, r3
@@ -16653,21 +16632,19 @@ void driveWheelTask() {
  8007306:	4b28      	ldr	r3, [pc, #160]	; (80073a8 <driveWheelTask+0x678>)
  8007308:	61da      	str	r2, [r3, #28]
  800730a:	e0ce      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega<650){
+		else if(cnt_tim_omega<650) {mecanum.speed.vw = -(float) (rc.ch5-100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  800730c:	4b22      	ldr	r3, [pc, #136]	; (8007398 <driveWheelTask+0x668>)
  800730e:	881b      	ldrh	r3, [r3, #0]
  8007310:	f240 2289 	movw	r2, #649	; 0x289
  8007314:	4293      	cmp	r3, r2
  8007316:	d84d      	bhi.n	80073b4 <driveWheelTask+0x684>
-			mecanum.speed.vw = -(float) (rc.ch5+100.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  8007318:	4b20      	ldr	r3, [pc, #128]	; (800739c <driveWheelTask+0x66c>)
  800731a:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  800731e:	4618      	mov	r0, r3
  8007320:	f7f9 f910 	bl	8000544 <__aeabi_i2d>
  8007324:	f04f 0200 	mov.w	r2, #0
  8007328:	4b21      	ldr	r3, [pc, #132]	; (80073b0 <driveWheelTask+0x680>)
- 800732a:	f7f8 ffbf 	bl	80002ac <__adddf3>
+ 800732a:	f7f8 ffbd 	bl	80002a8 <__aeabi_dsub>
  800732e:	4603      	mov	r3, r0
  8007330:	460c      	mov	r4, r1
  8007332:	4618      	mov	r0, r3
@@ -16714,13 +16691,11 @@ void driveWheelTask() {
  80073a8:	20000544 	.word	0x20000544
  80073ac:	406f4000 	.word	0x406f4000
  80073b0:	40590000 	.word	0x40590000
-		}
-		else if(cnt_tim_omega<700){
+		else if(cnt_tim_omega<700) {mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  80073b4:	4b88      	ldr	r3, [pc, #544]	; (80075d8 <driveWheelTask+0x8a8>)
  80073b6:	881b      	ldrh	r3, [r3, #0]
  80073b8:	f5b3 7f2f 	cmp.w	r3, #700	; 0x2bc
  80073bc:	d238      	bcs.n	8007430 <driveWheelTask+0x700>
-			mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  80073be:	4b87      	ldr	r3, [pc, #540]	; (80075dc <driveWheelTask+0x8ac>)
  80073c0:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  80073c4:	4618      	mov	r0, r3
@@ -16763,13 +16738,11 @@ void driveWheelTask() {
  800742a:	4b6f      	ldr	r3, [pc, #444]	; (80075e8 <driveWheelTask+0x8b8>)
  800742c:	61da      	str	r2, [r3, #28]
  800742e:	e03c      	b.n	80074aa <driveWheelTask+0x77a>
-		}
-		else if(cnt_tim_omega<=800){
+		else if(cnt_tim_omega<=800){mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
  8007430:	4b69      	ldr	r3, [pc, #420]	; (80075d8 <driveWheelTask+0x8a8>)
  8007432:	881b      	ldrh	r3, [r3, #0]
  8007434:	f5b3 7f48 	cmp.w	r3, #800	; 0x320
  8007438:	d837      	bhi.n	80074aa <driveWheelTask+0x77a>
-			mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;  //speed is not yet
  800743a:	4b68      	ldr	r3, [pc, #416]	; (80075dc <driveWheelTask+0x8ac>)
  800743c:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  8007440:	4618      	mov	r0, r3
@@ -16811,7 +16784,6 @@ void driveWheelTask() {
  80074a4:	4602      	mov	r2, r0
  80074a6:	4b50      	ldr	r3, [pc, #320]	; (80075e8 <driveWheelTask+0x8b8>)
  80074a8:	61da      	str	r2, [r3, #28]
-		}
 		cnt_tim_omega++;
  80074aa:	4b4b      	ldr	r3, [pc, #300]	; (80075d8 <driveWheelTask+0x8a8>)
  80074ac:	881b      	ldrh	r3, [r3, #0]
@@ -17735,26 +17707,26 @@ void Gimbal_Task(){
  8007cd6:	b21a      	sxth	r2, r3
  8007cd8:	4b25      	ldr	r3, [pc, #148]	; (8007d70 <Gimbal_Task+0x350>)
  8007cda:	801a      	strh	r2, [r3, #0]
-	if((target_pich-pich_now)>40){u[1]=30000;}
+	if((target_pich-pich_now)>30){u[1]=30000;}
  8007cdc:	4b1f      	ldr	r3, [pc, #124]	; (8007d5c <Gimbal_Task+0x33c>)
  8007cde:	f9b3 3000 	ldrsh.w	r3, [r3]
  8007ce2:	461a      	mov	r2, r3
  8007ce4:	4b22      	ldr	r3, [pc, #136]	; (8007d70 <Gimbal_Task+0x350>)
  8007ce6:	f9b3 3000 	ldrsh.w	r3, [r3]
  8007cea:	1ad3      	subs	r3, r2, r3
- 8007cec:	2b28      	cmp	r3, #40	; 0x28
+ 8007cec:	2b1e      	cmp	r3, #30
  8007cee:	dd03      	ble.n	8007cf8 <Gimbal_Task+0x2d8>
  8007cf0:	f247 5330 	movw	r3, #30000	; 0x7530
  8007cf4:	807b      	strh	r3, [r7, #2]
  8007cf6:	e07f      	b.n	8007df8 <Gimbal_Task+0x3d8>
-	else if((target_pich-pich_now)<-40){u[1]=-30000;}
+	else if((target_pich-pich_now)<-30){u[1]=-30000;}
  8007cf8:	4b18      	ldr	r3, [pc, #96]	; (8007d5c <Gimbal_Task+0x33c>)
  8007cfa:	f9b3 3000 	ldrsh.w	r3, [r3]
  8007cfe:	461a      	mov	r2, r3
  8007d00:	4b1b      	ldr	r3, [pc, #108]	; (8007d70 <Gimbal_Task+0x350>)
  8007d02:	f9b3 3000 	ldrsh.w	r3, [r3]
  8007d06:	1ad3      	subs	r3, r2, r3
- 8007d08:	f113 0f28 	cmn.w	r3, #40	; 0x28
+ 8007d08:	f113 0f1e 	cmn.w	r3, #30
  8007d0c:	da32      	bge.n	8007d74 <Gimbal_Task+0x354>
  8007d0e:	f648 23d0 	movw	r3, #35536	; 0x8ad0
  8007d12:	807b      	strh	r3, [r7, #2]
@@ -17784,7 +17756,7 @@ void Gimbal_Task(){
  8007d6c:	200005c8 	.word	0x200005c8
  8007d70:	20000618 	.word	0x20000618
 	else{
-		u[1]=map(target_pich-pich_now, -40, 40, -30000, 30000)-(gimbalPitchFdb.rpm*40.0);//param is not yet
+		u[1]=map(target_pich-pich_now, -30, 30, -30000, 30000)-(gimbalPitchFdb.rpm*50.0);//param is not yet
  8007d74:	4b27      	ldr	r3, [pc, #156]	; (8007e14 <Gimbal_Task+0x3f4>)
  8007d76:	f9b3 3000 	ldrsh.w	r3, [r3]
  8007d7a:	461a      	mov	r2, r3
@@ -17794,8 +17766,8 @@ void Gimbal_Task(){
  8007d84:	f247 5330 	movw	r3, #30000	; 0x7530
  8007d88:	9300      	str	r3, [sp, #0]
  8007d8a:	4b24      	ldr	r3, [pc, #144]	; (8007e1c <Gimbal_Task+0x3fc>)
- 8007d8c:	2228      	movs	r2, #40	; 0x28
- 8007d8e:	f06f 0127 	mvn.w	r1, #39	; 0x27
+ 8007d8c:	221e      	movs	r2, #30
+ 8007d8e:	f06f 011d 	mvn.w	r1, #29
  8007d92:	f7fe fb0d 	bl	80063b0 <map>
  8007d96:	4603      	mov	r3, r0
  8007d98:	4618      	mov	r0, r3
@@ -17859,7 +17831,7 @@ void Gimbal_Task(){
  8007e18:	20000618 	.word	0x20000618
  8007e1c:	ffff8ad0 	.word	0xffff8ad0
  8007e20:	200005c8 	.word	0x200005c8
- 8007e24:	40440000 	.word	0x40440000
+ 8007e24:	40490000 	.word	0x40490000
  8007e28:	20000388 	.word	0x20000388
  8007e2c:	200003b8 	.word	0x200003b8
 
