@@ -155,12 +155,14 @@ int main(void)
   sConfigOC.Pulse = map(90,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
-  sConfigOC.Pulse = map(20,0,180,500,2500);
+  sConfigOC.Pulse = map(145,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
-  sConfigOC.Pulse = map(20,0,180,500,2500);
+  sConfigOC.Pulse = map(145,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+
+
 
   mpu_device_init();
   mpu_offset_call();
@@ -552,34 +554,14 @@ void Gimbal_Task(){
 	rc_SW1_temp=rc.sw1;
 }
 
-void fire_task_open(){
-	if(rc.key_Shift==1){
-		sConfigOC.Pulse = map(160,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
-
-		sConfigOC.Pulse = map(160,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
-	}
-	else{
-		sConfigOC.Pulse = map(20,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
-
-		sConfigOC.Pulse = map(20,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
-	}
-}
 
 void fire_Task(){
 	if(rc.sw2==1){
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
 		//max 1500
-		if(sw1_cnt>=1400){
-			sw1_cnt=1400;
+		if(sw1_cnt>=1450){
+			sw1_cnt=1450;
 		}
 		else{sw1_cnt++;}
 	}
@@ -589,6 +571,28 @@ void fire_Task(){
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
 	}
 }
+
+void fire_task_open(){
+	if(rc.key_Shift==1){
+		sConfigOC.Pulse = map(60,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+
+		sConfigOC.Pulse = map(60,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+	}
+	else{
+		sConfigOC.Pulse = map(145,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+
+		sConfigOC.Pulse = map(145,0,180,500,2500);
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+	}
+}
+
 
 /* USER CODE END 4 */
 
