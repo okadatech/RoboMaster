@@ -155,10 +155,10 @@ int main(void)
   sConfigOC.Pulse = map(90,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
-  sConfigOC.Pulse = map(20,0,180,500,2500);
+  sConfigOC.Pulse = map(145,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
-  sConfigOC.Pulse = map(20,0,180,500,2500);
+  sConfigOC.Pulse = map(145,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
@@ -549,7 +549,7 @@ void fire_task_push(){
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
-	else if(cnt_tim_fire_task>150 && cnt_tim_fire_task<=400){
+	else if(cnt_tim_fire_task>150 && cnt_tim_fire_task<=500){
 		sConfigOC.Pulse = map(120,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -557,7 +557,7 @@ void fire_task_push(){
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
-	else if(cnt_tim_fire_task>400 && cnt_tim_fire_task<=500){
+	else if(cnt_tim_fire_task>500 && cnt_tim_fire_task<=600){
 		sConfigOC.Pulse = map(90,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -565,15 +565,15 @@ void fire_task_push(){
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
-	else if(cnt_tim_fire_task>500 && cnt_tim_fire_task<=570){
+	else if(cnt_tim_fire_task>600 && cnt_tim_fire_task<=850){
 		sConfigOC.Pulse = map(90,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-		sConfigOC.Pulse = map(110,0,180,500,2500);
+		sConfigOC.Pulse = map(120,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
-	else if(cnt_tim_fire_task>570 && cnt_tim_fire_task<=640){
+	else if(cnt_tim_fire_task>850 && cnt_tim_fire_task<=950){
 		sConfigOC.Pulse = map(90,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -592,7 +592,7 @@ void fire_task_push(){
 
 
 	cnt_tim_fire_task++;
-	if(cnt_tim_fire_task>640){
+	if(cnt_tim_fire_task>950){
 		cnt_tim_fire_task=0;
 		fire=0;
 	}
@@ -614,22 +614,23 @@ void fire_Task(){
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
 	}
 }
+
 void fire_task_open(){
 	if(rc.key_Shift==1){
-		sConfigOC.Pulse = map(160,0,180,500,2500);
+		sConfigOC.Pulse = map(60,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
 
-		sConfigOC.Pulse = map(160,0,180,500,2500);
+		sConfigOC.Pulse = map(60,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 	}
 	else{
-		sConfigOC.Pulse = map(20,0,180,500,2500);
+		sConfigOC.Pulse = map(145,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
 
-		sConfigOC.Pulse = map(20,0,180,500,2500);
+		sConfigOC.Pulse = map(145,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 	}
