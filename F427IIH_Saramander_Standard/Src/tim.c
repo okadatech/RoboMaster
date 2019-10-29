@@ -35,6 +35,10 @@ TIM_HandleTypeDef htim12;
 /* TIM1 init function */
 void MX_TIM1_Init(void)
 {
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
+
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 167;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -84,6 +88,8 @@ void MX_TIM1_Init(void)
 /* TIM2 init function */
 void MX_TIM2_Init(void)
 {
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
 
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 84;
@@ -127,6 +133,7 @@ void MX_TIM2_Init(void)
 /* TIM6 init function */
 void MX_TIM6_Init(void)
 {
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
 
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 10-1;
@@ -148,6 +155,9 @@ void MX_TIM6_Init(void)
 /* TIM8 init function */
 void MX_TIM8_Init(void)
 {
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
 
   htim8.Instance = TIM8;
   htim8.Init.Prescaler = 167;
@@ -198,6 +208,7 @@ void MX_TIM8_Init(void)
 /* TIM12 init function */
 void MX_TIM12_Init(void)
 {
+  TIM_OC_InitTypeDef sConfigOC = {0};
 
   htim12.Instance = TIM12;
   htim12.Init.Prescaler = 83;

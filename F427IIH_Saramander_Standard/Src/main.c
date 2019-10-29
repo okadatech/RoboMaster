@@ -537,14 +537,18 @@ void Gimbal_Task(){
 	if(rc.sw2==2){target_pich=0;}
 	else{
 		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
-		if(target_pich>=10){target_pich=10;}
-		if(target_pich<-28){target_pich=-28;}
+		if(target_pich>=19){target_pich=19;}
+		if(target_pich<-22){target_pich=-22;}
 	}
-	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+22;
-	if((target_pich-pich_now)>30){u[1]=30000;}
-	else if((target_pich-pich_now)<-30){u[1]=-30000;}
+	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+29;
+
+	if(pich_now>-4){HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);}
+	else{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);}
+
+	if((target_pich-pich_now)>19){u[1]=30000;}
+	else if((target_pich-pich_now)<-19){u[1]=-30000;}
 	else{
-		u[1]=map(target_pich-pich_now, -30, 30, -30000, 30000)-(gimbalPitchFdb.rpm*60.0);//param is not yet
+		u[1]=map(target_pich-pich_now, -19, 19, -30000, 30000)-(gimbalPitchFdb.rpm*60.0);//param is not yet
 		if(u[1]>30000){u[1]=30000;}
 		if(u[1]<-30000){u[1]=-30000;}
 	}

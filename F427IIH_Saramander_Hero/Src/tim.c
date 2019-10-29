@@ -21,9 +21,9 @@
 #include "tim.h"
 
 /* USER CODE BEGIN 0 */
- TIM_MasterConfigTypeDef sMasterConfig = {0};
-  TIM_OC_InitTypeDef sConfigOC = {0};
-  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
+TIM_MasterConfigTypeDef sMasterConfig;
+TIM_OC_InitTypeDef sConfigOC;
+TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig;
 /* USER CODE END 0 */
 
 TIM_HandleTypeDef htim1;
