@@ -149,6 +149,7 @@ int main(void)
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_8, 1);
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);
   sConfigOC.Pulse = map(90,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
