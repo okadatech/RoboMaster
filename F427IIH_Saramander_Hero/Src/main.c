@@ -381,9 +381,9 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
 }
 
 void driveWheelTask() {
-
-	mecanum.speed.vx = (float) rc.ch4 / 660 * MAX_CHASSIS_VX_SPEED;
-	mecanum.speed.vy = -(float) rc.ch3 / 660 * MAX_CHASSIS_VX_SPEED;
+	float vx_temp,vy_temp;
+	vx_temp = (float) rc.ch4 / 660 * MAX_CHASSIS_VX_SPEED;
+	vy_temp = -(float) rc.ch3 / 660 * MAX_CHASSIS_VY_SPEED;
 
 	if(rc.sw1==1){
 		if(cnt_tim_omega<100)      {mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
@@ -402,10 +402,18 @@ void driveWheelTask() {
 		else if(cnt_tim_omega<=800){mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED;}
 		cnt_tim_omega++;
 		if(cnt_tim_omega>800){cnt_tim_omega=0;}
+
+		mecanum.speed.vx = vx_temp*cos(IMU_yaw*M_PI/180.0)-vy_temp*sin(IMU_yaw*M_PI/180.0);
+		mecanum.speed.vy = vx_temp*sin(IMU_yaw*M_PI/180.0)+vy_temp*cos(IMU_yaw*M_PI/180.0);
+		if(mecanum.speed.vx>MAX_CHASSIS_VX_SPEED){mecanum.speed.vx=MAX_CHASSIS_VX_SPEED;}
+		if(mecanum.speed.vy>MAX_CHASSIS_VY_SPEED){mecanum.speed.vy=MAX_CHASSIS_VY_SPEED;}
 	}
 	else{
 		cnt_tim_omega=0;
 		mecanum.speed.vw = -(float) rc.ch5 / 660 * MAX_CHASSIS_VW_SPEED;
+		mecanum.speed.vx = vx_temp;
+		mecanum.speed.vy = vy_temp;
+
 	}
 
 	mecanum_calculate(&mecanum);
