@@ -35,6 +35,7 @@ TIM_HandleTypeDef htim12;
 /* TIM1 init function */
 void MX_TIM1_Init(void)
 {
+
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 167;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -127,7 +128,6 @@ void MX_TIM2_Init(void)
 /* TIM6 init function */
 void MX_TIM6_Init(void)
 {
-
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 10-1;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -148,7 +148,6 @@ void MX_TIM6_Init(void)
 /* TIM8 init function */
 void MX_TIM8_Init(void)
 {
-
   htim8.Instance = TIM8;
   htim8.Init.Prescaler = 167;
   htim8.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -198,7 +197,6 @@ void MX_TIM8_Init(void)
 /* TIM12 init function */
 void MX_TIM12_Init(void)
 {
-
   htim12.Instance = TIM12;
   htim12.Init.Prescaler = 83;
   htim12.Init.CounterMode = TIM_COUNTERMODE_UP;

@@ -149,6 +149,7 @@ int main(void)
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_8, 1);
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);
   sConfigOC.Pulse = map(90,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -526,6 +527,9 @@ void Gimbal_Task(){
 		if(target_pich<-30){target_pich=-30;}
 	}
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+28;
+	if(pich_now>-4){HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);}
+		else{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);}
+
 	if((target_pich-pich_now)>30){u[1]=30000;}
 	else if((target_pich-pich_now)<-30){u[1]=-30000;}
 	else{
