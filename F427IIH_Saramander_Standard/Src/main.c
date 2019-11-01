@@ -388,9 +388,6 @@ void driveWheelTask() {
 	const float MAX_CHASSIS_VY_SPEED_calc= 3300.0/2.0;
 	const float MAX_CHASSIS_VW_SPEED_calc= 300.0/2.0;
 
-	vx_temp =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc;
-	vy_temp = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc;
-
 	if(rc.sw1==1){
 		if(cnt_tim_omega<100)      {mecanum.speed.vw = -(float) (rc.ch5-400.0) / 660.0 * MAX_CHASSIS_VW_SPEED_calc;}
 		else if(cnt_tim_omega<150) {mecanum.speed.vw = -(float) (rc.ch5-250.0) / 660.0 * MAX_CHASSIS_VW_SPEED_calc;}
@@ -409,14 +406,17 @@ void driveWheelTask() {
 		cnt_tim_omega++;
 		if(cnt_tim_omega>800){cnt_tim_omega=0;}
 
+		vx_temp =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc;
+		vy_temp = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc;
+
 		mecanum.speed.vx = vx_temp*cos(IMU_yaw*M_PI/180.0)-vy_temp*sin(IMU_yaw*M_PI/180.0);
 		mecanum.speed.vy = vx_temp*sin(IMU_yaw*M_PI/180.0)+vy_temp*cos(IMU_yaw*M_PI/180.0);
 	}
 	else{
 		cnt_tim_omega=0;
 		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
-		mecanum.speed.vx = vx_temp;
-		mecanum.speed.vy = vy_temp;
+		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc;
+		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc;
 
 	}
 
@@ -483,14 +483,9 @@ void initLoadPID() {
 }
 
 void timerTask() { //call 500Hz
-	driveWheelTask();
-	Gimbal_Task();
-	fire_Task();
 	mpu_get_data();
 	imu_ahrs_update();
 	imu_attitude_update();
-	fire_task_open();
-
 	IMU_pich=(imu.pit)-IMU_pich_set;
 		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
 		if(IMU_pich< -90.0){IMU_pich=IMU_pich+180;}
@@ -500,6 +495,11 @@ void timerTask() { //call 500Hz
 	IMU_rol=(imu.rol)-IMU_rol_set;
 		if(IMU_rol>  180.0){IMU_rol=IMU_rol-360;}
 		if(IMU_rol< -180.0){IMU_rol=IMU_rol+360;}
+
+	driveWheelTask();
+	Gimbal_Task();
+	fire_Task();
+	fire_task_open();
 }
 
 void Gimbal_Task(){

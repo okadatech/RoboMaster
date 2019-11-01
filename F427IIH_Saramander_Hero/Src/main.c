@@ -479,14 +479,10 @@ void initLoadPID() {
 }
 
 void timerTask() { //call 500Hz
-	driveWheelTask();
-	Gimbal_Task();
-	fire_Task();
+
 	mpu_get_data();
 	imu_ahrs_update();
 	imu_attitude_update();
-	fire_task_open();
-
 	IMU_pich=(imu.pit)-IMU_pich_set;
 		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
 		if(IMU_pich< -90.0){IMU_pich=IMU_pich+180;}
@@ -496,6 +492,12 @@ void timerTask() { //call 500Hz
 	IMU_rol=(imu.rol)-IMU_rol_set;
 		if(IMU_rol>  180.0){IMU_rol=IMU_rol-360;}
 		if(IMU_rol< -180.0){IMU_rol=IMU_rol+360;}
+
+	driveWheelTask();
+	Gimbal_Task();
+	fire_Task();
+	fire_task_open();
+
 }
 
 void Gimbal_Task(){

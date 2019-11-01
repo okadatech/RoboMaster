@@ -37,11 +37,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  16 .debug_macro  00025ff1  00000000  00000000  0003ac48  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   0000f236  00000000  00000000  00060c39  2**0
+ 17 .debug_line   0000f237  00000000  00000000  00060c39  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    000dcfc9  00000000  00000000  0006fe6f  2**0
+ 18 .debug_str    000dcfc9  00000000  00000000  0006fe70  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  0014ce38  2**0
+ 19 .comment      0000007b  00000000  00000000  0014ce39  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00005c90  00000000  00000000  0014ceb4  2**2
                   CONTENTS, READONLY, DEBUGGING
@@ -16232,7 +16232,6 @@ void driveWheelTask() {
  8006e50:	e92d 43b0 	stmdb	sp!, {r4, r5, r7, r8, r9, lr}
  8006e54:	b086      	sub	sp, #24
  8006e56:	af00      	add	r7, sp, #0
-
 	float vx_temp,vy_temp;
 	vx_temp = (float) rc.ch4 / 660 * MAX_CHASSIS_VX_SPEED;
  8006e58:	4bcf      	ldr	r3, [pc, #828]	; (8007198 <driveWheelTask+0x348>)
@@ -17531,129 +17530,129 @@ void initLoadPID() {
 void timerTask() { //call 500Hz
  8007aec:	b580      	push	{r7, lr}
  8007aee:	af00      	add	r7, sp, #0
-	driveWheelTask();
- 8007af0:	f7ff f9ae 	bl	8006e50 <driveWheelTask>
-	Gimbal_Task();
- 8007af4:	f000 f8c0 	bl	8007c78 <Gimbal_Task>
-	fire_Task();
- 8007af8:	f000 fc4c 	bl	8008394 <fire_Task>
-	mpu_get_data();
- 8007afc:	f7fd f8be 	bl	8004c7c <mpu_get_data>
-	imu_ahrs_update();
- 8007b00:	f7fd fc1e 	bl	8005340 <imu_ahrs_update>
-	imu_attitude_update();
- 8007b04:	f7fe f8bc 	bl	8005c80 <imu_attitude_update>
-	fire_task_open();
- 8007b08:	f000 fc80 	bl	800840c <fire_task_open>
 
+	mpu_get_data();
+ 8007af0:	f7fd f8c4 	bl	8004c7c <mpu_get_data>
+	imu_ahrs_update();
+ 8007af4:	f7fd fc24 	bl	8005340 <imu_ahrs_update>
+	imu_attitude_update();
+ 8007af8:	f7fe f8c2 	bl	8005c80 <imu_attitude_update>
 	IMU_pich=(imu.pit)-IMU_pich_set;
- 8007b0c:	4b4d      	ldr	r3, [pc, #308]	; (8007c44 <timerTask+0x158>)
- 8007b0e:	ed93 7a0b 	vldr	s14, [r3, #44]	; 0x2c
- 8007b12:	4b4d      	ldr	r3, [pc, #308]	; (8007c48 <timerTask+0x15c>)
- 8007b14:	edd3 7a00 	vldr	s15, [r3]
- 8007b18:	ee77 7a67 	vsub.f32	s15, s14, s15
- 8007b1c:	4b4b      	ldr	r3, [pc, #300]	; (8007c4c <timerTask+0x160>)
- 8007b1e:	edc3 7a00 	vstr	s15, [r3]
+ 8007afc:	4b51      	ldr	r3, [pc, #324]	; (8007c44 <timerTask+0x158>)
+ 8007afe:	ed93 7a0b 	vldr	s14, [r3, #44]	; 0x2c
+ 8007b02:	4b51      	ldr	r3, [pc, #324]	; (8007c48 <timerTask+0x15c>)
+ 8007b04:	edd3 7a00 	vldr	s15, [r3]
+ 8007b08:	ee77 7a67 	vsub.f32	s15, s14, s15
+ 8007b0c:	4b4f      	ldr	r3, [pc, #316]	; (8007c4c <timerTask+0x160>)
+ 8007b0e:	edc3 7a00 	vstr	s15, [r3]
 		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
- 8007b22:	4b4a      	ldr	r3, [pc, #296]	; (8007c4c <timerTask+0x160>)
- 8007b24:	edd3 7a00 	vldr	s15, [r3]
- 8007b28:	ed9f 7a49 	vldr	s14, [pc, #292]	; 8007c50 <timerTask+0x164>
- 8007b2c:	eef4 7ac7 	vcmpe.f32	s15, s14
- 8007b30:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8007b34:	dd09      	ble.n	8007b4a <timerTask+0x5e>
- 8007b36:	4b45      	ldr	r3, [pc, #276]	; (8007c4c <timerTask+0x160>)
- 8007b38:	edd3 7a00 	vldr	s15, [r3]
- 8007b3c:	ed9f 7a45 	vldr	s14, [pc, #276]	; 8007c54 <timerTask+0x168>
- 8007b40:	ee77 7ac7 	vsub.f32	s15, s15, s14
- 8007b44:	4b41      	ldr	r3, [pc, #260]	; (8007c4c <timerTask+0x160>)
- 8007b46:	edc3 7a00 	vstr	s15, [r3]
+ 8007b12:	4b4e      	ldr	r3, [pc, #312]	; (8007c4c <timerTask+0x160>)
+ 8007b14:	edd3 7a00 	vldr	s15, [r3]
+ 8007b18:	ed9f 7a4d 	vldr	s14, [pc, #308]	; 8007c50 <timerTask+0x164>
+ 8007b1c:	eef4 7ac7 	vcmpe.f32	s15, s14
+ 8007b20:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8007b24:	dd09      	ble.n	8007b3a <timerTask+0x4e>
+ 8007b26:	4b49      	ldr	r3, [pc, #292]	; (8007c4c <timerTask+0x160>)
+ 8007b28:	edd3 7a00 	vldr	s15, [r3]
+ 8007b2c:	ed9f 7a49 	vldr	s14, [pc, #292]	; 8007c54 <timerTask+0x168>
+ 8007b30:	ee77 7ac7 	vsub.f32	s15, s15, s14
+ 8007b34:	4b45      	ldr	r3, [pc, #276]	; (8007c4c <timerTask+0x160>)
+ 8007b36:	edc3 7a00 	vstr	s15, [r3]
 		if(IMU_pich< -90.0){IMU_pich=IMU_pich+180;}
- 8007b4a:	4b40      	ldr	r3, [pc, #256]	; (8007c4c <timerTask+0x160>)
- 8007b4c:	edd3 7a00 	vldr	s15, [r3]
- 8007b50:	ed9f 7a41 	vldr	s14, [pc, #260]	; 8007c58 <timerTask+0x16c>
- 8007b54:	eef4 7ac7 	vcmpe.f32	s15, s14
- 8007b58:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8007b5c:	d509      	bpl.n	8007b72 <timerTask+0x86>
- 8007b5e:	4b3b      	ldr	r3, [pc, #236]	; (8007c4c <timerTask+0x160>)
- 8007b60:	edd3 7a00 	vldr	s15, [r3]
- 8007b64:	ed9f 7a3b 	vldr	s14, [pc, #236]	; 8007c54 <timerTask+0x168>
- 8007b68:	ee77 7a87 	vadd.f32	s15, s15, s14
- 8007b6c:	4b37      	ldr	r3, [pc, #220]	; (8007c4c <timerTask+0x160>)
- 8007b6e:	edc3 7a00 	vstr	s15, [r3]
+ 8007b3a:	4b44      	ldr	r3, [pc, #272]	; (8007c4c <timerTask+0x160>)
+ 8007b3c:	edd3 7a00 	vldr	s15, [r3]
+ 8007b40:	ed9f 7a45 	vldr	s14, [pc, #276]	; 8007c58 <timerTask+0x16c>
+ 8007b44:	eef4 7ac7 	vcmpe.f32	s15, s14
+ 8007b48:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8007b4c:	d509      	bpl.n	8007b62 <timerTask+0x76>
+ 8007b4e:	4b3f      	ldr	r3, [pc, #252]	; (8007c4c <timerTask+0x160>)
+ 8007b50:	edd3 7a00 	vldr	s15, [r3]
+ 8007b54:	ed9f 7a3f 	vldr	s14, [pc, #252]	; 8007c54 <timerTask+0x168>
+ 8007b58:	ee77 7a87 	vadd.f32	s15, s15, s14
+ 8007b5c:	4b3b      	ldr	r3, [pc, #236]	; (8007c4c <timerTask+0x160>)
+ 8007b5e:	edc3 7a00 	vstr	s15, [r3]
 	IMU_yaw=(imu.yaw)-IMU_yaw_set;
- 8007b72:	4b34      	ldr	r3, [pc, #208]	; (8007c44 <timerTask+0x158>)
- 8007b74:	ed93 7a0c 	vldr	s14, [r3, #48]	; 0x30
- 8007b78:	4b38      	ldr	r3, [pc, #224]	; (8007c5c <timerTask+0x170>)
- 8007b7a:	edd3 7a00 	vldr	s15, [r3]
- 8007b7e:	ee77 7a67 	vsub.f32	s15, s14, s15
- 8007b82:	4b37      	ldr	r3, [pc, #220]	; (8007c60 <timerTask+0x174>)
- 8007b84:	edc3 7a00 	vstr	s15, [r3]
+ 8007b62:	4b38      	ldr	r3, [pc, #224]	; (8007c44 <timerTask+0x158>)
+ 8007b64:	ed93 7a0c 	vldr	s14, [r3, #48]	; 0x30
+ 8007b68:	4b3c      	ldr	r3, [pc, #240]	; (8007c5c <timerTask+0x170>)
+ 8007b6a:	edd3 7a00 	vldr	s15, [r3]
+ 8007b6e:	ee77 7a67 	vsub.f32	s15, s14, s15
+ 8007b72:	4b3b      	ldr	r3, [pc, #236]	; (8007c60 <timerTask+0x174>)
+ 8007b74:	edc3 7a00 	vstr	s15, [r3]
 		if(IMU_yaw>  180.0){IMU_yaw=IMU_yaw-360;}
- 8007b88:	4b35      	ldr	r3, [pc, #212]	; (8007c60 <timerTask+0x174>)
- 8007b8a:	edd3 7a00 	vldr	s15, [r3]
- 8007b8e:	ed9f 7a31 	vldr	s14, [pc, #196]	; 8007c54 <timerTask+0x168>
- 8007b92:	eef4 7ac7 	vcmpe.f32	s15, s14
- 8007b96:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8007b9a:	dd09      	ble.n	8007bb0 <timerTask+0xc4>
- 8007b9c:	4b30      	ldr	r3, [pc, #192]	; (8007c60 <timerTask+0x174>)
- 8007b9e:	edd3 7a00 	vldr	s15, [r3]
- 8007ba2:	ed9f 7a30 	vldr	s14, [pc, #192]	; 8007c64 <timerTask+0x178>
- 8007ba6:	ee77 7ac7 	vsub.f32	s15, s15, s14
- 8007baa:	4b2d      	ldr	r3, [pc, #180]	; (8007c60 <timerTask+0x174>)
- 8007bac:	edc3 7a00 	vstr	s15, [r3]
+ 8007b78:	4b39      	ldr	r3, [pc, #228]	; (8007c60 <timerTask+0x174>)
+ 8007b7a:	edd3 7a00 	vldr	s15, [r3]
+ 8007b7e:	ed9f 7a35 	vldr	s14, [pc, #212]	; 8007c54 <timerTask+0x168>
+ 8007b82:	eef4 7ac7 	vcmpe.f32	s15, s14
+ 8007b86:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8007b8a:	dd09      	ble.n	8007ba0 <timerTask+0xb4>
+ 8007b8c:	4b34      	ldr	r3, [pc, #208]	; (8007c60 <timerTask+0x174>)
+ 8007b8e:	edd3 7a00 	vldr	s15, [r3]
+ 8007b92:	ed9f 7a34 	vldr	s14, [pc, #208]	; 8007c64 <timerTask+0x178>
+ 8007b96:	ee77 7ac7 	vsub.f32	s15, s15, s14
+ 8007b9a:	4b31      	ldr	r3, [pc, #196]	; (8007c60 <timerTask+0x174>)
+ 8007b9c:	edc3 7a00 	vstr	s15, [r3]
 		if(IMU_yaw< -180.0){IMU_yaw=IMU_yaw+360;}
- 8007bb0:	4b2b      	ldr	r3, [pc, #172]	; (8007c60 <timerTask+0x174>)
- 8007bb2:	edd3 7a00 	vldr	s15, [r3]
- 8007bb6:	ed9f 7a2c 	vldr	s14, [pc, #176]	; 8007c68 <timerTask+0x17c>
- 8007bba:	eef4 7ac7 	vcmpe.f32	s15, s14
- 8007bbe:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8007bc2:	d509      	bpl.n	8007bd8 <timerTask+0xec>
- 8007bc4:	4b26      	ldr	r3, [pc, #152]	; (8007c60 <timerTask+0x174>)
- 8007bc6:	edd3 7a00 	vldr	s15, [r3]
- 8007bca:	ed9f 7a26 	vldr	s14, [pc, #152]	; 8007c64 <timerTask+0x178>
- 8007bce:	ee77 7a87 	vadd.f32	s15, s15, s14
- 8007bd2:	4b23      	ldr	r3, [pc, #140]	; (8007c60 <timerTask+0x174>)
- 8007bd4:	edc3 7a00 	vstr	s15, [r3]
+ 8007ba0:	4b2f      	ldr	r3, [pc, #188]	; (8007c60 <timerTask+0x174>)
+ 8007ba2:	edd3 7a00 	vldr	s15, [r3]
+ 8007ba6:	ed9f 7a30 	vldr	s14, [pc, #192]	; 8007c68 <timerTask+0x17c>
+ 8007baa:	eef4 7ac7 	vcmpe.f32	s15, s14
+ 8007bae:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8007bb2:	d509      	bpl.n	8007bc8 <timerTask+0xdc>
+ 8007bb4:	4b2a      	ldr	r3, [pc, #168]	; (8007c60 <timerTask+0x174>)
+ 8007bb6:	edd3 7a00 	vldr	s15, [r3]
+ 8007bba:	ed9f 7a2a 	vldr	s14, [pc, #168]	; 8007c64 <timerTask+0x178>
+ 8007bbe:	ee77 7a87 	vadd.f32	s15, s15, s14
+ 8007bc2:	4b27      	ldr	r3, [pc, #156]	; (8007c60 <timerTask+0x174>)
+ 8007bc4:	edc3 7a00 	vstr	s15, [r3]
 	IMU_rol=(imu.rol)-IMU_rol_set;
- 8007bd8:	4b1a      	ldr	r3, [pc, #104]	; (8007c44 <timerTask+0x158>)
- 8007bda:	ed93 7a0a 	vldr	s14, [r3, #40]	; 0x28
- 8007bde:	4b23      	ldr	r3, [pc, #140]	; (8007c6c <timerTask+0x180>)
- 8007be0:	edd3 7a00 	vldr	s15, [r3]
- 8007be4:	ee77 7a67 	vsub.f32	s15, s14, s15
- 8007be8:	4b21      	ldr	r3, [pc, #132]	; (8007c70 <timerTask+0x184>)
- 8007bea:	edc3 7a00 	vstr	s15, [r3]
+ 8007bc8:	4b1e      	ldr	r3, [pc, #120]	; (8007c44 <timerTask+0x158>)
+ 8007bca:	ed93 7a0a 	vldr	s14, [r3, #40]	; 0x28
+ 8007bce:	4b27      	ldr	r3, [pc, #156]	; (8007c6c <timerTask+0x180>)
+ 8007bd0:	edd3 7a00 	vldr	s15, [r3]
+ 8007bd4:	ee77 7a67 	vsub.f32	s15, s14, s15
+ 8007bd8:	4b25      	ldr	r3, [pc, #148]	; (8007c70 <timerTask+0x184>)
+ 8007bda:	edc3 7a00 	vstr	s15, [r3]
 		if(IMU_rol>  180.0){IMU_rol=IMU_rol-360;}
- 8007bee:	4b20      	ldr	r3, [pc, #128]	; (8007c70 <timerTask+0x184>)
- 8007bf0:	edd3 7a00 	vldr	s15, [r3]
- 8007bf4:	ed9f 7a17 	vldr	s14, [pc, #92]	; 8007c54 <timerTask+0x168>
- 8007bf8:	eef4 7ac7 	vcmpe.f32	s15, s14
- 8007bfc:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8007c00:	dd09      	ble.n	8007c16 <timerTask+0x12a>
- 8007c02:	4b1b      	ldr	r3, [pc, #108]	; (8007c70 <timerTask+0x184>)
- 8007c04:	edd3 7a00 	vldr	s15, [r3]
- 8007c08:	ed9f 7a16 	vldr	s14, [pc, #88]	; 8007c64 <timerTask+0x178>
- 8007c0c:	ee77 7ac7 	vsub.f32	s15, s15, s14
- 8007c10:	4b17      	ldr	r3, [pc, #92]	; (8007c70 <timerTask+0x184>)
- 8007c12:	edc3 7a00 	vstr	s15, [r3]
+ 8007bde:	4b24      	ldr	r3, [pc, #144]	; (8007c70 <timerTask+0x184>)
+ 8007be0:	edd3 7a00 	vldr	s15, [r3]
+ 8007be4:	ed9f 7a1b 	vldr	s14, [pc, #108]	; 8007c54 <timerTask+0x168>
+ 8007be8:	eef4 7ac7 	vcmpe.f32	s15, s14
+ 8007bec:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8007bf0:	dd09      	ble.n	8007c06 <timerTask+0x11a>
+ 8007bf2:	4b1f      	ldr	r3, [pc, #124]	; (8007c70 <timerTask+0x184>)
+ 8007bf4:	edd3 7a00 	vldr	s15, [r3]
+ 8007bf8:	ed9f 7a1a 	vldr	s14, [pc, #104]	; 8007c64 <timerTask+0x178>
+ 8007bfc:	ee77 7ac7 	vsub.f32	s15, s15, s14
+ 8007c00:	4b1b      	ldr	r3, [pc, #108]	; (8007c70 <timerTask+0x184>)
+ 8007c02:	edc3 7a00 	vstr	s15, [r3]
 		if(IMU_rol< -180.0){IMU_rol=IMU_rol+360;}
- 8007c16:	4b16      	ldr	r3, [pc, #88]	; (8007c70 <timerTask+0x184>)
- 8007c18:	edd3 7a00 	vldr	s15, [r3]
- 8007c1c:	ed9f 7a12 	vldr	s14, [pc, #72]	; 8007c68 <timerTask+0x17c>
- 8007c20:	eef4 7ac7 	vcmpe.f32	s15, s14
- 8007c24:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8007c28:	d400      	bmi.n	8007c2c <timerTask+0x140>
+ 8007c06:	4b1a      	ldr	r3, [pc, #104]	; (8007c70 <timerTask+0x184>)
+ 8007c08:	edd3 7a00 	vldr	s15, [r3]
+ 8007c0c:	ed9f 7a16 	vldr	s14, [pc, #88]	; 8007c68 <timerTask+0x17c>
+ 8007c10:	eef4 7ac7 	vcmpe.f32	s15, s14
+ 8007c14:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8007c18:	d509      	bpl.n	8007c2e <timerTask+0x142>
+ 8007c1a:	4b15      	ldr	r3, [pc, #84]	; (8007c70 <timerTask+0x184>)
+ 8007c1c:	edd3 7a00 	vldr	s15, [r3]
+ 8007c20:	ed9f 7a10 	vldr	s14, [pc, #64]	; 8007c64 <timerTask+0x178>
+ 8007c24:	ee77 7a87 	vadd.f32	s15, s15, s14
+ 8007c28:	4b11      	ldr	r3, [pc, #68]	; (8007c70 <timerTask+0x184>)
+ 8007c2a:	edc3 7a00 	vstr	s15, [r3]
+
+	driveWheelTask();
+ 8007c2e:	f7ff f90f 	bl	8006e50 <driveWheelTask>
+	Gimbal_Task();
+ 8007c32:	f000 f821 	bl	8007c78 <Gimbal_Task>
+	fire_Task();
+ 8007c36:	f000 fbad 	bl	8008394 <fire_Task>
+	fire_task_open();
+ 8007c3a:	f000 fbe7 	bl	800840c <fire_task_open>
+
 }
- 8007c2a:	e009      	b.n	8007c40 <timerTask+0x154>
-		if(IMU_rol< -180.0){IMU_rol=IMU_rol+360;}
- 8007c2c:	4b10      	ldr	r3, [pc, #64]	; (8007c70 <timerTask+0x184>)
- 8007c2e:	edd3 7a00 	vldr	s15, [r3]
- 8007c32:	ed9f 7a0c 	vldr	s14, [pc, #48]	; 8007c64 <timerTask+0x178>
- 8007c36:	ee77 7a87 	vadd.f32	s15, s15, s14
- 8007c3a:	4b0d      	ldr	r3, [pc, #52]	; (8007c70 <timerTask+0x184>)
- 8007c3c:	edc3 7a00 	vstr	s15, [r3]
-}
- 8007c40:	bf00      	nop
- 8007c42:	bd80      	pop	{r7, pc}
+ 8007c3e:	bf00      	nop
+ 8007c40:	bd80      	pop	{r7, pc}
+ 8007c42:	bf00      	nop
  8007c44:	20000244 	.word	0x20000244
  8007c48:	20000378 	.word	0x20000378
  8007c4c:	200005c8 	.word	0x200005c8
