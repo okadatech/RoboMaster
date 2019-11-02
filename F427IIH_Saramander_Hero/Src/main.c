@@ -404,17 +404,17 @@ void driveWheelTask() {
 		cnt_tim_omega++;
 		if(cnt_tim_omega>800){cnt_tim_omega=0;}
 
-		vx_temp =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc*2.0/3.0;
-		vy_temp = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc*2.0/3.0;
+		vx_temp =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc*2.0/2.5;
+		vy_temp = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc*2.0/2.5;
 
 		mecanum.speed.vx = vx_temp*cos(IMU_yaw*M_PI/180.0)-vy_temp*sin(IMU_yaw*M_PI/180.0);
 		mecanum.speed.vy = vx_temp*sin(IMU_yaw*M_PI/180.0)+vy_temp*cos(IMU_yaw*M_PI/180.0);
 	}
 	else{
 		cnt_tim_omega=0;
-		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
-		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc;
-		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc;
+		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc*1.4;
+		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc*1.4;
+		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc*1.4;
 
 	}
 
