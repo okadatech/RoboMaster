@@ -90,6 +90,7 @@ uint8_t cnt_tim,cnt_tim_fire;
 uint16_t cnt_tim_omega;
 uint16_t sw1_cnt=1220;
 uint8_t rc_SW1_temp;
+uint8_t cnt_tim_task;
 
 uint32_t RC_time;
 
@@ -211,7 +212,7 @@ int main(void)
 		  IMU_rol_set=imu.rol;
 	  }
 
-	  //printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
+	  printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
 	   //printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
 	   printf(" target_Pitch:%d target_Yaw:%d now_Pit:%d now_Yaw:%d", target_pich,target_yaw,pich_now,yaw_now);
 	   printf(" RC_time=%d",(int)RC_time);
@@ -275,16 +276,36 @@ void SystemClock_Config(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	static long unsigned int c = 0;
 	c++;
-	if (htim->Instance == htim6.Instance) {//500Hz
+	if (htim->Instance == htim6.Instance) {
+		//1kHz
+		mpu_get_data();
+		imu_ahrs_update();
+		imu_attitude_update();
+		IMU_pich=(imu.pit)-IMU_pich_set;
+		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
+		if(IMU_pich< -90.0){IMU_pich=IMU_pich+180;}
+		IMU_yaw=(imu.yaw)-IMU_yaw_set;
+		if(IMU_yaw>  180.0){IMU_yaw=IMU_yaw-360;}
+		if(IMU_yaw< -180.0){IMU_yaw=IMU_yaw+360;}
+		IMU_rol=(imu.rol)-IMU_rol_set;
+		if(IMU_rol>  180.0){IMU_rol=IMU_rol-360;}
+		if(IMU_rol< -180.0){IMU_rol=IMU_rol+360;}
+
+		if(cnt_tim_task>1){
+		//500Hz
 		timerTask();
-		if(cnt_tim>20){
+		cnt_tim_task=0;
+		}
+		cnt_tim_task++;
+
+		if(cnt_tim>40){
 		HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
 		cnt_tim=0;
 		}
 		cnt_tim++;
 
 		RC_time++;
-		if(RC_time>10000){
+		if(RC_time>20000){
 			NVIC_SystemReset();
 		}
 	}
@@ -483,19 +504,6 @@ void initLoadPID() {
 }
 
 void timerTask() { //call 500Hz
-	mpu_get_data();
-	imu_ahrs_update();
-	imu_attitude_update();
-	IMU_pich=(imu.pit)-IMU_pich_set;
-		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
-		if(IMU_pich< -90.0){IMU_pich=IMU_pich+180;}
-	IMU_yaw=(imu.yaw)-IMU_yaw_set;
-		if(IMU_yaw>  180.0){IMU_yaw=IMU_yaw-360;}
-		if(IMU_yaw< -180.0){IMU_yaw=IMU_yaw+360;}
-	IMU_rol=(imu.rol)-IMU_rol_set;
-		if(IMU_rol>  180.0){IMU_rol=IMU_rol-360;}
-		if(IMU_rol< -180.0){IMU_rol=IMU_rol+360;}
-
 	driveWheelTask();
 	Gimbal_Task();
 	fire_Task();
