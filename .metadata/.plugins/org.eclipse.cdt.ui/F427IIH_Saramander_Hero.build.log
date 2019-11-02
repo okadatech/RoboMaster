@@ -1,4 +1,4 @@
-02:46:44 **** Build of configuration Debug for project F427IIH_Saramander_Hero ****
+19:43:58 **** Build of configuration Debug for project F427IIH_Saramander_Hero ****
 make -j4 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
 arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -7,11 +7,11 @@ Finished building target: F427IIH_Saramander_Hero.elf
 arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
 arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
    text	   data	    bss	    dec	    hex	filename
-  58584	    508	   3276	  62368	   f3a0	F427IIH_Saramander_Hero.elf
+  58832	    508	   3276	  62616	   f498	F427IIH_Saramander_Hero.elf
 Finished building: default.size.stdout
  
 Finished building: F427IIH_Saramander_Hero.list
  
 
-02:46:48 Build Finished. 0 errors, 0 warnings. (took 3s.459ms)
+19:44:02 Build Finished. 0 errors, 0 warnings. (took 4s.108ms)
 
