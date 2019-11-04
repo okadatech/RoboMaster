@@ -21,9 +21,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   8 .data         000001f4  20000000  0800e5b0  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          000006cc  200001f4  0800e7a4  000201f4  2**2
+  9 .bss          000006c8  200001f4  0800e7a4  000201f4  2**2
                   ALLOC
- 10 ._user_heap_stack 00000600  200008c0  0800e7a4  000208c0  2**0
+ 10 ._user_heap_stack 00000604  200008bc  0800e7a4  000208bc  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  000201f4  2**0
                   CONTENTS, READONLY
@@ -37,9 +37,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  16 .debug_macro  00025ff1  00000000  00000000  0003ac68  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   0000f1e1  00000000  00000000  00060c59  2**0
+ 17 .debug_line   0000f1e0  00000000  00000000  00060c59  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    000dd019  00000000  00000000  0006fe3a  2**0
+ 18 .debug_str    000dd01a  00000000  00000000  0006fe39  2**0
                   CONTENTS, READONLY, DEBUGGING
  19 .comment      0000007b  00000000  00000000  0014ce53  2**0
                   CONTENTS, READONLY
@@ -11615,7 +11615,7 @@ uint8_t mpu_write_byte(uint8_t const reg, uint8_t const data)
  8004910:	40021400 	.word	0x40021400
  8004914:	20000240 	.word	0x20000240
  8004918:	20000241 	.word	0x20000241
- 800491c:	20000624 	.word	0x20000624
+ 800491c:	20000620 	.word	0x20000620
 
 08004920 <mpu_read_byte>:
   * @retval 
@@ -11673,7 +11673,7 @@ uint8_t mpu_read_byte(uint8_t const reg)
  8004978:	40021400 	.word	0x40021400
  800497c:	20000240 	.word	0x20000240
  8004980:	20000241 	.word	0x20000241
- 8004984:	20000624 	.word	0x20000624
+ 8004984:	20000620 	.word	0x20000620
 
 08004988 <mpu_read_bytes>:
   * @usage  call in ist8310_get_data(),         
@@ -11741,7 +11741,7 @@ uint8_t mpu_read_bytes(uint8_t const regAddr, uint8_t* pData, uint8_t len)
  80049f4:	20000240 	.word	0x20000240
  80049f8:	2000000c 	.word	0x2000000c
  80049fc:	20000241 	.word	0x20000241
- 8004a00:	20000624 	.word	0x20000624
+ 8004a00:	20000620 	.word	0x20000620
 
 08004a04 <ist_reg_write_by_mpu>:
   *         data: data to be written
@@ -14856,7 +14856,7 @@ HAL_UART_Transmit(&huart7, &ch, 1, 1);
  80063fe:	46bd      	mov	sp, r7
  8006400:	bd80      	pop	{r7, pc}
  8006402:	bf00      	nop
- 8006404:	200007bc 	.word	0x200007bc
+ 8006404:	200007b8 	.word	0x200007b8
 
 08006408 <map>:
 void fire_task_open();
@@ -15284,37 +15284,37 @@ int main(void)
 	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1){
  8006710:	e7b0      	b.n	8006674 <main+0x234>
  8006712:	bf00      	nop
- 8006714:	200005e0 	.word	0x200005e0
- 8006718:	200007fc 	.word	0x200007fc
+ 8006714:	200005dc 	.word	0x200005dc
+ 8006718:	200007f8 	.word	0x200007f8
  800671c:	40021000 	.word	0x40021000
  8006720:	40021400 	.word	0x40021400
  8006724:	40021800 	.word	0x40021800
  8006728:	40020c00 	.word	0x40020c00
  800672c:	200002a0 	.word	0x200002a0
- 8006730:	2000073c 	.word	0x2000073c
- 8006734:	2000067c 	.word	0x2000067c
- 8006738:	200006bc 	.word	0x200006bc
+ 8006730:	20000738 	.word	0x20000738
+ 8006734:	20000678 	.word	0x20000678
+ 8006738:	200006b8 	.word	0x200006b8
  800673c:	20000020 	.word	0x20000020
  8006740:	2000035c 	.word	0x2000035c
  8006744:	20000334 	.word	0x20000334
  8006748:	40021c00 	.word	0x40021c00
  800674c:	20000244 	.word	0x20000244
  8006750:	200003b8 	.word	0x200003b8
- 8006754:	200005bc 	.word	0x200005bc
+ 8006754:	200005b8 	.word	0x200005b8
  8006758:	200003bc 	.word	0x200003bc
- 800675c:	200003f8 	.word	0x200003f8
- 8006760:	2000048c 	.word	0x2000048c
+ 800675c:	200003f4 	.word	0x200003f4
+ 8006760:	20000488 	.word	0x20000488
  8006764:	40020400 	.word	0x40020400
- 8006768:	20000404 	.word	0x20000404
- 800676c:	200005cc 	.word	0x200005cc
+ 8006768:	20000400 	.word	0x20000400
+ 800676c:	200005c8 	.word	0x200005c8
  8006770:	200003a4 	.word	0x200003a4
  8006774:	0800e030 	.word	0x0800e030
- 8006778:	20000400 	.word	0x20000400
- 800677c:	200005dc 	.word	0x200005dc
- 8006780:	20000620 	.word	0x20000620
- 8006784:	200005f2 	.word	0x200005f2
+ 8006778:	200003fc 	.word	0x200003fc
+ 800677c:	200005d8 	.word	0x200005d8
+ 8006780:	2000061c 	.word	0x2000061c
+ 8006784:	200005ee 	.word	0x200005ee
  8006788:	0800e058 	.word	0x0800e058
- 800678c:	200003fc 	.word	0x200003fc
+ 800678c:	200003f8 	.word	0x200003f8
  8006790:	0800e090 	.word	0x0800e090
  8006794:	0800e09c 	.word	0x0800e09c
 
@@ -15646,23 +15646,23 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
  8006a2c:	bd80      	pop	{r7, pc}
  8006a2e:	bf00      	nop
  8006a30:	2000027c 	.word	0x2000027c
- 8006a34:	200006bc 	.word	0x200006bc
+ 8006a34:	200006b8 	.word	0x200006b8
  8006a38:	20000244 	.word	0x20000244
  8006a3c:	200003b8 	.word	0x200003b8
- 8006a40:	200005cc 	.word	0x200005cc
+ 8006a40:	200005c8 	.word	0x200005c8
  8006a44:	42b40000 	.word	0x42b40000
  8006a48:	43340000 	.word	0x43340000
  8006a4c:	c2b40000 	.word	0xc2b40000
- 8006a50:	200005bc 	.word	0x200005bc
+ 8006a50:	200005b8 	.word	0x200005b8
  8006a54:	200003a4 	.word	0x200003a4
  8006a58:	43b40000 	.word	0x43b40000
  8006a5c:	c3340000 	.word	0xc3340000
  8006a60:	200003bc 	.word	0x200003bc
- 8006a64:	20000404 	.word	0x20000404
- 8006a68:	200003f4 	.word	0x200003f4
- 8006a6c:	200005b8 	.word	0x200005b8
+ 8006a64:	20000400 	.word	0x20000400
+ 8006a68:	200003f0 	.word	0x200003f0
+ 8006a6c:	200005b6 	.word	0x200005b6
  8006a70:	40021400 	.word	0x40021400
- 8006a74:	200003fc 	.word	0x200003fc
+ 8006a74:	200003f8 	.word	0x200003f8
 
 08006a78 <HAL_UART_RxCpltCallback>:
 
@@ -15984,8 +15984,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
  8006cfc:	f5b3 7f25 	cmp.w	r3, #660	; 0x294
  8006d00:	e008      	b.n	8006d14 <HAL_UART_RxCpltCallback+0x29c>
  8006d02:	bf00      	nop
- 8006d04:	200007fc 	.word	0x200007fc
- 8006d08:	200005e0 	.word	0x200005e0
+ 8006d04:	200007f8 	.word	0x200007f8
+ 8006d08:	200005dc 	.word	0x200005dc
  8006d0c:	40021800 	.word	0x40021800
  8006d10:	20000384 	.word	0x20000384
  8006d14:	dd01      	ble.n	8006d1a <HAL_UART_RxCpltCallback+0x2a2>
@@ -16103,10 +16103,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
  8006dde:	46bd      	mov	sp, r7
  8006de0:	bd80      	pop	{r7, pc}
  8006de2:	bf00      	nop
- 8006de4:	200003fc 	.word	0x200003fc
+ 8006de4:	200003f8 	.word	0x200003f8
  8006de8:	20000384 	.word	0x20000384
- 8006dec:	200003f8 	.word	0x200003f8
- 8006df0:	2000048c 	.word	0x2000048c
+ 8006dec:	200003f4 	.word	0x200003f4
+ 8006df0:	20000488 	.word	0x20000488
  8006df4:	00000000 	.word	0x00000000
 
 08006df8 <HAL_CAN_RxFifo0MsgPendingCallback>:
@@ -16383,13 +16383,13 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
  8006ff8:	00000000 	.word	0x00000000
  8006ffc:	4091d000 	.word	0x4091d000
  8007000:	20000334 	.word	0x20000334
- 8007004:	20000540 	.word	0x20000540
- 8007008:	2000059c 	.word	0x2000059c
- 800700c:	200003c4 	.word	0x200003c4
+ 8007004:	2000053c 	.word	0x2000053c
+ 8007008:	20000598 	.word	0x20000598
+ 800700c:	200003c0 	.word	0x200003c0
  8007010:	2000035c 	.word	0x2000035c
  8007014:	200003a8 	.word	0x200003a8
- 8007018:	200005d0 	.word	0x200005d0
- 800701c:	200005c0 	.word	0x200005c0
+ 8007018:	200005cc 	.word	0x200005cc
+ 800701c:	200005bc 	.word	0x200005bc
 
 08007020 <driveWheelTask>:
 
@@ -16413,11 +16413,11 @@ void driveWheelTask() {
  8007036:	7a9b      	ldrb	r3, [r3, #10]
  8007038:	2b01      	cmp	r3, #1
  800703a:	f040 8523 	bne.w	8007a84 <driveWheelTask+0xa64>
-	  if(cnt_tim_omega<100)      {mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=0;}
+		if(cnt_tim_omega<=100)     {mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
  800703e:	4bc5      	ldr	r3, [pc, #788]	; (8007354 <driveWheelTask+0x334>)
  8007040:	881b      	ldrh	r3, [r3, #0]
- 8007042:	2b63      	cmp	r3, #99	; 0x63
- 8007044:	d83b      	bhi.n	80070be <driveWheelTask+0x9e>
+ 8007042:	2b64      	cmp	r3, #100	; 0x64
+ 8007044:	d83c      	bhi.n	80070c0 <driveWheelTask+0xa0>
  8007046:	4bc2      	ldr	r3, [pc, #776]	; (8007350 <driveWheelTask+0x330>)
  8007048:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  800704c:	4618      	mov	r0, r3
@@ -16460,274 +16460,273 @@ void driveWheelTask() {
  80070b2:	4bab      	ldr	r3, [pc, #684]	; (8007360 <driveWheelTask+0x340>)
  80070b4:	61da      	str	r2, [r3, #28]
  80070b6:	4bab      	ldr	r3, [pc, #684]	; (8007364 <driveWheelTask+0x344>)
- 80070b8:	2200      	movs	r2, #0
- 80070ba:	801a      	strh	r2, [r3, #0]
- 80070bc:	e382      	b.n	80077c4 <driveWheelTask+0x7a4>
-	  else if(cnt_tim_omega<150) {mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=0;}
- 80070be:	4ba5      	ldr	r3, [pc, #660]	; (8007354 <driveWheelTask+0x334>)
- 80070c0:	881b      	ldrh	r3, [r3, #0]
- 80070c2:	2b95      	cmp	r3, #149	; 0x95
- 80070c4:	d83b      	bhi.n	800713e <driveWheelTask+0x11e>
- 80070c6:	4ba2      	ldr	r3, [pc, #648]	; (8007350 <driveWheelTask+0x330>)
- 80070c8:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
- 80070cc:	4618      	mov	r0, r3
- 80070ce:	f7f9 fa39 	bl	8000544 <__aeabi_i2d>
- 80070d2:	a39b      	add	r3, pc, #620	; (adr r3, 8007340 <driveWheelTask+0x320>)
- 80070d4:	e9d3 2300 	ldrd	r2, r3, [r3]
- 80070d8:	f7f9 f8e6 	bl	80002a8 <__aeabi_dsub>
- 80070dc:	4603      	mov	r3, r0
- 80070de:	460c      	mov	r4, r1
- 80070e0:	4618      	mov	r0, r3
- 80070e2:	4621      	mov	r1, r4
- 80070e4:	f7f9 fd70 	bl	8000bc8 <__aeabi_d2f>
- 80070e8:	4603      	mov	r3, r0
- 80070ea:	f083 4300 	eor.w	r3, r3, #2147483648	; 0x80000000
- 80070ee:	4618      	mov	r0, r3
- 80070f0:	f7f9 fa3a 	bl	8000568 <__aeabi_f2d>
- 80070f4:	f04f 0200 	mov.w	r2, #0
- 80070f8:	4b98      	ldr	r3, [pc, #608]	; (800735c <driveWheelTask+0x33c>)
- 80070fa:	f7f9 fbb7 	bl	800086c <__aeabi_ddiv>
- 80070fe:	4603      	mov	r3, r0
- 8007100:	460c      	mov	r4, r1
- 8007102:	4618      	mov	r0, r3
- 8007104:	4621      	mov	r1, r4
- 8007106:	a38e      	add	r3, pc, #568	; (adr r3, 8007340 <driveWheelTask+0x320>)
- 8007108:	e9d3 2300 	ldrd	r2, r3, [r3]
- 800710c:	f7f9 fa84 	bl	8000618 <__aeabi_dmul>
- 8007110:	4603      	mov	r3, r0
- 8007112:	460c      	mov	r4, r1
- 8007114:	4618      	mov	r0, r3
- 8007116:	4621      	mov	r1, r4
- 8007118:	f04f 0200 	mov.w	r2, #0
- 800711c:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
- 8007120:	f7f9 fba4 	bl	800086c <__aeabi_ddiv>
- 8007124:	4603      	mov	r3, r0
- 8007126:	460c      	mov	r4, r1
- 8007128:	4618      	mov	r0, r3
- 800712a:	4621      	mov	r1, r4
- 800712c:	f7f9 fd4c 	bl	8000bc8 <__aeabi_d2f>
- 8007130:	4602      	mov	r2, r0
- 8007132:	4b8b      	ldr	r3, [pc, #556]	; (8007360 <driveWheelTask+0x340>)
- 8007134:	61da      	str	r2, [r3, #28]
- 8007136:	4b8b      	ldr	r3, [pc, #556]	; (8007364 <driveWheelTask+0x344>)
- 8007138:	2200      	movs	r2, #0
- 800713a:	801a      	strh	r2, [r3, #0]
- 800713c:	e342      	b.n	80077c4 <driveWheelTask+0x7a4>
-	  else if(cnt_tim_omega<200) {mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=-3;}
- 800713e:	4b85      	ldr	r3, [pc, #532]	; (8007354 <driveWheelTask+0x334>)
- 8007140:	881b      	ldrh	r3, [r3, #0]
- 8007142:	2bc7      	cmp	r3, #199	; 0xc7
- 8007144:	d83c      	bhi.n	80071c0 <driveWheelTask+0x1a0>
- 8007146:	4b82      	ldr	r3, [pc, #520]	; (8007350 <driveWheelTask+0x330>)
- 8007148:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
- 800714c:	4618      	mov	r0, r3
- 800714e:	f7f9 f9f9 	bl	8000544 <__aeabi_i2d>
- 8007152:	f04f 0200 	mov.w	r2, #0
- 8007156:	4b84      	ldr	r3, [pc, #528]	; (8007368 <driveWheelTask+0x348>)
- 8007158:	f7f9 f8a6 	bl	80002a8 <__aeabi_dsub>
- 800715c:	4603      	mov	r3, r0
- 800715e:	460c      	mov	r4, r1
- 8007160:	4618      	mov	r0, r3
- 8007162:	4621      	mov	r1, r4
- 8007164:	f7f9 fd30 	bl	8000bc8 <__aeabi_d2f>
- 8007168:	4603      	mov	r3, r0
- 800716a:	f083 4300 	eor.w	r3, r3, #2147483648	; 0x80000000
- 800716e:	4618      	mov	r0, r3
- 8007170:	f7f9 f9fa 	bl	8000568 <__aeabi_f2d>
- 8007174:	f04f 0200 	mov.w	r2, #0
- 8007178:	4b78      	ldr	r3, [pc, #480]	; (800735c <driveWheelTask+0x33c>)
- 800717a:	f7f9 fb77 	bl	800086c <__aeabi_ddiv>
- 800717e:	4603      	mov	r3, r0
- 8007180:	460c      	mov	r4, r1
- 8007182:	4618      	mov	r0, r3
- 8007184:	4621      	mov	r1, r4
- 8007186:	a36e      	add	r3, pc, #440	; (adr r3, 8007340 <driveWheelTask+0x320>)
- 8007188:	e9d3 2300 	ldrd	r2, r3, [r3]
- 800718c:	f7f9 fa44 	bl	8000618 <__aeabi_dmul>
- 8007190:	4603      	mov	r3, r0
- 8007192:	460c      	mov	r4, r1
- 8007194:	4618      	mov	r0, r3
- 8007196:	4621      	mov	r1, r4
- 8007198:	f04f 0200 	mov.w	r2, #0
- 800719c:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
- 80071a0:	f7f9 fb64 	bl	800086c <__aeabi_ddiv>
- 80071a4:	4603      	mov	r3, r0
- 80071a6:	460c      	mov	r4, r1
- 80071a8:	4618      	mov	r0, r3
- 80071aa:	4621      	mov	r1, r4
- 80071ac:	f7f9 fd0c 	bl	8000bc8 <__aeabi_d2f>
- 80071b0:	4602      	mov	r2, r0
- 80071b2:	4b6b      	ldr	r3, [pc, #428]	; (8007360 <driveWheelTask+0x340>)
- 80071b4:	61da      	str	r2, [r3, #28]
- 80071b6:	4b6b      	ldr	r3, [pc, #428]	; (8007364 <driveWheelTask+0x344>)
- 80071b8:	f64f 72fd 	movw	r2, #65533	; 0xfffd
- 80071bc:	801a      	strh	r2, [r3, #0]
- 80071be:	e301      	b.n	80077c4 <driveWheelTask+0x7a4>
-	  else if(cnt_tim_omega==200){mecanum.speed.vw=-(float)(rc.ch5-  0.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=-3;}
- 80071c0:	4b64      	ldr	r3, [pc, #400]	; (8007354 <driveWheelTask+0x334>)
- 80071c2:	881b      	ldrh	r3, [r3, #0]
- 80071c4:	2bc8      	cmp	r3, #200	; 0xc8
- 80071c6:	d137      	bne.n	8007238 <driveWheelTask+0x218>
- 80071c8:	4b61      	ldr	r3, [pc, #388]	; (8007350 <driveWheelTask+0x330>)
- 80071ca:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
- 80071ce:	4618      	mov	r0, r3
- 80071d0:	f7f9 f9b8 	bl	8000544 <__aeabi_i2d>
- 80071d4:	4603      	mov	r3, r0
- 80071d6:	460c      	mov	r4, r1
- 80071d8:	4618      	mov	r0, r3
- 80071da:	4621      	mov	r1, r4
- 80071dc:	f7f9 fcf4 	bl	8000bc8 <__aeabi_d2f>
- 80071e0:	4603      	mov	r3, r0
- 80071e2:	f083 4300 	eor.w	r3, r3, #2147483648	; 0x80000000
- 80071e6:	4618      	mov	r0, r3
- 80071e8:	f7f9 f9be 	bl	8000568 <__aeabi_f2d>
- 80071ec:	f04f 0200 	mov.w	r2, #0
- 80071f0:	4b5a      	ldr	r3, [pc, #360]	; (800735c <driveWheelTask+0x33c>)
- 80071f2:	f7f9 fb3b 	bl	800086c <__aeabi_ddiv>
- 80071f6:	4603      	mov	r3, r0
- 80071f8:	460c      	mov	r4, r1
- 80071fa:	4618      	mov	r0, r3
- 80071fc:	4621      	mov	r1, r4
- 80071fe:	a350      	add	r3, pc, #320	; (adr r3, 8007340 <driveWheelTask+0x320>)
- 8007200:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8007204:	f7f9 fa08 	bl	8000618 <__aeabi_dmul>
- 8007208:	4603      	mov	r3, r0
- 800720a:	460c      	mov	r4, r1
- 800720c:	4618      	mov	r0, r3
- 800720e:	4621      	mov	r1, r4
- 8007210:	f04f 0200 	mov.w	r2, #0
- 8007214:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
- 8007218:	f7f9 fb28 	bl	800086c <__aeabi_ddiv>
- 800721c:	4603      	mov	r3, r0
- 800721e:	460c      	mov	r4, r1
- 8007220:	4618      	mov	r0, r3
- 8007222:	4621      	mov	r1, r4
- 8007224:	f7f9 fcd0 	bl	8000bc8 <__aeabi_d2f>
- 8007228:	4602      	mov	r2, r0
- 800722a:	4b4d      	ldr	r3, [pc, #308]	; (8007360 <driveWheelTask+0x340>)
- 800722c:	61da      	str	r2, [r3, #28]
- 800722e:	4b4d      	ldr	r3, [pc, #308]	; (8007364 <driveWheelTask+0x344>)
- 8007230:	f64f 72fd 	movw	r2, #65533	; 0xfffd
- 8007234:	801a      	strh	r2, [r3, #0]
- 8007236:	e2c5      	b.n	80077c4 <driveWheelTask+0x7a4>
-	  else if(cnt_tim_omega<250) {mecanum.speed.vw=-(float)(rc.ch5+100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=3;}
- 8007238:	4b46      	ldr	r3, [pc, #280]	; (8007354 <driveWheelTask+0x334>)
- 800723a:	881b      	ldrh	r3, [r3, #0]
- 800723c:	2bf9      	cmp	r3, #249	; 0xf9
- 800723e:	d83b      	bhi.n	80072b8 <driveWheelTask+0x298>
- 8007240:	4b43      	ldr	r3, [pc, #268]	; (8007350 <driveWheelTask+0x330>)
- 8007242:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
- 8007246:	4618      	mov	r0, r3
- 8007248:	f7f9 f97c 	bl	8000544 <__aeabi_i2d>
- 800724c:	f04f 0200 	mov.w	r2, #0
- 8007250:	4b45      	ldr	r3, [pc, #276]	; (8007368 <driveWheelTask+0x348>)
- 8007252:	f7f9 f82b 	bl	80002ac <__adddf3>
- 8007256:	4603      	mov	r3, r0
- 8007258:	460c      	mov	r4, r1
- 800725a:	4618      	mov	r0, r3
- 800725c:	4621      	mov	r1, r4
- 800725e:	f7f9 fcb3 	bl	8000bc8 <__aeabi_d2f>
- 8007262:	4603      	mov	r3, r0
- 8007264:	f083 4300 	eor.w	r3, r3, #2147483648	; 0x80000000
- 8007268:	4618      	mov	r0, r3
- 800726a:	f7f9 f97d 	bl	8000568 <__aeabi_f2d>
- 800726e:	f04f 0200 	mov.w	r2, #0
- 8007272:	4b3a      	ldr	r3, [pc, #232]	; (800735c <driveWheelTask+0x33c>)
- 8007274:	f7f9 fafa 	bl	800086c <__aeabi_ddiv>
- 8007278:	4603      	mov	r3, r0
- 800727a:	460c      	mov	r4, r1
- 800727c:	4618      	mov	r0, r3
- 800727e:	4621      	mov	r1, r4
- 8007280:	a32f      	add	r3, pc, #188	; (adr r3, 8007340 <driveWheelTask+0x320>)
- 8007282:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8007286:	f7f9 f9c7 	bl	8000618 <__aeabi_dmul>
- 800728a:	4603      	mov	r3, r0
- 800728c:	460c      	mov	r4, r1
- 800728e:	4618      	mov	r0, r3
- 8007290:	4621      	mov	r1, r4
- 8007292:	f04f 0200 	mov.w	r2, #0
- 8007296:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
- 800729a:	f7f9 fae7 	bl	800086c <__aeabi_ddiv>
- 800729e:	4603      	mov	r3, r0
- 80072a0:	460c      	mov	r4, r1
- 80072a2:	4618      	mov	r0, r3
- 80072a4:	4621      	mov	r1, r4
- 80072a6:	f7f9 fc8f 	bl	8000bc8 <__aeabi_d2f>
- 80072aa:	4602      	mov	r2, r0
- 80072ac:	4b2c      	ldr	r3, [pc, #176]	; (8007360 <driveWheelTask+0x340>)
- 80072ae:	61da      	str	r2, [r3, #28]
- 80072b0:	4b2c      	ldr	r3, [pc, #176]	; (8007364 <driveWheelTask+0x344>)
- 80072b2:	2203      	movs	r2, #3
- 80072b4:	801a      	strh	r2, [r3, #0]
- 80072b6:	e285      	b.n	80077c4 <driveWheelTask+0x7a4>
-	  else if(cnt_tim_omega<300) {mecanum.speed.vw=-(float)(rc.ch5+300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=0;}
- 80072b8:	4b26      	ldr	r3, [pc, #152]	; (8007354 <driveWheelTask+0x334>)
- 80072ba:	881b      	ldrh	r3, [r3, #0]
- 80072bc:	f5b3 7f96 	cmp.w	r3, #300	; 0x12c
- 80072c0:	d254      	bcs.n	800736c <driveWheelTask+0x34c>
- 80072c2:	4b23      	ldr	r3, [pc, #140]	; (8007350 <driveWheelTask+0x330>)
- 80072c4:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
- 80072c8:	4618      	mov	r0, r3
- 80072ca:	f7f9 f93b 	bl	8000544 <__aeabi_i2d>
- 80072ce:	a31c      	add	r3, pc, #112	; (adr r3, 8007340 <driveWheelTask+0x320>)
- 80072d0:	e9d3 2300 	ldrd	r2, r3, [r3]
- 80072d4:	f7f8 ffea 	bl	80002ac <__adddf3>
- 80072d8:	4603      	mov	r3, r0
- 80072da:	460c      	mov	r4, r1
- 80072dc:	4618      	mov	r0, r3
- 80072de:	4621      	mov	r1, r4
- 80072e0:	f7f9 fc72 	bl	8000bc8 <__aeabi_d2f>
- 80072e4:	4603      	mov	r3, r0
- 80072e6:	f083 4300 	eor.w	r3, r3, #2147483648	; 0x80000000
- 80072ea:	4618      	mov	r0, r3
- 80072ec:	f7f9 f93c 	bl	8000568 <__aeabi_f2d>
- 80072f0:	f04f 0200 	mov.w	r2, #0
- 80072f4:	4b19      	ldr	r3, [pc, #100]	; (800735c <driveWheelTask+0x33c>)
- 80072f6:	f7f9 fab9 	bl	800086c <__aeabi_ddiv>
- 80072fa:	4603      	mov	r3, r0
- 80072fc:	460c      	mov	r4, r1
- 80072fe:	4618      	mov	r0, r3
- 8007300:	4621      	mov	r1, r4
- 8007302:	a30f      	add	r3, pc, #60	; (adr r3, 8007340 <driveWheelTask+0x320>)
- 8007304:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8007308:	f7f9 f986 	bl	8000618 <__aeabi_dmul>
- 800730c:	4603      	mov	r3, r0
- 800730e:	460c      	mov	r4, r1
- 8007310:	4618      	mov	r0, r3
- 8007312:	4621      	mov	r1, r4
- 8007314:	f04f 0200 	mov.w	r2, #0
- 8007318:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
- 800731c:	f7f9 faa6 	bl	800086c <__aeabi_ddiv>
- 8007320:	4603      	mov	r3, r0
- 8007322:	460c      	mov	r4, r1
- 8007324:	4618      	mov	r0, r3
- 8007326:	4621      	mov	r1, r4
- 8007328:	f7f9 fc4e 	bl	8000bc8 <__aeabi_d2f>
- 800732c:	4602      	mov	r2, r0
- 800732e:	4b0c      	ldr	r3, [pc, #48]	; (8007360 <driveWheelTask+0x340>)
- 8007330:	61da      	str	r2, [r3, #28]
- 8007332:	4b0c      	ldr	r3, [pc, #48]	; (8007364 <driveWheelTask+0x344>)
- 8007334:	2200      	movs	r2, #0
- 8007336:	801a      	strh	r2, [r3, #0]
- 8007338:	e244      	b.n	80077c4 <driveWheelTask+0x7a4>
- 800733a:	bf00      	nop
+ 80070b8:	f64f 72fb 	movw	r2, #65531	; 0xfffb
+ 80070bc:	801a      	strh	r2, [r3, #0]
+ 80070be:	e382      	b.n	80077c6 <driveWheelTask+0x7a6>
+		else if(cnt_tim_omega<=150){mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
+ 80070c0:	4ba4      	ldr	r3, [pc, #656]	; (8007354 <driveWheelTask+0x334>)
+ 80070c2:	881b      	ldrh	r3, [r3, #0]
+ 80070c4:	2b96      	cmp	r3, #150	; 0x96
+ 80070c6:	d83c      	bhi.n	8007142 <driveWheelTask+0x122>
+ 80070c8:	4ba1      	ldr	r3, [pc, #644]	; (8007350 <driveWheelTask+0x330>)
+ 80070ca:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
+ 80070ce:	4618      	mov	r0, r3
+ 80070d0:	f7f9 fa38 	bl	8000544 <__aeabi_i2d>
+ 80070d4:	a39a      	add	r3, pc, #616	; (adr r3, 8007340 <driveWheelTask+0x320>)
+ 80070d6:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80070da:	f7f9 f8e5 	bl	80002a8 <__aeabi_dsub>
+ 80070de:	4603      	mov	r3, r0
+ 80070e0:	460c      	mov	r4, r1
+ 80070e2:	4618      	mov	r0, r3
+ 80070e4:	4621      	mov	r1, r4
+ 80070e6:	f7f9 fd6f 	bl	8000bc8 <__aeabi_d2f>
+ 80070ea:	4603      	mov	r3, r0
+ 80070ec:	f083 4300 	eor.w	r3, r3, #2147483648	; 0x80000000
+ 80070f0:	4618      	mov	r0, r3
+ 80070f2:	f7f9 fa39 	bl	8000568 <__aeabi_f2d>
+ 80070f6:	f04f 0200 	mov.w	r2, #0
+ 80070fa:	4b98      	ldr	r3, [pc, #608]	; (800735c <driveWheelTask+0x33c>)
+ 80070fc:	f7f9 fbb6 	bl	800086c <__aeabi_ddiv>
+ 8007100:	4603      	mov	r3, r0
+ 8007102:	460c      	mov	r4, r1
+ 8007104:	4618      	mov	r0, r3
+ 8007106:	4621      	mov	r1, r4
+ 8007108:	a38d      	add	r3, pc, #564	; (adr r3, 8007340 <driveWheelTask+0x320>)
+ 800710a:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 800710e:	f7f9 fa83 	bl	8000618 <__aeabi_dmul>
+ 8007112:	4603      	mov	r3, r0
+ 8007114:	460c      	mov	r4, r1
+ 8007116:	4618      	mov	r0, r3
+ 8007118:	4621      	mov	r1, r4
+ 800711a:	f04f 0200 	mov.w	r2, #0
+ 800711e:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
+ 8007122:	f7f9 fba3 	bl	800086c <__aeabi_ddiv>
+ 8007126:	4603      	mov	r3, r0
+ 8007128:	460c      	mov	r4, r1
+ 800712a:	4618      	mov	r0, r3
+ 800712c:	4621      	mov	r1, r4
+ 800712e:	f7f9 fd4b 	bl	8000bc8 <__aeabi_d2f>
+ 8007132:	4602      	mov	r2, r0
+ 8007134:	4b8a      	ldr	r3, [pc, #552]	; (8007360 <driveWheelTask+0x340>)
+ 8007136:	61da      	str	r2, [r3, #28]
+ 8007138:	4b8a      	ldr	r3, [pc, #552]	; (8007364 <driveWheelTask+0x344>)
+ 800713a:	f64f 72fc 	movw	r2, #65532	; 0xfffc
+ 800713e:	801a      	strh	r2, [r3, #0]
+ 8007140:	e341      	b.n	80077c6 <driveWheelTask+0x7a6>
+		else if(cnt_tim_omega<=199){mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
+ 8007142:	4b84      	ldr	r3, [pc, #528]	; (8007354 <driveWheelTask+0x334>)
+ 8007144:	881b      	ldrh	r3, [r3, #0]
+ 8007146:	2bc7      	cmp	r3, #199	; 0xc7
+ 8007148:	d83c      	bhi.n	80071c4 <driveWheelTask+0x1a4>
+ 800714a:	4b81      	ldr	r3, [pc, #516]	; (8007350 <driveWheelTask+0x330>)
+ 800714c:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
+ 8007150:	4618      	mov	r0, r3
+ 8007152:	f7f9 f9f7 	bl	8000544 <__aeabi_i2d>
+ 8007156:	f04f 0200 	mov.w	r2, #0
+ 800715a:	4b83      	ldr	r3, [pc, #524]	; (8007368 <driveWheelTask+0x348>)
+ 800715c:	f7f9 f8a4 	bl	80002a8 <__aeabi_dsub>
+ 8007160:	4603      	mov	r3, r0
+ 8007162:	460c      	mov	r4, r1
+ 8007164:	4618      	mov	r0, r3
+ 8007166:	4621      	mov	r1, r4
+ 8007168:	f7f9 fd2e 	bl	8000bc8 <__aeabi_d2f>
+ 800716c:	4603      	mov	r3, r0
+ 800716e:	f083 4300 	eor.w	r3, r3, #2147483648	; 0x80000000
+ 8007172:	4618      	mov	r0, r3
+ 8007174:	f7f9 f9f8 	bl	8000568 <__aeabi_f2d>
+ 8007178:	f04f 0200 	mov.w	r2, #0
+ 800717c:	4b77      	ldr	r3, [pc, #476]	; (800735c <driveWheelTask+0x33c>)
+ 800717e:	f7f9 fb75 	bl	800086c <__aeabi_ddiv>
+ 8007182:	4603      	mov	r3, r0
+ 8007184:	460c      	mov	r4, r1
+ 8007186:	4618      	mov	r0, r3
+ 8007188:	4621      	mov	r1, r4
+ 800718a:	a36d      	add	r3, pc, #436	; (adr r3, 8007340 <driveWheelTask+0x320>)
+ 800718c:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8007190:	f7f9 fa42 	bl	8000618 <__aeabi_dmul>
+ 8007194:	4603      	mov	r3, r0
+ 8007196:	460c      	mov	r4, r1
+ 8007198:	4618      	mov	r0, r3
+ 800719a:	4621      	mov	r1, r4
+ 800719c:	f04f 0200 	mov.w	r2, #0
+ 80071a0:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
+ 80071a4:	f7f9 fb62 	bl	800086c <__aeabi_ddiv>
+ 80071a8:	4603      	mov	r3, r0
+ 80071aa:	460c      	mov	r4, r1
+ 80071ac:	4618      	mov	r0, r3
+ 80071ae:	4621      	mov	r1, r4
+ 80071b0:	f7f9 fd0a 	bl	8000bc8 <__aeabi_d2f>
+ 80071b4:	4602      	mov	r2, r0
+ 80071b6:	4b6a      	ldr	r3, [pc, #424]	; (8007360 <driveWheelTask+0x340>)
+ 80071b8:	61da      	str	r2, [r3, #28]
+ 80071ba:	4b6a      	ldr	r3, [pc, #424]	; (8007364 <driveWheelTask+0x344>)
+ 80071bc:	f64f 72fe 	movw	r2, #65534	; 0xfffe
+ 80071c0:	801a      	strh	r2, [r3, #0]
+ 80071c2:	e300      	b.n	80077c6 <driveWheelTask+0x7a6>
+		else if(cnt_tim_omega==200){mecanum.speed.vw=-(float)(rc.ch5-  0.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=0;}
+ 80071c4:	4b63      	ldr	r3, [pc, #396]	; (8007354 <driveWheelTask+0x334>)
+ 80071c6:	881b      	ldrh	r3, [r3, #0]
+ 80071c8:	2bc8      	cmp	r3, #200	; 0xc8
+ 80071ca:	d136      	bne.n	800723a <driveWheelTask+0x21a>
+ 80071cc:	4b60      	ldr	r3, [pc, #384]	; (8007350 <driveWheelTask+0x330>)
+ 80071ce:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
+ 80071d2:	4618      	mov	r0, r3
+ 80071d4:	f7f9 f9b6 	bl	8000544 <__aeabi_i2d>
+ 80071d8:	4603      	mov	r3, r0
+ 80071da:	460c      	mov	r4, r1
+ 80071dc:	4618      	mov	r0, r3
+ 80071de:	4621      	mov	r1, r4
+ 80071e0:	f7f9 fcf2 	bl	8000bc8 <__aeabi_d2f>
+ 80071e4:	4603      	mov	r3, r0
+ 80071e6:	f083 4300 	eor.w	r3, r3, #2147483648	; 0x80000000
+ 80071ea:	4618      	mov	r0, r3
+ 80071ec:	f7f9 f9bc 	bl	8000568 <__aeabi_f2d>
+ 80071f0:	f04f 0200 	mov.w	r2, #0
+ 80071f4:	4b59      	ldr	r3, [pc, #356]	; (800735c <driveWheelTask+0x33c>)
+ 80071f6:	f7f9 fb39 	bl	800086c <__aeabi_ddiv>
+ 80071fa:	4603      	mov	r3, r0
+ 80071fc:	460c      	mov	r4, r1
+ 80071fe:	4618      	mov	r0, r3
+ 8007200:	4621      	mov	r1, r4
+ 8007202:	a34f      	add	r3, pc, #316	; (adr r3, 8007340 <driveWheelTask+0x320>)
+ 8007204:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8007208:	f7f9 fa06 	bl	8000618 <__aeabi_dmul>
+ 800720c:	4603      	mov	r3, r0
+ 800720e:	460c      	mov	r4, r1
+ 8007210:	4618      	mov	r0, r3
+ 8007212:	4621      	mov	r1, r4
+ 8007214:	f04f 0200 	mov.w	r2, #0
+ 8007218:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
+ 800721c:	f7f9 fb26 	bl	800086c <__aeabi_ddiv>
+ 8007220:	4603      	mov	r3, r0
+ 8007222:	460c      	mov	r4, r1
+ 8007224:	4618      	mov	r0, r3
+ 8007226:	4621      	mov	r1, r4
+ 8007228:	f7f9 fcce 	bl	8000bc8 <__aeabi_d2f>
+ 800722c:	4602      	mov	r2, r0
+ 800722e:	4b4c      	ldr	r3, [pc, #304]	; (8007360 <driveWheelTask+0x340>)
+ 8007230:	61da      	str	r2, [r3, #28]
+ 8007232:	4b4c      	ldr	r3, [pc, #304]	; (8007364 <driveWheelTask+0x344>)
+ 8007234:	2200      	movs	r2, #0
+ 8007236:	801a      	strh	r2, [r3, #0]
+ 8007238:	e2c5      	b.n	80077c6 <driveWheelTask+0x7a6>
+		else if(cnt_tim_omega<=250){mecanum.speed.vw=-(float)(rc.ch5+100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=2;}
+ 800723a:	4b46      	ldr	r3, [pc, #280]	; (8007354 <driveWheelTask+0x334>)
+ 800723c:	881b      	ldrh	r3, [r3, #0]
+ 800723e:	2bfa      	cmp	r3, #250	; 0xfa
+ 8007240:	d83b      	bhi.n	80072ba <driveWheelTask+0x29a>
+ 8007242:	4b43      	ldr	r3, [pc, #268]	; (8007350 <driveWheelTask+0x330>)
+ 8007244:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
+ 8007248:	4618      	mov	r0, r3
+ 800724a:	f7f9 f97b 	bl	8000544 <__aeabi_i2d>
+ 800724e:	f04f 0200 	mov.w	r2, #0
+ 8007252:	4b45      	ldr	r3, [pc, #276]	; (8007368 <driveWheelTask+0x348>)
+ 8007254:	f7f9 f82a 	bl	80002ac <__adddf3>
+ 8007258:	4603      	mov	r3, r0
+ 800725a:	460c      	mov	r4, r1
+ 800725c:	4618      	mov	r0, r3
+ 800725e:	4621      	mov	r1, r4
+ 8007260:	f7f9 fcb2 	bl	8000bc8 <__aeabi_d2f>
+ 8007264:	4603      	mov	r3, r0
+ 8007266:	f083 4300 	eor.w	r3, r3, #2147483648	; 0x80000000
+ 800726a:	4618      	mov	r0, r3
+ 800726c:	f7f9 f97c 	bl	8000568 <__aeabi_f2d>
+ 8007270:	f04f 0200 	mov.w	r2, #0
+ 8007274:	4b39      	ldr	r3, [pc, #228]	; (800735c <driveWheelTask+0x33c>)
+ 8007276:	f7f9 faf9 	bl	800086c <__aeabi_ddiv>
+ 800727a:	4603      	mov	r3, r0
+ 800727c:	460c      	mov	r4, r1
+ 800727e:	4618      	mov	r0, r3
+ 8007280:	4621      	mov	r1, r4
+ 8007282:	a32f      	add	r3, pc, #188	; (adr r3, 8007340 <driveWheelTask+0x320>)
+ 8007284:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8007288:	f7f9 f9c6 	bl	8000618 <__aeabi_dmul>
+ 800728c:	4603      	mov	r3, r0
+ 800728e:	460c      	mov	r4, r1
+ 8007290:	4618      	mov	r0, r3
+ 8007292:	4621      	mov	r1, r4
+ 8007294:	f04f 0200 	mov.w	r2, #0
+ 8007298:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
+ 800729c:	f7f9 fae6 	bl	800086c <__aeabi_ddiv>
+ 80072a0:	4603      	mov	r3, r0
+ 80072a2:	460c      	mov	r4, r1
+ 80072a4:	4618      	mov	r0, r3
+ 80072a6:	4621      	mov	r1, r4
+ 80072a8:	f7f9 fc8e 	bl	8000bc8 <__aeabi_d2f>
+ 80072ac:	4602      	mov	r2, r0
+ 80072ae:	4b2c      	ldr	r3, [pc, #176]	; (8007360 <driveWheelTask+0x340>)
+ 80072b0:	61da      	str	r2, [r3, #28]
+ 80072b2:	4b2c      	ldr	r3, [pc, #176]	; (8007364 <driveWheelTask+0x344>)
+ 80072b4:	2202      	movs	r2, #2
+ 80072b6:	801a      	strh	r2, [r3, #0]
+ 80072b8:	e285      	b.n	80077c6 <driveWheelTask+0x7a6>
+		else if(cnt_tim_omega<=300){mecanum.speed.vw=-(float)(rc.ch5+300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=4;}
+ 80072ba:	4b26      	ldr	r3, [pc, #152]	; (8007354 <driveWheelTask+0x334>)
+ 80072bc:	881b      	ldrh	r3, [r3, #0]
+ 80072be:	f5b3 7f96 	cmp.w	r3, #300	; 0x12c
+ 80072c2:	d853      	bhi.n	800736c <driveWheelTask+0x34c>
+ 80072c4:	4b22      	ldr	r3, [pc, #136]	; (8007350 <driveWheelTask+0x330>)
+ 80072c6:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
+ 80072ca:	4618      	mov	r0, r3
+ 80072cc:	f7f9 f93a 	bl	8000544 <__aeabi_i2d>
+ 80072d0:	a31b      	add	r3, pc, #108	; (adr r3, 8007340 <driveWheelTask+0x320>)
+ 80072d2:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80072d6:	f7f8 ffe9 	bl	80002ac <__adddf3>
+ 80072da:	4603      	mov	r3, r0
+ 80072dc:	460c      	mov	r4, r1
+ 80072de:	4618      	mov	r0, r3
+ 80072e0:	4621      	mov	r1, r4
+ 80072e2:	f7f9 fc71 	bl	8000bc8 <__aeabi_d2f>
+ 80072e6:	4603      	mov	r3, r0
+ 80072e8:	f083 4300 	eor.w	r3, r3, #2147483648	; 0x80000000
+ 80072ec:	4618      	mov	r0, r3
+ 80072ee:	f7f9 f93b 	bl	8000568 <__aeabi_f2d>
+ 80072f2:	f04f 0200 	mov.w	r2, #0
+ 80072f6:	4b19      	ldr	r3, [pc, #100]	; (800735c <driveWheelTask+0x33c>)
+ 80072f8:	f7f9 fab8 	bl	800086c <__aeabi_ddiv>
+ 80072fc:	4603      	mov	r3, r0
+ 80072fe:	460c      	mov	r4, r1
+ 8007300:	4618      	mov	r0, r3
+ 8007302:	4621      	mov	r1, r4
+ 8007304:	a30e      	add	r3, pc, #56	; (adr r3, 8007340 <driveWheelTask+0x320>)
+ 8007306:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 800730a:	f7f9 f985 	bl	8000618 <__aeabi_dmul>
+ 800730e:	4603      	mov	r3, r0
+ 8007310:	460c      	mov	r4, r1
+ 8007312:	4618      	mov	r0, r3
+ 8007314:	4621      	mov	r1, r4
+ 8007316:	f04f 0200 	mov.w	r2, #0
+ 800731a:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
+ 800731e:	f7f9 faa5 	bl	800086c <__aeabi_ddiv>
+ 8007322:	4603      	mov	r3, r0
+ 8007324:	460c      	mov	r4, r1
+ 8007326:	4618      	mov	r0, r3
+ 8007328:	4621      	mov	r1, r4
+ 800732a:	f7f9 fc4d 	bl	8000bc8 <__aeabi_d2f>
+ 800732e:	4602      	mov	r2, r0
+ 8007330:	4b0b      	ldr	r3, [pc, #44]	; (8007360 <driveWheelTask+0x340>)
+ 8007332:	61da      	str	r2, [r3, #28]
+ 8007334:	4b0b      	ldr	r3, [pc, #44]	; (8007364 <driveWheelTask+0x344>)
+ 8007336:	2204      	movs	r2, #4
+ 8007338:	801a      	strh	r2, [r3, #0]
+ 800733a:	e244      	b.n	80077c6 <driveWheelTask+0x7a6>
  800733c:	f3af 8000 	nop.w
  8007340:	00000000 	.word	0x00000000
  8007344:	4072c000 	.word	0x4072c000
  8007348:	44ce4000 	.word	0x44ce4000
  800734c:	43160000 	.word	0x43160000
  8007350:	20000384 	.word	0x20000384
- 8007354:	20000548 	.word	0x20000548
+ 8007354:	20000544 	.word	0x20000544
  8007358:	40790000 	.word	0x40790000
  800735c:	4084a000 	.word	0x4084a000
- 8007360:	2000054c 	.word	0x2000054c
- 8007364:	200003c0 	.word	0x200003c0
+ 8007360:	20000548 	.word	0x20000548
+ 8007364:	200005b4 	.word	0x200005b4
  8007368:	40590000 	.word	0x40590000
-	  else if(cnt_tim_omega<400) {mecanum.speed.vw=-(float)(rc.ch5+400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=0;}
+		else if(cnt_tim_omega<=400){mecanum.speed.vw=-(float)(rc.ch5+400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=5;}
  800736c:	4bc6      	ldr	r3, [pc, #792]	; (8007688 <driveWheelTask+0x668>)
  800736e:	881b      	ldrh	r3, [r3, #0]
  8007370:	f5b3 7fc8 	cmp.w	r3, #400	; 0x190
- 8007374:	d23b      	bcs.n	80073ee <driveWheelTask+0x3ce>
+ 8007374:	d83b      	bhi.n	80073ee <driveWheelTask+0x3ce>
  8007376:	4bc5      	ldr	r3, [pc, #788]	; (800768c <driveWheelTask+0x66c>)
  8007378:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  800737c:	4618      	mov	r0, r3
@@ -16770,14 +16769,14 @@ void driveWheelTask() {
  80073e2:	4bad      	ldr	r3, [pc, #692]	; (8007698 <driveWheelTask+0x678>)
  80073e4:	61da      	str	r2, [r3, #28]
  80073e6:	4bad      	ldr	r3, [pc, #692]	; (800769c <driveWheelTask+0x67c>)
- 80073e8:	2200      	movs	r2, #0
+ 80073e8:	2205      	movs	r2, #5
  80073ea:	801a      	strh	r2, [r3, #0]
- 80073ec:	e1ea      	b.n	80077c4 <driveWheelTask+0x7a4>
-	  else if(cnt_tim_omega<500) {mecanum.speed.vw=-(float)(rc.ch5+400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=0;}
+ 80073ec:	e1eb      	b.n	80077c6 <driveWheelTask+0x7a6>
+		else if(cnt_tim_omega<=500){mecanum.speed.vw=-(float)(rc.ch5+400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=5;}
  80073ee:	4ba6      	ldr	r3, [pc, #664]	; (8007688 <driveWheelTask+0x668>)
  80073f0:	881b      	ldrh	r3, [r3, #0]
  80073f2:	f5b3 7ffa 	cmp.w	r3, #500	; 0x1f4
- 80073f6:	d23b      	bcs.n	8007470 <driveWheelTask+0x450>
+ 80073f6:	d83b      	bhi.n	8007470 <driveWheelTask+0x450>
  80073f8:	4ba4      	ldr	r3, [pc, #656]	; (800768c <driveWheelTask+0x66c>)
  80073fa:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  80073fe:	4618      	mov	r0, r3
@@ -16820,13 +16819,13 @@ void driveWheelTask() {
  8007464:	4b8c      	ldr	r3, [pc, #560]	; (8007698 <driveWheelTask+0x678>)
  8007466:	61da      	str	r2, [r3, #28]
  8007468:	4b8c      	ldr	r3, [pc, #560]	; (800769c <driveWheelTask+0x67c>)
- 800746a:	2200      	movs	r2, #0
+ 800746a:	2205      	movs	r2, #5
  800746c:	801a      	strh	r2, [r3, #0]
- 800746e:	e1a9      	b.n	80077c4 <driveWheelTask+0x7a4>
-	  else if(cnt_tim_omega<550) {mecanum.speed.vw=-(float)(rc.ch5+300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=0;}
+ 800746e:	e1aa      	b.n	80077c6 <driveWheelTask+0x7a6>
+		else if(cnt_tim_omega<=550){mecanum.speed.vw=-(float)(rc.ch5+300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=4;}
  8007470:	4b85      	ldr	r3, [pc, #532]	; (8007688 <driveWheelTask+0x668>)
  8007472:	881b      	ldrh	r3, [r3, #0]
- 8007474:	f240 2225 	movw	r2, #549	; 0x225
+ 8007474:	f240 2226 	movw	r2, #550	; 0x226
  8007478:	4293      	cmp	r3, r2
  800747a:	d83b      	bhi.n	80074f4 <driveWheelTask+0x4d4>
  800747c:	4b83      	ldr	r3, [pc, #524]	; (800768c <driveWheelTask+0x66c>)
@@ -16871,10 +16870,10 @@ void driveWheelTask() {
  80074e8:	4b6b      	ldr	r3, [pc, #428]	; (8007698 <driveWheelTask+0x678>)
  80074ea:	61da      	str	r2, [r3, #28]
  80074ec:	4b6b      	ldr	r3, [pc, #428]	; (800769c <driveWheelTask+0x67c>)
- 80074ee:	2200      	movs	r2, #0
+ 80074ee:	2204      	movs	r2, #4
  80074f0:	801a      	strh	r2, [r3, #0]
- 80074f2:	e167      	b.n	80077c4 <driveWheelTask+0x7a4>
-	  else if(cnt_tim_omega<600) {mecanum.speed.vw=-(float)(rc.ch5+100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=3;}
+ 80074f2:	e168      	b.n	80077c6 <driveWheelTask+0x7a6>
+		else if(cnt_tim_omega<=599){mecanum.speed.vw=-(float)(rc.ch5+100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=2;}
  80074f4:	4b64      	ldr	r3, [pc, #400]	; (8007688 <driveWheelTask+0x668>)
  80074f6:	881b      	ldrh	r3, [r3, #0]
  80074f8:	f5b3 7f16 	cmp.w	r3, #600	; 0x258
@@ -16921,10 +16920,10 @@ void driveWheelTask() {
  800756a:	4b4b      	ldr	r3, [pc, #300]	; (8007698 <driveWheelTask+0x678>)
  800756c:	61da      	str	r2, [r3, #28]
  800756e:	4b4b      	ldr	r3, [pc, #300]	; (800769c <driveWheelTask+0x67c>)
- 8007570:	2203      	movs	r2, #3
+ 8007570:	2202      	movs	r2, #2
  8007572:	801a      	strh	r2, [r3, #0]
- 8007574:	e126      	b.n	80077c4 <driveWheelTask+0x7a4>
-	  else if(cnt_tim_omega==600){mecanum.speed.vw=-(float)(rc.ch5+  0.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=3;}
+ 8007574:	e127      	b.n	80077c6 <driveWheelTask+0x7a6>
+		else if(cnt_tim_omega==600){mecanum.speed.vw=-(float)(rc.ch5+  0.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=0;}
  8007576:	4b44      	ldr	r3, [pc, #272]	; (8007688 <driveWheelTask+0x668>)
  8007578:	881b      	ldrh	r3, [r3, #0]
  800757a:	f5b3 7f16 	cmp.w	r3, #600	; 0x258
@@ -16971,13 +16970,13 @@ void driveWheelTask() {
  80075ee:	4b2a      	ldr	r3, [pc, #168]	; (8007698 <driveWheelTask+0x678>)
  80075f0:	61da      	str	r2, [r3, #28]
  80075f2:	4b2a      	ldr	r3, [pc, #168]	; (800769c <driveWheelTask+0x67c>)
- 80075f4:	2203      	movs	r2, #3
+ 80075f4:	2200      	movs	r2, #0
  80075f6:	801a      	strh	r2, [r3, #0]
- 80075f8:	e0e4      	b.n	80077c4 <driveWheelTask+0x7a4>
-	  else if(cnt_tim_omega<650) {mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=-3;}
+ 80075f8:	e0e5      	b.n	80077c6 <driveWheelTask+0x7a6>
+		else if(cnt_tim_omega<=650){mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
  80075fa:	4b23      	ldr	r3, [pc, #140]	; (8007688 <driveWheelTask+0x668>)
  80075fc:	881b      	ldrh	r3, [r3, #0]
- 80075fe:	f240 2289 	movw	r2, #649	; 0x289
+ 80075fe:	f240 228a 	movw	r2, #650	; 0x28a
  8007602:	4293      	cmp	r3, r2
  8007604:	d84e      	bhi.n	80076a4 <driveWheelTask+0x684>
  8007606:	4b21      	ldr	r3, [pc, #132]	; (800768c <driveWheelTask+0x66c>)
@@ -17022,23 +17021,23 @@ void driveWheelTask() {
  8007672:	4b09      	ldr	r3, [pc, #36]	; (8007698 <driveWheelTask+0x678>)
  8007674:	61da      	str	r2, [r3, #28]
  8007676:	4b09      	ldr	r3, [pc, #36]	; (800769c <driveWheelTask+0x67c>)
- 8007678:	f64f 72fd 	movw	r2, #65533	; 0xfffd
+ 8007678:	f64f 72fe 	movw	r2, #65534	; 0xfffe
  800767c:	801a      	strh	r2, [r3, #0]
- 800767e:	e0a1      	b.n	80077c4 <driveWheelTask+0x7a4>
+ 800767e:	e0a2      	b.n	80077c6 <driveWheelTask+0x7a6>
  8007680:	00000000 	.word	0x00000000
  8007684:	4072c000 	.word	0x4072c000
- 8007688:	20000548 	.word	0x20000548
+ 8007688:	20000544 	.word	0x20000544
  800768c:	20000384 	.word	0x20000384
  8007690:	40790000 	.word	0x40790000
  8007694:	4084a000 	.word	0x4084a000
- 8007698:	2000054c 	.word	0x2000054c
- 800769c:	200003c0 	.word	0x200003c0
+ 8007698:	20000548 	.word	0x20000548
+ 800769c:	200005b4 	.word	0x200005b4
  80076a0:	40590000 	.word	0x40590000
-	  else if(cnt_tim_omega<700) {mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=0;}
+		else if(cnt_tim_omega<=700){mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
  80076a4:	4b22      	ldr	r3, [pc, #136]	; (8007730 <driveWheelTask+0x710>)
  80076a6:	881b      	ldrh	r3, [r3, #0]
  80076a8:	f5b3 7f2f 	cmp.w	r3, #700	; 0x2bc
- 80076ac:	d24a      	bcs.n	8007744 <driveWheelTask+0x724>
+ 80076ac:	d84a      	bhi.n	8007744 <driveWheelTask+0x724>
  80076ae:	4b21      	ldr	r3, [pc, #132]	; (8007734 <driveWheelTask+0x714>)
  80076b0:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  80076b4:	4618      	mov	r0, r3
@@ -17081,22 +17080,21 @@ void driveWheelTask() {
  800771a:	4b08      	ldr	r3, [pc, #32]	; (800773c <driveWheelTask+0x71c>)
  800771c:	61da      	str	r2, [r3, #28]
  800771e:	4b08      	ldr	r3, [pc, #32]	; (8007740 <driveWheelTask+0x720>)
- 8007720:	2200      	movs	r2, #0
- 8007722:	801a      	strh	r2, [r3, #0]
- 8007724:	e04e      	b.n	80077c4 <driveWheelTask+0x7a4>
- 8007726:	bf00      	nop
+ 8007720:	f64f 72fc 	movw	r2, #65532	; 0xfffc
+ 8007724:	801a      	strh	r2, [r3, #0]
+ 8007726:	e04e      	b.n	80077c6 <driveWheelTask+0x7a6>
  8007728:	00000000 	.word	0x00000000
  800772c:	4072c000 	.word	0x4072c000
- 8007730:	20000548 	.word	0x20000548
+ 8007730:	20000544 	.word	0x20000544
  8007734:	20000384 	.word	0x20000384
  8007738:	4084a000 	.word	0x4084a000
- 800773c:	2000054c 	.word	0x2000054c
- 8007740:	200003c0 	.word	0x200003c0
-	  else if(cnt_tim_omega<=800){mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_fowerd_param=0;}
+ 800773c:	20000548 	.word	0x20000548
+ 8007740:	200005b4 	.word	0x200005b4
+		else if(cnt_tim_omega<=800){mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
  8007744:	4bc6      	ldr	r3, [pc, #792]	; (8007a60 <driveWheelTask+0xa40>)
  8007746:	881b      	ldrh	r3, [r3, #0]
  8007748:	f5b3 7f48 	cmp.w	r3, #800	; 0x320
- 800774c:	d83a      	bhi.n	80077c4 <driveWheelTask+0x7a4>
+ 800774c:	d83b      	bhi.n	80077c6 <driveWheelTask+0x7a6>
  800774e:	4bc5      	ldr	r3, [pc, #788]	; (8007a64 <driveWheelTask+0xa44>)
  8007750:	f9b3 3008 	ldrsh.w	r3, [r3, #8]
  8007754:	4618      	mov	r0, r3
@@ -17139,271 +17137,271 @@ void driveWheelTask() {
  80077ba:	4bad      	ldr	r3, [pc, #692]	; (8007a70 <driveWheelTask+0xa50>)
  80077bc:	61da      	str	r2, [r3, #28]
  80077be:	4bad      	ldr	r3, [pc, #692]	; (8007a74 <driveWheelTask+0xa54>)
- 80077c0:	2200      	movs	r2, #0
- 80077c2:	801a      	strh	r2, [r3, #0]
+ 80077c0:	f64f 72fb 	movw	r2, #65531	; 0xfffb
+ 80077c4:	801a      	strh	r2, [r3, #0]
 		cnt_tim_omega++;
- 80077c4:	4ba6      	ldr	r3, [pc, #664]	; (8007a60 <driveWheelTask+0xa40>)
- 80077c6:	881b      	ldrh	r3, [r3, #0]
- 80077c8:	3301      	adds	r3, #1
- 80077ca:	b29a      	uxth	r2, r3
- 80077cc:	4ba4      	ldr	r3, [pc, #656]	; (8007a60 <driveWheelTask+0xa40>)
- 80077ce:	801a      	strh	r2, [r3, #0]
+ 80077c6:	4ba6      	ldr	r3, [pc, #664]	; (8007a60 <driveWheelTask+0xa40>)
+ 80077c8:	881b      	ldrh	r3, [r3, #0]
+ 80077ca:	3301      	adds	r3, #1
+ 80077cc:	b29a      	uxth	r2, r3
+ 80077ce:	4ba4      	ldr	r3, [pc, #656]	; (8007a60 <driveWheelTask+0xa40>)
+ 80077d0:	801a      	strh	r2, [r3, #0]
 		if(cnt_tim_omega>800){cnt_tim_omega=0;}
- 80077d0:	4ba3      	ldr	r3, [pc, #652]	; (8007a60 <driveWheelTask+0xa40>)
- 80077d2:	881b      	ldrh	r3, [r3, #0]
- 80077d4:	f5b3 7f48 	cmp.w	r3, #800	; 0x320
- 80077d8:	d902      	bls.n	80077e0 <driveWheelTask+0x7c0>
- 80077da:	4ba1      	ldr	r3, [pc, #644]	; (8007a60 <driveWheelTask+0xa40>)
- 80077dc:	2200      	movs	r2, #0
- 80077de:	801a      	strh	r2, [r3, #0]
+ 80077d2:	4ba3      	ldr	r3, [pc, #652]	; (8007a60 <driveWheelTask+0xa40>)
+ 80077d4:	881b      	ldrh	r3, [r3, #0]
+ 80077d6:	f5b3 7f48 	cmp.w	r3, #800	; 0x320
+ 80077da:	d902      	bls.n	80077e2 <driveWheelTask+0x7c2>
+ 80077dc:	4ba0      	ldr	r3, [pc, #640]	; (8007a60 <driveWheelTask+0xa40>)
+ 80077de:	2200      	movs	r2, #0
+ 80077e0:	801a      	strh	r2, [r3, #0]
 
 		vx_temp =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc*2.0/2.5;
- 80077e0:	4ba0      	ldr	r3, [pc, #640]	; (8007a64 <driveWheelTask+0xa44>)
- 80077e2:	f9b3 3006 	ldrsh.w	r3, [r3, #6]
- 80077e6:	ee07 3a90 	vmov	s15, r3
- 80077ea:	eef8 7ae7 	vcvt.f32.s32	s15, s15
- 80077ee:	ee17 0a90 	vmov	r0, s15
- 80077f2:	f7f8 feb9 	bl	8000568 <__aeabi_f2d>
- 80077f6:	f04f 0200 	mov.w	r2, #0
- 80077fa:	4b9c      	ldr	r3, [pc, #624]	; (8007a6c <driveWheelTask+0xa4c>)
- 80077fc:	f7f9 f836 	bl	800086c <__aeabi_ddiv>
- 8007800:	4603      	mov	r3, r0
- 8007802:	460c      	mov	r4, r1
- 8007804:	4625      	mov	r5, r4
- 8007806:	461c      	mov	r4, r3
- 8007808:	6a38      	ldr	r0, [r7, #32]
- 800780a:	f7f8 fead 	bl	8000568 <__aeabi_f2d>
- 800780e:	4602      	mov	r2, r0
- 8007810:	460b      	mov	r3, r1
- 8007812:	4620      	mov	r0, r4
- 8007814:	4629      	mov	r1, r5
- 8007816:	f7f8 feff 	bl	8000618 <__aeabi_dmul>
- 800781a:	4603      	mov	r3, r0
- 800781c:	460c      	mov	r4, r1
- 800781e:	4618      	mov	r0, r3
- 8007820:	4621      	mov	r1, r4
- 8007822:	4602      	mov	r2, r0
- 8007824:	460b      	mov	r3, r1
- 8007826:	f7f8 fd41 	bl	80002ac <__adddf3>
- 800782a:	4603      	mov	r3, r0
- 800782c:	460c      	mov	r4, r1
- 800782e:	4618      	mov	r0, r3
- 8007830:	4621      	mov	r1, r4
- 8007832:	f04f 0200 	mov.w	r2, #0
- 8007836:	4b90      	ldr	r3, [pc, #576]	; (8007a78 <driveWheelTask+0xa58>)
- 8007838:	f7f9 f818 	bl	800086c <__aeabi_ddiv>
- 800783c:	4603      	mov	r3, r0
- 800783e:	460c      	mov	r4, r1
- 8007840:	4618      	mov	r0, r3
- 8007842:	4621      	mov	r1, r4
- 8007844:	f7f9 f9c0 	bl	8000bc8 <__aeabi_d2f>
- 8007848:	4603      	mov	r3, r0
- 800784a:	617b      	str	r3, [r7, #20]
+ 80077e2:	4ba0      	ldr	r3, [pc, #640]	; (8007a64 <driveWheelTask+0xa44>)
+ 80077e4:	f9b3 3006 	ldrsh.w	r3, [r3, #6]
+ 80077e8:	ee07 3a90 	vmov	s15, r3
+ 80077ec:	eef8 7ae7 	vcvt.f32.s32	s15, s15
+ 80077f0:	ee17 0a90 	vmov	r0, s15
+ 80077f4:	f7f8 feb8 	bl	8000568 <__aeabi_f2d>
+ 80077f8:	f04f 0200 	mov.w	r2, #0
+ 80077fc:	4b9b      	ldr	r3, [pc, #620]	; (8007a6c <driveWheelTask+0xa4c>)
+ 80077fe:	f7f9 f835 	bl	800086c <__aeabi_ddiv>
+ 8007802:	4603      	mov	r3, r0
+ 8007804:	460c      	mov	r4, r1
+ 8007806:	4625      	mov	r5, r4
+ 8007808:	461c      	mov	r4, r3
+ 800780a:	6a38      	ldr	r0, [r7, #32]
+ 800780c:	f7f8 feac 	bl	8000568 <__aeabi_f2d>
+ 8007810:	4602      	mov	r2, r0
+ 8007812:	460b      	mov	r3, r1
+ 8007814:	4620      	mov	r0, r4
+ 8007816:	4629      	mov	r1, r5
+ 8007818:	f7f8 fefe 	bl	8000618 <__aeabi_dmul>
+ 800781c:	4603      	mov	r3, r0
+ 800781e:	460c      	mov	r4, r1
+ 8007820:	4618      	mov	r0, r3
+ 8007822:	4621      	mov	r1, r4
+ 8007824:	4602      	mov	r2, r0
+ 8007826:	460b      	mov	r3, r1
+ 8007828:	f7f8 fd40 	bl	80002ac <__adddf3>
+ 800782c:	4603      	mov	r3, r0
+ 800782e:	460c      	mov	r4, r1
+ 8007830:	4618      	mov	r0, r3
+ 8007832:	4621      	mov	r1, r4
+ 8007834:	f04f 0200 	mov.w	r2, #0
+ 8007838:	4b8f      	ldr	r3, [pc, #572]	; (8007a78 <driveWheelTask+0xa58>)
+ 800783a:	f7f9 f817 	bl	800086c <__aeabi_ddiv>
+ 800783e:	4603      	mov	r3, r0
+ 8007840:	460c      	mov	r4, r1
+ 8007842:	4618      	mov	r0, r3
+ 8007844:	4621      	mov	r1, r4
+ 8007846:	f7f9 f9bf 	bl	8000bc8 <__aeabi_d2f>
+ 800784a:	4603      	mov	r3, r0
+ 800784c:	617b      	str	r3, [r7, #20]
 		vy_temp = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc*2.0/2.5;
- 800784c:	4b85      	ldr	r3, [pc, #532]	; (8007a64 <driveWheelTask+0xa44>)
- 800784e:	f9b3 3004 	ldrsh.w	r3, [r3, #4]
- 8007852:	ee07 3a90 	vmov	s15, r3
- 8007856:	eef8 7ae7 	vcvt.f32.s32	s15, s15
- 800785a:	eef1 7a67 	vneg.f32	s15, s15
- 800785e:	ee17 3a90 	vmov	r3, s15
- 8007862:	4618      	mov	r0, r3
- 8007864:	f7f8 fe80 	bl	8000568 <__aeabi_f2d>
- 8007868:	f04f 0200 	mov.w	r2, #0
- 800786c:	4b7f      	ldr	r3, [pc, #508]	; (8007a6c <driveWheelTask+0xa4c>)
- 800786e:	f7f8 fffd 	bl	800086c <__aeabi_ddiv>
- 8007872:	4603      	mov	r3, r0
- 8007874:	460c      	mov	r4, r1
- 8007876:	4625      	mov	r5, r4
- 8007878:	461c      	mov	r4, r3
- 800787a:	69f8      	ldr	r0, [r7, #28]
- 800787c:	f7f8 fe74 	bl	8000568 <__aeabi_f2d>
- 8007880:	4602      	mov	r2, r0
- 8007882:	460b      	mov	r3, r1
- 8007884:	4620      	mov	r0, r4
- 8007886:	4629      	mov	r1, r5
- 8007888:	f7f8 fec6 	bl	8000618 <__aeabi_dmul>
- 800788c:	4603      	mov	r3, r0
- 800788e:	460c      	mov	r4, r1
- 8007890:	4618      	mov	r0, r3
- 8007892:	4621      	mov	r1, r4
- 8007894:	4602      	mov	r2, r0
- 8007896:	460b      	mov	r3, r1
- 8007898:	f7f8 fd08 	bl	80002ac <__adddf3>
- 800789c:	4603      	mov	r3, r0
- 800789e:	460c      	mov	r4, r1
- 80078a0:	4618      	mov	r0, r3
- 80078a2:	4621      	mov	r1, r4
- 80078a4:	f04f 0200 	mov.w	r2, #0
- 80078a8:	4b73      	ldr	r3, [pc, #460]	; (8007a78 <driveWheelTask+0xa58>)
- 80078aa:	f7f8 ffdf 	bl	800086c <__aeabi_ddiv>
- 80078ae:	4603      	mov	r3, r0
- 80078b0:	460c      	mov	r4, r1
- 80078b2:	4618      	mov	r0, r3
- 80078b4:	4621      	mov	r1, r4
- 80078b6:	f7f9 f987 	bl	8000bc8 <__aeabi_d2f>
- 80078ba:	4603      	mov	r3, r0
- 80078bc:	613b      	str	r3, [r7, #16]
+ 800784e:	4b85      	ldr	r3, [pc, #532]	; (8007a64 <driveWheelTask+0xa44>)
+ 8007850:	f9b3 3004 	ldrsh.w	r3, [r3, #4]
+ 8007854:	ee07 3a90 	vmov	s15, r3
+ 8007858:	eef8 7ae7 	vcvt.f32.s32	s15, s15
+ 800785c:	eef1 7a67 	vneg.f32	s15, s15
+ 8007860:	ee17 3a90 	vmov	r3, s15
+ 8007864:	4618      	mov	r0, r3
+ 8007866:	f7f8 fe7f 	bl	8000568 <__aeabi_f2d>
+ 800786a:	f04f 0200 	mov.w	r2, #0
+ 800786e:	4b7f      	ldr	r3, [pc, #508]	; (8007a6c <driveWheelTask+0xa4c>)
+ 8007870:	f7f8 fffc 	bl	800086c <__aeabi_ddiv>
+ 8007874:	4603      	mov	r3, r0
+ 8007876:	460c      	mov	r4, r1
+ 8007878:	4625      	mov	r5, r4
+ 800787a:	461c      	mov	r4, r3
+ 800787c:	69f8      	ldr	r0, [r7, #28]
+ 800787e:	f7f8 fe73 	bl	8000568 <__aeabi_f2d>
+ 8007882:	4602      	mov	r2, r0
+ 8007884:	460b      	mov	r3, r1
+ 8007886:	4620      	mov	r0, r4
+ 8007888:	4629      	mov	r1, r5
+ 800788a:	f7f8 fec5 	bl	8000618 <__aeabi_dmul>
+ 800788e:	4603      	mov	r3, r0
+ 8007890:	460c      	mov	r4, r1
+ 8007892:	4618      	mov	r0, r3
+ 8007894:	4621      	mov	r1, r4
+ 8007896:	4602      	mov	r2, r0
+ 8007898:	460b      	mov	r3, r1
+ 800789a:	f7f8 fd07 	bl	80002ac <__adddf3>
+ 800789e:	4603      	mov	r3, r0
+ 80078a0:	460c      	mov	r4, r1
+ 80078a2:	4618      	mov	r0, r3
+ 80078a4:	4621      	mov	r1, r4
+ 80078a6:	f04f 0200 	mov.w	r2, #0
+ 80078aa:	4b73      	ldr	r3, [pc, #460]	; (8007a78 <driveWheelTask+0xa58>)
+ 80078ac:	f7f8 ffde 	bl	800086c <__aeabi_ddiv>
+ 80078b0:	4603      	mov	r3, r0
+ 80078b2:	460c      	mov	r4, r1
+ 80078b4:	4618      	mov	r0, r3
+ 80078b6:	4621      	mov	r1, r4
+ 80078b8:	f7f9 f986 	bl	8000bc8 <__aeabi_d2f>
+ 80078bc:	4603      	mov	r3, r0
+ 80078be:	613b      	str	r3, [r7, #16]
 
 		mecanum.speed.vx = vx_temp*cos(IMU_yaw*M_PI/180.0)-vy_temp*sin(IMU_yaw*M_PI/180.0);
- 80078be:	6978      	ldr	r0, [r7, #20]
- 80078c0:	f7f8 fe52 	bl	8000568 <__aeabi_f2d>
- 80078c4:	4604      	mov	r4, r0
- 80078c6:	460d      	mov	r5, r1
- 80078c8:	4b6c      	ldr	r3, [pc, #432]	; (8007a7c <driveWheelTask+0xa5c>)
- 80078ca:	681b      	ldr	r3, [r3, #0]
- 80078cc:	4618      	mov	r0, r3
- 80078ce:	f7f8 fe4b 	bl	8000568 <__aeabi_f2d>
- 80078d2:	a361      	add	r3, pc, #388	; (adr r3, 8007a58 <driveWheelTask+0xa38>)
- 80078d4:	e9d3 2300 	ldrd	r2, r3, [r3]
- 80078d8:	f7f8 fe9e 	bl	8000618 <__aeabi_dmul>
- 80078dc:	4602      	mov	r2, r0
- 80078de:	460b      	mov	r3, r1
- 80078e0:	4610      	mov	r0, r2
- 80078e2:	4619      	mov	r1, r3
- 80078e4:	f04f 0200 	mov.w	r2, #0
- 80078e8:	4b65      	ldr	r3, [pc, #404]	; (8007a80 <driveWheelTask+0xa60>)
- 80078ea:	f7f8 ffbf 	bl	800086c <__aeabi_ddiv>
- 80078ee:	4602      	mov	r2, r0
- 80078f0:	460b      	mov	r3, r1
- 80078f2:	ec43 2b17 	vmov	d7, r2, r3
- 80078f6:	eeb0 0a47 	vmov.f32	s0, s14
- 80078fa:	eef0 0a67 	vmov.f32	s1, s15
- 80078fe:	f004 fd2f 	bl	800c360 <cos>
- 8007902:	ec53 2b10 	vmov	r2, r3, d0
- 8007906:	4620      	mov	r0, r4
- 8007908:	4629      	mov	r1, r5
- 800790a:	f7f8 fe85 	bl	8000618 <__aeabi_dmul>
- 800790e:	4603      	mov	r3, r0
- 8007910:	460c      	mov	r4, r1
- 8007912:	4625      	mov	r5, r4
- 8007914:	461c      	mov	r4, r3
- 8007916:	6938      	ldr	r0, [r7, #16]
- 8007918:	f7f8 fe26 	bl	8000568 <__aeabi_f2d>
- 800791c:	4680      	mov	r8, r0
- 800791e:	4689      	mov	r9, r1
- 8007920:	4b56      	ldr	r3, [pc, #344]	; (8007a7c <driveWheelTask+0xa5c>)
- 8007922:	681b      	ldr	r3, [r3, #0]
- 8007924:	4618      	mov	r0, r3
- 8007926:	f7f8 fe1f 	bl	8000568 <__aeabi_f2d>
- 800792a:	a34b      	add	r3, pc, #300	; (adr r3, 8007a58 <driveWheelTask+0xa38>)
- 800792c:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8007930:	f7f8 fe72 	bl	8000618 <__aeabi_dmul>
- 8007934:	4602      	mov	r2, r0
- 8007936:	460b      	mov	r3, r1
- 8007938:	4610      	mov	r0, r2
- 800793a:	4619      	mov	r1, r3
- 800793c:	f04f 0200 	mov.w	r2, #0
- 8007940:	4b4f      	ldr	r3, [pc, #316]	; (8007a80 <driveWheelTask+0xa60>)
- 8007942:	f7f8 ff93 	bl	800086c <__aeabi_ddiv>
- 8007946:	4602      	mov	r2, r0
- 8007948:	460b      	mov	r3, r1
- 800794a:	ec43 2b17 	vmov	d7, r2, r3
- 800794e:	eeb0 0a47 	vmov.f32	s0, s14
- 8007952:	eef0 0a67 	vmov.f32	s1, s15
- 8007956:	f004 fd47 	bl	800c3e8 <sin>
- 800795a:	ec53 2b10 	vmov	r2, r3, d0
- 800795e:	4640      	mov	r0, r8
- 8007960:	4649      	mov	r1, r9
- 8007962:	f7f8 fe59 	bl	8000618 <__aeabi_dmul>
- 8007966:	4602      	mov	r2, r0
- 8007968:	460b      	mov	r3, r1
- 800796a:	4620      	mov	r0, r4
- 800796c:	4629      	mov	r1, r5
- 800796e:	f7f8 fc9b 	bl	80002a8 <__aeabi_dsub>
- 8007972:	4603      	mov	r3, r0
- 8007974:	460c      	mov	r4, r1
- 8007976:	4618      	mov	r0, r3
- 8007978:	4621      	mov	r1, r4
- 800797a:	f7f9 f925 	bl	8000bc8 <__aeabi_d2f>
- 800797e:	4602      	mov	r2, r0
- 8007980:	4b3b      	ldr	r3, [pc, #236]	; (8007a70 <driveWheelTask+0xa50>)
- 8007982:	615a      	str	r2, [r3, #20]
+ 80078c0:	6978      	ldr	r0, [r7, #20]
+ 80078c2:	f7f8 fe51 	bl	8000568 <__aeabi_f2d>
+ 80078c6:	4604      	mov	r4, r0
+ 80078c8:	460d      	mov	r5, r1
+ 80078ca:	4b6c      	ldr	r3, [pc, #432]	; (8007a7c <driveWheelTask+0xa5c>)
+ 80078cc:	681b      	ldr	r3, [r3, #0]
+ 80078ce:	4618      	mov	r0, r3
+ 80078d0:	f7f8 fe4a 	bl	8000568 <__aeabi_f2d>
+ 80078d4:	a360      	add	r3, pc, #384	; (adr r3, 8007a58 <driveWheelTask+0xa38>)
+ 80078d6:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80078da:	f7f8 fe9d 	bl	8000618 <__aeabi_dmul>
+ 80078de:	4602      	mov	r2, r0
+ 80078e0:	460b      	mov	r3, r1
+ 80078e2:	4610      	mov	r0, r2
+ 80078e4:	4619      	mov	r1, r3
+ 80078e6:	f04f 0200 	mov.w	r2, #0
+ 80078ea:	4b65      	ldr	r3, [pc, #404]	; (8007a80 <driveWheelTask+0xa60>)
+ 80078ec:	f7f8 ffbe 	bl	800086c <__aeabi_ddiv>
+ 80078f0:	4602      	mov	r2, r0
+ 80078f2:	460b      	mov	r3, r1
+ 80078f4:	ec43 2b17 	vmov	d7, r2, r3
+ 80078f8:	eeb0 0a47 	vmov.f32	s0, s14
+ 80078fc:	eef0 0a67 	vmov.f32	s1, s15
+ 8007900:	f004 fd2e 	bl	800c360 <cos>
+ 8007904:	ec53 2b10 	vmov	r2, r3, d0
+ 8007908:	4620      	mov	r0, r4
+ 800790a:	4629      	mov	r1, r5
+ 800790c:	f7f8 fe84 	bl	8000618 <__aeabi_dmul>
+ 8007910:	4603      	mov	r3, r0
+ 8007912:	460c      	mov	r4, r1
+ 8007914:	4625      	mov	r5, r4
+ 8007916:	461c      	mov	r4, r3
+ 8007918:	6938      	ldr	r0, [r7, #16]
+ 800791a:	f7f8 fe25 	bl	8000568 <__aeabi_f2d>
+ 800791e:	4680      	mov	r8, r0
+ 8007920:	4689      	mov	r9, r1
+ 8007922:	4b56      	ldr	r3, [pc, #344]	; (8007a7c <driveWheelTask+0xa5c>)
+ 8007924:	681b      	ldr	r3, [r3, #0]
+ 8007926:	4618      	mov	r0, r3
+ 8007928:	f7f8 fe1e 	bl	8000568 <__aeabi_f2d>
+ 800792c:	a34a      	add	r3, pc, #296	; (adr r3, 8007a58 <driveWheelTask+0xa38>)
+ 800792e:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8007932:	f7f8 fe71 	bl	8000618 <__aeabi_dmul>
+ 8007936:	4602      	mov	r2, r0
+ 8007938:	460b      	mov	r3, r1
+ 800793a:	4610      	mov	r0, r2
+ 800793c:	4619      	mov	r1, r3
+ 800793e:	f04f 0200 	mov.w	r2, #0
+ 8007942:	4b4f      	ldr	r3, [pc, #316]	; (8007a80 <driveWheelTask+0xa60>)
+ 8007944:	f7f8 ff92 	bl	800086c <__aeabi_ddiv>
+ 8007948:	4602      	mov	r2, r0
+ 800794a:	460b      	mov	r3, r1
+ 800794c:	ec43 2b17 	vmov	d7, r2, r3
+ 8007950:	eeb0 0a47 	vmov.f32	s0, s14
+ 8007954:	eef0 0a67 	vmov.f32	s1, s15
+ 8007958:	f004 fd46 	bl	800c3e8 <sin>
+ 800795c:	ec53 2b10 	vmov	r2, r3, d0
+ 8007960:	4640      	mov	r0, r8
+ 8007962:	4649      	mov	r1, r9
+ 8007964:	f7f8 fe58 	bl	8000618 <__aeabi_dmul>
+ 8007968:	4602      	mov	r2, r0
+ 800796a:	460b      	mov	r3, r1
+ 800796c:	4620      	mov	r0, r4
+ 800796e:	4629      	mov	r1, r5
+ 8007970:	f7f8 fc9a 	bl	80002a8 <__aeabi_dsub>
+ 8007974:	4603      	mov	r3, r0
+ 8007976:	460c      	mov	r4, r1
+ 8007978:	4618      	mov	r0, r3
+ 800797a:	4621      	mov	r1, r4
+ 800797c:	f7f9 f924 	bl	8000bc8 <__aeabi_d2f>
+ 8007980:	4602      	mov	r2, r0
+ 8007982:	4b3b      	ldr	r3, [pc, #236]	; (8007a70 <driveWheelTask+0xa50>)
+ 8007984:	615a      	str	r2, [r3, #20]
 		mecanum.speed.vy = vx_temp*sin(IMU_yaw*M_PI/180.0)+vy_temp*cos(IMU_yaw*M_PI/180.0);
- 8007984:	6978      	ldr	r0, [r7, #20]
- 8007986:	f7f8 fdef 	bl	8000568 <__aeabi_f2d>
- 800798a:	4604      	mov	r4, r0
- 800798c:	460d      	mov	r5, r1
- 800798e:	4b3b      	ldr	r3, [pc, #236]	; (8007a7c <driveWheelTask+0xa5c>)
- 8007990:	681b      	ldr	r3, [r3, #0]
- 8007992:	4618      	mov	r0, r3
- 8007994:	f7f8 fde8 	bl	8000568 <__aeabi_f2d>
- 8007998:	a32f      	add	r3, pc, #188	; (adr r3, 8007a58 <driveWheelTask+0xa38>)
- 800799a:	e9d3 2300 	ldrd	r2, r3, [r3]
- 800799e:	f7f8 fe3b 	bl	8000618 <__aeabi_dmul>
- 80079a2:	4602      	mov	r2, r0
- 80079a4:	460b      	mov	r3, r1
- 80079a6:	4610      	mov	r0, r2
- 80079a8:	4619      	mov	r1, r3
- 80079aa:	f04f 0200 	mov.w	r2, #0
- 80079ae:	4b34      	ldr	r3, [pc, #208]	; (8007a80 <driveWheelTask+0xa60>)
- 80079b0:	f7f8 ff5c 	bl	800086c <__aeabi_ddiv>
- 80079b4:	4602      	mov	r2, r0
- 80079b6:	460b      	mov	r3, r1
- 80079b8:	ec43 2b17 	vmov	d7, r2, r3
- 80079bc:	eeb0 0a47 	vmov.f32	s0, s14
- 80079c0:	eef0 0a67 	vmov.f32	s1, s15
- 80079c4:	f004 fd10 	bl	800c3e8 <sin>
- 80079c8:	ec53 2b10 	vmov	r2, r3, d0
- 80079cc:	4620      	mov	r0, r4
- 80079ce:	4629      	mov	r1, r5
- 80079d0:	f7f8 fe22 	bl	8000618 <__aeabi_dmul>
- 80079d4:	4603      	mov	r3, r0
- 80079d6:	460c      	mov	r4, r1
- 80079d8:	4625      	mov	r5, r4
- 80079da:	461c      	mov	r4, r3
- 80079dc:	6938      	ldr	r0, [r7, #16]
- 80079de:	f7f8 fdc3 	bl	8000568 <__aeabi_f2d>
- 80079e2:	4680      	mov	r8, r0
- 80079e4:	4689      	mov	r9, r1
- 80079e6:	4b25      	ldr	r3, [pc, #148]	; (8007a7c <driveWheelTask+0xa5c>)
- 80079e8:	681b      	ldr	r3, [r3, #0]
- 80079ea:	4618      	mov	r0, r3
- 80079ec:	f7f8 fdbc 	bl	8000568 <__aeabi_f2d>
- 80079f0:	a319      	add	r3, pc, #100	; (adr r3, 8007a58 <driveWheelTask+0xa38>)
- 80079f2:	e9d3 2300 	ldrd	r2, r3, [r3]
- 80079f6:	f7f8 fe0f 	bl	8000618 <__aeabi_dmul>
- 80079fa:	4602      	mov	r2, r0
- 80079fc:	460b      	mov	r3, r1
- 80079fe:	4610      	mov	r0, r2
- 8007a00:	4619      	mov	r1, r3
- 8007a02:	f04f 0200 	mov.w	r2, #0
- 8007a06:	4b1e      	ldr	r3, [pc, #120]	; (8007a80 <driveWheelTask+0xa60>)
- 8007a08:	f7f8 ff30 	bl	800086c <__aeabi_ddiv>
- 8007a0c:	4602      	mov	r2, r0
- 8007a0e:	460b      	mov	r3, r1
- 8007a10:	ec43 2b17 	vmov	d7, r2, r3
- 8007a14:	eeb0 0a47 	vmov.f32	s0, s14
- 8007a18:	eef0 0a67 	vmov.f32	s1, s15
- 8007a1c:	f004 fca0 	bl	800c360 <cos>
- 8007a20:	ec53 2b10 	vmov	r2, r3, d0
- 8007a24:	4640      	mov	r0, r8
- 8007a26:	4649      	mov	r1, r9
- 8007a28:	f7f8 fdf6 	bl	8000618 <__aeabi_dmul>
- 8007a2c:	4602      	mov	r2, r0
- 8007a2e:	460b      	mov	r3, r1
- 8007a30:	4620      	mov	r0, r4
- 8007a32:	4629      	mov	r1, r5
- 8007a34:	f7f8 fc3a 	bl	80002ac <__adddf3>
- 8007a38:	4603      	mov	r3, r0
- 8007a3a:	460c      	mov	r4, r1
- 8007a3c:	4618      	mov	r0, r3
- 8007a3e:	4621      	mov	r1, r4
- 8007a40:	f7f9 f8c2 	bl	8000bc8 <__aeabi_d2f>
- 8007a44:	4602      	mov	r2, r0
- 8007a46:	4b0a      	ldr	r3, [pc, #40]	; (8007a70 <driveWheelTask+0xa50>)
- 8007a48:	619a      	str	r2, [r3, #24]
- 8007a4a:	e0b4      	b.n	8007bb6 <driveWheelTask+0xb96>
- 8007a4c:	f3af 8000 	nop.w
+ 8007986:	6978      	ldr	r0, [r7, #20]
+ 8007988:	f7f8 fdee 	bl	8000568 <__aeabi_f2d>
+ 800798c:	4604      	mov	r4, r0
+ 800798e:	460d      	mov	r5, r1
+ 8007990:	4b3a      	ldr	r3, [pc, #232]	; (8007a7c <driveWheelTask+0xa5c>)
+ 8007992:	681b      	ldr	r3, [r3, #0]
+ 8007994:	4618      	mov	r0, r3
+ 8007996:	f7f8 fde7 	bl	8000568 <__aeabi_f2d>
+ 800799a:	a32f      	add	r3, pc, #188	; (adr r3, 8007a58 <driveWheelTask+0xa38>)
+ 800799c:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80079a0:	f7f8 fe3a 	bl	8000618 <__aeabi_dmul>
+ 80079a4:	4602      	mov	r2, r0
+ 80079a6:	460b      	mov	r3, r1
+ 80079a8:	4610      	mov	r0, r2
+ 80079aa:	4619      	mov	r1, r3
+ 80079ac:	f04f 0200 	mov.w	r2, #0
+ 80079b0:	4b33      	ldr	r3, [pc, #204]	; (8007a80 <driveWheelTask+0xa60>)
+ 80079b2:	f7f8 ff5b 	bl	800086c <__aeabi_ddiv>
+ 80079b6:	4602      	mov	r2, r0
+ 80079b8:	460b      	mov	r3, r1
+ 80079ba:	ec43 2b17 	vmov	d7, r2, r3
+ 80079be:	eeb0 0a47 	vmov.f32	s0, s14
+ 80079c2:	eef0 0a67 	vmov.f32	s1, s15
+ 80079c6:	f004 fd0f 	bl	800c3e8 <sin>
+ 80079ca:	ec53 2b10 	vmov	r2, r3, d0
+ 80079ce:	4620      	mov	r0, r4
+ 80079d0:	4629      	mov	r1, r5
+ 80079d2:	f7f8 fe21 	bl	8000618 <__aeabi_dmul>
+ 80079d6:	4603      	mov	r3, r0
+ 80079d8:	460c      	mov	r4, r1
+ 80079da:	4625      	mov	r5, r4
+ 80079dc:	461c      	mov	r4, r3
+ 80079de:	6938      	ldr	r0, [r7, #16]
+ 80079e0:	f7f8 fdc2 	bl	8000568 <__aeabi_f2d>
+ 80079e4:	4680      	mov	r8, r0
+ 80079e6:	4689      	mov	r9, r1
+ 80079e8:	4b24      	ldr	r3, [pc, #144]	; (8007a7c <driveWheelTask+0xa5c>)
+ 80079ea:	681b      	ldr	r3, [r3, #0]
+ 80079ec:	4618      	mov	r0, r3
+ 80079ee:	f7f8 fdbb 	bl	8000568 <__aeabi_f2d>
+ 80079f2:	a319      	add	r3, pc, #100	; (adr r3, 8007a58 <driveWheelTask+0xa38>)
+ 80079f4:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80079f8:	f7f8 fe0e 	bl	8000618 <__aeabi_dmul>
+ 80079fc:	4602      	mov	r2, r0
+ 80079fe:	460b      	mov	r3, r1
+ 8007a00:	4610      	mov	r0, r2
+ 8007a02:	4619      	mov	r1, r3
+ 8007a04:	f04f 0200 	mov.w	r2, #0
+ 8007a08:	4b1d      	ldr	r3, [pc, #116]	; (8007a80 <driveWheelTask+0xa60>)
+ 8007a0a:	f7f8 ff2f 	bl	800086c <__aeabi_ddiv>
+ 8007a0e:	4602      	mov	r2, r0
+ 8007a10:	460b      	mov	r3, r1
+ 8007a12:	ec43 2b17 	vmov	d7, r2, r3
+ 8007a16:	eeb0 0a47 	vmov.f32	s0, s14
+ 8007a1a:	eef0 0a67 	vmov.f32	s1, s15
+ 8007a1e:	f004 fc9f 	bl	800c360 <cos>
+ 8007a22:	ec53 2b10 	vmov	r2, r3, d0
+ 8007a26:	4640      	mov	r0, r8
+ 8007a28:	4649      	mov	r1, r9
+ 8007a2a:	f7f8 fdf5 	bl	8000618 <__aeabi_dmul>
+ 8007a2e:	4602      	mov	r2, r0
+ 8007a30:	460b      	mov	r3, r1
+ 8007a32:	4620      	mov	r0, r4
+ 8007a34:	4629      	mov	r1, r5
+ 8007a36:	f7f8 fc39 	bl	80002ac <__adddf3>
+ 8007a3a:	4603      	mov	r3, r0
+ 8007a3c:	460c      	mov	r4, r1
+ 8007a3e:	4618      	mov	r0, r3
+ 8007a40:	4621      	mov	r1, r4
+ 8007a42:	f7f9 f8c1 	bl	8000bc8 <__aeabi_d2f>
+ 8007a46:	4602      	mov	r2, r0
+ 8007a48:	4b09      	ldr	r3, [pc, #36]	; (8007a70 <driveWheelTask+0xa50>)
+ 8007a4a:	619a      	str	r2, [r3, #24]
+ 8007a4c:	e0b3      	b.n	8007bb6 <driveWheelTask+0xb96>
+ 8007a4e:	bf00      	nop
  8007a50:	00000000 	.word	0x00000000
  8007a54:	4072c000 	.word	0x4072c000
  8007a58:	54442d18 	.word	0x54442d18
  8007a5c:	400921fb 	.word	0x400921fb
- 8007a60:	20000548 	.word	0x20000548
+ 8007a60:	20000544 	.word	0x20000544
  8007a64:	20000384 	.word	0x20000384
  8007a68:	40790000 	.word	0x40790000
  8007a6c:	4084a000 	.word	0x4084a000
- 8007a70:	2000054c 	.word	0x2000054c
- 8007a74:	200003c0 	.word	0x200003c0
+ 8007a70:	20000548 	.word	0x20000548
+ 8007a74:	200005b4 	.word	0x200005b4
  8007a78:	40040000 	.word	0x40040000
  8007a7c:	200003a4 	.word	0x200003a4
  8007a80:	40668000 	.word	0x40668000
@@ -17413,7 +17411,7 @@ void driveWheelTask() {
  8007a84:	4b7a      	ldr	r3, [pc, #488]	; (8007c70 <driveWheelTask+0xc50>)
  8007a86:	2200      	movs	r2, #0
  8007a88:	801a      	strh	r2, [r3, #0]
-		feed_fowerd_param=0;
+		feed_forward_param=0;
  8007a8a:	4b7a      	ldr	r3, [pc, #488]	; (8007c74 <driveWheelTask+0xc54>)
  8007a8c:	2200      	movs	r2, #0
  8007a8e:	801a      	strh	r2, [r3, #0]
@@ -17613,13 +17611,13 @@ void driveWheelTask() {
  8007c64:	f3af 8000 	nop.w
  8007c68:	66666666 	.word	0x66666666
  8007c6c:	3ff66666 	.word	0x3ff66666
- 8007c70:	20000548 	.word	0x20000548
- 8007c74:	200003c0 	.word	0x200003c0
+ 8007c70:	20000544 	.word	0x20000544
+ 8007c74:	200005b4 	.word	0x200005b4
  8007c78:	20000384 	.word	0x20000384
  8007c7c:	4084a000 	.word	0x4084a000
- 8007c80:	2000054c 	.word	0x2000054c
- 8007c84:	200003c4 	.word	0x200003c4
- 8007c88:	20000490 	.word	0x20000490
+ 8007c80:	20000548 	.word	0x20000548
+ 8007c84:	200003c0 	.word	0x200003c0
+ 8007c88:	2000048c 	.word	0x2000048c
 
 08007c8c <initPID>:
 
@@ -17707,7 +17705,7 @@ void initPID() {
  8007d28:	46bd      	mov	sp, r7
  8007d2a:	f85d 7b04 	ldr.w	r7, [sp], #4
  8007d2e:	4770      	bx	lr
- 8007d30:	20000490 	.word	0x20000490
+ 8007d30:	2000048c 	.word	0x2000048c
  8007d34:	40d00000 	.word	0x40d00000
  8007d38:	42480000 	.word	0x42480000
  8007d3c:	466a6000 	.word	0x466a6000
@@ -17744,7 +17742,7 @@ void initMecanum() {
  8007d70:	46bd      	mov	sp, r7
  8007d72:	f85d 7b04 	ldr.w	r7, [sp], #4
  8007d76:	4770      	bx	lr
- 8007d78:	2000054c 	.word	0x2000054c
+ 8007d78:	20000548 	.word	0x20000548
  8007d7c:	43ef0000 	.word	0x43ef0000
  8007d80:	43c50000 	.word	0x43c50000
  8007d84:	43cf8000 	.word	0x43cf8000
@@ -17824,7 +17822,7 @@ void initFriction() {
  8007e06:	46bd      	mov	sp, r7
  8007e08:	bd80      	pop	{r7, pc}
  8007e0a:	bf00      	nop
- 8007e0c:	2000067c 	.word	0x2000067c
+ 8007e0c:	20000678 	.word	0x20000678
 
 08007e10 <initLoadPID>:
 
@@ -17865,7 +17863,7 @@ void initLoadPID() {
  8007e44:	f85d 7b04 	ldr.w	r7, [sp], #4
  8007e48:	4770      	bx	lr
  8007e4a:	bf00      	nop
- 8007e4c:	200005f4 	.word	0x200005f4
+ 8007e4c:	200005f0 	.word	0x200005f0
  8007e50:	41200000 	.word	0x41200000
  8007e54:	42480000 	.word	0x42480000
  8007e58:	3d8f5c29 	.word	0x3d8f5c29
@@ -18049,7 +18047,7 @@ void Gimbal_Task(){
  8007fee:	6b1b      	ldr	r3, [r3, #48]	; 0x30
  8007ff0:	4a5c      	ldr	r2, [pc, #368]	; (8008164 <Gimbal_Task+0x2e4>)
  8007ff2:	6013      	str	r3, [r2, #0]
-		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_fowerd_param;
+		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
  8007ff4:	4b5c      	ldr	r3, [pc, #368]	; (8008168 <Gimbal_Task+0x2e8>)
  8007ff6:	681b      	ldr	r3, [r3, #0]
  8007ff8:	ee07 3a90 	vmov	s15, r3
@@ -18183,22 +18181,22 @@ void Gimbal_Task(){
  800813c:	40bfff00 	.word	0x40bfff00
  8008140:	20000384 	.word	0x20000384
  8008144:	c4610000 	.word	0xc4610000
- 8008148:	200005c0 	.word	0x200005c0
- 800814c:	200005f4 	.word	0x200005f4
- 8008150:	2000040c 	.word	0x2000040c
+ 8008148:	200005bc 	.word	0x200005bc
+ 800814c:	200005f0 	.word	0x200005f0
+ 8008150:	20000408 	.word	0x20000408
  8008154:	409c2000 	.word	0x409c2000
- 8008158:	200005dc 	.word	0x200005dc
+ 8008158:	200005d8 	.word	0x200005d8
  800815c:	200003b4 	.word	0x200003b4
  8008160:	20000244 	.word	0x20000244
- 8008164:	200005bc 	.word	0x200005bc
- 8008168:	200003f8 	.word	0x200003f8
+ 8008164:	200005b8 	.word	0x200005b8
+ 8008168:	200003f4 	.word	0x200003f4
  800816c:	00000014 	.word	0x00000014
  8008170:	200003a4 	.word	0x200003a4
- 8008174:	200003c0 	.word	0x200003c0
+ 8008174:	200005b4 	.word	0x200005b4
  8008178:	200003a8 	.word	0x200003a8
  800817c:	40b00000 	.word	0x40b00000
  8008180:	40768000 	.word	0x40768000
- 8008184:	200005f2 	.word	0x200005f2
+ 8008184:	200005ee 	.word	0x200005ee
 	else{
 		u[0]=map(target_yaw-yaw_now, -50, 50, -30000, 30000)-(gimbalYawFdb.rpm*60.0);
  8008188:	4b9b      	ldr	r3, [pc, #620]	; (80083f8 <Gimbal_Task+0x578>)
@@ -18456,20 +18454,20 @@ void Gimbal_Task(){
  80083ec:	f3af 8000 	nop.w
  80083f0:	00000000 	.word	0x00000000
  80083f4:	40bfff00 	.word	0x40bfff00
- 80083f8:	200005dc 	.word	0x200005dc
- 80083fc:	200005f2 	.word	0x200005f2
+ 80083f8:	200005d8 	.word	0x200005d8
+ 80083fc:	200005ee 	.word	0x200005ee
  8008400:	ffff8ad0 	.word	0xffff8ad0
  8008404:	200003a8 	.word	0x200003a8
  8008408:	404e0000 	.word	0x404e0000
  800840c:	20000384 	.word	0x20000384
- 8008410:	20000400 	.word	0x20000400
- 8008414:	2000048c 	.word	0x2000048c
+ 8008410:	200003fc 	.word	0x200003fc
+ 8008414:	20000488 	.word	0x20000488
  8008418:	00000032 	.word	0x00000032
- 800841c:	200005cc 	.word	0x200005cc
- 8008420:	200005d0 	.word	0x200005d0
+ 800841c:	200005c8 	.word	0x200005c8
+ 8008420:	200005cc 	.word	0x200005cc
  8008424:	40b00000 	.word	0x40b00000
  8008428:	40768000 	.word	0x40768000
- 800842c:	20000620 	.word	0x20000620
+ 800842c:	2000061c 	.word	0x2000061c
  8008430:	40020c00 	.word	0x40020c00
  8008434:	200003b4 	.word	0x200003b4
 
@@ -18547,7 +18545,7 @@ void fire_Task(){
  80084a2:	bf00      	nop
  80084a4:	20000384 	.word	0x20000384
  80084a8:	2000001a 	.word	0x2000001a
- 80084ac:	2000067c 	.word	0x2000067c
+ 80084ac:	20000678 	.word	0x20000678
 
 080084b0 <fire_task_open>:
 
@@ -18658,7 +18656,7 @@ void fire_task_open(){
  800857e:	bd80      	pop	{r7, pc}
  8008580:	20000384 	.word	0x20000384
  8008584:	200002a0 	.word	0x200002a0
- 8008588:	2000073c 	.word	0x2000073c
+ 8008588:	20000738 	.word	0x20000738
 
 0800858c <Error_Handler>:
 /**
@@ -19485,7 +19483,7 @@ void MX_SPI5_Init(void)
 }
  8008ce4:	bf00      	nop
  8008ce6:	bd80      	pop	{r7, pc}
- 8008ce8:	20000624 	.word	0x20000624
+ 8008ce8:	20000620 	.word	0x20000620
  8008cec:	40015000 	.word	0x40015000
 
 08008cf0 <HAL_SPI_MspInit>:
@@ -19867,7 +19865,7 @@ void USART1_IRQHandler(void)
  8008e5e:	bf00      	nop
  8008e60:	bd80      	pop	{r7, pc}
  8008e62:	bf00      	nop
- 8008e64:	200007fc 	.word	0x200007fc
+ 8008e64:	200007f8 	.word	0x200007f8
 
 08008e68 <TIM6_DAC_IRQHandler>:
 
@@ -19891,7 +19889,7 @@ void TIM6_DAC_IRQHandler(void)
  8008e72:	bf00      	nop
  8008e74:	bd80      	pop	{r7, pc}
  8008e76:	bf00      	nop
- 8008e78:	200006bc 	.word	0x200006bc
+ 8008e78:	200006b8 	.word	0x200006b8
 
 08008e7c <CAN2_RX0_IRQHandler>:
 
@@ -19963,7 +19961,7 @@ void USART6_IRQHandler(void)
  8008eae:	bf00      	nop
  8008eb0:	bd80      	pop	{r7, pc}
  8008eb2:	bf00      	nop
- 8008eb4:	2000087c 	.word	0x2000087c
+ 8008eb4:	20000878 	.word	0x20000878
 
 08008eb8 <_read>:
 	_kill(status, -1);
@@ -20442,7 +20440,7 @@ void MX_TIM1_Init(void)
  800914e:	bf00      	nop
  8009150:	bd80      	pop	{r7, pc}
  8009152:	bf00      	nop
- 8009154:	200006fc 	.word	0x200006fc
+ 8009154:	200006f8 	.word	0x200006f8
  8009158:	40010000 	.word	0x40010000
  800915c:	20000298 	.word	0x20000298
  8009160:	200002a0 	.word	0x200002a0
@@ -20579,7 +20577,7 @@ void MX_TIM2_Init(void)
 }
  8009230:	bf00      	nop
  8009232:	bd80      	pop	{r7, pc}
- 8009234:	2000073c 	.word	0x2000073c
+ 8009234:	20000738 	.word	0x20000738
  8009238:	20000298 	.word	0x20000298
  800923c:	200002a0 	.word	0x200002a0
 
@@ -20644,7 +20642,7 @@ void MX_TIM6_Init(void)
  8009292:	bf00      	nop
  8009294:	bd80      	pop	{r7, pc}
  8009296:	bf00      	nop
- 8009298:	200006bc 	.word	0x200006bc
+ 8009298:	200006b8 	.word	0x200006b8
  800929c:	40001000 	.word	0x40001000
  80092a0:	20000298 	.word	0x20000298
 
@@ -20810,7 +20808,7 @@ void MX_TIM8_Init(void)
 }
  8009398:	bf00      	nop
  800939a:	bd80      	pop	{r7, pc}
- 800939c:	2000067c 	.word	0x2000067c
+ 800939c:	20000678 	.word	0x20000678
  80093a0:	40010400 	.word	0x40010400
  80093a4:	20000298 	.word	0x20000298
  80093a8:	200002a0 	.word	0x200002a0
@@ -20892,7 +20890,7 @@ void MX_TIM12_Init(void)
 }
  800941c:	bf00      	nop
  800941e:	bd80      	pop	{r7, pc}
- 8009420:	2000077c 	.word	0x2000077c
+ 8009420:	20000778 	.word	0x20000778
  8009424:	40001800 	.word	0x40001800
  8009428:	200002a0 	.word	0x200002a0
 
@@ -21360,7 +21358,7 @@ void MX_UART7_Init(void)
  8009726:	bf00      	nop
  8009728:	bd80      	pop	{r7, pc}
  800972a:	bf00      	nop
- 800972c:	200007bc 	.word	0x200007bc
+ 800972c:	200007b8 	.word	0x200007b8
  8009730:	40007800 	.word	0x40007800
 
 08009734 <MX_UART8_Init>:
@@ -21417,7 +21415,7 @@ void MX_UART8_Init(void)
  800977a:	bf00      	nop
  800977c:	bd80      	pop	{r7, pc}
  800977e:	bf00      	nop
- 8009780:	2000083c 	.word	0x2000083c
+ 8009780:	20000838 	.word	0x20000838
  8009784:	40007c00 	.word	0x40007c00
 
 08009788 <MX_USART1_UART_Init>:
@@ -21474,7 +21472,7 @@ void MX_USART1_UART_Init(void)
 }
  80097cc:	bf00      	nop
  80097ce:	bd80      	pop	{r7, pc}
- 80097d0:	200007fc 	.word	0x200007fc
+ 80097d0:	200007f8 	.word	0x200007f8
  80097d4:	40011000 	.word	0x40011000
  80097d8:	000186a0 	.word	0x000186a0
 
@@ -21533,7 +21531,7 @@ void MX_USART6_UART_Init(void)
  8009822:	bf00      	nop
  8009824:	bd80      	pop	{r7, pc}
  8009826:	bf00      	nop
- 8009828:	2000087c 	.word	0x2000087c
+ 8009828:	20000878 	.word	0x20000878
  800982c:	40011400 	.word	0x40011400
 
 08009830 <HAL_UART_MspInit>:
@@ -21898,7 +21896,7 @@ LoopFillZerobss:
   ldr  r2, =_sbss
  8009a6c:	200001f4 	.word	0x200001f4
   ldr  r3, = _ebss
- 8009a70:	200008c0 	.word	0x200008c0
+ 8009a70:	200008bc 	.word	0x200008bc
 
 08009a74 <ADC_IRQHandler>:
  * @retval None       
@@ -26010,7 +26008,7 @@ Infinite_Loop:
  800c1ba:	b103      	cbz	r3, 800c1be <_sbrk_r+0x1a>
  800c1bc:	602b      	str	r3, [r5, #0]
  800c1be:	bd38      	pop	{r3, r4, r5, pc}
- 800c1c0:	200008bc 	.word	0x200008bc
+ 800c1c0:	200008b8 	.word	0x200008b8
 
 0800c1c4 <__sread>:
  800c1c4:	b510      	push	{r4, lr}
@@ -26088,7 +26086,7 @@ Infinite_Loop:
  800c266:	b103      	cbz	r3, 800c26a <_write_r+0x1e>
  800c268:	602b      	str	r3, [r5, #0]
  800c26a:	bd38      	pop	{r3, r4, r5, pc}
- 800c26c:	200008bc 	.word	0x200008bc
+ 800c26c:	200008b8 	.word	0x200008b8
 
 0800c270 <_close_r>:
  800c270:	b538      	push	{r3, r4, r5, lr}
@@ -26104,7 +26102,7 @@ Infinite_Loop:
  800c286:	b103      	cbz	r3, 800c28a <_close_r+0x1a>
  800c288:	602b      	str	r3, [r5, #0]
  800c28a:	bd38      	pop	{r3, r4, r5, pc}
- 800c28c:	200008bc 	.word	0x200008bc
+ 800c28c:	200008b8 	.word	0x200008b8
 
 0800c290 <_fstat_r>:
  800c290:	b538      	push	{r3, r4, r5, lr}
@@ -26122,7 +26120,7 @@ Infinite_Loop:
  800c2aa:	602b      	str	r3, [r5, #0]
  800c2ac:	bd38      	pop	{r3, r4, r5, pc}
  800c2ae:	bf00      	nop
- 800c2b0:	200008bc 	.word	0x200008bc
+ 800c2b0:	200008b8 	.word	0x200008b8
 
 0800c2b4 <_isatty_r>:
  800c2b4:	b538      	push	{r3, r4, r5, lr}
@@ -26138,7 +26136,7 @@ Infinite_Loop:
  800c2ca:	b103      	cbz	r3, 800c2ce <_isatty_r+0x1a>
  800c2cc:	602b      	str	r3, [r5, #0]
  800c2ce:	bd38      	pop	{r3, r4, r5, pc}
- 800c2d0:	200008bc 	.word	0x200008bc
+ 800c2d0:	200008b8 	.word	0x200008b8
 
 0800c2d4 <_lseek_r>:
  800c2d4:	b538      	push	{r3, r4, r5, lr}
@@ -26156,7 +26154,7 @@ Infinite_Loop:
  800c2ee:	b103      	cbz	r3, 800c2f2 <_lseek_r+0x1e>
  800c2f0:	602b      	str	r3, [r5, #0]
  800c2f2:	bd38      	pop	{r3, r4, r5, pc}
- 800c2f4:	200008bc 	.word	0x200008bc
+ 800c2f4:	200008b8 	.word	0x200008b8
 
 0800c2f8 <__ascii_mbtowc>:
  800c2f8:	b082      	sub	sp, #8
@@ -26199,7 +26197,7 @@ Infinite_Loop:
  800c33a:	b103      	cbz	r3, 800c33e <_read_r+0x1e>
  800c33c:	602b      	str	r3, [r5, #0]
  800c33e:	bd38      	pop	{r3, r4, r5, pc}
- 800c340:	200008bc 	.word	0x200008bc
+ 800c340:	200008b8 	.word	0x200008b8
 
 0800c344 <__ascii_wctomb>:
  800c344:	b149      	cbz	r1, 800c35a <__ascii_wctomb+0x16>
