@@ -427,8 +427,10 @@ void driveWheelTask() {
 		vx_temp =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc*2.0/2.5;
 		vy_temp = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc*2.0/2.5;
 
-		mecanum.speed.vx = vx_temp*cos(IMU_yaw*M_PI/180.0)-vy_temp*sin(IMU_yaw*M_PI/180.0);
-		mecanum.speed.vy = vx_temp*sin(IMU_yaw*M_PI/180.0)+vy_temp*cos(IMU_yaw*M_PI/180.0);
+		mecanum.speed.vx = vx_temp*cos((IMU_yaw+feed_forward_param)*M_PI/180.0)
+										- vy_temp*sin((IMU_yaw+feed_forward_param)*M_PI/180.0);
+		mecanum.speed.vy = vx_temp*sin((IMU_yaw+feed_forward_param)*M_PI/180.0)
+										+ vy_temp*cos((IMU_yaw+feed_forward_param)*M_PI/180.0);
 	}
 	else{
 		cnt_tim_omega=0;
