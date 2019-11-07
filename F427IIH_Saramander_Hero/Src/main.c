@@ -410,14 +410,14 @@ void driveWheelTask() {
 		if(cnt_tim_omega<=100)      {mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
 		else if(cnt_tim_omega<=150) {mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
 		else if(cnt_tim_omega<=199) {mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
-		else if(cnt_tim_omega==200){mecanum.speed.vw=-(float)(rc.ch5-  0.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=0;}
+		else if(cnt_tim_omega==200) {mecanum.speed.vw=-(float)(rc.ch5-  0.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=0;}
 		else if(cnt_tim_omega<=250) {mecanum.speed.vw=-(float)(rc.ch5+100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=2;}
 		else if(cnt_tim_omega<=300) {mecanum.speed.vw=-(float)(rc.ch5+300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=4;}
 		else if(cnt_tim_omega<=400) {mecanum.speed.vw=-(float)(rc.ch5+400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=5;}
 		else if(cnt_tim_omega<=500) {mecanum.speed.vw=-(float)(rc.ch5+400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=5;}
 		else if(cnt_tim_omega<=550) {mecanum.speed.vw=-(float)(rc.ch5+300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=4;}
 		else if(cnt_tim_omega<=599) {mecanum.speed.vw=-(float)(rc.ch5+100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=2;}
-		else if(cnt_tim_omega==600){mecanum.speed.vw=-(float)(rc.ch5+  0.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=0;}
+		else if(cnt_tim_omega==600) {mecanum.speed.vw=-(float)(rc.ch5+  0.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=0;}
 		else if(cnt_tim_omega<=650) {mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
 		else if(cnt_tim_omega<=700) {mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
 		else if(cnt_tim_omega<=800) {mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}

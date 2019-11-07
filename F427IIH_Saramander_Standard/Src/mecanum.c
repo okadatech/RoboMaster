@@ -38,15 +38,15 @@
     }                                \
   } while (0)
 
-const float sinM1 = sin(    M_PI/4.0);
-const float sinM2 = sin(3.0*M_PI/4.0);
-const float sinM3 = sin(5.0*M_PI/4.0);
-const float sinM4 = sin(7.0*M_PI/4.0);
+const float sinM1 = sin(5.0*M_PI/4.0);
+const float sinM2 = sin(7.0*M_PI/4.0);
+const float sinM3 = sin(    M_PI/4.0);
+const float sinM4 = sin(3.0*M_PI/4.0);
 
-const float cosM1 = cos(    M_PI/4.0);
-const float cosM2 = cos(3.0*M_PI/4.0);
-const float cosM3 = cos(5.0*M_PI/4.0);
-const float cosM4 = cos(7.0*M_PI/4.0);
+const float cosM1 = cos(5.0*M_PI/4.0);
+const float cosM2 = cos(7.0*M_PI/4.0);
+const float cosM3 = cos(    M_PI/4.0);
+const float cosM4 = cos(3.0*M_PI/4.0);
 
 
 /**

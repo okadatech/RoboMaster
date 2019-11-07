@@ -19018,8 +19018,8 @@ void mecanum_calculate(struct mecanum *mec)
  8008958:	c3160000 	.word	0xc3160000
  800895c:	43160000 	.word	0x43160000
  8008960:	43160000 	.word	0x43160000
- 8008964:	3f3504f3 	.word	0x3f3504f3
- 8008968:	bf3504f3 	.word	0xbf3504f3
+ 8008964:	bf3504f3 	.word	0xbf3504f3
+ 8008968:	3f3504f3 	.word	0x3f3504f3
  800896c:	4584d000 	.word	0x4584d000
       wheel_rpm[i] *= rate;
  8008970:	f897 3022 	ldrb.w	r3, [r7, #34]	; 0x22

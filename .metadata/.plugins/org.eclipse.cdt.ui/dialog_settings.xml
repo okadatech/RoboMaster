@@ -8,12 +8,19 @@
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
 		<item key="size.width" value="916"/>
-		<item key="size.height" value="223"/>
+		<item key="size.height" value="301"/>
 	</section>
 	<section name="CResourceRenameRefactoringInputPage">
 		<item key="updateReferences" value="true"/>
 	</section>
 	<section name="PDOMSearchPage">
+		<item key="caseSensitive" value="false"/>
+		<item key="searchFlags" value="227191"/>
+		<list key="previousPatterns">
+			<item value="mecanum_calculate"/>
+			<item value="mecanum_position_measure"/>
+			<item value="yaw_gyro_angle"/>
+		</list>
 	</section>
 	<section name="org.eclipse.cdt.internal.ui.preferences.EditTemplateDialog_dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="-4"/>
