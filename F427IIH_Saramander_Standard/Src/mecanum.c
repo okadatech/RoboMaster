@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+
 #include "mecanum.h"
 
 #ifndef RADIAN_COEF
@@ -37,17 +38,6 @@
       (val) = (max);                 \
     }                                \
   } while (0)
-
-const float sinM1 = sin(5.0*M_PI/4.0);
-const float sinM2 = sin(7.0*M_PI/4.0);
-const float sinM3 = sin(    M_PI/4.0);
-const float sinM4 = sin(3.0*M_PI/4.0);
-
-const float cosM1 = cos(5.0*M_PI/4.0);
-const float cosM2 = cos(7.0*M_PI/4.0);
-const float cosM3 = cos(    M_PI/4.0);
-const float cosM4 = cos(3.0*M_PI/4.0);
-
 
 /**
   * @brief mecanum glb_chassis velocity decomposition.F:forword; B:backword; L:left; R:right
@@ -77,16 +67,10 @@ void mecanum_calculate(struct mecanum *mec)
   float wheel_rpm[4];
   float max = 0;
 
- // wheel_rpm[0] = (-mec->speed.vx - mec->speed.vy - mec->speed.vw * rotate_ratio_fr) * wheel_rpm_ratio;
- // wheel_rpm[1] = ( mec->speed.vx - mec->speed.vy - mec->speed.vw * rotate_ratio_fl) * wheel_rpm_ratio;
- // wheel_rpm[2] = ( mec->speed.vx + mec->speed.vy - mec->speed.vw * rotate_ratio_bl) * wheel_rpm_ratio;
- // wheel_rpm[3] = (-mec->speed.vx + mec->speed.vy - mec->speed.vw * rotate_ratio_br) * wheel_rpm_ratio;
-
-  wheel_rpm[0] = ((mec->speed.vx)*sinM1 + (mec->speed.vy)*cosM1 - mec->speed.vw * rotate_ratio_fr) * wheel_rpm_ratio;
-  wheel_rpm[1] = ((mec->speed.vx)*sinM2 + (mec->speed.vy)*cosM2 - mec->speed.vw * rotate_ratio_fl) * wheel_rpm_ratio;
-  wheel_rpm[2] = ((mec->speed.vx)*sinM3 + (mec->speed.vy)*cosM3 - mec->speed.vw * rotate_ratio_bl) * wheel_rpm_ratio;
-  wheel_rpm[3] = ((mec->speed.vx)*sinM4 + (mec->speed.vy)*cosM4 - mec->speed.vw * rotate_ratio_br) * wheel_rpm_ratio;
-
+  wheel_rpm[0] = (-mec->speed.vx - mec->speed.vy - mec->speed.vw * rotate_ratio_fr) * wheel_rpm_ratio;
+  wheel_rpm[1] = (mec->speed.vx - mec->speed.vy - mec->speed.vw * rotate_ratio_fl) * wheel_rpm_ratio;
+  wheel_rpm[2] = (mec->speed.vx + mec->speed.vy - mec->speed.vw * rotate_ratio_bl) * wheel_rpm_ratio;
+  wheel_rpm[3] = (-mec->speed.vx + mec->speed.vy - mec->speed.vw * rotate_ratio_br) * wheel_rpm_ratio;
 
   //find max item
   for (uint8_t i = 0; i < 4; i++)
@@ -105,8 +89,6 @@ void mecanum_calculate(struct mecanum *mec)
   memcpy(mec->wheel_rpm, wheel_rpm, 4 * sizeof(float));
 }
 
-//I don't know so I put "mecanum_position_measure"
-/*
 void mecanum_position_measure(struct mecanum *mec, struct mecanum_motor_fdb wheel_fdb[])
 {
   static float rotate_ratio_fr;
@@ -142,6 +124,7 @@ void mecanum_position_measure(struct mecanum *mec, struct mecanum_motor_fdb whee
   diff_d_y = d_y - last_d_y;
   diff_d_w = d_w - last_d_w;
 
+  /* use glb_chassis gyro angle data */
   mecanum_angle = mec->gyro.yaw_gyro_angle / RADIAN_COEF;
 
   position_x += diff_d_x * cos(mecanum_angle) - diff_d_y * sin(mecanum_angle);
@@ -160,4 +143,4 @@ void mecanum_position_measure(struct mecanum *mec, struct mecanum_motor_fdb whee
   mec->position.v_x_mm = v_x;                 //mm/s
   mec->position.v_y_mm = v_y;                 //mm/s
   mec->position.rate_deg = v_w * RADIAN_COEF; //degree/s
-}*/
+}

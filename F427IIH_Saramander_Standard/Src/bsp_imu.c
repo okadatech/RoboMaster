@@ -310,7 +310,7 @@ void mpu_get_data()
 	
     imu.temp = 21 + mpu_data.temp / 333.87f;
 	  /* 2000dps -> rad/s */
-	  imu.wx   = mpu_data.gx / 16.384f / 57.3f; 
+	imu.wx   = mpu_data.gx / 16.384f / 57.3f;
     imu.wy   = mpu_data.gy / 16.384f / 57.3f; 
     imu.wz   = mpu_data.gz / 16.384f / 57.3f;
 }
@@ -384,7 +384,7 @@ uint8_t mpu_device_init(void)
 void mpu_offset_call(void)
 {
 	int i;
-	for (i=0; i<300;i++)
+	for (i=0; i<500;i++)
 	{
 		mpu_read_bytes(MPU6500_ACCEL_XOUT_H, mpu_buff, 14);
 
@@ -398,12 +398,12 @@ void mpu_offset_call(void)
 
 		MPU_DELAY(5);
 	}
-	mpu_data.ax_offset=mpu_data.ax_offset / 300;
-	mpu_data.ay_offset=mpu_data.ay_offset / 300;
-	mpu_data.az_offset=mpu_data.az_offset / 300;
-	mpu_data.gx_offset=mpu_data.gx_offset / 300;
-	mpu_data.gy_offset=mpu_data.gx_offset / 300;
-	mpu_data.gz_offset=mpu_data.gz_offset / 300;
+	mpu_data.ax_offset=mpu_data.ax_offset / 500;
+	mpu_data.ay_offset=mpu_data.ay_offset / 500;
+	mpu_data.az_offset=mpu_data.az_offset / 500;
+	mpu_data.gx_offset=mpu_data.gx_offset / 500;
+	mpu_data.gy_offset=mpu_data.gx_offset / 500;
+	mpu_data.gz_offset=mpu_data.gz_offset / 500;
 }
 
 

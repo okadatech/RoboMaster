@@ -26,6 +26,7 @@
 //#include "xprintf.h"
 #include "motor_fdb.h"
 #include "bsp_imu.h"
+#include "ahrs.h"
 
 #include "stdio.h"
 #include <stdlib.h>
@@ -49,6 +50,8 @@ TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig;
 
 float DBUFF[32];
 
+struct ahrs_sensor imu_sensor;
+struct attitude imu_attitude;
 
 float IMU_pich;
 float IMU_yaw;

@@ -1,13 +1,140 @@
-00:09:57 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
+00:33:48 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/mecanum.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/mecanum.d" -MT"Src/mecanum.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/mecanum.o"
+arm-none-eabi-gcc "../Src/madgwick_ahrs.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/madgwick_ahrs.d" -MT"Src/madgwick_ahrs.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/madgwick_ahrs.o"
 arm-none-eabi-gcc -o "F427IIH_Saramander_Standard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Standard\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Standard.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: F427IIH_Saramander_Standard.elf
  
 arm-none-eabi-objdump -h -S  F427IIH_Saramander_Standard.elf  > "F427IIH_Saramander_Standard.list"
 arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
    text	   data	    bss	    dec	    hex	filename
-  58936	    508	   3276	  62720	   f500	F427IIH_Saramander_Standard.elf
+  61448	    520	   3368	  65336	   ff38	F427IIH_Saramander_Standard.elf
+Finished building: default.size.stdout
+ 
+Finished building: F427IIH_Saramander_Standard.list
+ 
+00:34:00 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/madgwick_ahrs.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/madgwick_ahrs.d" -MT"Src/madgwick_ahrs.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/madgwick_ahrs.o"
+../Src/madgwick_ahrs.c: In function 'madgwick_ahrs_update':
+../Src/madgwick_ahrs.c:144:9: error: redeclaration of 'q0q1' with no linkage
+   float q0q1 = q0 * q1;
+         ^~~~
+../Src/madgwick_ahrs.c:41:111: note: previous declaration of 'q0q1' was here
+   float _2q0mx, _2q0my, _2q0mz, _2q1mx, _2bx, _2bz, _4bx, _4bz, _2q0, _2q1, _2q2, _2q3, _2q0q2, _2q2q3, q0q0, q0q1, q0q2, q0q3, q1q1, q1q2, q1q3, q2q2, q2q3, q3q3;
+                                                                                                               ^~~~
+../Src/madgwick_ahrs.c:145:9: error: redeclaration of 'q0q2' with no linkage
+   float q0q2 = q0 * q2;
+         ^~~~
+../Src/madgwick_ahrs.c:41:117: note: previous declaration of 'q0q2' was here
+   float _2q0mx, _2q0my, _2q0mz, _2q1mx, _2bx, _2bz, _4bx, _4bz, _2q0, _2q1, _2q2, _2q3, _2q0q2, _2q2q3, q0q0, q0q1, q0q2, q0q3, q1q1, q1q2, q1q3, q2q2, q2q3, q3q3;
+                                                                                                                     ^~~~
+../Src/madgwick_ahrs.c:146:9: error: redeclaration of 'q0q3' with no linkage
+   float q0q3 = q0 * q3;
+         ^~~~
+../Src/madgwick_ahrs.c:41:123: note: previous declaration of 'q0q3' was here
+   float _2q0mx, _2q0my, _2q0mz, _2q1mx, _2bx, _2bz, _4bx, _4bz, _2q0, _2q1, _2q2, _2q3, _2q0q2, _2q2q3, q0q0, q0q1, q0q2, q0q3, q1q1, q1q2, q1q3, q2q2, q2q3, q3q3;
+                                                                                                                           ^~~~
+../Src/madgwick_ahrs.c:147:9: error: redeclaration of 'q1q2' with no linkage
+   float q1q2 = q1 * q2;
+         ^~~~
+../Src/madgwick_ahrs.c:41:135: note: previous declaration of 'q1q2' was here
+   float _2q0mx, _2q0my, _2q0mz, _2q1mx, _2bx, _2bz, _4bx, _4bz, _2q0, _2q1, _2q2, _2q3, _2q0q2, _2q2q3, q0q0, q0q1, q0q2, q0q3, q1q1, q1q2, q1q3, q2q2, q2q3, q3q3;
+                                                                                                                                       ^~~~
+../Src/madgwick_ahrs.c:148:9: error: redeclaration of 'q1q3' with no linkage
+   float q1q3 = q1 * q3;
+         ^~~~
+../Src/madgwick_ahrs.c:41:141: note: previous declaration of 'q1q3' was here
+   float _2q0mx, _2q0my, _2q0mz, _2q1mx, _2bx, _2bz, _4bx, _4bz, _2q0, _2q1, _2q2, _2q3, _2q0q2, _2q2q3, q0q0, q0q1, q0q2, q0q3, q1q1, q1q2, q1q3, q2q2, q2q3, q3q3;
+                                                                                                                                             ^~~~
+../Src/madgwick_ahrs.c:149:9: error: redeclaration of 'q2q3' with no linkage
+   float q2q3 = q2 * q3;
+         ^~~~
+../Src/madgwick_ahrs.c:41:153: note: previous declaration of 'q2q3' was here
+   float _2q0mx, _2q0my, _2q0mz, _2q1mx, _2bx, _2bz, _4bx, _4bz, _2q0, _2q1, _2q2, _2q3, _2q0q2, _2q2q3, q0q0, q0q1, q0q2, q0q3, q1q1, q1q2, q1q3, q2q2, q2q3, q3q3;
+                                                                                                                                                         ^~~~
+make: *** [Src/subdir.mk:84: Src/madgwick_ahrs.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+00:34:19 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/madgwick_ahrs.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/madgwick_ahrs.d" -MT"Src/madgwick_ahrs.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/madgwick_ahrs.o"
+arm-none-eabi-gcc -o "F427IIH_Saramander_Standard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Standard\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Standard.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F427IIH_Saramander_Standard.elf
+ 
+arm-none-eabi-objdump -h -S  F427IIH_Saramander_Standard.elf  > "F427IIH_Saramander_Standard.list"
+arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  61448	    520	   3368	  65336	   ff38	F427IIH_Saramander_Standard.elf
+Finished building: default.size.stdout
+ 
+Finished building: F427IIH_Saramander_Standard.list
+ 
+00:39:23 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/madgwick_ahrs.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/madgwick_ahrs.d" -MT"Src/madgwick_ahrs.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/madgwick_ahrs.o"
+arm-none-eabi-gcc -o "F427IIH_Saramander_Standard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Standard\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Standard.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F427IIH_Saramander_Standard.elf
+ 
+arm-none-eabi-objdump -h -S  F427IIH_Saramander_Standard.elf  > "F427IIH_Saramander_Standard.list"
+arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  61448	    520	   3368	  65336	   ff38	F427IIH_Saramander_Standard.elf
+Finished building: default.size.stdout
+ 
+Finished building: F427IIH_Saramander_Standard.list
+ 
+00:41:26 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "F427IIH_Saramander_Standard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Standard\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Standard.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F427IIH_Saramander_Standard.elf
+ 
+arm-none-eabi-objdump -h -S  F427IIH_Saramander_Standard.elf  > "F427IIH_Saramander_Standard.list"
+arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  61448	    520	   3368	  65336	   ff38	F427IIH_Saramander_Standard.elf
+Finished building: default.size.stdout
+ 
+Finished building: F427IIH_Saramander_Standard.list
+ 
+00:49:43 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "F427IIH_Saramander_Standard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Standard\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Standard.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F427IIH_Saramander_Standard.elf
+ 
+arm-none-eabi-objdump -h -S  F427IIH_Saramander_Standard.elf  > "F427IIH_Saramander_Standard.list"
+arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  57536	    516	   3324	  61376	   efc0	F427IIH_Saramander_Standard.elf
+Finished building: default.size.stdout
+ 
+Finished building: F427IIH_Saramander_Standard.list
+ 
+00:52:39 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "F427IIH_Saramander_Standard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Standard\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Standard.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F427IIH_Saramander_Standard.elf
+ 
+arm-none-eabi-objdump -h -S  F427IIH_Saramander_Standard.elf  > "F427IIH_Saramander_Standard.list"
+arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  57864	    516	   3324	  61704	   f108	F427IIH_Saramander_Standard.elf
+Finished building: default.size.stdout
+ 
+Finished building: F427IIH_Saramander_Standard.list
+ 
+00:59:04 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/bsp_imu.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/bsp_imu.d" -MT"Src/bsp_imu.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/bsp_imu.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "F427IIH_Saramander_Standard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Standard\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Standard.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F427IIH_Saramander_Standard.elf
+ 
+arm-none-eabi-objdump -h -S  F427IIH_Saramander_Standard.elf  > "F427IIH_Saramander_Standard.list"
+arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  57864	    516	   3324	  61704	   f108	F427IIH_Saramander_Standard.elf
 Finished building: default.size.stdout
  
 Finished building: F427IIH_Saramander_Standard.list

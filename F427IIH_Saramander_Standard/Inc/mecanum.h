@@ -24,10 +24,6 @@
 #define MECANUM_H_EXTERN extern
 #endif
 
-
-#include <stdbool.h>
-#include <string.h>
-
 /************************ chassis parameter ****************************/
 /* the radius of wheel(mm) */
 #define RADIUS 76
@@ -112,6 +108,6 @@ struct mecanum_motor_fdb
 };
 
 void mecanum_calculate(struct mecanum *mec);
-//void mecanum_position_measure(struct mecanum *mec, struct mecanum_motor_fdb wheel_fdb[]);
+void mecanum_position_measure(struct mecanum *mec, struct mecanum_motor_fdb wheel_fdb[]);
 
 #endif // __MECANUM_H__

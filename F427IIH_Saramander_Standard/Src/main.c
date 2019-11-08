@@ -166,7 +166,6 @@ int main(void)
 
   mpu_device_init();
   mpu_offset_call();
-  init_quaternion();
 
 
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1); // friction wheel
@@ -188,9 +187,9 @@ int main(void)
   HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
 
-  IMU_pich_set=imu.pit;
-  IMU_yaw_set=imu.yaw;
-  IMU_rol_set=imu.rol;
+  IMU_pich_set=imu_attitude.pitch;
+  IMU_yaw_set=imu_attitude.yaw;
+  IMU_rol_set=imu_attitude.roll;
   PC_mouse_x=0;
   PC_mouse_y=0;
   /* USER CODE END 2 */
@@ -205,9 +204,9 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1){
-		  IMU_pich_set=imu.pit;
-		  IMU_yaw_set=imu.yaw;
-		  IMU_rol_set=imu.rol;
+		  IMU_pich_set=imu_attitude.pitch;
+		  IMU_yaw_set=imu_attitude.yaw;
+		  IMU_rol_set=imu_attitude.roll;
 	  }
 
 	  printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
@@ -277,15 +276,24 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (htim->Instance == htim6.Instance) {
 		//1kHz
 		mpu_get_data();
-		imu_ahrs_update();
-		imu_attitude_update();
-		IMU_pich=(imu.pit)-IMU_pich_set;
+		imu_sensor.ax=imu.ax;
+		imu_sensor.ay=imu.ay;
+		imu_sensor.az=imu.az;
+		imu_sensor.mx=imu.mx;
+		imu_sensor.my=imu.my;
+		imu_sensor.mz=imu.mz;
+		imu_sensor.wx=imu.wx;
+		imu_sensor.wy=imu.wy;
+		imu_sensor.wz=imu.wz;
+		madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
+
+		IMU_pich=(imu_attitude.pitch)-IMU_pich_set;
 		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
 		if(IMU_pich< -90.0){IMU_pich=IMU_pich+180;}
-		IMU_yaw=(imu.yaw)-IMU_yaw_set;
+		IMU_yaw=(imu_attitude.yaw)-IMU_yaw_set;
 		if(IMU_yaw>  180.0){IMU_yaw=IMU_yaw-360;}
 		if(IMU_yaw< -180.0){IMU_yaw=IMU_yaw+360;}
-		IMU_rol=(imu.rol)-IMU_rol_set;
+		IMU_rol=(imu_attitude.roll)-IMU_rol_set;
 		if(IMU_rol>  180.0){IMU_rol=IMU_rol-360;}
 		if(IMU_rol< -180.0){IMU_rol=IMU_rol+360;}
 
@@ -475,21 +483,38 @@ void initMecanum() {
 }
 
 void initFriction() {
-	for(int i=0;i<300;i++){
+	for(int i=0;i<3000;i++){
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1500);
-	HAL_Delay(10);
 	mpu_get_data();
-	imu_ahrs_update();
-	imu_attitude_update();
+	imu_sensor.ax=imu.ax;
+	imu_sensor.ay=imu.ay;
+	imu_sensor.az=imu.az;
+	imu_sensor.mx=imu.mx;
+	imu_sensor.my=imu.my;
+	imu_sensor.mz=imu.mz;
+	imu_sensor.wx=imu.wx;
+	imu_sensor.wy=imu.wy;
+	imu_sensor.wz=imu.wz;
+	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
+	HAL_Delay(1);
+
 	}
-	for(int i=0;i<500;i++){
+	for(int i=0;i<5000;i++){
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1220);
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1220);
-	HAL_Delay(10);
 	mpu_get_data();
-	imu_ahrs_update();
-	imu_attitude_update();
+	imu_sensor.ax=imu.ax;
+	imu_sensor.ay=imu.ay;
+	imu_sensor.az=imu.az;
+	imu_sensor.mx=imu.mx;
+	imu_sensor.my=imu.my;
+	imu_sensor.mz=imu.mz;
+	imu_sensor.wx=imu.wx;
+	imu_sensor.wy=imu.wy;
+	imu_sensor.wz=imu.wz;
+	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
+	HAL_Delay(1);
 	}
 
 }
