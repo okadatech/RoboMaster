@@ -336,8 +336,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 		rc.mouse_x = ((int16_t)rcData[6]) | ((int16_t)rcData[7] << 8);
 		rc.mouse_y = ((int16_t)rcData[8]) | ((int16_t)rcData[9] << 8);
 		rc.mouse_z = ((int16_t)rcData[10]) | ((int16_t)rcData[11] << 8);
-		rc.mouse_press_l = rcData[12];
-		rc.mouse_press_r = rcData[13];
+		rc.mouse_press_r = rcData[12];
+		rc.mouse_press_l = rcData[13];
 		rc.key_v = ((int16_t)rcData[14]);
 		rc.key_W =     (0b0000000000000001 & rc.key_v);
 		rc.key_S =     (0b0000000000000010 & rc.key_v)>>1;
@@ -483,7 +483,7 @@ void initMecanum() {
 }
 
 void initFriction() {
-	for(int i=0;i<3000;i++){
+	for(int i=0;i<2500;i++){
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1500);
 	mpu_get_data();
@@ -498,9 +498,8 @@ void initFriction() {
 	imu_sensor.wz=imu.wz;
 	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
 	HAL_Delay(1);
-
 	}
-	for(int i=0;i<5000;i++){
+	for(int i=0;i<4000;i++){
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1220);
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1220);
 	mpu_get_data();
@@ -558,7 +557,7 @@ void Gimbal_Task(){
 	if(rc.sw2==2){target_yaw=0;}
 	else{
 		if(rc.sw1==1){
-			if(rc_SW1_temp==3){IMU_yaw_set=imu.yaw;}
+			if(rc_SW1_temp==3){IMU_yaw_set=imu_attitude.yaw;}
 		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
 		if(target_yaw>70){target_yaw=70;}
 		if(target_yaw<-70){target_yaw=-70;}
