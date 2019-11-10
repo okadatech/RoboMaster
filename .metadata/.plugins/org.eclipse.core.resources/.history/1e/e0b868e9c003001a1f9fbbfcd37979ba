@@ -423,8 +423,6 @@ void driveWheelTask() {
 	    if (fabs((float)wheelFdb[i].torque/16384.0*20.0) > max_torque)
 	    	max_torque = fabs((float)wheelFdb[i].torque/16384.0*20.0);
 	  }
-
-
 	if(rc.sw1==1){
 		if(cnt_tim_omega<=100)     {mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
 		else if(cnt_tim_omega<=150){mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
@@ -454,9 +452,9 @@ void driveWheelTask() {
 	else{
 		cnt_tim_omega=0;
 		feed_forward_param=0;
-		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc*1.3;
-		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc*1.3;
-		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc*1.3;
+		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
+		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc;
+		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc;
 
 	}
 
@@ -468,7 +466,7 @@ void driveWheelTask() {
 		wheelPID[i].error = error;
 		u[i] = (int16_t) pidExecute(&(wheelPID[i]));
 
-	    if(max_torque>=1.0){
+	    if(max_torque>=2.0){
 	    	int16_t u[4];
 	    	for (int i = 0; i < 4; i++) {
 	    		u[i] = 0;
