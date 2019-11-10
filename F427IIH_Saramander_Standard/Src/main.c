@@ -454,9 +454,9 @@ void driveWheelTask() {
 	else{
 		cnt_tim_omega=0;
 		feed_forward_param=0;
-		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc*1.3;
-		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc*1.3;
-		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc*1.3;
+		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
+		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc;
+		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc;
 
 	}
 
@@ -469,11 +469,9 @@ void driveWheelTask() {
 		u[i] = (int16_t) pidExecute(&(wheelPID[i]));
 
 	    if(max_torque>=1.0){
-	    	int16_t u[4];
 	    	for (int i = 0; i < 4; i++) {
 	    		u[i] = 0;
 	    	}
-	    	driveWheel(u);
 	    }
 	}
 	driveWheel(u);
