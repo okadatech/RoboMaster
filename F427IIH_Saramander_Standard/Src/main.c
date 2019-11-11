@@ -162,11 +162,8 @@ int main(void)
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
-
-
   mpu_device_init();
   mpu_offset_call();
-
 
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1); // friction wheel
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
@@ -220,8 +217,8 @@ int main(void)
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
 	  //printf(" ch5=%d vw=%f cnt=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
-	  printf("torque 0=%f 1=%f 2=%f 3=%f",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
-	    			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
+	  //printf("torque 0=%f 1=%f 2=%f 3=%f",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
+	   // 			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
 	    printf("\r\n");
 
 
@@ -273,8 +270,6 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-	static long unsigned int c = 0;
-	c++;
 	if (htim->Instance == htim6.Instance) {
 		//1kHz
 		mpu_get_data();
@@ -530,9 +525,9 @@ void initFriction() {
 void initPID() {
 	for (int i = 0; i < 4; i++) {
 		wheelPID[i].t = 2.0f;
-		wheelPID[i].p = 3.0f;	//up
-		wheelPID[i].i = 20.0f;  //down
-		wheelPID[i].d = 0.01f;	//down
+		wheelPID[i].p = 3.0f;
+		wheelPID[i].i = 20.0f;
+		wheelPID[i].d = 0.01f;
 		wheelPID[i].outLimit = 15000.0f;
 		wheelPID[i].integralOutLimit = 500.0f;
 		wheelPID[i].differentialFilterRate = 0.9f;
@@ -559,7 +554,7 @@ void timerTask() { //call 500Hz
 void Gimbal_Task(){
 	int fire = 0;
 	int16_t u[4];
-	if (rc.mouse_press_r == 1) {
+	if (rc.mouse_press_r == 1 ||  rc.ch1==660) {
 		fire = 1;
 		DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
 		DBUFF[3] = u[2] = pidExecute(&loadPID);
