@@ -87,12 +87,11 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
 	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 void timerTask() ;
-uint8_t cnt_tim,cnt_tim_fire,cnt_tim_task;
-uint16_t cnt_tim_omega,cnt_tim_fire_task,feed_forward_param;
+uint8_t cnt_tim,cnt_tim_fire,cnt_tim_task,fire;
+uint16_t cnt_tim_omega,feed_forward_param;
 uint16_t sw1_cnt=1220;
 uint8_t rc_SW1_temp;
-uint8_t fire = 0;
-uint32_t RC_time;
+uint32_t RC_time,cnt_tim_fire_task;
 /* USER CODE END 0 */
 
 /**
@@ -137,6 +136,7 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
+
   HAL_UART_Receive_IT(&huart1, rcData, 18);
 
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 0);
@@ -163,13 +163,14 @@ int main(void)
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
+
+
   mpu_device_init();
   mpu_offset_call();
-  init_quaternion();
+
 
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1); // friction wheel
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
-
   initFriction();
   initPID();
   initLoadPID();
@@ -187,9 +188,9 @@ int main(void)
   HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
 
-  IMU_pich_set=imu.pit;
-  IMU_yaw_set=imu.yaw;
-  IMU_rol_set=imu.rol;
+  IMU_pich_set=imu_attitude.pitch;
+  IMU_yaw_set=imu_attitude.yaw;
+  IMU_rol_set=imu_attitude.roll;
   PC_mouse_x=0;
   PC_mouse_y=0;
   /* USER CODE END 2 */
@@ -203,23 +204,26 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+
 	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1){
-		  IMU_pich_set=imu.pit;
-		  IMU_yaw_set=imu.yaw;
-		  IMU_rol_set=imu.rol;
+		  IMU_pich_set=imu_attitude.pitch;
+		  IMU_yaw_set=imu_attitude.yaw;
+		  IMU_rol_set=imu_attitude.roll;
 	  }
 
-	   printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
+	  //printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
 	   //printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
 	   //printf(" target_Pitch:%d target_Yaw:%d now_Pit:%d now_Yaw:%d", target_pich,target_yaw,pich_now,yaw_now);
-	  //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
+	   //printf(" RC_time=%d",(int)RC_time);
+	   //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
 	  //	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
 	//		 ,rc.key_W,rc.key_S,rc.key_A,rc.key_D,rc.key_Q,rc.key_E,rc.key_Shift,rc.key_Ctrl);
 	  //printf("PC_mouse_x=%d PC_mouse_y=%d",PC_mouse_x,PC_mouse_y);
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
-	  printf(" cnt_tim_fire_task=%d",cnt_tim_fire_task);
-	   //printf(" ch5=%d vw=%f cnt=%d shift=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega,rc.key_Shift);
+	  //printf(" ch5=%d vw=%f cnt=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
+	  printf("torque 0=%f 1=%f 2=%f 3=%f",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
+	    			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
 	  printf("\r\n");
 
   }
@@ -275,28 +279,37 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (htim->Instance == htim6.Instance) {
 		//1kHz
 		mpu_get_data();
-		imu_ahrs_update();
-		imu_attitude_update();
-		IMU_pich=(imu.pit)-IMU_pich_set;
+		imu_sensor.ax=imu.ax;
+		imu_sensor.ay=imu.ay;
+		imu_sensor.az=imu.az;
+		imu_sensor.mx=imu.mx;
+		imu_sensor.my=imu.my;
+		imu_sensor.mz=imu.mz;
+		imu_sensor.wx=imu.wx;
+		imu_sensor.wy=imu.wy;
+		imu_sensor.wz=imu.wz;
+		madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
+
+		IMU_pich=(imu_attitude.pitch)-IMU_pich_set;
 		if(IMU_pich>  90.0){IMU_pich=IMU_pich-180;}
 		if(IMU_pich< -90.0){IMU_pich=IMU_pich+180;}
-		IMU_yaw=(imu.yaw)-IMU_yaw_set;
+		IMU_yaw=(imu_attitude.yaw)-IMU_yaw_set;
 		if(IMU_yaw>  180.0){IMU_yaw=IMU_yaw-360;}
 		if(IMU_yaw< -180.0){IMU_yaw=IMU_yaw+360;}
-		IMU_rol=(imu.rol)-IMU_rol_set;
+		IMU_rol=(imu_attitude.roll)-IMU_rol_set;
 		if(IMU_rol>  180.0){IMU_rol=IMU_rol-360;}
 		if(IMU_rol< -180.0){IMU_rol=IMU_rol+360;}
 
 		if(cnt_tim_task>1){
-			//500Hz
-			timerTask();
-			cnt_tim_task=0;
+		//500Hz
+		timerTask();
+		cnt_tim_task=0;
 		}
 		cnt_tim_task++;
 
 		if(cnt_tim>40){
-			HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
-			cnt_tim=0;
+		HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
+		cnt_tim=0;
 		}
 		cnt_tim++;
 
@@ -326,8 +339,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 		rc.mouse_x = ((int16_t)rcData[6]) | ((int16_t)rcData[7] << 8);
 		rc.mouse_y = ((int16_t)rcData[8]) | ((int16_t)rcData[9] << 8);
 		rc.mouse_z = ((int16_t)rcData[10]) | ((int16_t)rcData[11] << 8);
-		rc.mouse_press_l = rcData[12];
-		rc.mouse_press_r = rcData[13];
+		rc.mouse_press_r = rcData[12];
+		rc.mouse_press_l = rcData[13];
 		rc.key_v = ((int16_t)rcData[14]);
 		rc.key_W =     (0b0000000000000001 & rc.key_v);
 		rc.key_S =     (0b0000000000000010 & rc.key_v)>>1;
@@ -339,12 +352,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 		rc.key_E =     (0b0000000010000000 & rc.key_v)>>7;
 
 		if ((abs(rc.ch5) > 660) ||(abs(rc.ch3) > 660) ||(abs(rc.ch4) > 660)){
-					NVIC_SystemReset();
-		}
+			NVIC_SystemReset();
+		  }
 		else{
-			RC_time=0;
+			 RC_time=0;
 		}
-
 
 		if(rc.sw2==2){
 			PC_mouse_x=0;
@@ -402,25 +414,35 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
 
 void driveWheelTask() {
 	float vx_temp,vy_temp;
-	const float MAX_CHASSIS_VX_SPEED_calc= MAX_CHASSIS_VX_SPEED;
-	const float MAX_CHASSIS_VY_SPEED_calc= MAX_CHASSIS_VY_SPEED;
-	const float MAX_CHASSIS_VW_SPEED_calc= MAX_CHASSIS_VW_SPEED;
+    float MAX_CHASSIS_VX_SPEED_calc,MAX_CHASSIS_VY_SPEED_calc,MAX_CHASSIS_VW_SPEED_calc;
+	float max_torque=0;
+
+	MAX_CHASSIS_VX_SPEED_calc= MAX_CHASSIS_VX_SPEED;
+	MAX_CHASSIS_VY_SPEED_calc= MAX_CHASSIS_VY_SPEED;
+    MAX_CHASSIS_VW_SPEED_calc= MAX_CHASSIS_VW_SPEED;
+
+    for (uint8_t i = 0; i < 4; i++)
+	  {
+	    if (fabs((float)wheelFdb[i].torque/16384.0*20.0) > max_torque)
+	    	max_torque = fabs((float)wheelFdb[i].torque/16384.0*20.0);
+	  }
+
 
 	if(rc.sw1==1){
-		if(cnt_tim_omega<=100)      {mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
-		else if(cnt_tim_omega<=150) {mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
-		else if(cnt_tim_omega<=199) {mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
+		if(cnt_tim_omega<=100)     {mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
+		else if(cnt_tim_omega<=150){mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
+		else if(cnt_tim_omega<=199){mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
 		else if(cnt_tim_omega==200){mecanum.speed.vw=-(float)(rc.ch5-  0.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=0;}
-		else if(cnt_tim_omega<=250) {mecanum.speed.vw=-(float)(rc.ch5+100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=2;}
-		else if(cnt_tim_omega<=300) {mecanum.speed.vw=-(float)(rc.ch5+300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=4;}
-		else if(cnt_tim_omega<=400) {mecanum.speed.vw=-(float)(rc.ch5+400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=5;}
-		else if(cnt_tim_omega<=500) {mecanum.speed.vw=-(float)(rc.ch5+400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=5;}
-		else if(cnt_tim_omega<=550) {mecanum.speed.vw=-(float)(rc.ch5+300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=4;}
-		else if(cnt_tim_omega<=599) {mecanum.speed.vw=-(float)(rc.ch5+100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=2;}
+		else if(cnt_tim_omega<=250){mecanum.speed.vw=-(float)(rc.ch5+100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=2;}
+		else if(cnt_tim_omega<=300){mecanum.speed.vw=-(float)(rc.ch5+300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=4;}
+		else if(cnt_tim_omega<=400){mecanum.speed.vw=-(float)(rc.ch5+400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=5;}
+		else if(cnt_tim_omega<=500){mecanum.speed.vw=-(float)(rc.ch5+400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=5;}
+		else if(cnt_tim_omega<=550){mecanum.speed.vw=-(float)(rc.ch5+300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=4;}
+		else if(cnt_tim_omega<=599){mecanum.speed.vw=-(float)(rc.ch5+100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=2;}
 		else if(cnt_tim_omega==600){mecanum.speed.vw=-(float)(rc.ch5+  0.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=0;}
-		else if(cnt_tim_omega<=650) {mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
-		else if(cnt_tim_omega<=700) {mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
-		else if(cnt_tim_omega<=800) {mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
+		else if(cnt_tim_omega<=650){mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
+		else if(cnt_tim_omega<=700){mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
+		else if(cnt_tim_omega<=800){mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
 		cnt_tim_omega++;
 		if(cnt_tim_omega>800){cnt_tim_omega=0;}
 
@@ -428,16 +450,16 @@ void driveWheelTask() {
 		vy_temp = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc*2.0/2.5;
 
 		mecanum.speed.vx = vx_temp*cos((IMU_yaw+feed_forward_param)*M_PI/180.0)
-										- vy_temp*sin((IMU_yaw+feed_forward_param)*M_PI/180.0);
+								- vy_temp*sin((IMU_yaw+feed_forward_param)*M_PI/180.0);
 		mecanum.speed.vy = vx_temp*sin((IMU_yaw+feed_forward_param)*M_PI/180.0)
-										+ vy_temp*cos((IMU_yaw+feed_forward_param)*M_PI/180.0);
+								+ vy_temp*cos((IMU_yaw+feed_forward_param)*M_PI/180.0);
 	}
 	else{
 		cnt_tim_omega=0;
 		feed_forward_param=0;
-		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc*1.4;
-		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc*1.4;
-		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc*1.4;
+		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
+		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc;
+		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc;
 
 	}
 
@@ -448,22 +470,16 @@ void driveWheelTask() {
 		int error = mecanum.wheel_rpm[i] - wheelFdb[i].rpm;
 		wheelPID[i].error = error;
 		u[i] = (int16_t) pidExecute(&(wheelPID[i]));
+
+	    if(max_torque>=1.23){
+	    	for (int i = 0; i < 4; i++) {
+	    		u[i] = 0;
+	    	}
+	    }
 	}
 	driveWheel(u);
 
-}
 
-
-void initPID() {
-	for (int i = 0; i < 4; i++) {
-		wheelPID[i].t = 2.0f;
-		wheelPID[i].p = 6.5f;
-		wheelPID[i].i = 50.0f;
-		wheelPID[i].d = 0.0f;
-		wheelPID[i].outLimit = 15000.0f;
-		wheelPID[i].integralOutLimit = 500.0f;
-		wheelPID[i].differentialFilterRate = 0.9f;
-	}
 }
 
 void initMecanum() {
@@ -475,23 +491,51 @@ void initMecanum() {
 }
 
 void initFriction() {
-	for(int i=0;i<300;i++){
+	for(int i=0;i<2500;i++){
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1500);
-	HAL_Delay(10);
 	mpu_get_data();
-	imu_ahrs_update();
-	imu_attitude_update();
+	imu_sensor.ax=imu.ax;
+	imu_sensor.ay=imu.ay;
+	imu_sensor.az=imu.az;
+	imu_sensor.mx=imu.mx;
+	imu_sensor.my=imu.my;
+	imu_sensor.mz=imu.mz;
+	imu_sensor.wx=imu.wx;
+	imu_sensor.wy=imu.wy;
+	imu_sensor.wz=imu.wz;
+	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
+	HAL_Delay(1);
 	}
-	for(int i=0;i<500;i++){
+	for(int i=0;i<4000;i++){
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1220);
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1220);
-	HAL_Delay(10);
 	mpu_get_data();
-	imu_ahrs_update();
-	imu_attitude_update();
+	imu_sensor.ax=imu.ax;
+	imu_sensor.ay=imu.ay;
+	imu_sensor.az=imu.az;
+	imu_sensor.mx=imu.mx;
+	imu_sensor.my=imu.my;
+	imu_sensor.mz=imu.mz;
+	imu_sensor.wx=imu.wx;
+	imu_sensor.wy=imu.wy;
+	imu_sensor.wz=imu.wz;
+	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
+	HAL_Delay(1);
 	}
 
+}
+
+void initPID() {
+	for (int i = 0; i < 4; i++) {
+		wheelPID[i].t = 2.0f;
+		wheelPID[i].p = 3.0f;	//up
+		wheelPID[i].i = 20.0f;  //down
+		wheelPID[i].d = 0.01f;	//down
+		wheelPID[i].outLimit = 15000.0f;
+		wheelPID[i].integralOutLimit = 500.0f;
+		wheelPID[i].differentialFilterRate = 0.9f;
+	}
 }
 
 void initLoadPID() {
@@ -522,7 +566,7 @@ void Gimbal_Task(){
 	if(rc.sw2==2){target_yaw=0;}
 	else{
 		if(rc.sw1==1){
-			if(rc_SW1_temp==3){IMU_yaw_set=imu.yaw;}
+			if(rc_SW1_temp==3){IMU_yaw_set=imu_attitude.yaw;}
 		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
 		if(target_yaw>70){target_yaw=70;}
 		if(target_yaw<-70){target_yaw=-70;}
@@ -534,10 +578,11 @@ void Gimbal_Task(){
 		}
 	}
 	yaw_now=(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0);
-	if((target_yaw-yaw_now)>60){u[0]=30000;}
-	else if((target_yaw-yaw_now)<-60){u[0]=-30000;}
+
+	if((target_yaw-yaw_now)>50){u[0]=30000;}
+	else if((target_yaw-yaw_now)<-50){u[0]=-30000;}
 	else{
-		u[0]=map(target_yaw-yaw_now, -60, 60, -30000, 30000)-(gimbalYawFdb.rpm*50.0);//param is not yet
+		u[0]=map(target_yaw-yaw_now, -50, 50, -30000, 30000)-(gimbalYawFdb.rpm*60.0);
 		if(u[0]>30000){u[0]=30000;}
 		if(u[0]<-30000){u[0]=-30000;}
 	}
@@ -545,18 +590,18 @@ void Gimbal_Task(){
 	if(rc.sw2==2){target_pich=0;}
 	else{
 		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
-		if(target_pich>=30){target_pich=30;}
-		if(target_pich<-30){target_pich=-30;}
+		if(target_pich>=19){target_pich=19;}
+		if(target_pich<-22){target_pich=-22;}
 	}
-	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+28;
+	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+29;
 
 	if((pich_now+IMU_pich)>-4){HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);}
-		else{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);}
+	else{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);}
 
-	if((target_pich-pich_now)>30){u[1]=30000;}
-	else if((target_pich-pich_now)<-30){u[1]=-30000;}
+	if((target_pich-pich_now)>19){u[1]=30000;}
+	else if((target_pich-pich_now)<-19){u[1]=-30000;}
 	else{
-		u[1]=map(target_pich-pich_now, -30, 30, -30000, 30000)-(gimbalPitchFdb.rpm*50.0);//param is not yet
+		u[1]=map(target_pich-pich_now, -19, 19, -30000, 30000)-(gimbalPitchFdb.rpm*60.0);//param is not yet
 		if(u[1]>30000){u[1]=30000;}
 		if(u[1]<-30000){u[1]=-30000;}
 	}
@@ -568,7 +613,7 @@ void Gimbal_Task(){
 
 void fire_task_push(){
 	if(fire==1){
-	if(cnt_tim_fire_task>0 && cnt_tim_fire_task<=150){
+	if(cnt_tim_fire_task>0 && cnt_tim_fire_task<=110){
 		sConfigOC.Pulse = map(50,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -576,7 +621,7 @@ void fire_task_push(){
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
-	else if(cnt_tim_fire_task>150 && cnt_tim_fire_task<=500){
+	else if(cnt_tim_fire_task>110 && cnt_tim_fire_task<=410){
 		sConfigOC.Pulse = map(120,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -584,7 +629,7 @@ void fire_task_push(){
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
-	else if(cnt_tim_fire_task>500 && cnt_tim_fire_task<=600){
+	else if(cnt_tim_fire_task>410 && cnt_tim_fire_task<=500){
 		sConfigOC.Pulse = map(90,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -592,7 +637,7 @@ void fire_task_push(){
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
-	else if(cnt_tim_fire_task>600 && cnt_tim_fire_task<=850){
+	else if(cnt_tim_fire_task>500 && cnt_tim_fire_task<=700){
 		sConfigOC.Pulse = map(90,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -600,7 +645,7 @@ void fire_task_push(){
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
-	else if(cnt_tim_fire_task>850 && cnt_tim_fire_task<=950){
+	else if(cnt_tim_fire_task>700 && cnt_tim_fire_task<=790){
 		sConfigOC.Pulse = map(90,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -619,7 +664,7 @@ void fire_task_push(){
 
 
 	cnt_tim_fire_task++;
-	if(cnt_tim_fire_task>950){
+	if(cnt_tim_fire_task>790){
 		cnt_tim_fire_task=0;
 		fire=0;
 	}

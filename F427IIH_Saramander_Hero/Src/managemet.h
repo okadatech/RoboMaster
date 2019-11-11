@@ -26,6 +26,7 @@
 //#include "xprintf.h"
 #include "motor_fdb.h"
 #include "bsp_imu.h"
+#include "ahrs.h"
 
 #include "stdio.h"
 #include <stdlib.h>
@@ -42,8 +43,15 @@ struct mecanum mecanum;
 _pid_t wheelPID[4], loadPID;
 int16_t target_yaw,target_pich;
 int16_t yaw_now,pich_now;
+
+TIM_MasterConfigTypeDef sMasterConfig;
+TIM_OC_InitTypeDef sConfigOC;
+TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig;
+
 float DBUFF[32];
 
+struct ahrs_sensor imu_sensor;
+struct attitude imu_attitude;
 
 float IMU_pich;
 float IMU_yaw;
@@ -53,10 +61,6 @@ float IMU_pich_set;
 float IMU_yaw_set;
 float IMU_rol_set;
 
-
-TIM_MasterConfigTypeDef sMasterConfig;
-TIM_OC_InitTypeDef sConfigOC;
-TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig;
 
 int PC_mouse_x,PC_mouse_y;
 

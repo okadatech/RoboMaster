@@ -21,9 +21,9 @@
 #include "tim.h"
 
 /* USER CODE BEGIN 0 */
-TIM_MasterConfigTypeDef sMasterConfig;
-TIM_OC_InitTypeDef sConfigOC;
-TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig;
+ TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
 /* USER CODE END 0 */
 
 TIM_HandleTypeDef htim1;
@@ -149,6 +149,7 @@ void MX_TIM6_Init(void)
 /* TIM8 init function */
 void MX_TIM8_Init(void)
 {
+
   htim8.Instance = TIM8;
   htim8.Init.Prescaler = 167;
   htim8.Init.CounterMode = TIM_COUNTERMODE_UP;
