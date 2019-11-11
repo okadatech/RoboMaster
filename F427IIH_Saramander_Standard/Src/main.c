@@ -220,7 +220,9 @@ int main(void)
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
 	  //printf(" ch5=%d vw=%f cnt=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
-
+	  printf("torque 0=%f 1=%f 2=%f 3=%f",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
+	    			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
+	    printf("\r\n");
 
 
   }
@@ -468,7 +470,7 @@ void driveWheelTask() {
 		wheelPID[i].error = error;
 		u[i] = (int16_t) pidExecute(&(wheelPID[i]));
 
-	    if(max_torque>=1.0){
+	    if(max_torque>=1.23){
 	    	for (int i = 0; i < 4; i++) {
 	    		u[i] = 0;
 	    	}
@@ -476,9 +478,7 @@ void driveWheelTask() {
 	}
 	driveWheel(u);
 
-    printf("torque 0=%f 1=%f 2=%f 3=%f",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
-    			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
-    printf("\r\n");
+
 }
 
 
@@ -530,9 +530,9 @@ void initFriction() {
 void initPID() {
 	for (int i = 0; i < 4; i++) {
 		wheelPID[i].t = 2.0f;
-		wheelPID[i].p = 6.0f;	//up
-		wheelPID[i].i = 30.0f;  //down
-		wheelPID[i].d = 0.07f;	//down
+		wheelPID[i].p = 3.0f;	//up
+		wheelPID[i].i = 20.0f;  //down
+		wheelPID[i].d = 0.01f;	//down
 		wheelPID[i].outLimit = 15000.0f;
 		wheelPID[i].integralOutLimit = 500.0f;
 		wheelPID[i].differentialFilterRate = 0.9f;
