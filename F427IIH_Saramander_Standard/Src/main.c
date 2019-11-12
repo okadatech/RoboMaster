@@ -200,7 +200,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1){
+	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1 || rc.sw1==2){
 		  IMU_pich_set=imu_attitude.pitch;
 		  IMU_yaw_set=imu_attitude.yaw;
 		  IMU_rol_set=imu_attitude.roll;
@@ -409,7 +409,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
 void driveWheelTask() {
 	float vx_temp,vy_temp;
     float MAX_CHASSIS_VX_SPEED_calc,MAX_CHASSIS_VY_SPEED_calc,MAX_CHASSIS_VW_SPEED_calc;
-	float max_torque=0;
+	float torque_sum=0.0;
 
 	MAX_CHASSIS_VX_SPEED_calc= MAX_CHASSIS_VX_SPEED;
 	MAX_CHASSIS_VY_SPEED_calc= MAX_CHASSIS_VY_SPEED;
@@ -417,12 +417,11 @@ void driveWheelTask() {
 
     for (uint8_t i = 0; i < 4; i++)
 	  {
-	    if (fabs((float)wheelFdb[i].torque/16384.0*20.0) > max_torque)
-	    	max_torque = fabs((float)wheelFdb[i].torque/16384.0*20.0);
+    	torque_sum+=fabs((float)wheelFdb[i].torque/16384.0*20.0);
 	  }
 
 
-	if(rc.sw1==1){
+	if(rc.sw2==1){
 		if(cnt_tim_omega<=100)     {mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
 		else if(cnt_tim_omega<=150){mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
 		else if(cnt_tim_omega<=199){mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
@@ -465,11 +464,12 @@ void driveWheelTask() {
 		wheelPID[i].error = error;
 		u[i] = (int16_t) pidExecute(&(wheelPID[i]));
 
-	    if(max_torque>=1.23){
-	    	for (int i = 0; i < 4; i++) {
-	    		u[i] = 0;
-	    	}
-	    }
+
+		if(torque_sum>3.9){
+			for (int i = 0; i < 4; i++) {
+				u[i] = 0;
+			}
+		}
 	}
 	driveWheel(u);
 
@@ -554,13 +554,13 @@ void timerTask() { //call 500Hz
 void Gimbal_Task(){
 	int fire = 0;
 	int16_t u[4];
-	if (rc.mouse_press_r == 1 ||  rc.ch1==660) {
+	if (rc.mouse_press_r == 1 ||  rc.ch2==660) {
 		fire = 1;
 		DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
 		DBUFF[3] = u[2] = pidExecute(&loadPID);
 	} else {
 		fire = 0;
-		if(rc.sw1==2){
+		if(rc.ch2==-660){
 			DBUFF[1] = loadPID.error = 900.0f*2.0 - loadMotorFdb.rpm;
 			DBUFF[3] = u[2] = pidExecute(&loadPID);
 		}
@@ -572,7 +572,7 @@ void Gimbal_Task(){
 
 	if(rc.sw2==2){target_yaw=0;}
 	else{
-		if(rc.sw1==1){
+		if(rc.sw2==1){
 			if(rc_SW1_temp==3){IMU_yaw_set=imu_attitude.yaw;}
 		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
 		if(target_yaw>70){target_yaw=70;}
@@ -615,12 +615,12 @@ void Gimbal_Task(){
 
 	u[3]=0;
 	driveGimbalMotors(u);
-	rc_SW1_temp=rc.sw1;
+	rc_SW1_temp=rc.sw2;
 }
 
 
 void fire_Task(){
-	if(rc.sw2==1){
+	if(rc.sw1==1){
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
 		//max 1500
