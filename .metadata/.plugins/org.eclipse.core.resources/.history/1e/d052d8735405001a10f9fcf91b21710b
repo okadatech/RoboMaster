@@ -415,9 +415,10 @@ void driveWheelTask() {
 	MAX_CHASSIS_VY_SPEED_calc= MAX_CHASSIS_VY_SPEED;
     MAX_CHASSIS_VW_SPEED_calc= MAX_CHASSIS_VW_SPEED;
 
-
-    torque_sum = fabs((float)wheelFdb[0].torque/16384.0*20.0)+fabs((float)wheelFdb[1].torque/16384.0*20.0)
-    		    +fabs((float)wheelFdb[2].torque/16384.0*20.0)+fabs((float)wheelFdb[3].torque/16384.0*20.0);
+    for (uint8_t i = 0; i < 4; i++)
+	  {
+    	torque_sum+=fabs((float)wheelFdb[i].torque/16384.0*20.0);
+	  }
 
 
 	if(rc.sw2==1){
@@ -449,8 +450,7 @@ void driveWheelTask() {
 	else{
 		cnt_tim_omega=0;
 		feed_forward_param=0;
-		//mecanum.speed.vw = -(float)rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
-		mecanum.speed.vw = -(float) (rc.ch5*log(abs(rc.ch5)+1.0)/2.83) / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
+		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
 		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc;
 		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc;
 
@@ -463,6 +463,7 @@ void driveWheelTask() {
 		int error = mecanum.wheel_rpm[i] - wheelFdb[i].rpm;
 		wheelPID[i].error = error;
 		u[i] = (int16_t) pidExecute(&(wheelPID[i]));
+
 
 		if(torque_sum>3.9){
 			for (int i = 0; i < 4; i++) {
@@ -557,8 +558,7 @@ void Gimbal_Task(){
 		fire = 1;
 		DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
 		DBUFF[3] = u[2] = pidExecute(&loadPID);
-	}
-	else {
+	} else {
 		fire = 0;
 		if(rc.ch2==-660){
 			DBUFF[1] = loadPID.error = 900.0f*2.0 - loadMotorFdb.rpm;
