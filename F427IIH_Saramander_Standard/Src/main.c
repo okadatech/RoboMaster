@@ -184,6 +184,7 @@ int main(void)
   HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
 
+  CustomData_init(13,0x0113);
   IMU_pich_set=imu_attitude.pitch;
   IMU_yaw_set=imu_attitude.yaw;
   IMU_rol_set=imu_attitude.roll;
@@ -221,6 +222,13 @@ int main(void)
 	   // 			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
 	    printf("\r\n");
 
+	    uint8_t customdataPacket[28];
+	    setData1(100.0f);
+	    setData2(2.0f);
+	    setData3(3.0f);
+	    setMasks(0x02);
+	    makeCustomDataPacket(customdataPacket);
+	    HAL_UART_Transmit(&huart8, (uint8_t *)customdataPacket, 28, 100);
 
   }
   /* USER CODE END 3 */
@@ -450,7 +458,7 @@ void driveWheelTask() {
 		cnt_tim_omega=0;
 		feed_forward_param=0;
 		//mecanum.speed.vw = -(float)rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
-		mecanum.speed.vw = -(float) (rc.ch5*log(abs(rc.ch5)+1.0)/2.83) / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
+		mecanum.speed.vw = -(float)(rc.ch5*log(abs(rc.ch5)+1.0)*0.153) / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
 		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc;
 		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc;
 

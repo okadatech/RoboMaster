@@ -1,0 +1,16 @@
+/*
+ * referee_serial_port_protocol.h
+ *
+ *  Created on: 2019/11/13
+ *      Author: okadatech
+ */
+
+#ifndef REFEREE_SERIAL_PORT_PROTOCOL_H_
+#define REFEREE_SERIAL_PORT_PROTOCOL_H_
+
+#include "stm32f4xx_hal.h"
+#include <stdbool.h>
+#include <string.h>
+#include "managemet.h"
+
+#endif /* REFEREE_SERIAL_PORT_PROTOCOL_H_ */

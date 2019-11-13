@@ -32,7 +32,8 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Inc/main.h ../Inc/spi.h ../Inc/tim.h ../Inc/usart.h ../Inc/gpio.h \
  ../Src/managemet.h ../Inc/remote_controller.h ../Inc/wheel.h \
  ../Inc/pid.h ../Inc/motor.h ../Inc/can.h ../Inc/mecanum.h \
- ../Inc/motor_fdb.h ../Src/bsp_imu.h ../Src/mytype.h ../Src/ahrs.h
+ ../Inc/motor_fdb.h ../Src/bsp_imu.h ../Src/mytype.h ../Src/ahrs.h \
+ ../Src/referee_serial_port_protocol.h
 
 ../Inc/main.h:
 
@@ -129,3 +130,5 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 ../Src/mytype.h:
 
 ../Src/ahrs.h:
+
+../Src/referee_serial_port_protocol.h:
