@@ -253,13 +253,13 @@ void setFrameHeader(uint8_t header[7]){
 
 
  void setData1(float value){
-  CustomData.data1 += value;
+  CustomData.data1 = value;
 }
  void setData2(float value){
-  CustomData.data2 += value;
+  CustomData.data2 = value;
 }
  void setData3(float value){
-  CustomData.data3 += value;
+  CustomData.data3 = value;
 }
  void setMasks(uint8_t mask){
   CustomData.masks = mask;
