@@ -86,7 +86,7 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
 	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 void timerTask() ;
-uint8_t cnt_tim,cnt_tim_fire,cnt_tim_task;
+uint8_t cnt_tim,cnt_tim_fire,cnt_tim_task,cnt_time_main;
 uint16_t cnt_tim_omega,feed_forward_param;
 uint16_t sw1_cnt=1220;
 uint8_t rc_SW1_temp;
@@ -211,7 +211,7 @@ int main(void)
 
 	  //printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
 	   //printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
-	   printf(" target_Pitch:%d target_Yaw:%d now_Pit:%d now_Yaw:%d", target_pich,target_yaw,pich_now,yaw_now);
+	   //printf(" target_Pitch:%d target_Yaw:%d now_Pit:%d now_Yaw:%d", target_pich,target_yaw,pich_now,yaw_now);
 	   //printf(" RC_time=%d",(int)RC_time);
 	   //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
 	  //	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
@@ -220,27 +220,34 @@ int main(void)
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
 	  //printf(" ch5=%d vw=%f cnt=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
-	  //printf("torque 0=%f 1=%f 2=%f 3=%f",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
-	   // 			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
-	    printf("\r\n");
+	  printf("torque M0=%8.3lf M1=%8.3lf M2=%8.3lf M3=%8.3lf",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
+	    			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
+	   //printf(" =%d",(int)cnt_time_main);
+	   printf("\r\n");
 
-	    setData1(IMU_pich);
-	    setData2(IMU_yaw);
-	    setData3((float)yaw_now);
-	         if(                yaw_now<=-55){setMasks(0b011111);}
-	    else if(yaw_now>=-55 && yaw_now<=-45){setMasks(0b001111);}
-	    else if(yaw_now>=-45 && yaw_now<=-35){setMasks(0b101111);}
-	    else if(yaw_now>=-35 && yaw_now<=-20){setMasks(0b100111);}
-	    else if(yaw_now>=-20 && yaw_now<=-10){setMasks(0b110111);}
-	    else if(yaw_now>=-10 && yaw_now<= 10){setMasks(0b110011);}
-	    else if(yaw_now>= 10 && yaw_now<= 20){setMasks(0b111011);}
-	    else if(yaw_now>= 20 && yaw_now<= 35){setMasks(0b111001);}
-	    else if(yaw_now>= 35 && yaw_now<= 45){setMasks(0b111101);}
-	    else if(yaw_now>= 45 && yaw_now<= 55){setMasks(0b111100);}
-	    else if(yaw_now>= 55                ){setMasks(0b111110);}
-	    makeCustomDataPacket(customdataPacket);
-	    HAL_UART_Transmit(&huart8, (uint8_t *)customdataPacket, 28, 0xff);
-
+		if(cnt_time_main>=10){
+		    setData1(IMU_pich);
+		    setData2(IMU_yaw);
+		    setData3((float)yaw_now);
+		    	 if(yaw_now>=-75 && yaw_now<=-55){setMasks(0b011111);}
+		    else if(yaw_now>=-55 && yaw_now<=-45){setMasks(0b001111);}
+		    else if(yaw_now>=-45 && yaw_now<=-35){setMasks(0b101111);}
+		    else if(yaw_now>=-35 && yaw_now<=-20){setMasks(0b100111);}
+		    else if(yaw_now>=-20 && yaw_now<=-10){setMasks(0b110111);}
+		    else if(yaw_now>=-10 && yaw_now<= 10){setMasks(0b110011);}
+		    else if(yaw_now>= 10 && yaw_now<= 20){setMasks(0b111011);}
+		    else if(yaw_now>= 20 && yaw_now<= 35){setMasks(0b111001);}
+		    else if(yaw_now>= 35 && yaw_now<= 45){setMasks(0b111101);}
+		    else if(yaw_now>= 45 && yaw_now<= 55){setMasks(0b111100);}
+		    else if(yaw_now>= 55 && yaw_now<= 75){setMasks(0b111110);}
+		    else  								 {setMasks(0b000000);}
+		    makeCustomDataPacket(customdataPacket);
+		    HAL_UART_Transmit(&huart8, (uint8_t *)customdataPacket, 28,100);
+			cnt_time_main=0;
+		}
+		else{
+			cnt_time_main++;
+		}
   }
   /* USER CODE END 3 */
 }
@@ -321,8 +328,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 		cnt_tim_task++;
 
 		if(cnt_tim>40){
-		HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
-		cnt_tim=0;
+			HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
+			cnt_tim=0;
 		}
 		cnt_tim++;
 

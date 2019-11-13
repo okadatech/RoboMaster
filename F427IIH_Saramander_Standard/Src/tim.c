@@ -149,7 +149,6 @@ void MX_TIM6_Init(void)
 /* TIM8 init function */
 void MX_TIM8_Init(void)
 {
-
   htim8.Instance = TIM8;
   htim8.Init.Prescaler = 167;
   htim8.Init.CounterMode = TIM_COUNTERMODE_UP;
