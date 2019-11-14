@@ -86,12 +86,13 @@ void fire_task_open();
 long map(long x, long in_min, long in_max, long out_min, long out_max) {
 	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
-void timerTask() ;
-uint8_t cnt_tim,cnt_tim_fire,cnt_tim_task,fire;
+uint8_t cnt_tim,cnt_tim_fire,cnt_tim_task,fire,cnt_time_main;
 uint16_t cnt_tim_omega,feed_forward_param;
 uint16_t sw1_cnt=1220;
 uint8_t rc_SW1_temp;
 uint32_t RC_time,cnt_tim_fire_task;
+uint8_t customdataPacket[28];
+
 /* USER CODE END 0 */
 
 /**
@@ -136,7 +137,6 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
-
   HAL_UART_Receive_IT(&huart1, rcData, 18);
 
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 0);
@@ -164,10 +164,8 @@ int main(void)
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
 
-
   mpu_device_init();
   mpu_offset_call();
-
 
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1); // friction wheel
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
@@ -188,6 +186,9 @@ int main(void)
   HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
 
+  CustomData_init(11,0x0111);  //blue-1
+  //CustomData_init(1,0x0101);  //red-1
+
   IMU_pich_set=imu_attitude.pitch;
   IMU_yaw_set=imu_attitude.yaw;
   IMU_rol_set=imu_attitude.roll;
@@ -204,8 +205,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-
-	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1){
+	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1 || rc.sw1==2){
 		  IMU_pich_set=imu_attitude.pitch;
 		  IMU_yaw_set=imu_attitude.yaw;
 		  IMU_rol_set=imu_attitude.roll;
@@ -222,10 +222,34 @@ int main(void)
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
 	  //printf(" ch5=%d vw=%f cnt=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
-	  //printf("torque 0=%f 1=%f 2=%f 3=%f",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
-	  //  			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
-	  printf("\r\n");
+	  printf("torque M0=%8.3lf M1=%8.3lf M2=%8.3lf M3=%8.3lf",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
+	    			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
+	   //printf(" =%d",(int)cnt_time_main);
+	   printf("\r\n");
 
+		if(cnt_time_main>=10){
+		    setData1(IMU_pich);
+		    setData2(IMU_yaw);
+		    setData3((float)yaw_now);
+		    	 if(yaw_now>=-75 && yaw_now<=-55){setMasks(0b011111);}
+		    else if(yaw_now>=-55 && yaw_now<=-45){setMasks(0b001111);}
+		    else if(yaw_now>=-45 && yaw_now<=-35){setMasks(0b101111);}
+		    else if(yaw_now>=-35 && yaw_now<=-20){setMasks(0b100111);}
+		    else if(yaw_now>=-20 && yaw_now<=-10){setMasks(0b110111);}
+		    else if(yaw_now>=-10 && yaw_now<= 10){setMasks(0b110011);}
+		    else if(yaw_now>= 10 && yaw_now<= 20){setMasks(0b111011);}
+		    else if(yaw_now>= 20 && yaw_now<= 35){setMasks(0b111001);}
+		    else if(yaw_now>= 35 && yaw_now<= 45){setMasks(0b111101);}
+		    else if(yaw_now>= 45 && yaw_now<= 55){setMasks(0b111100);}
+		    else if(yaw_now>= 55 && yaw_now<= 75){setMasks(0b111110);}
+		    else  								 {setMasks(0b000000);}
+		    makeCustomDataPacket(customdataPacket);
+		    HAL_UART_Transmit(&huart8, (uint8_t *)customdataPacket, 28,100);
+			cnt_time_main=0;
+		}
+		else{
+			cnt_time_main++;
+		}
   }
   /* USER CODE END 3 */
 }
@@ -306,8 +330,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 		cnt_tim_task++;
 
 		if(cnt_tim>40){
-		HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
-		cnt_tim=0;
+			HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
+			cnt_tim=0;
 		}
 		cnt_tim++;
 
@@ -413,20 +437,18 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
 void driveWheelTask() {
 	float vx_temp,vy_temp;
     float MAX_CHASSIS_VX_SPEED_calc,MAX_CHASSIS_VY_SPEED_calc,MAX_CHASSIS_VW_SPEED_calc;
-	float max_torque=0;
+	float torque_sum=0.0;
 
 	MAX_CHASSIS_VX_SPEED_calc= MAX_CHASSIS_VX_SPEED;
 	MAX_CHASSIS_VY_SPEED_calc= MAX_CHASSIS_VY_SPEED;
     MAX_CHASSIS_VW_SPEED_calc= MAX_CHASSIS_VW_SPEED;
 
-    for (uint8_t i = 0; i < 4; i++)
-	  {
-	    if (fabs((float)wheelFdb[i].torque/16384.0*20.0) > max_torque)
-	    	max_torque = fabs((float)wheelFdb[i].torque/16384.0*20.0);
-	  }
+
+    torque_sum = fabs((float)wheelFdb[0].torque/16384.0*20.0)+fabs((float)wheelFdb[1].torque/16384.0*20.0)
+    		    +fabs((float)wheelFdb[2].torque/16384.0*20.0)+fabs((float)wheelFdb[3].torque/16384.0*20.0);
 
 
-	if(rc.sw1==1){
+	if(rc.sw2==1){
 		if(cnt_tim_omega<=100)     {mecanum.speed.vw=-(float)(rc.ch5-400.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
 		else if(cnt_tim_omega<=150){mecanum.speed.vw=-(float)(rc.ch5-300.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
 		else if(cnt_tim_omega<=199){mecanum.speed.vw=-(float)(rc.ch5-100.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
@@ -455,7 +477,7 @@ void driveWheelTask() {
 	else{
 		cnt_tim_omega=0;
 		feed_forward_param=0;
-		mecanum.speed.vw = -(float) rc.ch5 / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
+		mecanum.speed.vw = -(float)(rc.ch5*log(abs(rc.ch5)+1.0)*0.153) / 660.0 * MAX_CHASSIS_VW_SPEED_calc;
 		mecanum.speed.vx =  (float) rc.ch4 / 660.0 * MAX_CHASSIS_VX_SPEED_calc;
 		mecanum.speed.vy = -(float) rc.ch3 / 660.0 * MAX_CHASSIS_VY_SPEED_calc;
 
@@ -469,16 +491,18 @@ void driveWheelTask() {
 		wheelPID[i].error = error;
 		u[i] = (int16_t) pidExecute(&(wheelPID[i]));
 
-	    if(max_torque>=1.23){
-	    	for (int i = 0; i < 4; i++) {
-	    		u[i] = 0;
-	    	}
-	    }
+		if(torque_sum>3.9){
+			for (int i = 0; i < 4; i++) {
+				u[i] = 0;
+			}
+		}
 	}
 	driveWheel(u);
 
 
 }
+
+
 
 void initMecanum() {
 	mecanum.param.wheel_perimeter = PERIMETER;
@@ -527,9 +551,9 @@ void initFriction() {
 void initPID() {
 	for (int i = 0; i < 4; i++) {
 		wheelPID[i].t = 2.0f;
-		wheelPID[i].p = 3.0f;	//up
-		wheelPID[i].i = 20.0f;  //down
-		wheelPID[i].d = 0.01f;	//down
+		wheelPID[i].p = 3.0f;
+		wheelPID[i].i = 20.0f;
+		wheelPID[i].d = 0.01f;
 		wheelPID[i].outLimit = 15000.0f;
 		wheelPID[i].integralOutLimit = 500.0f;
 		wheelPID[i].differentialFilterRate = 0.9f;
@@ -551,7 +575,6 @@ void timerTask() { //call 500Hz
 	Gimbal_Task();
 	fire_Task();
 	fire_task_open();
-
 }
 
 void Gimbal_Task(){
@@ -561,9 +584,10 @@ void Gimbal_Task(){
 	}
 	fire_task_push();
 
+
 	if(rc.sw2==2){target_yaw=0;}
 	else{
-		if(rc.sw1==1){
+		if(rc.sw2==1){
 			if(rc_SW1_temp==3){IMU_yaw_set=imu_attitude.yaw;}
 		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
 		if(target_yaw>70){target_yaw=70;}
@@ -606,8 +630,9 @@ void Gimbal_Task(){
 
 	u[3]=0;
 	driveGimbalMotors(u);
-	rc_SW1_temp=rc.sw1;
+	rc_SW1_temp=rc.sw2;
 }
+
 
 void fire_task_push(){
 	if(fire==1){
@@ -668,8 +693,9 @@ void fire_task_push(){
 	}
 	}
 }
+
 void fire_Task(){
-	if(rc.sw2==1){
+	if(rc.sw1==1){
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
 		//max 1500
@@ -705,6 +731,7 @@ void fire_task_open(){
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 	}
 }
+
 
 /* USER CODE END 4 */
 
