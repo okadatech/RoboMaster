@@ -273,10 +273,10 @@ void setFrameHeader(uint8_t header[7]){
 
 
  void CustomData_init(uint16_t sender,uint16_t clientID){
-   setData1(0x12345678);
-   setData2(0x56781234);
-   setData3(0x9ABC1234);
-   setMasks(0x02);
+   setData1(0.0);
+   setData2(0.0);
+   setData3(0.0);
+   setMasks(0b000000);
    setSenderID(sender);
    setClientID(clientID);
  }
