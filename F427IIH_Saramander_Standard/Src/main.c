@@ -185,7 +185,12 @@ int main(void)
   HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
 
+  //CustomData_init(3,0x0103);  //red-3
+  //CustomData_init(4,0x0104);  //red-4
+  //CustomData_init(5,0x0105);  //red-5
   CustomData_init(13,0x0113);  //blue-3
+  //CustomData_init(14,0x0114);  //blue-4
+  //CustomData_init(15,0x0115);  //blue-5
 
   IMU_pich_set=imu_attitude.pitch;
   IMU_yaw_set=imu_attitude.yaw;
