@@ -1,10 +1,16 @@
-23:00:01 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
+20:41:20 **** Build of configuration Debug for project F427IIH_Saramander_Standard ****
 make -j4 all 
 arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
+arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Standard.elf  "F427IIH_Saramander_Standard.hex"
+arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Standard.elf  "F427IIH_Saramander_Standard.bin"
    text	   data	    bss	    dec	    hex	filename
   50368	    516	   3364	  54248	   d3e8	F427IIH_Saramander_Standard.elf
 Finished building: default.size.stdout
  
+Finished building: F427IIH_Saramander_Standard.bin
+Finished building: F427IIH_Saramander_Standard.hex
+ 
+ 
 
-23:00:02 Build Finished. 0 errors, 0 warnings. (took 1s.585ms)
+20:41:22 Build Finished. 0 errors, 0 warnings. (took 2s.459ms)
 
