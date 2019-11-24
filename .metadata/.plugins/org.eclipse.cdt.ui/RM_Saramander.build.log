@@ -1,4 +1,4 @@
-20:05:02 **** Incremental Build of configuration Debug for project rm_saramander ****
+20:03:06 **** Build of configuration Debug for project rm_saramander ****
 make all 
 arm-none-eabi-size   rm_saramander.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   rm_saramander.elf
 Finished building: default.size.stdout
  
 
-20:05:03 Build Finished. 0 errors, 0 warnings. (took 1s.291ms)
+20:03:08 Build Finished. 0 errors, 0 warnings. (took 1s.727ms)
 

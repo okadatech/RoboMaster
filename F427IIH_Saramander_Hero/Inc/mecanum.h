@@ -30,9 +30,9 @@
 /* the perimeter of wheel(mm) */
 #define PERIMETER 478
 /* wheel track distance(mm) */
-#define WHEELTRACK 394
+#define WHEELTRACK 565
 /* wheelbase distance(mm) */
-#define WHEELBASE 415
+#define WHEELBASE 495
 
 /* gimbal is relative to chassis center x axis offset(mm) */
 #define ROTATE_X_OFFSET 7

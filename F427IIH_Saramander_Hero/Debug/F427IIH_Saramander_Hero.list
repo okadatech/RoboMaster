@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  17 .debug_macro  000265d3  00000000  00000000  0005b520  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_line   000123f0  00000000  00000000  00081af3  2**0
+ 18 .debug_line   000123f5  00000000  00000000  00081af3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .debug_str    000dd465  00000000  00000000  00093ee3  2**0
+ 19 .debug_str    000dd465  00000000  00000000  00093ee8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 20 .comment      0000007b  00000000  00000000  00171348  2**0
+ 20 .comment      0000007b  00000000  00000000  0017134d  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  000048f0  00000000  00000000  001713c4  2**2
+ 21 .debug_frame  000048f0  00000000  00000000  001713c8  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -11962,172 +11962,174 @@ void initFriction() {
 	imu_sensor.wz=imu.wz;
 	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
  8005500:	4f52      	ldr	r7, [pc, #328]	; (800564c <initFriction+0x158>)
- 8005502:	4626      	mov	r6, r4
 void initFriction() {
- 8005504:	f640 18c4 	movw	r8, #2500	; 0x9c4
+ 8005502:	f44f 68fa 	mov.w	r8, #2000	; 0x7d0
+	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
+ 8005506:	4626      	mov	r6, r4
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 2000);
+ 8005508:	46c1      	mov	r9, r8
+ 800550a:	f8da 3000 	ldr.w	r3, [sl]
+ 800550e:	f8c3 9034 	str.w	r9, [r3, #52]	; 0x34
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 2000);
+ 8005512:	f8c3 9038 	str.w	r9, [r3, #56]	; 0x38
+	mpu_get_data();
+ 8005516:	f7fe fc83 	bl	8003e20 <mpu_get_data>
+	imu_sensor.ax=imu.ax;
+ 800551a:	f9b5 3000 	ldrsh.w	r3, [r5]
+	imu_sensor.wx=imu.wx;
+ 800551e:	f8d5 c010 	ldr.w	ip, [r5, #16]
+	imu_sensor.wy=imu.wy;
+ 8005522:	696a      	ldr	r2, [r5, #20]
+	imu_sensor.wx=imu.wx;
+ 8005524:	f8c4 c00c 	str.w	ip, [r4, #12]
+	imu_sensor.ax=imu.ax;
+ 8005528:	ee05 3a10 	vmov	s10, r3
+	imu_sensor.ay=imu.ay;
+ 800552c:	f9b5 3002 	ldrsh.w	r3, [r5, #2]
+	imu_sensor.wy=imu.wy;
+ 8005530:	6122      	str	r2, [r4, #16]
+	imu_sensor.ay=imu.ay;
+ 8005532:	ee05 3a90 	vmov	s11, r3
+	imu_sensor.az=imu.az;
+ 8005536:	f9b5 3004 	ldrsh.w	r3, [r5, #4]
+ 800553a:	ee06 3a10 	vmov	s12, r3
+	imu_sensor.mx=imu.mx;
+ 800553e:	f9b5 3006 	ldrsh.w	r3, [r5, #6]
+ 8005542:	ee06 3a90 	vmov	s13, r3
+	imu_sensor.my=imu.my;
+ 8005546:	f9b5 3008 	ldrsh.w	r3, [r5, #8]
+ 800554a:	ee07 3a10 	vmov	s14, r3
+	imu_sensor.mz=imu.mz;
+ 800554e:	f9b5 300a 	ldrsh.w	r3, [r5, #10]
+ 8005552:	ee07 3a90 	vmov	s15, r3
+	imu_sensor.ax=imu.ax;
+ 8005556:	eeb8 5ac5 	vcvt.f32.s32	s10, s10
+	imu_sensor.ay=imu.ay;
+ 800555a:	eef8 5ae5 	vcvt.f32.s32	s11, s11
+	imu_sensor.az=imu.az;
+ 800555e:	eeb8 6ac6 	vcvt.f32.s32	s12, s12
+	imu_sensor.mx=imu.mx;
+ 8005562:	eef8 6ae6 	vcvt.f32.s32	s13, s13
+	imu_sensor.my=imu.my;
+ 8005566:	eeb8 7ac7 	vcvt.f32.s32	s14, s14
+	imu_sensor.mz=imu.mz;
+ 800556a:	eef8 7ae7 	vcvt.f32.s32	s15, s15
+	imu_sensor.wz=imu.wz;
+ 800556e:	69ab      	ldr	r3, [r5, #24]
+	imu_sensor.ax=imu.ax;
+ 8005570:	ed84 5a00 	vstr	s10, [r4]
+	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
+ 8005574:	4639      	mov	r1, r7
+ 8005576:	4630      	mov	r0, r6
+	imu_sensor.ay=imu.ay;
+ 8005578:	edc4 5a01 	vstr	s11, [r4, #4]
+	imu_sensor.az=imu.az;
+ 800557c:	ed84 6a02 	vstr	s12, [r4, #8]
+	imu_sensor.mx=imu.mx;
+ 8005580:	edc4 6a06 	vstr	s13, [r4, #24]
+	imu_sensor.my=imu.my;
+ 8005584:	ed84 7a07 	vstr	s14, [r4, #28]
+	imu_sensor.mz=imu.mz;
+ 8005588:	edc4 7a08 	vstr	s15, [r4, #32]
+	imu_sensor.wz=imu.wz;
+ 800558c:	6163      	str	r3, [r4, #20]
+	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
+ 800558e:	f7ff f857 	bl	8004640 <madgwick_ahrs_updateIMU>
+	HAL_Delay(1);
+ 8005592:	2001      	movs	r0, #1
+ 8005594:	f7fb fd38 	bl	8001008 <HAL_Delay>
+	for(int i=0;i<2000;i++){
+ 8005598:	f1b8 0801 	subs.w	r8, r8, #1
+ 800559c:	d1b5      	bne.n	800550a <initFriction+0x16>
+	imu_sensor.my=imu.my;
+	imu_sensor.mz=imu.mz;
+	imu_sensor.wx=imu.wx;
+	imu_sensor.wy=imu.wy;
+	imu_sensor.wz=imu.wz;
+	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
+ 800559e:	f8df 80ac 	ldr.w	r8, [pc, #172]	; 800564c <initFriction+0x158>
+ 80055a2:	4f28      	ldr	r7, [pc, #160]	; (8005644 <initFriction+0x150>)
+ 80055a4:	f640 16c4 	movw	r6, #2500	; 0x9c4
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
- 8005508:	f240 59dc 	movw	r9, #1500	; 0x5dc
- 800550c:	f8da 3000 	ldr.w	r3, [sl]
- 8005510:	f8c3 9034 	str.w	r9, [r3, #52]	; 0x34
+ 80055a8:	f240 59dc 	movw	r9, #1500	; 0x5dc
+ 80055ac:	f8da 3000 	ldr.w	r3, [sl]
+ 80055b0:	f8c3 9034 	str.w	r9, [r3, #52]	; 0x34
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1500);
- 8005514:	f8c3 9038 	str.w	r9, [r3, #56]	; 0x38
+ 80055b4:	f8c3 9038 	str.w	r9, [r3, #56]	; 0x38
 	mpu_get_data();
- 8005518:	f7fe fc82 	bl	8003e20 <mpu_get_data>
+ 80055b8:	f7fe fc32 	bl	8003e20 <mpu_get_data>
 	imu_sensor.ax=imu.ax;
- 800551c:	f9b5 3000 	ldrsh.w	r3, [r5]
+ 80055bc:	f9b5 3000 	ldrsh.w	r3, [r5]
 	imu_sensor.wx=imu.wx;
- 8005520:	f8d5 c010 	ldr.w	ip, [r5, #16]
+ 80055c0:	f8d5 c010 	ldr.w	ip, [r5, #16]
 	imu_sensor.wy=imu.wy;
- 8005524:	696a      	ldr	r2, [r5, #20]
+ 80055c4:	696a      	ldr	r2, [r5, #20]
 	imu_sensor.wx=imu.wx;
- 8005526:	f8c4 c00c 	str.w	ip, [r4, #12]
+ 80055c6:	f8c4 c00c 	str.w	ip, [r4, #12]
 	imu_sensor.ax=imu.ax;
- 800552a:	ee05 3a10 	vmov	s10, r3
+ 80055ca:	ee05 3a10 	vmov	s10, r3
 	imu_sensor.ay=imu.ay;
- 800552e:	f9b5 3002 	ldrsh.w	r3, [r5, #2]
+ 80055ce:	f9b5 3002 	ldrsh.w	r3, [r5, #2]
 	imu_sensor.wy=imu.wy;
- 8005532:	6122      	str	r2, [r4, #16]
+ 80055d2:	6122      	str	r2, [r4, #16]
 	imu_sensor.ay=imu.ay;
- 8005534:	ee05 3a90 	vmov	s11, r3
+ 80055d4:	ee05 3a90 	vmov	s11, r3
 	imu_sensor.az=imu.az;
- 8005538:	f9b5 3004 	ldrsh.w	r3, [r5, #4]
- 800553c:	ee06 3a10 	vmov	s12, r3
+ 80055d8:	f9b5 3004 	ldrsh.w	r3, [r5, #4]
+ 80055dc:	ee06 3a10 	vmov	s12, r3
 	imu_sensor.mx=imu.mx;
- 8005540:	f9b5 3006 	ldrsh.w	r3, [r5, #6]
- 8005544:	ee06 3a90 	vmov	s13, r3
+ 80055e0:	f9b5 3006 	ldrsh.w	r3, [r5, #6]
+ 80055e4:	ee06 3a90 	vmov	s13, r3
 	imu_sensor.my=imu.my;
- 8005548:	f9b5 3008 	ldrsh.w	r3, [r5, #8]
- 800554c:	ee07 3a10 	vmov	s14, r3
+ 80055e8:	f9b5 3008 	ldrsh.w	r3, [r5, #8]
+ 80055ec:	ee07 3a10 	vmov	s14, r3
 	imu_sensor.mz=imu.mz;
- 8005550:	f9b5 300a 	ldrsh.w	r3, [r5, #10]
- 8005554:	ee07 3a90 	vmov	s15, r3
+ 80055f0:	f9b5 300a 	ldrsh.w	r3, [r5, #10]
+ 80055f4:	ee07 3a90 	vmov	s15, r3
 	imu_sensor.ax=imu.ax;
- 8005558:	eeb8 5ac5 	vcvt.f32.s32	s10, s10
+ 80055f8:	eeb8 5ac5 	vcvt.f32.s32	s10, s10
 	imu_sensor.ay=imu.ay;
- 800555c:	eef8 5ae5 	vcvt.f32.s32	s11, s11
+ 80055fc:	eef8 5ae5 	vcvt.f32.s32	s11, s11
 	imu_sensor.az=imu.az;
- 8005560:	eeb8 6ac6 	vcvt.f32.s32	s12, s12
+ 8005600:	eeb8 6ac6 	vcvt.f32.s32	s12, s12
 	imu_sensor.mx=imu.mx;
- 8005564:	eef8 6ae6 	vcvt.f32.s32	s13, s13
+ 8005604:	eef8 6ae6 	vcvt.f32.s32	s13, s13
 	imu_sensor.my=imu.my;
- 8005568:	eeb8 7ac7 	vcvt.f32.s32	s14, s14
+ 8005608:	eeb8 7ac7 	vcvt.f32.s32	s14, s14
 	imu_sensor.mz=imu.mz;
- 800556c:	eef8 7ae7 	vcvt.f32.s32	s15, s15
+ 800560c:	eef8 7ae7 	vcvt.f32.s32	s15, s15
 	imu_sensor.wz=imu.wz;
- 8005570:	69ab      	ldr	r3, [r5, #24]
+ 8005610:	69ab      	ldr	r3, [r5, #24]
 	imu_sensor.ax=imu.ax;
- 8005572:	ed84 5a00 	vstr	s10, [r4]
+ 8005612:	ed84 5a00 	vstr	s10, [r4]
 	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
- 8005576:	4639      	mov	r1, r7
- 8005578:	4630      	mov	r0, r6
+ 8005616:	4641      	mov	r1, r8
+ 8005618:	4638      	mov	r0, r7
 	imu_sensor.ay=imu.ay;
- 800557a:	edc4 5a01 	vstr	s11, [r4, #4]
+ 800561a:	edc4 5a01 	vstr	s11, [r4, #4]
 	imu_sensor.az=imu.az;
- 800557e:	ed84 6a02 	vstr	s12, [r4, #8]
+ 800561e:	ed84 6a02 	vstr	s12, [r4, #8]
 	imu_sensor.mx=imu.mx;
- 8005582:	edc4 6a06 	vstr	s13, [r4, #24]
+ 8005622:	edc4 6a06 	vstr	s13, [r4, #24]
 	imu_sensor.my=imu.my;
- 8005586:	ed84 7a07 	vstr	s14, [r4, #28]
+ 8005626:	ed84 7a07 	vstr	s14, [r4, #28]
 	imu_sensor.mz=imu.mz;
- 800558a:	edc4 7a08 	vstr	s15, [r4, #32]
+ 800562a:	edc4 7a08 	vstr	s15, [r4, #32]
 	imu_sensor.wz=imu.wz;
- 800558e:	6163      	str	r3, [r4, #20]
+ 800562e:	6163      	str	r3, [r4, #20]
 	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
- 8005590:	f7ff f856 	bl	8004640 <madgwick_ahrs_updateIMU>
+ 8005630:	f7ff f806 	bl	8004640 <madgwick_ahrs_updateIMU>
 	HAL_Delay(1);
- 8005594:	2001      	movs	r0, #1
- 8005596:	f7fb fd37 	bl	8001008 <HAL_Delay>
+ 8005634:	2001      	movs	r0, #1
+ 8005636:	f7fb fce7 	bl	8001008 <HAL_Delay>
 	for(int i=0;i<2500;i++){
- 800559a:	f1b8 0801 	subs.w	r8, r8, #1
- 800559e:	d1b5      	bne.n	800550c <initFriction+0x18>
-	imu_sensor.my=imu.my;
-	imu_sensor.mz=imu.mz;
-	imu_sensor.wx=imu.wx;
-	imu_sensor.wy=imu.wy;
-	imu_sensor.wz=imu.wz;
-	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
- 80055a0:	f8df 80a8 	ldr.w	r8, [pc, #168]	; 800564c <initFriction+0x158>
- 80055a4:	4f27      	ldr	r7, [pc, #156]	; (8005644 <initFriction+0x150>)
- 80055a6:	f44f 667a 	mov.w	r6, #4000	; 0xfa0
-	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1220);
- 80055aa:	f240 49c4 	movw	r9, #1220	; 0x4c4
- 80055ae:	f8da 3000 	ldr.w	r3, [sl]
- 80055b2:	f8c3 9034 	str.w	r9, [r3, #52]	; 0x34
-	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1220);
- 80055b6:	f8c3 9038 	str.w	r9, [r3, #56]	; 0x38
-	mpu_get_data();
- 80055ba:	f7fe fc31 	bl	8003e20 <mpu_get_data>
-	imu_sensor.ax=imu.ax;
- 80055be:	f9b5 3000 	ldrsh.w	r3, [r5]
-	imu_sensor.wx=imu.wx;
- 80055c2:	f8d5 c010 	ldr.w	ip, [r5, #16]
-	imu_sensor.wy=imu.wy;
- 80055c6:	696a      	ldr	r2, [r5, #20]
-	imu_sensor.wx=imu.wx;
- 80055c8:	f8c4 c00c 	str.w	ip, [r4, #12]
-	imu_sensor.ax=imu.ax;
- 80055cc:	ee05 3a10 	vmov	s10, r3
-	imu_sensor.ay=imu.ay;
- 80055d0:	f9b5 3002 	ldrsh.w	r3, [r5, #2]
-	imu_sensor.wy=imu.wy;
- 80055d4:	6122      	str	r2, [r4, #16]
-	imu_sensor.ay=imu.ay;
- 80055d6:	ee05 3a90 	vmov	s11, r3
-	imu_sensor.az=imu.az;
- 80055da:	f9b5 3004 	ldrsh.w	r3, [r5, #4]
- 80055de:	ee06 3a10 	vmov	s12, r3
-	imu_sensor.mx=imu.mx;
- 80055e2:	f9b5 3006 	ldrsh.w	r3, [r5, #6]
- 80055e6:	ee06 3a90 	vmov	s13, r3
-	imu_sensor.my=imu.my;
- 80055ea:	f9b5 3008 	ldrsh.w	r3, [r5, #8]
- 80055ee:	ee07 3a10 	vmov	s14, r3
-	imu_sensor.mz=imu.mz;
- 80055f2:	f9b5 300a 	ldrsh.w	r3, [r5, #10]
- 80055f6:	ee07 3a90 	vmov	s15, r3
-	imu_sensor.ax=imu.ax;
- 80055fa:	eeb8 5ac5 	vcvt.f32.s32	s10, s10
-	imu_sensor.ay=imu.ay;
- 80055fe:	eef8 5ae5 	vcvt.f32.s32	s11, s11
-	imu_sensor.az=imu.az;
- 8005602:	eeb8 6ac6 	vcvt.f32.s32	s12, s12
-	imu_sensor.mx=imu.mx;
- 8005606:	eef8 6ae6 	vcvt.f32.s32	s13, s13
-	imu_sensor.my=imu.my;
- 800560a:	eeb8 7ac7 	vcvt.f32.s32	s14, s14
-	imu_sensor.mz=imu.mz;
- 800560e:	eef8 7ae7 	vcvt.f32.s32	s15, s15
-	imu_sensor.wz=imu.wz;
- 8005612:	69ab      	ldr	r3, [r5, #24]
-	imu_sensor.ax=imu.ax;
- 8005614:	ed84 5a00 	vstr	s10, [r4]
-	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
- 8005618:	4641      	mov	r1, r8
- 800561a:	4638      	mov	r0, r7
-	imu_sensor.ay=imu.ay;
- 800561c:	edc4 5a01 	vstr	s11, [r4, #4]
-	imu_sensor.az=imu.az;
- 8005620:	ed84 6a02 	vstr	s12, [r4, #8]
-	imu_sensor.mx=imu.mx;
- 8005624:	edc4 6a06 	vstr	s13, [r4, #24]
-	imu_sensor.my=imu.my;
- 8005628:	ed84 7a07 	vstr	s14, [r4, #28]
-	imu_sensor.mz=imu.mz;
- 800562c:	edc4 7a08 	vstr	s15, [r4, #32]
-	imu_sensor.wz=imu.wz;
- 8005630:	6163      	str	r3, [r4, #20]
-	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
- 8005632:	f7ff f805 	bl	8004640 <madgwick_ahrs_updateIMU>
-	HAL_Delay(1);
- 8005636:	2001      	movs	r0, #1
- 8005638:	f7fb fce6 	bl	8001008 <HAL_Delay>
-	for(int i=0;i<4000;i++){
- 800563c:	3e01      	subs	r6, #1
- 800563e:	d1b6      	bne.n	80055ae <initFriction+0xba>
+ 800563a:	3e01      	subs	r6, #1
+ 800563c:	d1b6      	bne.n	80055ac <initFriction+0xb8>
 	}
 
 }
- 8005640:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+ 800563e:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+ 8005642:	bf00      	nop
  8005644:	20000620 	.word	0x20000620
  8005648:	20000218 	.word	0x20000218
  800564c:	200003b0 	.word	0x200003b0
@@ -12601,8 +12603,8 @@ void initLoadPID() {
  80059e8:	461c4000 	.word	0x461c4000
  80059ec:	20000544 	.word	0x20000544
  80059f0:	43ef0000 	.word	0x43ef0000
- 80059f4:	43c50000 	.word	0x43c50000
- 80059f8:	43cf8000 	.word	0x43cf8000
+ 80059f4:	440d4000 	.word	0x440d4000
+ 80059f8:	43f78000 	.word	0x43f78000
  80059fc:	20000728 	.word	0x20000728
  8005a00:	20000028 	.word	0x20000028
  8005a04:	2000034c 	.word	0x2000034c
@@ -13273,18 +13275,18 @@ void fire_Task(){
 		else{sw1_cnt++;}
 	}
 	else{
-		sw1_cnt=1220;
+		sw1_cnt=1500;
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
  8005f76:	4b1c      	ldr	r3, [pc, #112]	; (8005fe8 <timerTask+0x84>)
-		sw1_cnt=1220;
+		sw1_cnt=1500;
  8005f78:	481c      	ldr	r0, [pc, #112]	; (8005fec <timerTask+0x88>)
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
  8005f7a:	6819      	ldr	r1, [r3, #0]
-		sw1_cnt=1220;
- 8005f7c:	f240 43c4 	movw	r3, #1220	; 0x4c4
+		sw1_cnt=1500;
+ 8005f7c:	f240 53dc 	movw	r3, #1500	; 0x5dc
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
  8005f80:	634b      	str	r3, [r1, #52]	; 0x34
-		sw1_cnt=1220;
+		sw1_cnt=1500;
  8005f82:	8003      	strh	r3, [r0, #0]
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
  8005f84:	638b      	str	r3, [r1, #56]	; 0x38
@@ -13344,16 +13346,16 @@ void fire_task_open(){
  8005fc6:	4908      	ldr	r1, [pc, #32]	; (8005fe8 <timerTask+0x84>)
  8005fc8:	8803      	ldrh	r3, [r0, #0]
  8005fca:	6809      	ldr	r1, [r1, #0]
-		if(sw1_cnt>=1250){
- 8005fcc:	f240 44e1 	movw	r4, #1249	; 0x4e1
+		if(sw1_cnt>=1540){
+ 8005fcc:	f240 6403 	movw	r4, #1539	; 0x603
  8005fd0:	42a3      	cmp	r3, r4
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
  8005fd2:	634b      	str	r3, [r1, #52]	; 0x34
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
  8005fd4:	638b      	str	r3, [r1, #56]	; 0x38
-			sw1_cnt=1250;
+			sw1_cnt=1540;
  8005fd6:	bf8c      	ite	hi
- 8005fd8:	f240 43e2 	movwhi	r3, #1250	; 0x4e2
+ 8005fd8:	f240 6304 	movwhi	r3, #1540	; 0x604
 		else{sw1_cnt++;}
  8005fdc:	3301      	addls	r3, #1
  8005fde:	8003      	strh	r3, [r0, #0]

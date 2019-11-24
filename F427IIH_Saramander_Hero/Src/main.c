@@ -513,9 +513,9 @@ void initMecanum() {
 }
 
 void initFriction() {
-	for(int i=0;i<2500;i++){
-	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
-	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1500);
+	for(int i=0;i<2000;i++){
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 2000);
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 2000);
 	mpu_get_data();
 	imu_sensor.ax=imu.ax;
 	imu_sensor.ay=imu.ay;
@@ -529,9 +529,9 @@ void initFriction() {
 	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
 	HAL_Delay(1);
 	}
-	for(int i=0;i<4000;i++){
-	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1220);
-	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1220);
+	for(int i=0;i<2500;i++){
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1500);
 	mpu_get_data();
 	imu_sensor.ax=imu.ax;
 	imu_sensor.ay=imu.ay;
@@ -698,14 +698,14 @@ void fire_Task(){
 	if(rc.sw1==1){
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
-		//max 1500
-		if(sw1_cnt>=1250){
-			sw1_cnt=1250;
+		//max 2000
+		if(sw1_cnt>=1540){
+			sw1_cnt=1540;
 		}
 		else{sw1_cnt++;}
 	}
 	else{
-		sw1_cnt=1220;
+		sw1_cnt=1500;
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, sw1_cnt);
 		__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, sw1_cnt);
 	}
