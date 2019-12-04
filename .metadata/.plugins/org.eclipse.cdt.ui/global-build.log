@@ -1,7 +1,7 @@
-22:42:03 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+00:08:00 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Standard ****
 make -j4 all 
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
    text	   data	    bss	    dec	    hex	filename
-  50616	    516	   3380	  54512	   d4f0	F427IIH_Saramander_Hero.elf
+  50528	    516	   3364	  54408	   d488	F427IIH_Saramander_Standard.elf
 Finished building: default.size.stdout
  
