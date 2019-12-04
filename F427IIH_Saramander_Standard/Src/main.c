@@ -208,7 +208,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1 || rc.sw1==2){
+	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2)==1 || rc.sw1==2 || rc.key_Ctrl==1){
 		  IMU_pich_set=imu_attitude.pitch;
 		  IMU_yaw_set=imu_attitude.yaw;
 		  IMU_rol_set=imu_attitude.roll;
@@ -451,7 +451,7 @@ void driveWheelTask() {
     		    +fabs((float)wheelFdb[2].torque/16384.0*20.0)+fabs((float)wheelFdb[3].torque/16384.0*20.0);
 
 
-	if(rc.sw2==1){
+	if(rc.sw2==1|| rc.key_W==1){
 		if(cnt_tim_omega<=100)     {mecanum.speed.vw=-(float)(rc.ch5-250.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-5;}
 		else if(cnt_tim_omega<=150){mecanum.speed.vw=-(float)(rc.ch5-200.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-4;}
 		else if(cnt_tim_omega<=199){mecanum.speed.vw=-(float)(rc.ch5-80.0)/660.0*MAX_CHASSIS_VW_SPEED;feed_forward_param=-2;}
@@ -591,7 +591,7 @@ void Gimbal_Task(){
 	}
 	else {
 		fire = 0;
-		if(rc.ch2==-660){
+		if(rc.ch2==-660 || rc.key_Q==1 ){
 			DBUFF[1] = loadPID.error = 900.0f*2.0 - loadMotorFdb.rpm;
 			DBUFF[3] = u[2] = pidExecute(&loadPID);
 		}
@@ -601,9 +601,9 @@ void Gimbal_Task(){
 		}
 	}
 
-	if(rc.sw2==2){target_yaw=0;}
+	if(rc.sw2==2 || rc.key_E==1){target_yaw=0;}
 	else{
-		if(rc.sw2==1){
+		if(rc.sw2==1 || rc.key_W==1){
 			if(rc_SW1_temp==3){IMU_yaw_set=imu_attitude.yaw;}
 		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
 		if(target_yaw>70){target_yaw=70;}
@@ -625,7 +625,7 @@ void Gimbal_Task(){
 		if(u[0]<-30000){u[0]=-30000;}
 	}
 
-	if(rc.sw2==2){target_pich=0;}
+	if(rc.sw2==2 || rc.key_E==1){target_pich=0;}
 	else{
 		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
 		if(target_pich>=19){target_pich=19;}
