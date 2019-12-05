@@ -89,7 +89,7 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
 uint8_t cnt_tim,cnt_tim_fire,cnt_tim_task,fire,cnt_time_main;
 uint16_t cnt_tim_omega,feed_forward_param;
 uint16_t sw1_cnt=1220;
-uint8_t rc_SW1_temp;
+uint8_t rc_SW1_temp,rc_W_temp;
 uint32_t RC_time,cnt_tim_fire_task;
 uint8_t customdataPacket[28];
 
@@ -380,7 +380,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 			 RC_time=0;
 		}
 
-		if(rc.sw2==2){
+		if(rc.sw2==2|| rc.key_E==1){
 			PC_mouse_x=0;
 			PC_mouse_y=0;
 		}
@@ -491,7 +491,7 @@ void driveWheelTask() {
 		wheelPID[i].error = error;
 		u[i] = (int16_t) pidExecute(&(wheelPID[i]));
 
-		if(torque_sum>3.9){
+		if(torque_sum>4.5){
 			for (int i = 0; i < 4; i++) {
 				u[i] = 0;
 			}
@@ -552,8 +552,8 @@ void initPID() {
 	for (int i = 0; i < 4; i++) {
 		wheelPID[i].t = 2.0f;
 		wheelPID[i].p = 3.0f;
-		wheelPID[i].i = 20.0f;
-		wheelPID[i].d = 0.01f;
+		wheelPID[i].i = 30.0f;
+		wheelPID[i].d = 0.0f;
 		wheelPID[i].outLimit = 15000.0f;
 		wheelPID[i].integralOutLimit = 500.0f;
 		wheelPID[i].differentialFilterRate = 0.9f;
@@ -588,7 +588,8 @@ void Gimbal_Task(){
 	if(rc.sw2==2|| rc.key_E==1){target_yaw=0;}
 	else{
 		if(rc.sw2==1|| rc.key_W==1){
-			if(rc_SW1_temp==3){IMU_yaw_set=imu_attitude.yaw;}
+			if(rc_SW1_temp==3 && rc.sw2==1){IMU_yaw_set=imu_attitude.yaw;}
+			if(rc_W_temp==0 &&  rc.key_W==1){IMU_yaw_set=imu_attitude.yaw;}
 		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
 		if(target_yaw>70){target_yaw=70;}
 		if(target_yaw<-70){target_yaw=-70;}
@@ -631,6 +632,7 @@ void Gimbal_Task(){
 	u[3]=0;
 	driveGimbalMotors(u);
 	rc_SW1_temp=rc.sw2;
+	rc_W_temp=rc.key_W;
 }
 
 
