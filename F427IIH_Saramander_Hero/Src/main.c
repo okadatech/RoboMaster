@@ -601,6 +601,7 @@ void Gimbal_Task(){
 		}
 	}
 	yaw_now=((float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0))+60.0;
+	if(yaw_now>360){yaw_now=yaw_now-360;}
 
 	if((target_yaw-yaw_now)>50){u[0]=30000;}
 	else if((target_yaw-yaw_now)<-50){u[0]=-30000;}

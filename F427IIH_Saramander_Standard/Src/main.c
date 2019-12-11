@@ -633,6 +633,7 @@ void Gimbal_Task(){
 		if(target_pich<-22){target_pich=-22;}
 	}
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+29;
+	if(pich_now>360){pich_now=pich_now-360;}
 
 	if((pich_now+IMU_pich)>-4){HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);}
 	else{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);}
