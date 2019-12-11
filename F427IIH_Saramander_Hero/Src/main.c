@@ -213,7 +213,7 @@ int main(void)
 
 	  //printf(" Roll:%8.3lf  Pitch:%8.3lf  Yaw:%8.3lf", IMU_rol, IMU_pich, IMU_yaw);
 	   //printf(" Roll_set:%8.3lf  Pitch_set:%8.3lf  Yaw_set:%8.3lf", IMU_rol_set, IMU_pich_set, IMU_yaw_set);
-	   //printf(" target_Pitch:%d target_Yaw:%d now_Pit:%d now_Yaw:%d", target_pich,target_yaw,pich_now,yaw_now);
+	  printf(" target_Pitch:%d target_Yaw:%d now_Pit:%d now_Yaw:%d", target_pich,target_yaw,pich_now,yaw_now);
 	   //printf(" RC_time=%d",(int)RC_time);
 	   //printf("ch1=%d ch2=%d ch3=%d ch4=%d ch5=%d sw1=%d sw2=%d m_x=%d m_y=%d m_z=%d m_l=%d m_r=%d W=%d S=%d A=%d D=%d Q=%d E=%d Shift=%d Ctrl=%d"
 	  //	 ,rc.ch1,rc.ch2,rc.ch3,rc.ch4,rc.ch5,rc.sw1,rc.sw2,rc.mouse_x, rc.mouse_y, rc.mouse_z,rc.mouse_press_l,rc.mouse_press_r
@@ -600,7 +600,7 @@ void Gimbal_Task(){
 			if(target_yaw<-70){target_yaw=-70;}
 		}
 	}
-	yaw_now=(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0);
+	yaw_now=((float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0))+60.0;
 
 	if((target_yaw-yaw_now)>50){u[0]=30000;}
 	else if((target_yaw-yaw_now)<-50){u[0]=-30000;}
@@ -616,7 +616,7 @@ void Gimbal_Task(){
 		if(target_pich>=19){target_pich=19;}
 		if(target_pich<-22){target_pich=-22;}
 	}
-	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+29;
+	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0);
 
 	if((pich_now+IMU_pich)>-4){HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);}
 	else{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);}
@@ -639,57 +639,29 @@ void Gimbal_Task(){
 void fire_task_push(){
 	if(fire==1){
 	if(cnt_tim_fire_task>0 && cnt_tim_fire_task<=110){
-		sConfigOC.Pulse = map(50,0,180,500,2500);
+		sConfigOC.Pulse = map(130,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-		sConfigOC.Pulse = map(90,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
 	else if(cnt_tim_fire_task>110 && cnt_tim_fire_task<=410){
-		sConfigOC.Pulse = map(120,0,180,500,2500);
+		sConfigOC.Pulse = map(60,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-		sConfigOC.Pulse = map(90,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
 	else if(cnt_tim_fire_task>410 && cnt_tim_fire_task<=500){
 		sConfigOC.Pulse = map(90,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-		sConfigOC.Pulse = map(90,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
-	}
-	else if(cnt_tim_fire_task>500 && cnt_tim_fire_task<=700){
-		sConfigOC.Pulse = map(90,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-		sConfigOC.Pulse = map(120,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
-	}
-	else if(cnt_tim_fire_task>700 && cnt_tim_fire_task<=790){
-		sConfigOC.Pulse = map(90,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-		sConfigOC.Pulse = map(90,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
 	else{
 		sConfigOC.Pulse = map(90,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-		sConfigOC.Pulse = map(90,0,180,500,2500);
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
-		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	}
 
 
 	cnt_tim_fire_task++;
-	if(cnt_tim_fire_task>790){
+	if(cnt_tim_fire_task>500){
 		cnt_tim_fire_task=0;
 		fire=0;
 	}
