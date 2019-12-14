@@ -1,0 +1,15 @@
+myiic.c:66:6:IIC_Delay	0	static,ignoring_inline_asm
+myiic.c:89:6:IIC_Init	8	static
+myiic.c:100:6:IIC_Start	8	static,ignoring_inline_asm
+myiic.c:111:6:IIC_Stop	8	static,ignoring_inline_asm
+myiic.c:124:4:IIC_Wait_Ack	16	static,ignoring_inline_asm
+myiic.c:145:6:IIC_Ack	8	static,ignoring_inline_asm
+myiic.c:156:6:IIC_NAck	8	static,ignoring_inline_asm
+myiic.c:171:6:IIC_Send_Byte	16	static,ignoring_inline_asm
+myiic.c:190:4:IIC_Read_Byte	24	static,ignoring_inline_asm
+myiic.c:212:4:IIC_Write_Reg	24	static
+myiic.c:233:4:IIC_Read_Reg	16	static
+myiic.c:249:4:IIC_Write_Bytes	24	static
+myiic.c:273:4:IIC_Read_Bytes	32	static,ignoring_inline_asm
+myiic.c:300:4:IIC_Write	24	static
+myiic.c:305:4:IIC_Read	4	static
