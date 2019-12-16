@@ -141,6 +141,11 @@ int main(void)
 
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 0);
   HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, 1);
+  HAL_GPIO_WritePin(POWER_OUT1_GPIO_Port, POWER_OUT1_Pin, 1);
+  HAL_GPIO_WritePin(POWER_OUT2_GPIO_Port, POWER_OUT2_Pin, 1);
+  HAL_GPIO_WritePin(POWER_OUT3_GPIO_Port, POWER_OUT3_Pin, 1);
+  HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
+  HAL_Delay(1000);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, 1);
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_3, 1);
@@ -180,10 +185,6 @@ int main(void)
   HAL_CAN_Start(&hcan2);
   HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
   HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING);
-  HAL_GPIO_WritePin(POWER_OUT1_GPIO_Port, POWER_OUT1_Pin, 1);
-  HAL_GPIO_WritePin(POWER_OUT2_GPIO_Port, POWER_OUT2_Pin, 1);
-  HAL_GPIO_WritePin(POWER_OUT3_GPIO_Port, POWER_OUT3_Pin, 1);
-  HAL_GPIO_WritePin(POWER_OUT4_GPIO_Port, POWER_OUT4_Pin, 1);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 1);
 
   CustomData_init(11,0x0111);  //blue-1
