@@ -12070,7 +12070,7 @@ void initFriction() {
 	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
  8005626:	f8df 80ac 	ldr.w	r8, [pc, #172]	; 80056d4 <initFriction+0x158>
  800562a:	4f28      	ldr	r7, [pc, #160]	; (80056cc <initFriction+0x150>)
- 800562c:	f640 16c4 	movw	r6, #2500	; 0x9c4
+ 800562c:	f640 06fc 	movw	r6, #2300	; 0x8fc
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
  8005630:	f240 59dc 	movw	r9, #1500	; 0x5dc
  8005634:	f8da 3000 	ldr.w	r3, [sl]
@@ -12143,7 +12143,7 @@ void initFriction() {
 	HAL_Delay(1);
  80056bc:	2001      	movs	r0, #1
  80056be:	f7fb fca3 	bl	8001008 <HAL_Delay>
-	for(int i=0;i<2500;i++){
+	for(int i=0;i<2300;i++){
  80056c2:	3e01      	subs	r6, #1
  80056c4:	d1b6      	bne.n	8005634 <initFriction+0xb8>
 	}
@@ -12307,13 +12307,13 @@ void initFriction() {
  8005800:	2104      	movs	r1, #4
  8005802:	4894      	ldr	r0, [pc, #592]	; (8005a54 <main+0x378>)
  8005804:	f7fc ff04 	bl	8002610 <HAL_TIM_PWM_Start>
-  sConfigOC.Pulse = map(145,0,180,500,2500);
- 8005808:	f640 043f 	movw	r4, #2111	; 0x83f
+  sConfigOC.Pulse = map(139,0,180,500,2500);
+ 8005808:	f240 74fc 	movw	r4, #2044	; 0x7fc
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
  800580c:	4629      	mov	r1, r5
  800580e:	2208      	movs	r2, #8
  8005810:	4890      	ldr	r0, [pc, #576]	; (8005a54 <main+0x378>)
-  sConfigOC.Pulse = map(145,0,180,500,2500);
+  sConfigOC.Pulse = map(139,0,180,500,2500);
  8005812:	606c      	str	r4, [r5, #4]
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
  8005814:	f7fc ff26 	bl	8002664 <HAL_TIM_PWM_ConfigChannel>
@@ -12325,7 +12325,7 @@ void initFriction() {
  8005820:	220c      	movs	r2, #12
  8005822:	4629      	mov	r1, r5
  8005824:	488b      	ldr	r0, [pc, #556]	; (8005a54 <main+0x378>)
-  sConfigOC.Pulse = map(145,0,180,500,2500);
+  sConfigOC.Pulse = map(139,0,180,500,2500);
  8005826:	606c      	str	r4, [r5, #4]
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
  8005828:	f7fc ff1c 	bl	8002664 <HAL_TIM_PWM_ConfigChannel>
@@ -12885,13 +12885,13 @@ void fire_task_push(){
 	else if(cnt_tim_fire_task>110 && cnt_tim_fire_task<=410){
  8005cbc:	3b6f      	subs	r3, #111	; 0x6f
  8005cbe:	f5b3 7f96 	cmp.w	r3, #300	; 0x12c
-		sConfigOC.Pulse = map(60,0,180,500,2500);
+		sConfigOC.Pulse = map(70,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
  8005cc2:	48a0      	ldr	r0, [pc, #640]	; (8005f44 <Gimbal_Task+0x31c>)
-		sConfigOC.Pulse = map(60,0,180,500,2500);
+		sConfigOC.Pulse = map(70,0,180,500,2500);
  8005cc4:	4ba0      	ldr	r3, [pc, #640]	; (8005f48 <Gimbal_Task+0x320>)
  8005cc6:	bf34      	ite	cc
- 8005cc8:	f240 428e 	movwcc	r2, #1166	; 0x48e
+ 8005cc8:	f240 42fd 	movwcc	r2, #1277	; 0x4fd
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 	}
 	else if(cnt_tim_fire_task>410 && cnt_tim_fire_task<=500){
@@ -13308,27 +13308,27 @@ void fire_Task(){
 void fire_task_open(){
 	if(rc.key_Shift==1){
  800604e:	f992 301e 	ldrsb.w	r3, [r2, #30]
-		sConfigOC.Pulse = map(60,0,180,500,2500);
+		sConfigOC.Pulse = map(50,0,180,500,2500);
  8006052:	4c19      	ldr	r4, [pc, #100]	; (80060b8 <timerTask+0x8c>)
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
  8006054:	4819      	ldr	r0, [pc, #100]	; (80060bc <timerTask+0x90>)
 	if(rc.key_Shift==1){
  8006056:	2b01      	cmp	r3, #1
-		sConfigOC.Pulse = map(60,0,180,500,2500);
+		sConfigOC.Pulse = map(50,0,180,500,2500);
  8006058:	bf0c      	ite	eq
- 800605a:	f240 458e 	movweq	r5, #1166	; 0x48e
-		sConfigOC.Pulse = map(60,0,180,500,2500);
+ 800605a:	f240 451f 	movweq	r5, #1055	; 0x41f
+		sConfigOC.Pulse = map(50,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 	}
 	else{
-		sConfigOC.Pulse = map(145,0,180,500,2500);
- 800605e:	f640 053f 	movwne	r5, #2111	; 0x83f
+		sConfigOC.Pulse = map(139,0,180,500,2500);
+ 800605e:	f240 75fc 	movwne	r5, #2044	; 0x7fc
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
  8006062:	4621      	mov	r1, r4
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
  8006064:	2208      	movs	r2, #8
-		sConfigOC.Pulse = map(145,0,180,500,2500);
+		sConfigOC.Pulse = map(139,0,180,500,2500);
  8006066:	6065      	str	r5, [r4, #4]
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
  8006068:	f7fc fafc 	bl	8002664 <HAL_TIM_PWM_ConfigChannel>
@@ -13337,12 +13337,12 @@ void fire_task_open(){
  800606e:	4813      	ldr	r0, [pc, #76]	; (80060bc <timerTask+0x90>)
  8006070:	f7fc face 	bl	8002610 <HAL_TIM_PWM_Start>
 
-		sConfigOC.Pulse = map(145,0,180,500,2500);
+		sConfigOC.Pulse = map(139,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
  8006074:	4621      	mov	r1, r4
  8006076:	220c      	movs	r2, #12
  8006078:	4810      	ldr	r0, [pc, #64]	; (80060bc <timerTask+0x90>)
-		sConfigOC.Pulse = map(145,0,180,500,2500);
+		sConfigOC.Pulse = map(139,0,180,500,2500);
  800607a:	6065      	str	r5, [r4, #4]
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
  800607c:	f7fc faf2 	bl	8002664 <HAL_TIM_PWM_ConfigChannel>

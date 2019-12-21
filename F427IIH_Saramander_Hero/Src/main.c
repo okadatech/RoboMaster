@@ -161,10 +161,10 @@ int main(void)
   sConfigOC.Pulse = map(90,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
-  sConfigOC.Pulse = map(145,0,180,500,2500);
+  sConfigOC.Pulse = map(139,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
-  sConfigOC.Pulse = map(145,0,180,500,2500);
+  sConfigOC.Pulse = map(139,0,180,500,2500);
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
@@ -530,7 +530,7 @@ void initFriction() {
 	madgwick_ahrs_updateIMU(&imu_sensor, &imu_attitude);
 	HAL_Delay(1);
 	}
-	for(int i=0;i<2500;i++){
+	for(int i=0;i<2300;i++){
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 1500);
 	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 1500);
 	mpu_get_data();
@@ -646,7 +646,7 @@ void fire_task_push(){
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 	}
 	else if(cnt_tim_fire_task>110 && cnt_tim_fire_task<=410){
-		sConfigOC.Pulse = map(60,0,180,500,2500);
+		sConfigOC.Pulse = map(70,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 	}
@@ -689,20 +689,20 @@ void fire_Task(){
 
 void fire_task_open(){
 	if(rc.key_Shift==1){
-		sConfigOC.Pulse = map(60,0,180,500,2500);
+		sConfigOC.Pulse = map(50,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
 
-		sConfigOC.Pulse = map(60,0,180,500,2500);
+		sConfigOC.Pulse = map(50,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 	}
 	else{
-		sConfigOC.Pulse = map(145,0,180,500,2500);
+		sConfigOC.Pulse = map(139,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
 
-		sConfigOC.Pulse = map(145,0,180,500,2500);
+		sConfigOC.Pulse = map(139,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 	}
