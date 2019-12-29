@@ -20851,3 +20851,411 @@
 2019-12-29 22:46:30,995 [INFO] ProjectBuilder:2373 - Time for Generating toolchain IDE Files: 2223mS.
 2019-12-29 22:46:30,996 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 1mS.
 2019-12-29 22:46:31,000 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
+2019-12-29 22:49:45,684 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:57:23,886 [INFO] Activator:176 - 
+
+
+2019-12-29 22:57:23,890 [INFO] Activator:177 - !SESSION log4j initialized
+2019-12-29 22:59:03,867 [INFO] Activator:176 - 
+
+
+2019-12-29 22:59:03,867 [INFO] Activator:177 - !SESSION log4j initialized
+2019-12-29 23:03:53,645 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-29 23:03:53,652 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-29 23:03:53,668 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-29 23:03:53,668 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 23:03:53,668 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 23:03:53,668 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-29 23:03:53,668 [INFO] DbMcusAds:72 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:53,668 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:53,668 [INFO] DbMcusJson:59 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:53,668 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:53,683 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:53,767 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-29 23:03:53,896 [INFO] RulesReader:52 - Compatibility file has been processed (179 Rules)
+2019-12-29 23:03:54,010 [INFO] MicroXplorer:570 - Detected Java Version = 1.8.0_202
+2019-12-29 23:03:54,010 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-29 23:03:54,010 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-29 23:03:54,010 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 23:03:54,010 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 23:03:54,010 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-29 23:03:54,010 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,010 [INFO] DbMcusAds:72 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:54,010 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,010 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:54,010 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,010 [INFO] DbMcusJson:59 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:54,010 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,010 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:54,010 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,010 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:54,010 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,010 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,010 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-29 23:03:54,130 [INFO] MainPanel:185 - HeapMemory: 295698432
+2019-12-29 23:03:54,199 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-29 23:03:54,199 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-29 23:03:54,199 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 23:03:54,199 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 23:03:54,199 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-29 23:03:54,199 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,199 [INFO] DbMcusAds:72 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:54,199 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,199 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:54,199 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,199 [INFO] DbMcusJson:59 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:54,199 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,199 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:54,199 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,199 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 23:03:54,199 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,199 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 23:03:54,199 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-29 23:03:54,231 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-29 23:03:54,231 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=]
+2019-12-29 23:03:54,231 [INFO] PluginManage:292 - Check plugin analytics
+2019-12-29 23:03:54,231 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2019-12-29 23:03:54,231 [INFO] PluginManage:292 - Check plugin clock
+2019-12-29 23:03:54,253 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2019-12-29 23:03:54,253 [INFO] PluginManage:292 - Check plugin ddr
+2019-12-29 23:03:54,253 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2019-12-29 23:03:54,253 [INFO] PluginManage:292 - Check plugin filemanager
+2019-12-29 23:03:54,384 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2019-12-29 23:03:54,384 [INFO] PluginManage:292 - Check plugin ipmanager
+2019-12-29 23:03:54,384 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2019-12-29 23:03:54,384 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2019-12-29 23:03:54,400 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2019-12-29 23:03:54,400 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2019-12-29 23:03:54,431 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2019-12-29 23:03:54,431 [INFO] PluginManage:292 - Check plugin power
+2019-12-29 23:03:54,431 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2019-12-29 23:03:54,431 [INFO] PluginManage:292 - Check plugin projectmanager
+2019-12-29 23:03:54,453 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2019-12-29 23:03:54,453 [INFO] PluginManage:292 - Check plugin thirdparty
+2019-12-29 23:03:54,516 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 32 ms. number of Sw pack : 27
+2019-12-29 23:03:54,547 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2019-12-29 23:03:54,547 [INFO] PluginManage:292 - Check plugin tools
+2019-12-29 23:03:54,553 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2019-12-29 23:03:54,553 [INFO] PluginManage:292 - Check plugin updater
+2019-12-29 23:03:54,553 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2019-12-29 23:03:54,553 [INFO] PluginManage:265 - PluginManage : Loaded plugins [12]
+2019-12-29 23:03:54,770 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-29 23:03:54,870 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,870 [INFO] PluginManager:200 - loadIPPluginJar : add adc
+2019-12-29 23:03:54,870 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,870 [INFO] PluginManager:200 - loadIPPluginJar : add aes
+2019-12-29 23:03:54,870 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,870 [INFO] PluginManager:200 - loadIPPluginJar : add can
+2019-12-29 23:03:54,870 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,870 [INFO] PluginManager:200 - loadIPPluginJar : add comp
+2019-12-29 23:03:54,885 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,885 [INFO] PluginManager:200 - loadIPPluginJar : add cryp
+2019-12-29 23:03:54,885 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,885 [INFO] PluginManager:200 - loadIPPluginJar : add dfsdm
+2019-12-29 23:03:54,885 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,885 [INFO] PluginManager:200 - loadIPPluginJar : add dma
+2019-12-29 23:03:54,885 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,885 [INFO] PluginManager:200 - loadIPPluginJar : add fatfs
+2019-12-29 23:03:54,901 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,901 [INFO] PluginManager:200 - loadIPPluginJar : add fmc
+2019-12-29 23:03:54,901 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,901 [INFO] PluginManager:200 - loadIPPluginJar : add freertos
+2019-12-29 23:03:54,901 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,901 [INFO] PluginManager:200 - loadIPPluginJar : add genericplugin
+2019-12-29 23:03:54,901 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,901 [INFO] PluginManager:200 - loadIPPluginJar : add gfxmmu
+2019-12-29 23:03:54,917 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,917 [INFO] PluginManager:200 - loadIPPluginJar : add gfxsimulator
+2019-12-29 23:03:54,917 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,917 [INFO] PluginManager:200 - loadIPPluginJar : add gic
+2019-12-29 23:03:54,917 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,917 [INFO] PluginManager:200 - loadIPPluginJar : add gpio
+2019-12-29 23:03:54,917 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,917 [INFO] PluginManager:200 - loadIPPluginJar : add gtzc
+2019-12-29 23:03:54,932 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,932 [INFO] PluginManager:200 - loadIPPluginJar : add hash
+2019-12-29 23:03:54,932 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,932 [INFO] PluginManager:200 - loadIPPluginJar : add i2c
+2019-12-29 23:03:54,932 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,932 [INFO] PluginManager:200 - loadIPPluginJar : add i2s
+2019-12-29 23:03:54,932 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,932 [INFO] PluginManager:200 - loadIPPluginJar : add ipddr
+2019-12-29 23:03:54,932 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,932 [INFO] PluginManager:200 - loadIPPluginJar : add ltdc
+2019-12-29 23:03:54,948 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,948 [INFO] PluginManager:200 - loadIPPluginJar : add mdma
+2019-12-29 23:03:54,948 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,948 [INFO] PluginManager:200 - loadIPPluginJar : add nvic
+2019-12-29 23:03:54,954 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,954 [INFO] PluginManager:200 - loadIPPluginJar : add opamp
+2019-12-29 23:03:54,954 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,954 [INFO] PluginManager:200 - loadIPPluginJar : add pdm2pcm
+2019-12-29 23:03:54,954 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,954 [INFO] PluginManager:200 - loadIPPluginJar : add plateformsettings
+2019-12-29 23:03:54,970 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,970 [INFO] PluginManager:200 - loadIPPluginJar : add quadspi
+2019-12-29 23:03:54,970 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,970 [INFO] PluginManager:200 - loadIPPluginJar : add resmgrutility
+2019-12-29 23:03:54,970 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,970 [INFO] PluginManager:200 - loadIPPluginJar : add sai
+2019-12-29 23:03:54,970 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,970 [INFO] PluginManager:200 - loadIPPluginJar : add spi
+2019-12-29 23:03:54,970 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,970 [INFO] PluginManager:200 - loadIPPluginJar : add stm32_wpan
+2019-12-29 23:03:54,986 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,986 [INFO] PluginManager:200 - loadIPPluginJar : add tim
+2019-12-29 23:03:54,986 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,986 [INFO] PluginManager:200 - loadIPPluginJar : add touchsensing
+2019-12-29 23:03:54,986 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,986 [INFO] PluginManager:200 - loadIPPluginJar : add tracer_emb
+2019-12-29 23:03:54,986 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:54,986 [INFO] PluginManager:200 - loadIPPluginJar : add ts
+2019-12-29 23:03:55,001 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:55,001 [INFO] PluginManager:200 - loadIPPluginJar : add tsc
+2019-12-29 23:03:55,001 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:55,001 [INFO] PluginManager:200 - loadIPPluginJar : add ucpd
+2019-12-29 23:03:55,001 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:03:55,001 [INFO] PluginManager:200 - loadIPPluginJar : add usart
+2019-12-29 23:03:55,518 [INFO] BoardConnectionPanel:220 - [DDR PANEL] osNameString: Windows
+2019-12-29 23:03:55,703 [INFO] BoardConnectionPanel:3149 - [DDR PANEL] STM32CubeIDE environment
+2019-12-29 23:03:55,703 [INFO] MainDdrPanel:100 - [DDR PANEL] GETTER - cubeProgrammerPath is: null
+2019-12-29 23:03:55,910 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-29 23:03:56,141 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-29 23:03:56,141 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-29 23:03:56,141 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-29 23:03:56,156 [INFO] BoardConnectionPanel:3149 - [DDR PANEL] STM32CubeIDE environment
+2019-12-29 23:03:56,156 [INFO] MainDdrPanel:100 - [DDR PANEL] GETTER - cubeProgrammerPath is: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin
+2019-12-29 23:03:56,163 [INFO] ProgrammerExecThread:148 - [ProgrammerAPI] CubeProgrammer command construction: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin\STM32_Programmer_CLI.exe -l
+2019-12-29 23:03:56,265 [INFO] MainDdrPanel:90 - [DDR PANEL] SETTER - Set cubeProgrammerPath to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin
+2019-12-29 23:03:56,265 [INFO] Updater:886 - Updater Version found : 5.4.0
+2019-12-29 23:03:56,280 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-29 23:03:56,562 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-29 23:03:56,562 [INFO] MainUpdater:236 - Updater Check For Update Now.
+2019-12-29 23:03:56,562 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-29 23:03:56,624 [INFO] CheckServerUpdateThread:92 - End of CheckServer Thread
+2019-12-29 23:03:56,796 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-29 23:03:56,796 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-29 23:03:56,921 [INFO] MicroXplorer:390 - Change Database Path : 
+2019-12-29 23:03:56,921 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-29 23:03:56,936 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-29 23:03:56,936 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 235307224 Bytes (295698432)
+2019-12-29 23:03:56,936 [INFO] MicroXplorer:390 - Change Database Path : 
+2019-12-29 23:03:56,936 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-29 23:03:56,936 [INFO] OpenFileManager:269 - Change cursor
+2019-12-29 23:03:57,932 [INFO] ThirdPartyDb:264 - Close Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-12-29 23:03:58,043 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 16 ms. number of Sw pack : 27
+2019-12-29 23:03:58,043 [INFO] ThirdPartyDb:264 - Close Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-12-29 23:03:58,102 [INFO] IntegrityCheckThread:97 - End integrity checks thread
+2019-12-29 23:04:02,624 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (48MHZClocksFreq_Value) has invalid value (84000000)
+2019-12-29 23:04:02,624 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2019-12-29 23:04:02,624 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (MCO2PinFreq_Value) has invalid value (168000000)
+2019-12-29 23:04:02,624 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RTCHSEDivFreq_Value) has invalid value (6000000)
+2019-12-29 23:04:03,274 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 342057816 Bytes (576716800)
+2019-12-29 23:04:03,290 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 16 ms. number of Sw pack : 27
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics BlueNRG-MS 1.0.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 1.1.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.1.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.2.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.2.1
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.3.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.3.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.0.1
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.3.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.4.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.4.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.1.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.4.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 3.0.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.2.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 4.0.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 7.0.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 4.1.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 3.1.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 5.0.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 1.0.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 4.0.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.1
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 1.0.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.13.0
+2019-12-29 23:04:03,399 [INFO] ThirdParty:897 - CMSIS Pack Vendor :ARM CMSIS 5.6.0
+2019-12-29 23:04:03,918 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-29 23:04:03,918 [INFO] PinOutPanel:1367 - setPackage(STM32F427IIHx,UFBGA176)
+2019-12-29 23:04:04,892 [INFO] UtilMem:74 - Before build in PCC Used Memory: 252728384 Bytes (576716800)
+2019-12-29 23:04:05,284 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/ryouma/.stm32cubemx/plugins/power
+2019-12-29 23:04:05,284 [INFO] UtilMem:74 - After build in PCC Used Memory: 267934776 Bytes (576716800)
+2019-12-29 23:04:05,284 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,284 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,300 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,316 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 23:04:05,331 [INFO] Can:56 - Can Add PropertyChangeListener com.st.microxplorer.plugins.ip.can.Can@5dbfaed9
+2019-12-29 23:04:05,331 [INFO] Can:56 - Can Add PropertyChangeListener com.st.microxplorer.plugins.ip.can.Can@72a37d0a
+2019-12-29 23:04:05,331 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 23:04:05,363 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] toolchainItems.length=====1
+2019-12-29 23:04:05,488 [INFO] OpenFileManager:289 - Restore cursor
+2019-12-29 23:04:05,503 [INFO] DbMcusXml:106 - Load MCU database from C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/families.xml
+2019-12-29 23:04:05,799 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 23:04:06,011 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 23:04:07,306 [INFO] DbMcusJson:87 - JSON generation date=Wed Dec 11 20:27:49 JST 2019 (1576063669)
+2019-12-29 23:04:09,385 [INFO] DbMcus:193 - Found 1544 MCUs (1504 are supported by CubeMX, 1504 are visible in CubeMX)
+2019-12-29 23:04:09,386 [INFO] ApiDb:158 - Load user favorites file C:\Users\ryouma/.stm32cubemx/favorites.mcus.txt: 0 item(s)
+2019-12-29 23:04:09,386 [INFO] ApiDb:163 - User favorites MCUs=[]
+2019-12-29 23:04:09,386 [INFO] DbMcus:204 - Set 0 / 0 favorites MCUs
+2019-12-29 23:04:12,727 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 23:04:22,153 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 23:04:27,493 [INFO] NvicIntPanel:88 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,489x443,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2019-12-29 23:04:36,081 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 461571928 Bytes (639631360)
+2019-12-29 23:04:36,807 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 471535440 Bytes (639631360)
+2019-12-29 23:04:51,203 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 300617576 Bytes (639631360)
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: SPI
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM6_7
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: CAN
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: CAN
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: SYS
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: RCC
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: NVIC
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: USART
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: USART
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: DMA
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: UART
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: UART
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8
+2019-12-29 23:04:51,874 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: GPIO
+2019-12-29 23:04:51,890 [INFO] CodeGenerator:598 - code generatio: config db path: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\
+2019-12-29 23:04:53,672 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\MXTmpFiles\license.tmp_save
+2019-12-29 23:04:54,135 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\MXTmpFiles\license.tmp
+2019-12-29 23:04:54,401 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\gpio.c_save
+2019-12-29 23:04:54,647 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\gpio.c
+2019-12-29 23:04:54,694 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\gpio.h_save
+2019-12-29 23:04:54,889 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\gpio.h
+2019-12-29 23:04:56,264 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 23:04:56,264 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for CAN
+2019-12-29 23:04:56,264 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 23:04:56,295 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\can.c_save
+2019-12-29 23:04:56,498 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\can.c
+2019-12-29 23:04:56,545 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\can.h_save
+2019-12-29 23:04:56,670 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\can.h
+2019-12-29 23:04:56,686 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 23:04:56,686 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for DMA
+2019-12-29 23:04:56,686 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 23:04:56,748 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\dma.c_save
+2019-12-29 23:04:56,842 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\dma.c
+2019-12-29 23:04:56,873 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\dma.h_save
+2019-12-29 23:04:56,967 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\dma.h
+2019-12-29 23:04:56,967 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 23:04:56,967 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SPI
+2019-12-29 23:04:56,967 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 23:04:57,014 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\spi.c_save
+2019-12-29 23:04:57,167 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\spi.c
+2019-12-29 23:04:57,198 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\spi.h_save
+2019-12-29 23:04:57,339 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\spi.h
+2019-12-29 23:04:57,339 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 23:04:57,339 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SYS
+2019-12-29 23:04:57,339 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 23:04:57,386 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\sys.c_save
+2019-12-29 23:04:57,526 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\sys.c
+2019-12-29 23:04:57,558 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\sys.h_save
+2019-12-29 23:04:57,636 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\sys.h
+2019-12-29 23:04:57,651 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 23:04:57,651 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for TIM
+2019-12-29 23:04:57,651 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 23:04:57,698 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\tim.c_save
+2019-12-29 23:04:57,964 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\tim.c
+2019-12-29 23:04:57,995 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\tim.h_save
+2019-12-29 23:04:58,125 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\tim.h
+2019-12-29 23:04:58,125 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 23:04:58,125 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2019-12-29 23:04:58,125 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 23:04:58,172 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\usart.c_save
+2019-12-29 23:04:58,661 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\usart.c
+2019-12-29 23:04:58,692 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\usart.h_save
+2019-12-29 23:04:58,879 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\usart.h
+2019-12-29 23:04:58,879 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2019-12-29 23:04:58,879 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 23:04:59,051 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\stm32f4xx_it.c_save
+2019-12-29 23:04:59,442 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\stm32f4xx_it.c
+2019-12-29 23:04:59,473 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\stm32f4xx_it.h_save
+2019-12-29 23:04:59,551 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\stm32f4xx_it.h
+2019-12-29 23:04:59,598 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\stm32f4xx_hal_msp.c_save
+2019-12-29 23:04:59,692 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\stm32f4xx_hal_msp.c
+2019-12-29 23:04:59,723 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\MXTmpFiles\system.tmp_save
+2019-12-29 23:04:59,770 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\MXTmpFiles\system.tmp
+2019-12-29 23:04:59,817 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\stm32f4xx_hal_conf.h_save
+2019-12-29 23:04:59,926 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\stm32f4xx_hal_conf.h
+2019-12-29 23:04:59,973 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\main.h_save
+2019-12-29 23:05:00,211 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Inc\main.h
+2019-12-29 23:05:00,247 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\main.c_save
+2019-12-29 23:05:00,595 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\Src\main.c
+2019-12-29 23:05:02,437 [INFO] ProjectBuilder:1645 - Time for Copy HAL[1] : 839mS.
+2019-12-29 23:05:02,453 [INFO] ProjectBuilder:2206 - Project Generator version: 3.5.2
+2019-12-29 23:05:02,765 [INFO] ConfigFileManager:953 - The Die is : DIE419
+2019-12-29 23:05:06,594 [INFO] ProjectBuilder:2373 - Time for Generating toolchain IDE Files: 4141mS.
+2019-12-29 23:05:06,594 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
+2019-12-29 23:05:06,594 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
+2019-12-29 23:06:45,070 [INFO] BlockDiagram:1827 - stop enableDisableButtons

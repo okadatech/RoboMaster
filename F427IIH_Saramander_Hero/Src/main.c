@@ -21,6 +21,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "can.h"
+#include "dma.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -92,7 +93,7 @@ uint16_t sw1_cnt=1220;
 uint8_t rc_SW1_temp,rc_W_temp;
 uint32_t RC_time,cnt_tim_fire_task;
 uint8_t customdataPacket[28];
-
+uint8_t data_data_form_JetsonNANO_temp;
 /* USER CODE END 0 */
 
 /**
@@ -120,6 +121,10 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
+  //MX_UART7   UART_print
+  //MX_UART8   Judge
+  //MX_USART1  RC
+  //MX_USART6  JetsonNANO
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -136,6 +141,7 @@ int main(void)
   MX_USART6_UART_Init();
   MX_TIM2_Init();
   MX_TIM8_Init();
+  MX_DMA_Init();
   /* USER CODE BEGIN 2 */
   HAL_UART_Receive_IT(&huart1, rcData, 18);
 
@@ -195,6 +201,8 @@ int main(void)
   IMU_rol_set=imu_attitude.roll;
   PC_mouse_x=0;
   PC_mouse_y=0;
+
+  HAL_UART_Receive_DMA(&huart7,(uint8_t *)Rxbuf_form_JetsonNANO,Rxbufsize_from_JetsonNANO);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -251,6 +259,10 @@ int main(void)
 		else{
 			cnt_time_main++;
 		}
+		target_X=(data_form_JetsonNANO[0]<<8) | data_form_JetsonNANO[1];
+		target_Y=(data_form_JetsonNANO[2]<<8) | data_form_JetsonNANO[3];
+		cnt_tartget=data_form_JetsonNANO[4];
+
   }
   /* USER CODE END 3 */
 }
@@ -396,6 +408,41 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 			}
 		}
 
+	}
+
+	if (UartHandle->Instance == huart7.Instance) {
+	uint8_t j = 0;
+
+		while (Rxbuf_form_JetsonNANO[j] != 253 &&  j<sizeof(Rxbuf_form_JetsonNANO)) {
+			j++;
+		}
+		if(j>=sizeof(Rxbuf_form_JetsonNANO)){
+			for(uint8_t k=0;k<(sizeof(data_form_JetsonNANO));k++){
+				data_form_JetsonNANO[k]=0;
+			}
+		}
+		else{
+			for (uint8_t k = 0; k < sizeof(data_form_JetsonNANO); k++) {
+				if ((j + k) >= sizeof(data_form_JetsonNANO)) {
+					data_form_JetsonNANO[k] = Rxbuf_form_JetsonNANO[k - (sizeof(data_form_JetsonNANO) - j)];
+				}
+				else {
+					data_form_JetsonNANO[k] = Rxbuf_form_JetsonNANO[j + k + 1];
+				}
+			}
+		}
+		if(data_data_form_JetsonNANO_temp!=data_form_JetsonNANO[Rxbufsize_from_JetsonNANO-2]){
+			connect_jetsonnano=1;
+			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, 1);
+		}
+		else{
+			connect_jetsonnano=0;
+			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, 0);
+			for(uint8_t k=0;k<(sizeof(data_form_JetsonNANO));k++){
+				data_form_JetsonNANO[k]=0;
+			}
+		}
+		data_data_form_JetsonNANO_temp=data_form_JetsonNANO[Rxbufsize_from_JetsonNANO-2];
 	}
 }
 
@@ -591,12 +638,34 @@ void Gimbal_Task(){
 		if(rc.sw2==1|| rc.key_W==1){
 			if(rc_SW1_temp==3 && rc.sw2==1){IMU_yaw_set=imu_attitude.yaw;}
 			if(rc_W_temp==0 &&  rc.key_W==1){IMU_yaw_set=imu_attitude.yaw;}
-		target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
+			if(rc.key_S==1){
+				//Automatic aiming software
+				if(cnt_tartget>0){
+					target_yaw =((float)target_X)-IMU_yaw+feed_forward_param;
+				}
+				else{
+					target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
+				}
+			}
+			else{
+				target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
+			}
 		if(target_yaw>70){target_yaw=70;}
 		if(target_yaw<-70){target_yaw=-70;}
 		}
 		else{
-			target_yaw=(float)PC_mouse_x / yaw_magnification;
+			if(rc.key_S==1){
+				//Automatic aiming software
+				if(cnt_tartget>0){
+					target_yaw=(float)target_X;
+				}
+				else{
+					target_yaw=(float)PC_mouse_x / yaw_magnification;
+				}
+			}
+			else{
+				target_yaw=(float)PC_mouse_x / yaw_magnification;
+			}
 			if(target_yaw>70){target_yaw=70;}
 			if(target_yaw<-70){target_yaw=-70;}
 		}
@@ -614,7 +683,18 @@ void Gimbal_Task(){
 
 	if(rc.sw2==2|| rc.key_E==1){target_pich=0;}
 	else{
+		if(rc.key_S==1){
+			//Automatic aiming software
+			if(cnt_tartget>0){
+				target_pich=((float)target_Y)-IMU_pich;
+			}
+			else{
+				target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
+			}
+		}
+		else{
 		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
+		}
 		if(target_pich>=19){target_pich=19;}
 		if(target_pich<-22){target_pich=-22;}
 	}

@@ -61,7 +61,11 @@ float IMU_rol;
 float IMU_pich_set;
 float IMU_yaw_set;
 float IMU_rol_set;
-
+#define Rxbufsize_from_JetsonNANO 7
+uint8_t Rxbuf_form_JetsonNANO[Rxbufsize_from_JetsonNANO];
+uint8_t data_form_JetsonNANO[Rxbufsize_from_JetsonNANO-1];
+uint8_t connect_jetsonnano;
+int target_X,target_Y,cnt_tartget;
 
 int PC_mouse_x,PC_mouse_y;
 
