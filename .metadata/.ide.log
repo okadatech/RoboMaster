@@ -19266,3 +19266,1588 @@
 
 
 2019-12-22 16:34:17,482 [INFO] Activator:177 - !SESSION log4j initialized
+2019-12-25 23:19:25,854 [INFO] Activator:176 - 
+
+
+2019-12-25 23:19:25,857 [INFO] Activator:177 - !SESSION log4j initialized
+2019-12-29 22:20:08,586 [INFO] Activator:176 - 
+
+
+2019-12-29 22:20:08,596 [INFO] Activator:177 - !SESSION log4j initialized
+2019-12-29 22:20:34,533 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-29 22:20:34,564 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-29 22:20:34,564 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-29 22:20:34,564 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 22:20:34,564 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 22:20:34,564 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-29 22:20:34,580 [INFO] DbMcusAds:72 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:34,580 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:34,580 [INFO] DbMcusJson:59 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:34,580 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:34,580 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:34,674 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-29 22:20:34,810 [INFO] RulesReader:52 - Compatibility file has been processed (179 Rules)
+2019-12-29 22:20:34,935 [INFO] MicroXplorer:570 - Detected Java Version = 1.8.0_202
+2019-12-29 22:20:34,935 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-29 22:20:34,935 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-29 22:20:34,935 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 22:20:34,935 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 22:20:34,935 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-29 22:20:34,935 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:34,935 [INFO] DbMcusAds:72 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:34,935 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:34,935 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:34,935 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:34,935 [INFO] DbMcusJson:59 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:34,935 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:34,935 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:34,935 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:34,935 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:34,935 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:34,935 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:34,935 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-29 22:20:35,075 [INFO] MainPanel:185 - HeapMemory: 311427072
+2019-12-29 22:20:35,165 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-29 22:20:35,165 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-29 22:20:35,165 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 22:20:35,165 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-29 22:20:35,165 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-29 22:20:35,165 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:35,165 [INFO] DbMcusAds:72 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:35,165 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:35,165 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:35,165 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:35,165 [INFO] DbMcusJson:59 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:35,165 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:35,165 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:35,165 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:35,165 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-29 22:20:35,165 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:35,165 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2019-12-29 22:20:35,165 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-29 22:20:35,196 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-29 22:20:35,196 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=]
+2019-12-29 22:20:35,196 [INFO] PluginManage:292 - Check plugin analytics
+2019-12-29 22:20:35,212 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2019-12-29 22:20:35,212 [INFO] PluginManage:292 - Check plugin clock
+2019-12-29 22:20:35,227 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2019-12-29 22:20:35,227 [INFO] PluginManage:292 - Check plugin ddr
+2019-12-29 22:20:35,227 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2019-12-29 22:20:35,227 [INFO] PluginManage:292 - Check plugin filemanager
+2019-12-29 22:20:35,697 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2019-12-29 22:20:35,697 [INFO] PluginManage:292 - Check plugin ipmanager
+2019-12-29 22:20:35,707 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2019-12-29 22:20:35,707 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2019-12-29 22:20:35,729 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2019-12-29 22:20:35,730 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2019-12-29 22:20:35,795 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2019-12-29 22:20:35,796 [INFO] PluginManage:292 - Check plugin power
+2019-12-29 22:20:35,808 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2019-12-29 22:20:35,808 [INFO] PluginManage:292 - Check plugin projectmanager
+2019-12-29 22:20:35,856 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2019-12-29 22:20:35,856 [INFO] PluginManage:292 - Check plugin thirdparty
+2019-12-29 22:20:35,926 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 47 ms. number of Sw pack : 27
+2019-12-29 22:20:35,941 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2019-12-29 22:20:35,941 [INFO] PluginManage:292 - Check plugin tools
+2019-12-29 22:20:35,941 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2019-12-29 22:20:35,941 [INFO] PluginManage:292 - Check plugin updater
+2019-12-29 22:20:35,957 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2019-12-29 22:20:35,957 [INFO] PluginManage:265 - PluginManage : Loaded plugins [12]
+2019-12-29 22:20:36,211 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-29 22:20:36,309 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,324 [INFO] PluginManager:200 - loadIPPluginJar : add adc
+2019-12-29 22:20:36,327 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,327 [INFO] PluginManager:200 - loadIPPluginJar : add aes
+2019-12-29 22:20:36,330 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,331 [INFO] PluginManager:200 - loadIPPluginJar : add can
+2019-12-29 22:20:36,333 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,333 [INFO] PluginManager:200 - loadIPPluginJar : add comp
+2019-12-29 22:20:36,336 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,336 [INFO] PluginManager:200 - loadIPPluginJar : add cryp
+2019-12-29 22:20:36,338 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,338 [INFO] PluginManager:200 - loadIPPluginJar : add dfsdm
+2019-12-29 22:20:36,344 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,345 [INFO] PluginManager:200 - loadIPPluginJar : add dma
+2019-12-29 22:20:36,347 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,347 [INFO] PluginManager:200 - loadIPPluginJar : add fatfs
+2019-12-29 22:20:36,412 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,412 [INFO] PluginManager:200 - loadIPPluginJar : add fmc
+2019-12-29 22:20:36,428 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,428 [INFO] PluginManager:200 - loadIPPluginJar : add freertos
+2019-12-29 22:20:36,428 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,428 [INFO] PluginManager:200 - loadIPPluginJar : add genericplugin
+2019-12-29 22:20:36,428 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,428 [INFO] PluginManager:200 - loadIPPluginJar : add gfxmmu
+2019-12-29 22:20:36,428 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,428 [INFO] PluginManager:200 - loadIPPluginJar : add gfxsimulator
+2019-12-29 22:20:36,444 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,444 [INFO] PluginManager:200 - loadIPPluginJar : add gic
+2019-12-29 22:20:36,444 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,444 [INFO] PluginManager:200 - loadIPPluginJar : add gpio
+2019-12-29 22:20:36,444 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,444 [INFO] PluginManager:200 - loadIPPluginJar : add gtzc
+2019-12-29 22:20:36,444 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,444 [INFO] PluginManager:200 - loadIPPluginJar : add hash
+2019-12-29 22:20:36,459 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,459 [INFO] PluginManager:200 - loadIPPluginJar : add i2c
+2019-12-29 22:20:36,459 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,459 [INFO] PluginManager:200 - loadIPPluginJar : add i2s
+2019-12-29 22:20:36,459 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,459 [INFO] PluginManager:200 - loadIPPluginJar : add ipddr
+2019-12-29 22:20:36,459 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,459 [INFO] PluginManager:200 - loadIPPluginJar : add ltdc
+2019-12-29 22:20:36,459 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,459 [INFO] PluginManager:200 - loadIPPluginJar : add mdma
+2019-12-29 22:20:36,475 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,475 [INFO] PluginManager:200 - loadIPPluginJar : add nvic
+2019-12-29 22:20:36,475 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,475 [INFO] PluginManager:200 - loadIPPluginJar : add opamp
+2019-12-29 22:20:36,475 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,475 [INFO] PluginManager:200 - loadIPPluginJar : add pdm2pcm
+2019-12-29 22:20:36,475 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,491 [INFO] PluginManager:200 - loadIPPluginJar : add plateformsettings
+2019-12-29 22:20:36,491 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,491 [INFO] PluginManager:200 - loadIPPluginJar : add quadspi
+2019-12-29 22:20:36,491 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,491 [INFO] PluginManager:200 - loadIPPluginJar : add resmgrutility
+2019-12-29 22:20:36,491 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,491 [INFO] PluginManager:200 - loadIPPluginJar : add sai
+2019-12-29 22:20:36,553 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,553 [INFO] PluginManager:200 - loadIPPluginJar : add spi
+2019-12-29 22:20:36,553 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,569 [INFO] PluginManager:200 - loadIPPluginJar : add stm32_wpan
+2019-12-29 22:20:36,569 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,569 [INFO] PluginManager:200 - loadIPPluginJar : add tim
+2019-12-29 22:20:36,569 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,569 [INFO] PluginManager:200 - loadIPPluginJar : add touchsensing
+2019-12-29 22:20:36,569 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,569 [INFO] PluginManager:200 - loadIPPluginJar : add tracer_emb
+2019-12-29 22:20:36,569 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,569 [INFO] PluginManager:200 - loadIPPluginJar : add ts
+2019-12-29 22:20:36,569 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,569 [INFO] PluginManager:200 - loadIPPluginJar : add tsc
+2019-12-29 22:20:36,569 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,569 [INFO] PluginManager:200 - loadIPPluginJar : add ucpd
+2019-12-29 22:20:36,584 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:20:36,585 [INFO] PluginManager:200 - loadIPPluginJar : add usart
+2019-12-29 22:20:36,971 [INFO] BoardConnectionPanel:220 - [DDR PANEL] osNameString: Windows
+2019-12-29 22:20:37,112 [INFO] BoardConnectionPanel:3149 - [DDR PANEL] STM32CubeIDE environment
+2019-12-29 22:20:37,112 [INFO] MainDdrPanel:100 - [DDR PANEL] GETTER - cubeProgrammerPath is: null
+2019-12-29 22:20:37,297 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-29 22:20:37,562 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-29 22:20:37,562 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-29 22:20:37,562 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-29 22:20:37,578 [INFO] BoardConnectionPanel:3149 - [DDR PANEL] STM32CubeIDE environment
+2019-12-29 22:20:37,578 [INFO] MainDdrPanel:100 - [DDR PANEL] GETTER - cubeProgrammerPath is: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin
+2019-12-29 22:20:37,578 [INFO] ProgrammerExecThread:148 - [ProgrammerAPI] CubeProgrammer command construction: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin\STM32_Programmer_CLI.exe -l
+2019-12-29 22:20:37,687 [INFO] MainDdrPanel:90 - [DDR PANEL] SETTER - Set cubeProgrammerPath to: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin
+2019-12-29 22:20:37,687 [INFO] Updater:886 - Updater Version found : 5.4.0
+2019-12-29 22:20:37,703 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-29 22:20:38,429 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-29 22:20:38,429 [INFO] MainUpdater:236 - Updater Check For Update Now.
+2019-12-29 22:20:38,429 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-29 22:20:38,461 [INFO] CheckServerUpdateThread:92 - End of CheckServer Thread
+2019-12-29 22:20:38,632 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-29 22:20:38,632 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-29 22:20:38,742 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-29 22:20:38,757 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-29 22:20:38,757 [INFO] DbMcusXml:106 - Load MCU database from C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/families.xml
+2019-12-29 22:20:39,476 [INFO] ThirdPartyDb:264 - Close Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-12-29 22:20:40,105 [INFO] DbMcusJson:87 - JSON generation date=Wed Dec 11 20:27:49 JST 2019 (1576063669)
+2019-12-29 22:20:40,499 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 16 ms. number of Sw pack : 27
+2019-12-29 22:20:40,499 [INFO] ThirdPartyDb:264 - Close Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-12-29 22:20:40,809 [INFO] IntegrityCheckThread:97 - End integrity checks thread
+2019-12-29 22:20:41,515 [INFO] DbMcus:193 - Found 1544 MCUs (1504 are supported by CubeMX, 1504 are visible in CubeMX)
+2019-12-29 22:20:41,531 [INFO] ApiDb:158 - Load user favorites file C:\Users\ryouma/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2019-12-29 22:20:41,531 [INFO] ApiDb:163 - User favorites MCUs=[]
+2019-12-29 22:20:41,531 [INFO] DbMcus:204 - Set 0 / 0 favorites MCUs
+2019-12-29 22:20:42,707 [INFO] DbMcusAds:130 - JSON generation date=Thu Feb 21 01:46:15 JST 2019 (1550681175)
+2019-12-29 22:20:42,707 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-29 22:20:42,754 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/ryouma/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-29 22:20:43,547 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-29 22:20:43,812 [INFO] DbBoardsPdsc:92 - Found 19 items
+2019-12-29 22:20:43,812 [INFO] DbBoardsPdsc:92 - Found 9 items
+2019-12-29 22:20:43,828 [INFO] DbBoardsPdsc:92 - Found 27 items
+2019-12-29 22:20:43,844 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-29 22:20:43,859 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-29 22:20:43,875 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-29 22:20:43,875 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-29 22:20:43,906 [INFO] DbBoardsJson:79 - JSON generation date=Fri Dec 13 18:50:48 JST 2019 (1576230648)
+2019-12-29 22:20:43,922 [INFO] DbBoards:120 - Found 133 boards (132 are supported by CubeMX)
+2019-12-29 22:20:43,937 [INFO] DbBoardsDocs:118 - JSON generation date=Wed Dec 11 20:27:49 JST 2019 (1576063669)
+2019-12-29 22:20:43,937 [INFO] DbBoardsDocs:57 - Found 160 boards documents
+2019-12-29 22:20:43,937 [WARN] DbBoards:130 - board NUCLEO-H743ZI2 has no document id list !
+2019-12-29 22:20:43,953 [WARN] DbBoards:130 - board P-NUCLEO-WB55-Nucleo has no document id list !
+2019-12-29 22:20:43,953 [WARN] DbBoards:130 - board P-NUCLEO-WB55-USBDongle has no document id list !
+2019-12-29 22:20:43,953 [WARN] DbBoards:130 - board P-NUCLEO-WB55 has no document id list !
+2019-12-29 22:20:43,955 [WARN] DbBoards:130 - board STM32F401C-DISCO has no document id list !
+2019-12-29 22:20:43,955 [WARN] DbBoards:130 - board STM32F769I-DISC1 has no document id list !
+2019-12-29 22:20:43,956 [WARN] DbBoards:130 - board STM32L-DISCOVERY has no document id list !
+2019-12-29 22:20:43,956 [WARN] DbBoards:130 - board STM32H747I-DISC1 has no document id list !
+2019-12-29 22:20:43,957 [WARN] DbBoards:130 - board STM32MP157A-DK1 has no document id list !
+2019-12-29 22:20:43,957 [WARN] DbBoards:130 - board STM32L562E-DK has no document id list !
+2019-12-29 22:20:43,957 [WARN] DbBoards:130 - board STM32100E-EVAL has no document id list !
+2019-12-29 22:20:43,957 [WARN] DbBoards:130 - board STM32303C-EVAL has no document id list !
+2019-12-29 22:20:43,957 [WARN] DbBoards:130 - board STM32L152D-EVAL has no document id list !
+2019-12-29 22:20:43,958 [WARN] DbBoards:130 - board STM32H743I-EVAL2 has no document id list !
+2019-12-29 22:20:43,958 [WARN] DbBoards:130 - board STM32H753I-EVAL2 has no document id list !
+2019-12-29 22:20:43,958 [WARN] DbBoards:130 - board STM32G474E-EVAL1 has no document id list !
+2019-12-29 22:20:43,958 [WARN] DbBoards:130 - board STM32L552E-EV has no document id list !
+2019-12-29 22:20:43,959 [WARN] DbBoards:130 - board STEVAL-MKSBOX1V1 has no document id list !
+2019-12-29 22:20:44,850 [ERROR] DbBoards:192 - Image file not found for board STM32G0316-DISCO: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/boards/stm32g0316discovery_small.jpg
+2019-12-29 22:20:45,259 [INFO] ApiDb:158 - Load user favorites file C:\Users\ryouma/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2019-12-29 22:20:45,259 [INFO] ApiDb:163 - User favorites Boards=[]
+2019-12-29 22:20:45,259 [INFO] DbBoards:209 - Set 0 / 0 favorites Boards
+2019-12-29 22:20:45,431 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-29 22:20:45,431 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/ryouma/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-29 22:20:45,478 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-29 22:20:45,652 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\ryouma\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-29 22:20:57,888 [INFO] DbMcusDocs:126 - JSON generation date=Wed Dec 11 20:27:49 JST 2019 (1576063669)
+2019-12-29 22:20:57,982 [INFO] DbMcusDocs:61 - Found 537 MCUs documents
+2019-12-29 22:21:24,029 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.1.0
+2019-12-29 22:21:24,365 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] File copied successfully!!
+2019-12-29 22:21:24,498 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-29 22:21:24,498 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-29 22:21:24,581 [INFO] MicroXplorer:390 - Change Database Path : 
+2019-12-29 22:21:24,581 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-29 22:21:24,587 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-29 22:21:24,590 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 515522296 Bytes (624951296)
+2019-12-29 22:21:24,591 [INFO] MicroXplorer:390 - Change Database Path : 
+2019-12-29 22:21:24,592 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-29 22:21:24,592 [INFO] OpenFileManager:269 - Change cursor
+2019-12-29 22:21:35,278 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) Unable to find key (Mcu.ThirdPartyNb) in loaded IOC file
+2019-12-29 22:21:35,278 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) Unable to find key (Mcu.PinsNb) in loaded IOC file
+2019-12-29 22:21:35,278 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) Unable to find key (Mcu.IPNb) in loaded IOC file
+2019-12-29 22:21:36,240 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 520510936 Bytes (624951296)
+2019-12-29 22:21:36,271 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 16 ms. number of Sw pack : 27
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics BlueNRG-MS 1.0.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 1.1.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.1.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.2.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 5.2.1
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.3.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.3.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.0.1
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.3.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.4.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.4.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.1.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.4.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 3.0.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.2.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 4.0.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 7.0.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 4.1.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 3.1.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 5.0.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 1.0.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 4.0.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.1
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 1.0.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.13.0
+2019-12-29 22:21:36,415 [INFO] ThirdParty:897 - CMSIS Pack Vendor :ARM CMSIS 5.6.0
+2019-12-29 22:21:36,958 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-29 22:21:36,958 [INFO] PinOutPanel:1367 - setPackage(STM32G474RETx,LQFP64)
+2019-12-29 22:21:37,462 [INFO] UtilMem:74 - Before build in PCC Used Memory: 422211736 Bytes (624951296)
+2019-12-29 22:21:37,948 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/ryouma/.stm32cubemx/plugins/power
+2019-12-29 22:21:37,963 [INFO] UtilMem:74 - After build in PCC Used Memory: 461531296 Bytes (624951296)
+2019-12-29 22:21:37,963 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:21:37,963 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,963 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,963 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,963 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,963 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,963 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,963 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,963 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,979 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-29 22:21:37,995 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:21:38,010 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] toolchainItems.length=====1
+2019-12-29 22:21:38,120 [INFO] OpenFileManager:289 - Restore cursor
+2019-12-29 22:21:38,202 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:21:38,260 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:21:38,578 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 500854936 Bytes (624951296)
+2019-12-29 22:21:38,718 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 506652960 Bytes (624951296)
+2019-12-29 22:21:39,585 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: SYS
+2019-12-29 22:21:39,586 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: NVIC
+2019-12-29 22:21:39,588 [INFO] CodeGenerator:598 - code generatio: config db path: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\
+2019-12-29 22:21:40,592 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\license.tmp_save
+2019-12-29 22:21:41,628 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\license.tmp
+2019-12-29 22:21:41,879 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 22:21:41,879 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SYS
+2019-12-29 22:21:41,879 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:21:41,879 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2019-12-29 22:21:41,894 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:21:41,941 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_it.c_save
+2019-12-29 22:21:42,314 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_it.c
+2019-12-29 22:21:42,367 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_it.h_save
+2019-12-29 22:21:42,501 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_it.h
+2019-12-29 22:21:42,564 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_hal_msp.c_save
+2019-12-29 22:21:42,921 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_hal_msp.c
+2019-12-29 22:21:42,950 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\system.tmp_save
+2019-12-29 22:21:43,214 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\system.tmp
+2019-12-29 22:21:43,277 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_hal_conf.h_save
+2019-12-29 22:21:43,405 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_hal_conf.h
+2019-12-29 22:21:43,483 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\main.h_save
+2019-12-29 22:21:43,608 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\main.h
+2019-12-29 22:21:43,655 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\main.c_save
+2019-12-29 22:21:43,811 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\main.c
+2019-12-29 22:21:45,061 [INFO] ProjectBuilder:1645 - Time for Copy HAL[1] : 609mS.
+2019-12-29 22:21:45,061 [INFO] ProjectBuilder:2206 - Project Generator version: 3.5.2
+2019-12-29 22:21:45,859 [INFO] ConfigFileManager:953 - The Die is : DIE469
+2019-12-29 22:22:03,369 [INFO] ProjectBuilder:2373 - Time for Generating toolchain IDE Files: 18308mS.
+2019-12-29 22:22:03,370 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
+2019-12-29 22:22:03,375 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
+2019-12-29 22:22:15,305 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:17,424 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:20,465 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,465 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,466 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,466 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,466 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,466 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,466 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,466 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,466 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,466 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,466 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,467 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,467 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,467 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,467 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,468 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,468 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,468 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,468 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,468 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,468 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,468 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,481 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:20,551 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,567 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,567 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,567 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,567 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,567 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,567 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,567 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,567 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,567 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,567 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,614 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:22:20,630 [INFO] NvicIntPanel:88 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2019-12-29 22:22:20,645 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:23,688 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:26,070 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:26,179 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:26,827 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:30,006 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:30,091 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:31,957 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:35,357 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:22:35,424 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:24:39,577 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:24:43,370 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:24:43,457 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:24:44,119 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:24:46,115 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:24:46,193 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:10,642 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,642 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:10,657 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:12,982 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,982 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:25:12,998 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:17,494 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:20,762 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:20,902 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:23,233 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:23,467 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:23,577 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:28,433 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:28,701 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:28,839 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:31,978 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:32,195 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:32,328 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:36,577 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:36,871 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:36,996 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:40,013 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:40,290 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:40,447 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:45,226 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:45,486 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:45,639 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:47,055 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:51,154 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:51,218 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:54,623 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:54,656 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:25:54,665 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:26:01,065 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:26:01,138 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:26:03,649 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:26:06,958 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:26:09,778 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:26:09,831 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:27:47,365 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:27:49,469 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,469 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,470 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,470 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,470 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,470 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,470 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,470 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,470 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,470 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,470 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,470 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,471 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,471 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,471 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,471 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,471 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,471 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,471 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,471 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,471 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,472 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,472 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,472 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,484 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:27:49,500 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,500 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,500 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,500 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,501 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,501 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,501 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,501 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,501 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,501 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,501 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,501 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,514 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,514 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,514 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,514 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,514 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,515 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,515 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,515 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,515 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,515 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,515 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,515 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:27:49,519 [INFO] NvicIntPanel:88 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2019-12-29 22:27:49,524 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:27:58,228 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:00,493 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:00,524 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:00,540 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:01,021 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:03,318 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:03,365 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:19,724 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,724 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,880 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:19,896 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:21,992 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:21,992 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,148 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,149 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,149 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,149 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,149 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,149 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,149 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,149 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,149 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,149 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,149 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,150 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,150 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,150 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,150 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,150 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,150 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,150 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,150 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,151 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,151 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,151 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:22,164 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:24,951 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:24,951 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,108 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:25,123 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:27,258 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,258 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,388 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:27,408 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:29,664 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,664 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,836 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,836 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,836 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,836 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,836 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:29,851 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:34,290 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,290 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,529 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:34,545 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:37,244 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:37,322 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,322 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:37,471 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:40,077 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:40,180 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,180 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,414 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,430 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,430 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,430 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,430 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,430 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,430 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:40,430 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:45,099 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Tab changed to: Clock Configuration
+2019-12-29 22:28:48,275 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,275 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,432 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,447 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,447 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,447 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,447 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,447 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,447 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:48,447 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:49,979 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,979 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,979 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,979 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,980 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,981 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,981 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,981 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,981 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,981 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,981 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,981 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:49,981 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,108 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:50,124 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:57,368 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,368 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,509 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:28:57,525 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:28:59,421 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Tab changed to: Project Manager
+2019-12-29 22:29:03,550 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 670646696 Bytes (891289600)
+2019-12-29 22:29:04,225 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 679524552 Bytes (891289600)
+2019-12-29 22:29:04,484 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 697350344 Bytes (891289600)
+2019-12-29 22:29:04,699 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: FDCAN
+2019-12-29 22:29:04,699 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8G4
+2019-12-29 22:29:04,699 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8G4
+2019-12-29 22:29:04,699 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8G4
+2019-12-29 22:29:04,699 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: SYS
+2019-12-29 22:29:04,699 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: RCC
+2019-12-29 22:29:04,699 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: NVIC
+2019-12-29 22:29:04,699 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: USART
+2019-12-29 22:29:04,699 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: USART
+2019-12-29 22:29:04,700 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: USART
+2019-12-29 22:29:04,700 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: UART
+2019-12-29 22:29:04,700 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: UART
+2019-12-29 22:29:04,700 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: GPIO
+2019-12-29 22:29:04,700 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: FDCAN
+2019-12-29 22:29:04,701 [INFO] CodeGenerator:598 - code generatio: config db path: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\
+2019-12-29 22:29:04,703 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:04,703 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:29:05,336 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\license.tmp_save
+2019-12-29 22:29:05,476 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\license.tmp
+2019-12-29 22:29:05,932 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\gpio.c_save
+2019-12-29 22:29:06,125 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\gpio.c
+2019-12-29 22:29:06,156 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\gpio.h_save
+2019-12-29 22:29:06,437 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\gpio.h
+2019-12-29 22:29:08,383 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 22:29:08,383 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for FDCAN
+2019-12-29 22:29:08,383 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:29:08,415 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\fdcan.c_save
+2019-12-29 22:29:08,584 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\fdcan.c
+2019-12-29 22:29:08,617 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\fdcan.h_save
+2019-12-29 22:29:08,715 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\fdcan.h
+2019-12-29 22:29:08,717 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 22:29:08,718 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SYS
+2019-12-29 22:29:08,719 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:29:08,749 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\sys.c_save
+2019-12-29 22:29:08,878 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\sys.c
+2019-12-29 22:29:08,894 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\sys.h_save
+2019-12-29 22:29:08,978 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\sys.h
+2019-12-29 22:29:08,978 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 22:29:08,978 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for TIM
+2019-12-29 22:29:08,978 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:29:09,016 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\tim.c_save
+2019-12-29 22:29:09,169 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\tim.c
+2019-12-29 22:29:09,200 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\tim.h_save
+2019-12-29 22:29:09,316 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\tim.h
+2019-12-29 22:29:09,316 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 22:29:09,316 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2019-12-29 22:29:09,316 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:29:09,363 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\usart.c_save
+2019-12-29 22:29:09,567 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\usart.c
+2019-12-29 22:29:09,600 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\usart.h_save
+2019-12-29 22:29:09,678 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\usart.h
+2019-12-29 22:29:09,688 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2019-12-29 22:29:09,688 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:29:09,719 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_it.c_save
+2019-12-29 22:29:09,804 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_it.c
+2019-12-29 22:29:09,820 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_it.h_save
+2019-12-29 22:29:09,889 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_it.h
+2019-12-29 22:29:09,920 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_hal_msp.c_save
+2019-12-29 22:29:10,020 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_hal_msp.c
+2019-12-29 22:29:10,036 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\system.tmp_save
+2019-12-29 22:29:10,089 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\system.tmp
+2019-12-29 22:29:10,121 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_hal_conf.h_save
+2019-12-29 22:29:10,205 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_hal_conf.h
+2019-12-29 22:29:10,252 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\main.h_save
+2019-12-29 22:29:10,321 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\main.h
+2019-12-29 22:29:10,368 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\main.c_save
+2019-12-29 22:29:10,502 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\main.c
+2019-12-29 22:29:11,353 [INFO] ProjectBuilder:1645 - Time for Copy HAL[1] : 226mS.
+2019-12-29 22:29:11,353 [INFO] ProjectBuilder:2206 - Project Generator version: 3.5.2
+2019-12-29 22:29:11,769 [INFO] ConfigFileManager:953 - The Die is : DIE469
+2019-12-29 22:29:13,964 [INFO] ProjectBuilder:2373 - Time for Generating toolchain IDE Files: 2611mS.
+2019-12-29 22:29:13,965 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 1mS.
+2019-12-29 22:29:13,969 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
+2019-12-29 22:29:16,156 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Tab changed to: Pinout & Configuration
+2019-12-29 22:35:35,311 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:35:37,845 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:36:49,708 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:36:49,739 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,739 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,917 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,933 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,933 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,933 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,933 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,933 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,933 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,933 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:36:49,941 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:37:42,030 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:37:42,046 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,046 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,240 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,240 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,241 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,241 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,241 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,241 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,241 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,241 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,241 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,241 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,241 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,242 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,242 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,242 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,242 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,242 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,242 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,242 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,242 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,243 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,243 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,243 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:37:42,248 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:40:51,070 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:40:54,341 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:40:59,296 [INFO] Mcu:1327 - InternalPropertyChange: try BijectiveRequest:PWM Generation CH1
+2019-12-29 22:40:59,717 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:40:59,780 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:06,836 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:08,233 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:12,004 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:12,039 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:12,054 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:13,147 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:13,851 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:14,898 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:18,117 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:18,810 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:20,906 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:22,153 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:23,384 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:28,265 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:28,312 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:31,911 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:32,036 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:41:32,087 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:42:49,495 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:42:49,573 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,589 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,729 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:49,745 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:42:53,515 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:42:53,593 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,593 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,749 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:53,765 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:42:56,892 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:42:56,990 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,991 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,991 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,991 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,991 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,991 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,991 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,991 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,991 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,991 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,992 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,992 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,992 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,992 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,992 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,992 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,992 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,992 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,992 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,993 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,993 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,993 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,993 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:56,993 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,147 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,148 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,148 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,148 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,148 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,148 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,148 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,148 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,148 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,149 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,149 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,149 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,149 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,149 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,149 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,149 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,149 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,150 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,150 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,150 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,150 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,150 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:42:57,155 [INFO] BlockDiagram:1827 - stop enableDisableButtons
+2019-12-29 22:46:21,936 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 843063400 Bytes (979369984)
+2019-12-29 22:46:22,545 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 851978336 Bytes (979369984)
+2019-12-29 22:46:22,810 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 363493464 Bytes (979369984)
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: FDCAN
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8G4
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8G4
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8G4
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: SYS
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: RCC
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: NVIC
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: USART
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: USART
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: USART
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: TIM1_8G4
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: UART
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: UART
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: GPIO
+2019-12-29 22:46:22,978 [INFO] BlockDiagram:1871 - set Specific Code input for plugin: FDCAN
+2019-12-29 22:46:22,978 [INFO] CodeGenerator:598 - code generatio: config db path: C:\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\
+2019-12-29 22:46:22,978 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,978 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,978 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,978 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,978 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - ClockDivider not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - MessageRAMOffset not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - RxFifo0ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - RxFifo0ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - RxFifo1ElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - RxFifo1ElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - RxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - RxBufferSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - TxEventsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - TxBuffersNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - TxFifoQueueElmtsNbr not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:22,993 [WARN] IP:1925 - TxElmtSize not found: check if there is a RefParameter without a condition.
+2019-12-29 22:46:23,343 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\license.tmp_save
+2019-12-29 22:46:23,405 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\license.tmp
+2019-12-29 22:46:23,608 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\gpio.c_save
+2019-12-29 22:46:23,718 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\gpio.c
+2019-12-29 22:46:23,757 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\gpio.h_save
+2019-12-29 22:46:23,825 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\gpio.h
+2019-12-29 22:46:25,979 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 22:46:25,979 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for FDCAN
+2019-12-29 22:46:25,979 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:46:26,011 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\fdcan.c_save
+2019-12-29 22:46:26,129 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\fdcan.c
+2019-12-29 22:46:26,152 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\fdcan.h_save
+2019-12-29 22:46:26,215 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\fdcan.h
+2019-12-29 22:46:26,218 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 22:46:26,219 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SYS
+2019-12-29 22:46:26,220 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:46:26,256 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\sys.c_save
+2019-12-29 22:46:26,367 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\sys.c
+2019-12-29 22:46:26,397 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\sys.h_save
+2019-12-29 22:46:26,484 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\sys.h
+2019-12-29 22:46:26,486 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 22:46:26,487 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for TIM
+2019-12-29 22:46:26,488 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:46:26,533 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\tim.c_save
+2019-12-29 22:46:26,697 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\tim.c
+2019-12-29 22:46:26,726 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\tim.h_save
+2019-12-29 22:46:26,850 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\tim.h
+2019-12-29 22:46:26,853 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-29 22:46:26,854 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2019-12-29 22:46:26,854 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:46:26,899 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\usart.c_save
+2019-12-29 22:46:27,070 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\usart.c
+2019-12-29 22:46:27,097 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\usart.h_save
+2019-12-29 22:46:27,185 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\usart.h
+2019-12-29 22:46:27,188 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2019-12-29 22:46:27,190 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-29 22:46:27,237 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_it.c_save
+2019-12-29 22:46:27,334 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_it.c
+2019-12-29 22:46:27,365 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_it.h_save
+2019-12-29 22:46:27,421 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_it.h
+2019-12-29 22:46:27,453 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_hal_msp.c_save
+2019-12-29 22:46:27,531 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\stm32g4xx_hal_msp.c
+2019-12-29 22:46:27,562 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\system.tmp_save
+2019-12-29 22:46:27,624 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\MXTmpFiles\system.tmp
+2019-12-29 22:46:27,668 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_hal_conf.h_save
+2019-12-29 22:46:27,787 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\stm32g4xx_hal_conf.h
+2019-12-29 22:46:27,860 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\main.h_save
+2019-12-29 22:46:27,953 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Inc\main.h
+2019-12-29 22:46:27,984 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\main.c_save
+2019-12-29 22:46:28,109 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\G474_Saramander_Sentry\Core\Src\main.c
+2019-12-29 22:46:28,770 [INFO] ProjectBuilder:1645 - Time for Copy HAL[1] : 165mS.
+2019-12-29 22:46:28,772 [INFO] ProjectBuilder:2206 - Project Generator version: 3.5.2
+2019-12-29 22:46:29,082 [INFO] ConfigFileManager:953 - The Die is : DIE469
+2019-12-29 22:46:30,995 [INFO] ProjectBuilder:2373 - Time for Generating toolchain IDE Files: 2223mS.
+2019-12-29 22:46:30,996 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 1mS.
+2019-12-29 22:46:31,000 [INFO] ProjectBuilder:1505 - Time for Copy CMSIS : 0mS.
