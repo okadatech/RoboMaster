@@ -641,10 +641,10 @@ void Gimbal_Task(){
 			if(rc.key_S==1){
 				//Automatic aiming software
 				if(cnt_tartget>0){
-					target_yaw =((float)target_X)-IMU_yaw+feed_forward_param;
+					target_yaw =yaw_now+map(target_X,-480,480,50,-50)-IMU_yaw+feed_forward_param;
 				}
 				else{
-					target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
+					target_yaw =yaw_now-IMU_yaw+feed_forward_param;
 				}
 			}
 			else{
@@ -657,10 +657,10 @@ void Gimbal_Task(){
 			if(rc.key_S==1){
 				//Automatic aiming software
 				if(cnt_tartget>0){
-					target_yaw=(float)target_X;
+					target_yaw =yaw_now+map(target_X,-480,480,50,-50);
 				}
 				else{
-					target_yaw=(float)PC_mouse_x / yaw_magnification;
+					target_yaw =yaw_now;
 				}
 			}
 			else{
@@ -686,10 +686,10 @@ void Gimbal_Task(){
 		if(rc.key_S==1){
 			//Automatic aiming software
 			if(cnt_tartget>0){
-				target_pich=((float)target_Y)-IMU_pich;
+				target_pich=pich_now+map(target_Y,-360,360,20,-20)-IMU_pich;
 			}
 			else{
-				target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
+				target_pich=pich_now-IMU_pich;
 			}
 		}
 		else{
