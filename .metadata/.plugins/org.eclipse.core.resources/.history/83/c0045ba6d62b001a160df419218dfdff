@@ -638,7 +638,7 @@ void Gimbal_Task(){
 		if(rc.sw2==1|| rc.key_W==1){
 			if(rc_SW1_temp==3 && rc.sw2==1){IMU_yaw_set=imu_attitude.yaw;}
 			if(rc_W_temp==0 &&  rc.key_W==1){IMU_yaw_set=imu_attitude.yaw;}
-			if(rc.key_S==1 ||  rc.ch1==660){
+			if(rc.key_S==1 ||  rc.ch2==-660){
 				//Automatic aiming software
 				if(cnt_tartget>0){
 					target_yaw =yaw_now+map(target_X,-480,480,50,-50)-IMU_yaw+feed_forward_param;
@@ -654,7 +654,7 @@ void Gimbal_Task(){
 		if(target_yaw<-70){target_yaw=-70;}
 		}
 		else{
-			if(rc.key_S==1 ||  rc.ch1==660){
+			if(rc.key_S==1 ||  rc.ch2==-660){
 				//Automatic aiming software
 				if(cnt_tartget>0){
 					target_yaw =yaw_now+map(target_X,-480,480,50,-50);
@@ -683,7 +683,7 @@ void Gimbal_Task(){
 
 	if(rc.sw2==2|| rc.key_E==1){target_pich=0;}
 	else{
-		if(rc.key_S==1  ||  rc.ch1==660){
+		if(rc.key_S==1 ||  rc.ch2==-660){
 			//Automatic aiming software
 			if(cnt_tartget>0){
 				target_pich=pich_now+map(target_Y,-360,360,20,-20)-IMU_pich;

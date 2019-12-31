@@ -13870,11 +13870,11 @@ void fire_task_push(){
  80061ee:	f995 2018 	ldrsb.w	r2, [r5, #24]
  80061f2:	2a01      	cmp	r2, #1
  80061f4:	f000 81bf 	beq.w	8006576 <Gimbal_Task+0x3c6>
-			if(rc.key_S==1 ||  rc.ch2==-660){
+			if(rc.key_S==1 ||  rc.ch1==660){
  80061f8:	2b01      	cmp	r3, #1
  80061fa:	f000 823b 	beq.w	8006674 <Gimbal_Task+0x4c4>
- 80061fe:	f9b5 3002 	ldrsh.w	r3, [r5, #2]
- 8006202:	f513 7f25 	cmn.w	r3, #660	; 0x294
+ 80061fe:	f9b5 3000 	ldrsh.w	r3, [r5]
+ 8006202:	f5b3 7f25 	cmp.w	r3, #660	; 0x294
  8006206:	f000 8235 	beq.w	8006674 <Gimbal_Task+0x4c4>
 				target_yaw=(float)PC_mouse_x / yaw_magnification;
  800620a:	4b81      	ldr	r3, [pc, #516]	; (8006410 <Gimbal_Task+0x260>)
@@ -13890,8 +13890,8 @@ void fire_task_push(){
  800622c:	801c      	strh	r4, [r3, #0]
 			if(target_yaw>70){target_yaw=70;}
  800622e:	2c46      	cmp	r4, #70	; 0x46
- 8006230:	f8df a228 	ldr.w	sl, [pc, #552]	; 800645c <Gimbal_Task+0x2ac>
- 8006234:	f8df b228 	ldr.w	fp, [pc, #552]	; 8006460 <Gimbal_Task+0x2b0>
+ 8006230:	f8df b228 	ldr.w	fp, [pc, #552]	; 800645c <Gimbal_Task+0x2ac>
+ 8006234:	f8df a228 	ldr.w	sl, [pc, #552]	; 8006460 <Gimbal_Task+0x2b0>
  8006238:	f340 81cc 	ble.w	80065d4 <Gimbal_Task+0x424>
 		if(target_yaw>70){target_yaw=70;}
  800623c:	2446      	movs	r4, #70	; 0x46
@@ -13962,8 +13962,8 @@ void fire_task_push(){
  800628e:	2e02      	cmp	r6, #2
  8006290:	d1a4      	bne.n	80061dc <Gimbal_Task+0x2c>
  8006292:	4b61      	ldr	r3, [pc, #388]	; (8006418 <Gimbal_Task+0x268>)
- 8006294:	f8df a1c4 	ldr.w	sl, [pc, #452]	; 800645c <Gimbal_Task+0x2ac>
- 8006298:	f8df b1c4 	ldr.w	fp, [pc, #452]	; 8006460 <Gimbal_Task+0x2b0>
+ 8006294:	f8df b1c4 	ldr.w	fp, [pc, #452]	; 800645c <Gimbal_Task+0x2ac>
+ 8006298:	f8df a1c4 	ldr.w	sl, [pc, #452]	; 8006460 <Gimbal_Task+0x2b0>
  800629c:	f8df 81b8 	ldr.w	r8, [pc, #440]	; 8006458 <Gimbal_Task+0x2a8>
  80062a0:	2400      	movs	r4, #0
  80062a2:	801c      	strh	r4, [r3, #0]
@@ -14042,12 +14042,12 @@ void fire_task_push(){
  8006358:	f995 301d 	ldrsb.w	r3, [r5, #29]
  800635c:	2b01      	cmp	r3, #1
  800635e:	f000 8081 	beq.w	8006464 <Gimbal_Task+0x2b4>
-		if(rc.key_S==1 ||  rc.ch2==-660){
+		if(rc.key_S==1  ||  rc.ch1==660){
  8006362:	f995 301a 	ldrsb.w	r3, [r5, #26]
  8006366:	2b01      	cmp	r3, #1
  8006368:	d01c      	beq.n	80063a4 <Gimbal_Task+0x1f4>
- 800636a:	f9b5 3002 	ldrsh.w	r3, [r5, #2]
- 800636e:	f513 7f25 	cmn.w	r3, #660	; 0x294
+ 800636a:	f9b5 3000 	ldrsh.w	r3, [r5]
+ 800636e:	f5b3 7f25 	cmp.w	r3, #660	; 0x294
  8006372:	d017      	beq.n	80063a4 <Gimbal_Task+0x1f4>
 		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
  8006374:	4b31      	ldr	r3, [pc, #196]	; (800643c <Gimbal_Task+0x28c>)
@@ -14239,9 +14239,9 @@ void fire_task_push(){
 	rc_W_temp=rc.key_W;
  8006540:	7e2b      	ldrb	r3, [r5, #24]
 	rc_SW1_temp=rc.sw2;
- 8006542:	f88b 2000 	strb.w	r2, [fp]
+ 8006542:	f88a 2000 	strb.w	r2, [sl]
 	rc_W_temp=rc.key_W;
- 8006546:	f88a 3000 	strb.w	r3, [sl]
+ 8006546:	f88b 3000 	strb.w	r3, [fp]
 }
  800654a:	b003      	add	sp, #12
  800654c:	ecbd 8b02 	vpop	{d8}
@@ -14262,10 +14262,10 @@ void fire_task_push(){
  800656c:	f648 23d0 	movw	r3, #35536	; 0x8ad0
  8006570:	f8ad 3000 	strh.w	r3, [sp]
  8006574:	e6ea      	b.n	800634c <Gimbal_Task+0x19c>
- 8006576:	f8df a1b0 	ldr.w	sl, [pc, #432]	; 8006728 <Gimbal_Task+0x578>
+ 8006576:	f8df b1b0 	ldr.w	fp, [pc, #432]	; 8006728 <Gimbal_Task+0x578>
 			if(rc_SW1_temp==3 && rc.sw2==1){IMU_yaw_set=imu_attitude.yaw;}
- 800657a:	f8df b1b0 	ldr.w	fp, [pc, #432]	; 800672c <Gimbal_Task+0x57c>
- 800657e:	f89a 2000 	ldrb.w	r2, [sl]
+ 800657a:	f8df a1b0 	ldr.w	sl, [pc, #432]	; 800672c <Gimbal_Task+0x57c>
+ 800657e:	f89b 2000 	ldrb.w	r2, [fp]
 			if(rc_W_temp==0 &&  rc.key_W==1){IMU_yaw_set=imu_attitude.yaw;}
  8006582:	2a00      	cmp	r2, #0
  8006584:	d048      	beq.n	8006618 <Gimbal_Task+0x468>
@@ -14274,12 +14274,12 @@ void fire_task_push(){
  800658a:	8809      	ldrh	r1, [r1, #0]
  800658c:	edd2 6a00 	vldr	s13, [r2]
  8006590:	ee07 1a90 	vmov	s15, r1
-			if(rc.key_S==1 ||  rc.ch2==-660){
+			if(rc.key_S==1 ||  rc.ch1==660){
  8006594:	2b01      	cmp	r3, #1
  8006596:	eef8 7ae7 	vcvt.f32.s32	s15, s15
  800659a:	d042      	beq.n	8006622 <Gimbal_Task+0x472>
- 800659c:	f9b5 3002 	ldrsh.w	r3, [r5, #2]
- 80065a0:	f513 7f25 	cmn.w	r3, #660	; 0x294
+ 800659c:	f9b5 3000 	ldrsh.w	r3, [r5]
+ 80065a0:	f5b3 7f25 	cmp.w	r3, #660	; 0x294
  80065a4:	d03d      	beq.n	8006622 <Gimbal_Task+0x472>
 				target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
  80065a6:	4b55      	ldr	r3, [pc, #340]	; (80066fc <Gimbal_Task+0x54c>)
@@ -14315,10 +14315,10 @@ void fire_task_push(){
  80065f2:	f44f 62f3 	mov.w	r2, #1944	; 0x798
  80065f6:	e636      	b.n	8006266 <Gimbal_Task+0xb6>
 			if(rc_SW1_temp==3 && rc.sw2==1){IMU_yaw_set=imu_attitude.yaw;}
- 80065f8:	f8df b130 	ldr.w	fp, [pc, #304]	; 800672c <Gimbal_Task+0x57c>
- 80065fc:	f8df a128 	ldr.w	sl, [pc, #296]	; 8006728 <Gimbal_Task+0x578>
- 8006600:	f89b 1000 	ldrb.w	r1, [fp]
- 8006604:	f89a 2000 	ldrb.w	r2, [sl]
+ 80065f8:	f8df a130 	ldr.w	sl, [pc, #304]	; 800672c <Gimbal_Task+0x57c>
+ 80065fc:	f8df b128 	ldr.w	fp, [pc, #296]	; 8006728 <Gimbal_Task+0x578>
+ 8006600:	f89a 1000 	ldrb.w	r1, [sl]
+ 8006604:	f89b 2000 	ldrb.w	r2, [fp]
  8006608:	2903      	cmp	r1, #3
  800660a:	d058      	beq.n	80066be <Gimbal_Task+0x50e>
 			if(rc_W_temp==0 &&  rc.key_W==1){IMU_yaw_set=imu_attitude.yaw;}
