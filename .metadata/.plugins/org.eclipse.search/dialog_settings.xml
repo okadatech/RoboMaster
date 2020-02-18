@@ -19,8 +19,8 @@
 		<item key="scope" value="0"/>
 	</section>
 	<section name="DialogBounds_SearchDialog">
-		<item key="DIALOG_X_ORIGIN" value="635"/>
-		<item key="DIALOG_Y_ORIGIN" value="199"/>
+		<item key="DIALOG_X_ORIGIN" value="917"/>
+		<item key="DIALOG_Y_ORIGIN" value="156"/>
 		<item key="DIALOG_WIDTH" value="669"/>
 		<item key="DIALOG_HEIGHT" value="553"/>
 		<item key="DIALOG_FONT_NAME" value="1|Yu Gothic UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Yu Gothic UI"/>
@@ -56,5 +56,10 @@
 	</section>
 	<section name="org.eclipse.cdt.ui.pdomSearchViewPage">
 		<item key="showEnclosingDefinitions" value="true"/>
+	</section>
+	<section name="DialogBounds_SearchHistorySelectionDialog">
+		<item key="DIALOG_WIDTH" value="638"/>
+		<item key="DIALOG_HEIGHT" value="529"/>
+		<item key="DIALOG_FONT_NAME" value="1|Yu Gothic UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Yu Gothic UI"/>
 	</section>
 </section>

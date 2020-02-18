@@ -6675,7 +6675,7 @@ OUTPUT(F427IIH_Saramander_Standard.elf elf32-littlearm)
  .debug_macro   0x00000000000261dd      0x1fb Src/tim.o
  .debug_macro   0x00000000000263d8      0x1fb Src/usart.o
 
-.debug_line     0x0000000000000000    0x123af
+.debug_line     0x0000000000000000    0x123b0
  .debug_line    0x0000000000000000      0x909 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_line    0x0000000000000909      0xb7f Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o
  .debug_line    0x0000000000001488      0x975 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
@@ -6690,20 +6690,20 @@ OUTPUT(F427IIH_Saramander_Standard.elf elf32-littlearm)
  .debug_line    0x000000000000a377      0x7ce Src/can.o
  .debug_line    0x000000000000ab45      0x726 Src/gpio.o
  .debug_line    0x000000000000b26b      0x8a3 Src/madgwick_ahrs.o
- .debug_line    0x000000000000bb0e     0x11b3 Src/main.o
- .debug_line    0x000000000000ccc1      0x629 Src/mecanum.o
- .debug_line    0x000000000000d2ea      0x76e Src/motor.o
- .debug_line    0x000000000000da58       0x63 Src/pid.o
- .debug_line    0x000000000000dabb      0xc0e Src/referee_serial_port_protocol.o
- .debug_line    0x000000000000e6c9      0x741 Src/spi.o
- .debug_line    0x000000000000ee0a      0x6e5 Src/stm32f4xx_hal_msp.o
- .debug_line    0x000000000000f4ef      0x796 Src/stm32f4xx_it.o
- .debug_line    0x000000000000fc85      0x709 Src/syscalls.o
- .debug_line    0x000000000001038e      0x55d Src/sysmem.o
- .debug_line    0x00000000000108eb      0x71e Src/system_stm32f4xx.o
- .debug_line    0x0000000000011009      0xae7 Src/tim.o
- .debug_line    0x0000000000011af0      0x83e Src/usart.o
- .debug_line    0x000000000001232e       0x81 Startup/startup_stm32f427iihx.o
+ .debug_line    0x000000000000bb0e     0x11b4 Src/main.o
+ .debug_line    0x000000000000ccc2      0x629 Src/mecanum.o
+ .debug_line    0x000000000000d2eb      0x76e Src/motor.o
+ .debug_line    0x000000000000da59       0x63 Src/pid.o
+ .debug_line    0x000000000000dabc      0xc0e Src/referee_serial_port_protocol.o
+ .debug_line    0x000000000000e6ca      0x741 Src/spi.o
+ .debug_line    0x000000000000ee0b      0x6e5 Src/stm32f4xx_hal_msp.o
+ .debug_line    0x000000000000f4f0      0x796 Src/stm32f4xx_it.o
+ .debug_line    0x000000000000fc86      0x709 Src/syscalls.o
+ .debug_line    0x000000000001038f      0x55d Src/sysmem.o
+ .debug_line    0x00000000000108ec      0x71e Src/system_stm32f4xx.o
+ .debug_line    0x000000000001100a      0xae7 Src/tim.o
+ .debug_line    0x0000000000011af1      0x83e Src/usart.o
+ .debug_line    0x000000000001232f       0x81 Startup/startup_stm32f427iihx.o
 
 .debug_str      0x0000000000000000    0xdd458
  .debug_str     0x0000000000000000    0xd1db4 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o

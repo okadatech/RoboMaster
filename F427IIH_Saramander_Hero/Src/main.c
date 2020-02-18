@@ -129,6 +129,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_CAN1_Init();
   MX_CAN2_Init();
   MX_SPI5_Init();
@@ -141,10 +142,9 @@ int main(void)
   MX_USART6_UART_Init();
   MX_TIM2_Init();
   MX_TIM8_Init();
-  MX_DMA_Init();
   /* USER CODE BEGIN 2 */
   HAL_UART_Receive_IT(&huart1, rcData, 18);
-
+  HAL_UART_Receive_IT(&huart6,(uint8_t *)Rxbuf_form_JetsonNANO,Rxbufsize_from_JetsonNANO);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, 0);
   HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, 1);
   HAL_GPIO_WritePin(POWER_OUT1_GPIO_Port, POWER_OUT1_Pin, 1);
@@ -201,9 +201,11 @@ int main(void)
   IMU_rol_set=imu_attitude.roll;
   PC_mouse_x=0;
   PC_mouse_y=0;
+  HAL_UART_Init(&huart6);
 
-  HAL_UART_Receive_DMA(&huart7,(uint8_t *)Rxbuf_form_JetsonNANO,Rxbufsize_from_JetsonNANO);
   /* USER CODE END 2 */
+ 
+ 
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -231,9 +233,11 @@ int main(void)
 	  //printf("M0=%d M1=%d M2=%d M3=%d",wheelFdb[0].rpm,wheelFdb[1].rpm,wheelFdb[2].rpm,wheelFdb[3].rpm);
 	  //printf(" ch5=%d vw=%f cnt=%d",rc.ch5,mecanum.speed.vw,cnt_tim_omega);
 	  //printf(" target_yaw=%d angle=%f",target_yaw,(float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0));
-	  printf("torque M0=%8.3lf M1=%8.3lf M2=%8.3lf M3=%8.3lf",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
-	    			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
+	  //printf("torque M0=%8.3lf M1=%8.3lf M2=%8.3lf M3=%8.3lf",(float)wheelFdb[0].torque/16384.0*20.0,(float)wheelFdb[1].torque/16384.0*20.0
+	   // 			  ,(float)wheelFdb[2].torque/16384.0*20.0,(float)wheelFdb[3].torque/16384.0*20.0);
 	   //printf(" =%d",(int)cnt_time_main);
+	   printf(" X=%d Y=%d cnt=%d" ,target_X,target_Y,cnt_tartget);
+	   printf(" 0=%x 1=%x 2=%x 3=%x 4=%d 5=%d" , data_form_JetsonNANO[0],data_form_JetsonNANO[1],data_form_JetsonNANO[2],data_form_JetsonNANO[3],data_form_JetsonNANO[4],data_form_JetsonNANO[5]);
 	   printf("\r\n");
 
 		if(cnt_time_main>=10){
@@ -259,8 +263,9 @@ int main(void)
 		else{
 			cnt_time_main++;
 		}
-		target_X=(data_form_JetsonNANO[0]<<8) | data_form_JetsonNANO[1];
-		target_Y=(data_form_JetsonNANO[2]<<8) | data_form_JetsonNANO[3];
+
+		target_X=((data_form_JetsonNANO[0]<<8) | data_form_JetsonNANO[1])- 32767;
+		target_Y=((data_form_JetsonNANO[2]<<8) | data_form_JetsonNANO[3])- 32767;
 		cnt_tartget=data_form_JetsonNANO[4];
 
   }
@@ -410,40 +415,41 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 
 	}
 
-	if (UartHandle->Instance == huart7.Instance) {
-	uint8_t j = 0;
-
-		while (Rxbuf_form_JetsonNANO[j] != 253 &&  j<sizeof(Rxbuf_form_JetsonNANO)) {
-			j++;
-		}
-		if(j>=sizeof(Rxbuf_form_JetsonNANO)){
-			for(uint8_t k=0;k<(sizeof(data_form_JetsonNANO));k++){
-				data_form_JetsonNANO[k]=0;
+	if (UartHandle->Instance == huart6.Instance) {
+		uint8_t j = 0;
+			while (Rxbuf_form_JetsonNANO[j] != 253 &&  j<sizeof(Rxbuf_form_JetsonNANO)) {
+				j++;
 			}
-		}
-		else{
-			for (uint8_t k = 0; k < sizeof(data_form_JetsonNANO); k++) {
-				if ((j + k) >= sizeof(data_form_JetsonNANO)) {
-					data_form_JetsonNANO[k] = Rxbuf_form_JetsonNANO[k - (sizeof(data_form_JetsonNANO) - j)];
-				}
-				else {
-					data_form_JetsonNANO[k] = Rxbuf_form_JetsonNANO[j + k + 1];
+			if(j>=sizeof(Rxbuf_form_JetsonNANO)){
+				for(uint8_t k=0;k<(sizeof(data_form_JetsonNANO));k++){
+					data_form_JetsonNANO[k]=0;
 				}
 			}
-		}
-		if(data_data_form_JetsonNANO_temp!=data_form_JetsonNANO[Rxbufsize_from_JetsonNANO-2]){
-			connect_jetsonnano=1;
-			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, 1);
-		}
-		else{
-			connect_jetsonnano=0;
-			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, 0);
-			for(uint8_t k=0;k<(sizeof(data_form_JetsonNANO));k++){
-				data_form_JetsonNANO[k]=0;
+			else{
+				for (uint8_t k = 0; k < sizeof(data_form_JetsonNANO); k++) {
+					if ((j + k) >= sizeof(data_form_JetsonNANO)) {
+						data_form_JetsonNANO[k] = Rxbuf_form_JetsonNANO[k - (sizeof(data_form_JetsonNANO) - j)];
+					}
+					else {
+						data_form_JetsonNANO[k] = Rxbuf_form_JetsonNANO[j + k + 1];
+					}
+				}
 			}
-		}
-		data_data_form_JetsonNANO_temp=data_form_JetsonNANO[Rxbufsize_from_JetsonNANO-2];
+			if(data_data_form_JetsonNANO_temp!=data_form_JetsonNANO[Rxbufsize_from_JetsonNANO-2]){
+				connect_jetsonnano=1;
+				HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, 1);
+			}
+			else{
+				connect_jetsonnano=0;
+				HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, 0);
+				for(uint8_t k=0;k<(sizeof(data_form_JetsonNANO));k++){
+					data_form_JetsonNANO[k]=0;
+				}
+			}
+			data_data_form_JetsonNANO_temp=data_form_JetsonNANO[Rxbufsize_from_JetsonNANO-2];
 	}
+
+	HAL_UART_Receive_IT(&huart6,(uint8_t *)Rxbuf_form_JetsonNANO,Rxbufsize_from_JetsonNANO);
 }
 
 //can fifo0 receive interrupt
@@ -641,10 +647,10 @@ void Gimbal_Task(){
 			if(rc.key_S==1 ||  rc.ch1==660){
 				//Automatic aiming software
 				if(cnt_tartget>0){
-					target_yaw =yaw_now+map(target_X,-480,480,50,-50)-IMU_yaw+feed_forward_param;
+					target_yaw =target_yaw+map(target_X,-480,480,50,-50)-IMU_yaw+feed_forward_param;
 				}
 				else{
-					target_yaw =yaw_now-IMU_yaw+feed_forward_param;
+					target_yaw =target_yaw-IMU_yaw+feed_forward_param;
 				}
 			}
 			else{
@@ -657,10 +663,10 @@ void Gimbal_Task(){
 			if(rc.key_S==1 ||  rc.ch1==660){
 				//Automatic aiming software
 				if(cnt_tartget>0){
-					target_yaw =yaw_now+map(target_X,-480,480,50,-50);
+					target_yaw =target_yaw+map(target_X,-480,480,50,-50);
 				}
 				else{
-					target_yaw =yaw_now;
+					target_yaw =target_yaw;
 				}
 			}
 			else{
@@ -686,14 +692,14 @@ void Gimbal_Task(){
 		if(rc.key_S==1  ||  rc.ch1==660){
 			//Automatic aiming software
 			if(cnt_tartget>0){
-				target_pich=pich_now+map(target_Y,-360,360,20,-20)-IMU_pich;
+				target_pich=target_pich+map(target_Y,-360,360,20,-20);
 			}
 			else{
-				target_pich=pich_now-IMU_pich;
+				target_pich=target_pich;
 			}
 		}
 		else{
-		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
+			target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
 		}
 		if(target_pich>=19){target_pich=19;}
 		if(target_pich<-22){target_pich=-22;}

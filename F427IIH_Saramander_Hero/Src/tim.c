@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -85,6 +85,7 @@ void MX_TIM1_Init(void)
 /* TIM2 init function */
 void MX_TIM2_Init(void)
 {
+
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 84;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -148,7 +149,6 @@ void MX_TIM6_Init(void)
 /* TIM8 init function */
 void MX_TIM8_Init(void)
 {
-
   htim8.Instance = TIM8;
   htim8.Init.Prescaler = 167;
   htim8.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -198,6 +198,7 @@ void MX_TIM8_Init(void)
 /* TIM12 init function */
 void MX_TIM12_Init(void)
 {
+
   htim12.Instance = TIM12;
   htim12.Init.Prescaler = 83;
   htim12.Init.CounterMode = TIM_COUNTERMODE_UP;
