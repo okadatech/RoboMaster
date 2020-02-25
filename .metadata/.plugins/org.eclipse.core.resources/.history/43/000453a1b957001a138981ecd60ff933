@@ -1,0 +1,35 @@
+/*
+ * management.h
+ *
+ *  Created on: Feb 25, 2020
+ *      Author: okadatech
+ */
+
+#ifndef SRC_MANAGEMENT_H_
+#define SRC_MANAGEMENT_H_
+
+#include "main.h"
+#include "can.h"
+#include "dma.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
+#include "math.h"
+#include "remote_controller.h"
+#include "wheel.h"
+#include "pid.h"
+#include "motor.h"
+#include "mecanum.h"
+//#include "disp.h"
+//#include "xprintf.h"
+#include "motor_fdb.h"
+#include "bsp_imu.h"
+#include "ahrs.h"
+#include "referee_serial_port_protocol.h"
+
+#include "stdio.h"
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+#endif /* SRC_MANAGEMENT_H_ */

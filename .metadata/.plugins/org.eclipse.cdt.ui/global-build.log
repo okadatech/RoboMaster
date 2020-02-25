@@ -1,545 +1,363 @@
-23:10:52 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:18:17 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-gcc "../Core/Src/Kondo_servo.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Kondo_servo.d" -MT"Core/Src/Kondo_servo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Kondo_servo.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/referee_serial_port_protocol.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/referee_serial_port_protocol.d" -MT"Core/Src/referee_serial_port_protocol.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/referee_serial_port_protocol.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
+ 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  52616	    516	   3508	  56640	   dd40	F427IIH_Saramander_Hero.elf
+  40056	    484	   3028	  43568	   aa30	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-16:59:29 **** Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+Finished building: F446_Saramander_Sentry.bin
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+Finished building: F446_Saramander_Sentry.list
+ 
+01:18:59 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
+make -j4 all 
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  52456	    516	   3508	  56480	   dca0	F427IIH_Saramander_Hero.elf
+  40056	    484	   3028	  43568	   aa30	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:18:12 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:19:53 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  52456	    516	   3508	  56480	   dca0	F427IIH_Saramander_Hero.elf
-Finished building: default.size.stdout
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
- 
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:26:57 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
-   text	   data	    bss	    dec	    hex	filename
-  52456	    516	   3508	  56480	   dca0	F427IIH_Saramander_Hero.elf
+  40056	    484	   3028	  43568	   aa30	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-17:28:46 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+Finished building: F446_Saramander_Sentry.bin
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+Finished building: F446_Saramander_Sentry.list
+ 
+01:20:07 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
+make -j4 all 
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  52456	    516	   3508	  56480	   dca0	F427IIH_Saramander_Hero.elf
+  40056	    484	   3028	  43568	   aa30	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:29:08 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:21:06 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  52456	    516	   3508	  56480	   dca0	F427IIH_Saramander_Hero.elf
+  40056	    484	   3028	  43568	   aa30	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.hex
-Finished building: F427IIH_Saramander_Hero.bin
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:31:56 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:22:05 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  52456	    516	   3508	  56480	   dca0	F427IIH_Saramander_Hero.elf
+  38568	    484	   3028	  42080	   a460	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:32:35 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:25:16 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:204:3: error: unknown type name 'HAL_UART_S'
-   HAL_UART_S
-   ^~~~~~~~~~
-../Src/main.c:205:24: error: expected declaration specifiers or '...' before '&' token
-   HAL_UART_Receive_DMA(&huart6,(uint8_t *)Rxbuf_form_JetsonNANO,Rxbufsize_from_JetsonNANO);
-                        ^
-../Src/main.c:205:32: error: expected declaration specifiers or '...' before '(' token
-   HAL_UART_Receive_DMA(&huart6,(uint8_t *)Rxbuf_form_JetsonNANO,Rxbufsize_from_JetsonNANO);
-                                ^
-In file included from ../Src/main.c:32:0:
-../Src/managemet.h:64:35: error: expected declaration specifiers or '...' before numeric constant
- #define Rxbufsize_from_JetsonNANO 7
-                                   ^
-../Src/main.c:205:65: note: in expansion of macro 'Rxbufsize_from_JetsonNANO'
-   HAL_UART_Receive_DMA(&huart6,(uint8_t *)Rxbuf_form_JetsonNANO,Rxbufsize_from_JetsonNANO);
-                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~
-make: *** [Src/subdir.mk:96: Src/main.o] Error 1
-"make -j4 all" terminated with exit code 2. Build might be incomplete.
-17:32:38 **** Build of configuration Debug for project F427IIH_Saramander_Standard ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Standard.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Standard\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Standard.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Standard.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Standard.elf  > "F427IIH_Saramander_Standard.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Standard.elf  "F427IIH_Saramander_Standard.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Standard.elf  "F427IIH_Saramander_Standard.bin"
-arm-none-eabi-size   F427IIH_Saramander_Standard.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  50632	    516	   3364	  54512	   d4f0	F427IIH_Saramander_Standard.elf
+  38696	    484	   3028	  42208	   a4e0	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
-Finished building: F427IIH_Saramander_Standard.hex
- 
-Finished building: F427IIH_Saramander_Standard.bin
+Finished building: F446_Saramander_Sentry.bin
  
  
-Finished building: F427IIH_Saramander_Standard.list
+Finished building: F446_Saramander_Sentry.list
  
-17:32:44 **** Build of configuration Debug for project F427IIH_Saramander_Standard_kure ****
+01:26:45 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-size   F427IIH_Saramander_Standard_kure.elf 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
+ 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  50632	    516	   3364	  54512	   d4f0	F427IIH_Saramander_Standard_kure.elf
+  38848	    484	   3028	  42360	   a578	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-17:32:46 **** Build of configuration Debug for project G474_Saramander_Sentry ****
-make -j4 all 
-Command canceled
-17:33:30 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+Finished building: F446_Saramander_Sentry.bin
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+Finished building: F446_Saramander_Sentry.list
+ 
+01:28:04 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
+ 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  52464	    516	   3508	  56488	   dca8	F427IIH_Saramander_Hero.elf
-Finished building: default.size.stdout
-Finished building: F427IIH_Saramander_Hero.hex
-Finished building: F427IIH_Saramander_Hero.bin
- 
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:36:30 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
- 
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
-   text	   data	    bss	    dec	    hex	filename
-  52320	    516	   3508	  56344	   dc18	F427IIH_Saramander_Hero.elf
+  38848	    484	   3028	  42360	   a578	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:39:40 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:30:26 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  52384	    516	   3508	  56408	   dc58	F427IIH_Saramander_Hero.elf
-Finished building: default.size.stdout
-Finished building: F427IIH_Saramander_Hero.hex
-Finished building: F427IIH_Saramander_Hero.bin
- 
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:40:25 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
- 
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
-   text	   data	    bss	    dec	    hex	filename
-  52392	    516	   3508	  56416	   dc60	F427IIH_Saramander_Hero.elf
-Finished building: default.size.stdout
-Finished building: F427IIH_Saramander_Hero.hex
-Finished building: F427IIH_Saramander_Hero.bin
- 
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:42:27 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
- 
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
-   text	   data	    bss	    dec	    hex	filename
-  52440	    516	   3508	  56464	   dc90	F427IIH_Saramander_Hero.elf
+  38696	    484	   3028	  42208	   a4e0	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.hex
-Finished building: F427IIH_Saramander_Hero.bin
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:44:08 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:33:01 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  52424	    516	   3508	  56448	   dc80	F427IIH_Saramander_Hero.elf
+  39248	    484	   3028	  42760	   a708	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.hex
-Finished building: F427IIH_Saramander_Hero.bin
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:49:40 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:33:42 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/bsp_imu.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/bsp_imu.d" -MT"Src/bsp_imu.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/bsp_imu.o"
-arm-none-eabi-gcc "../Src/can.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/can.d" -MT"Src/can.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/can.o"
-arm-none-eabi-gcc "../Src/dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/dma.d" -MT"Src/dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/dma.o"
-arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
-../Src/bsp_imu.c: In function 'inv_sqrt':
-../Src/bsp_imu.c:57:2: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-  long  i     = *(long*)&y;
-  ^~~~
-../Src/bsp_imu.c:60:2: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-  y = *(float*)&i;
-  ^
-arm-none-eabi-gcc "../Src/motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/motor.d" -MT"Src/motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/motor.o"
-arm-none-eabi-gcc "../Src/myiic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/myiic.d" -MT"Src/myiic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/myiic.o"
-arm-none-eabi-gcc "../Src/referee_serial_port_protocol.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/referee_serial_port_protocol.d" -MT"Src/referee_serial_port_protocol.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/referee_serial_port_protocol.o"
-arm-none-eabi-gcc "../Src/spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi.d" -MT"Src/spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/spi.o"
-arm-none-eabi-gcc "../Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f4xx_hal_msp.d" -MT"Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f4xx_hal_msp.o"
-arm-none-eabi-gcc "../Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f4xx_it.d" -MT"Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f4xx_it.o"
-arm-none-eabi-gcc "../Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/system_stm32f4xx.o"
-arm-none-eabi-gcc "../Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/tim.d" -MT"Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/tim.o"
-arm-none-eabi-gcc "../Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/usart.d" -MT"Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/usart.o"
-arm-none-eabi-gcc "../Src/xprintf.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/xprintf.d" -MT"Src/xprintf.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/xprintf.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  51688	    516	   3508	  55712	   d9a0	F427IIH_Saramander_Hero.elf
+  39248	    484	   3028	  42760	   a708	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:51:29 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:34:31 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  51704	    516	   3508	  55728	   d9b0	F427IIH_Saramander_Hero.elf
-Finished building: default.size.stdout
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
- 
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:53:17 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
- 
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
-   text	   data	    bss	    dec	    hex	filename
-  51696	    516	   3508	  55720	   d9a8	F427IIH_Saramander_Hero.elf
-Finished building: default.size.stdout
-Finished building: F427IIH_Saramander_Hero.hex
- 
-Finished building: F427IIH_Saramander_Hero.bin
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:54:27 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
- 
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
-   text	   data	    bss	    dec	    hex	filename
-  51712	    516	   3508	  55736	   d9b8	F427IIH_Saramander_Hero.elf
+  39248	    484	   3028	  42760	   a708	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:56:53 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:37:35 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  51712	    516	   3508	  55736	   d9b8	F427IIH_Saramander_Hero.elf
-Finished building: default.size.stdout
-Finished building: F427IIH_Saramander_Hero.hex
- 
-Finished building: F427IIH_Saramander_Hero.bin
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-17:59:00 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
- 
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
-   text	   data	    bss	    dec	    hex	filename
-  51728	    516	   3508	  55752	   d9c8	F427IIH_Saramander_Hero.elf
-Finished building: default.size.stdout
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
- 
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-18:10:02 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
- 
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
-   text	   data	    bss	    dec	    hex	filename
-  51704	    516	   3508	  55728	   d9b0	F427IIH_Saramander_Hero.elf
-Finished building: default.size.stdout
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
- 
- 
- 
-Finished building: F427IIH_Saramander_Hero.list
- 
-18:14:54 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
- 
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
-   text	   data	    bss	    dec	    hex	filename
-  51752	    516	   3508	  55776	   d9e0	F427IIH_Saramander_Hero.elf
+  39280	    484	   3028	  42792	   a728	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.hex
-Finished building: F427IIH_Saramander_Hero.bin
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
- 
-18:17:42 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:38:06 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  51728	    516	   3508	  55752	   d9c8	F427IIH_Saramander_Hero.elf
+  39280	    484	   3028	  42792	   a728	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.bin
-Finished building: F427IIH_Saramander_Hero.hex
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
- 
-18:20:18 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:39:30 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  51704	    516	   3508	  55728	   d9b0	F427IIH_Saramander_Hero.elf
+  39240	    484	   3028	  42752	   a700	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.hex
-Finished building: F427IIH_Saramander_Hero.bin
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
- 
-18:22:43 **** Incremental Build of configuration Debug for project F427IIH_Saramander_Hero ****
+01:40:36 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F427xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "F427IIH_Saramander_Hero.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F427IIH_Saramander_Hero\STM32F427IIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F427IIH_Saramander_Hero.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F427IIH_Saramander_Hero.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
  
-arm-none-eabi-objdump -h -S  F427IIH_Saramander_Hero.elf  > "F427IIH_Saramander_Hero.list"
-arm-none-eabi-objcopy  -O ihex  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.hex"
-arm-none-eabi-objcopy  -O binary  F427IIH_Saramander_Hero.elf  "F427IIH_Saramander_Hero.bin"
-arm-none-eabi-size   F427IIH_Saramander_Hero.elf 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  51672	    516	   3508	  55696	   d990	F427IIH_Saramander_Hero.elf
+  39248	    484	   3028	  42760	   a708	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
-Finished building: F427IIH_Saramander_Hero.hex
-Finished building: F427IIH_Saramander_Hero.bin
+Finished building: F446_Saramander_Sentry.bin
  
+Finished building: F446_Saramander_Sentry.list
  
-Finished building: F427IIH_Saramander_Hero.list
+01:41:17 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
+ 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39240	    484	   3028	  42752	   a700	F446_Saramander_Sentry.elf
+Finished building: default.size.stdout
+ 
+Finished building: F446_Saramander_Sentry.bin
+ 
+Finished building: F446_Saramander_Sentry.list
+ 
+01:43:05 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
+ 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39240	    484	   3028	  42752	   a700	F446_Saramander_Sentry.elf
+Finished building: default.size.stdout
+ 
+Finished building: F446_Saramander_Sentry.bin
+ 
+Finished building: F446_Saramander_Sentry.list
+ 
+01:43:27 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
+make -j4 all 
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39240	    484	   3028	  42752	   a700	F446_Saramander_Sentry.elf
+Finished building: default.size.stdout
+ 
+01:44:01 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
+ 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39208	    484	   3028	  42720	   a6e0	F446_Saramander_Sentry.elf
+Finished building: default.size.stdout
+ 
+Finished building: F446_Saramander_Sentry.bin
+ 
+Finished building: F446_Saramander_Sentry.list
+ 
+01:45:06 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
+ 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39240	    484	   3028	  42752	   a700	F446_Saramander_Sentry.elf
+Finished building: default.size.stdout
+ 
+Finished building: F446_Saramander_Sentry.bin
+ 
+Finished building: F446_Saramander_Sentry.list
+ 
+01:46:03 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F446_Saramander_Sentry.elf
+ 
+arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sentry.list"
+arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
+arm-none-eabi-size   F446_Saramander_Sentry.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39232	    484	   3028	  42744	   a6f8	F446_Saramander_Sentry.elf
+Finished building: default.size.stdout
+ 
+Finished building: F446_Saramander_Sentry.bin
+ 
+Finished building: F446_Saramander_Sentry.list
  

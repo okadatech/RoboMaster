@@ -13676,7 +13676,7 @@ void fire_task_push(){
  8005ffc:	f9b4 3000 	ldrsh.w	r3, [r4]
  8006000:	f5b3 7f25 	cmp.w	r3, #660	; 0x294
  8006004:	f000 808e 	beq.w	8006124 <Gimbal_Task+0x2ec>
-		target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
+			target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
  8006008:	4b6e      	ldr	r3, [pc, #440]	; (80061c4 <Gimbal_Task+0x38c>)
  800600a:	ed9f 7a6f 	vldr	s14, [pc, #444]	; 80061c8 <Gimbal_Task+0x390>
  800600e:	edd3 7a00 	vldr	s15, [r3]
