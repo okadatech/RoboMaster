@@ -53,9 +53,10 @@ struct mecanum_motor_fdb
   float speed_rpm;
 };
 float DBUFF[32];
+float torque_sum;
 wheel_fdb_t wheelFdb[4];
 motor_fdb gimbalYawFdb, gimbalPitchFdb, loadMotorFdb;
-
+int target_X,target_Y,cnt_tartget;
 uint8_t fire;
-
+int target_place;
 #endif /* SRC_MANAGEMENT_H_ */

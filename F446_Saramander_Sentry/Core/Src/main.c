@@ -160,6 +160,8 @@ int main(void)
   HAL_UART_Receive_DMA(&huart3,(uint8_t*) Rxbuf_jetson, 7);
   initFriction();
   fire=0;
+  torque_sum=0.0;
+  target_place=2325;
   HAL_TIM_Base_Start_IT(&htim7);
   program_No=!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9)+!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_8)*2+
  				!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)*4+!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_14)*8;
@@ -178,7 +180,11 @@ int main(void)
 	 //HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_10);
 	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15,start_sw);
 	  //HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_15);
-	  printf("mofumofu\r\n");
+
+	  printf(" E1=%d",(int)TIM1->CNT);
+	  printf(" X=%d Y=%d cnt=%d check=%d",target_X,target_Y,cnt_tartget,data_Jetson[5]);
+	  printf(" torque_sum=%f",torque_sum);
+	  printf("\r\n");
   }
   /* USER CODE END 3 */
 }
@@ -312,6 +318,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 			}
 		}
 	}
+	target_X=((data_Jetson[0]<<8) | data_Jetson[1])- 32767;
+	target_Y=((data_Jetson[2]<<8) | data_Jetson[3])- 32767;
+	cnt_tartget=data_Jetson[4];
+
 }
 
 
@@ -332,22 +342,44 @@ void timerTask() { //call 500Hz
 void driveWheelTask() {
 	int16_t u[4];
 	if(start_sw==0){
-		mecanum.wheel_rpm[0]=2000.0;
-		mecanum.wheel_rpm[1]=2000.0;
+		if(program_No==0){target_place=2325;}
+		else if(program_No==1){
+			if(abs((int)TIM1->CNT-target_place)>10){target_place=100+(int)(rand()*(4500-100+1.0)/(1.0+RAND_MAX));}
+		}
+		else{target_place=2325;}
+		if(limit_sw1==0){TIM1->CNT=0;}
+		if(limit_sw2==0){TIM1->CNT=4650;}
+
+		if(abs((int)TIM1->CNT-target_place)>10){
+			mecanum.wheel_rpm[0]=0.0;
+			mecanum.wheel_rpm[1]=0.0;
+		}
+		else if(((int)TIM1->CNT-target_place)>0){
+			mecanum.wheel_rpm[0]=(float)map(abs((int)TIM1->CNT-target_place),0,5000,0,3000);
+			mecanum.wheel_rpm[0]=(float)map(abs((int)TIM1->CNT-target_place),0,5000,0,3000);
+		}
+		else if(((int)TIM1->CNT-target_place)<0){
+			mecanum.wheel_rpm[0]=(float)-1.0*map(abs((int)TIM1->CNT-target_place),0,5000,0,3000);
+			mecanum.wheel_rpm[0]=(float)-1.0*map(abs((int)TIM1->CNT-target_place),0,5000,0,3000);
+		}
+		else{
+			mecanum.wheel_rpm[0]=0.0;
+			mecanum.wheel_rpm[1]=0.0;
+		}
 	}
 	else{
 		mecanum.wheel_rpm[0]=0.0;
 		mecanum.wheel_rpm[1]=0.0;
 	}
-	float torque_sum=0.0;
+
 	    torque_sum = fabs((float)wheelFdb[0].torque/16384.0*20.0)+fabs((float)wheelFdb[1].torque/16384.0*20.0);
 	for (int i = 0; i < 2; i++) {
 		int error = mecanum.wheel_rpm[i] - wheelFdb[i].rpm;
 		wheelPID[i].error = error;
 		u[i] = (int16_t) pidExecute(&(wheelPID[i]));
 
-		if(torque_sum>5.0){
-			for (int i = 0; i < 4; i++) {
+		if(torque_sum>2.5){
+			for (int i = 0; i < 2; i++) {
 				u[i] = 0;
 			}
 		}
@@ -357,12 +389,12 @@ void driveWheelTask() {
 void Gimbal_Task(){
 	if(cnt_task_servo>10){
 		if(start_sw==0){
-			ics_set_pos(1,map(90,180,0,4833,10166));
-			ics_set_pos(2,map(90,180,0,4833,10166));
-		}
-		else{
 			ics_set_pos(1,map(120,180,0,4833,10166));
 			ics_set_pos(2,map(120,180,0,4833,10166));
+		}
+		else{
+			ics_set_pos(1,map(90,180,0,4833,10166));
+			ics_set_pos(2,map(90,180,0,4833,10166));
 		}
 
 
@@ -381,9 +413,10 @@ void fire_Task(){
 		fire=0;
 	}
 	if(start_sw==1){
+		DBUFF[1] = loadPID.error = 0 - loadMotorFdb.rpm;
+		DBUFF[3] = u[2] = pidExecute(&loadPID);
 		u[0]=0;
 		u[1]=0;
-		u[2]=0;
 		u[3]=0;
 		driveGimbalMotors(u);
 
