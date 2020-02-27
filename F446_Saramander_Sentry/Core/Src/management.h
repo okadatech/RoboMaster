@@ -56,4 +56,6 @@ float DBUFF[32];
 wheel_fdb_t wheelFdb[4];
 motor_fdb gimbalYawFdb, gimbalPitchFdb, loadMotorFdb;
 
+uint8_t fire;
+
 #endif /* SRC_MANAGEMENT_H_ */

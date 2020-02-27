@@ -67,7 +67,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint8_t program_No;
-uint8_t start_sw,select_sw,sw1,sw2,limit_sw1,limit_sw2;
+uint8_t start_sw,move_fire,sw1,sw2,limit_sw1,limit_sw2;
 uint8_t cnt_tim,cnt_tim_fire,cnt_tim_task,cnt_time_main,cnt_task_servo;
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
 void driveWheelTask();
@@ -159,7 +159,7 @@ int main(void)
   initCanFilter();
   HAL_UART_Receive_DMA(&huart3,(uint8_t*) Rxbuf_jetson, 7);
   initFriction();
-
+  fire=0;
   HAL_TIM_Base_Start_IT(&htim7);
   program_No=!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9)+!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_8)*2+
  				!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)*4+!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_14)*8;
@@ -314,6 +314,21 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 	}
 }
 
+
+void timerTask() { //call 500Hz
+	driveWheelTask();
+	Gimbal_Task();
+	fire_Task();
+	limit_sw1=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_15);
+	limit_sw2=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_0);
+	start_sw=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_1);
+	move_fire=HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5);
+	sw1=HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4);
+	sw2=HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10);
+	program_No=!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9)+!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_8)*2+
+	 				!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)*4+!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_14)*8;
+}
+
 void driveWheelTask() {
 	int16_t u[4];
 	if(start_sw==0){
@@ -321,8 +336,8 @@ void driveWheelTask() {
 		mecanum.wheel_rpm[1]=2000.0;
 	}
 	else{
-		mecanum.wheel_rpm[0]=-2000.0;
-		mecanum.wheel_rpm[1]=-2000.0;
+		mecanum.wheel_rpm[0]=0.0;
+		mecanum.wheel_rpm[1]=0.0;
 	}
 	float torque_sum=0.0;
 	    torque_sum = fabs((float)wheelFdb[0].torque/16384.0*20.0)+fabs((float)wheelFdb[1].torque/16384.0*20.0);
@@ -339,6 +354,69 @@ void driveWheelTask() {
 	}
 	driveWheel(u);
 }
+void Gimbal_Task(){
+	if(cnt_task_servo>10){
+		if(start_sw==0){
+			ics_set_pos(1,map(90,180,0,4833,10166));
+			ics_set_pos(2,map(90,180,0,4833,10166));
+		}
+		else{
+			ics_set_pos(1,map(120,180,0,4833,10166));
+			ics_set_pos(2,map(120,180,0,4833,10166));
+		}
+
+
+		cnt_task_servo=0;
+	}
+	else{
+		cnt_task_servo++;
+	}
+
+}
+
+
+void fire_Task(){
+	int16_t u[4];
+	if(fire>1){
+		fire=0;
+	}
+	if(start_sw==1){
+		u[0]=0;
+		u[1]=0;
+		u[2]=0;
+		u[3]=0;
+		driveGimbalMotors(u);
+
+	}
+	else{
+		DBUFF[1] = loadPID.error = -900.0f*fire*2 - loadMotorFdb.rpm;
+		DBUFF[3] = u[2] = pidExecute(&loadPID);
+		u[0]=0;
+		u[1]=0;
+		u[3]=0;
+		driveGimbalMotors(u);
+
+	}
+
+
+	if(move_fire==0){
+		 sConfigOC.Pulse = 1800;
+		 HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_3);
+		 HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
+		 sConfigOC.Pulse = 1800;
+		 HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_4);
+		 HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
+	}
+	else{
+		 sConfigOC.Pulse = 1500;
+		 HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_3);
+		 HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
+		 sConfigOC.Pulse = 1500;
+		 HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_4);
+		 HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
+	}
+}
+
 void initFriction() {
 	for(int i=0;i<100;i++){
 		HAL_Delay(20);
@@ -360,7 +438,6 @@ void initFriction() {
 	}
 
 }
-
 void initPID() {
 	for (int i = 0; i < 4; i++) {
 		wheelPID[i].t = 2.0f;
@@ -381,50 +458,6 @@ void initLoadPID() {
 	loadPID.outLimit = 30000.0f;
 	loadPID.integralOutLimit = 10000.0f;
 	loadPID.differentialFilterRate = 0.9f;
-}
-
-void timerTask() { //call 500Hz
-	driveWheelTask();
-	Gimbal_Task();
-	fire_Task();
-	limit_sw1=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_15);
-	limit_sw2=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_0);
-	start_sw=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_1);
-	select_sw=HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5);
-	sw1=HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4);
-	sw2=HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10);
-	program_No=!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9)+!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_8)*2+
-	 				!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)*4+!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_14)*8;
-}
-
-void Gimbal_Task(){
-	int fire = 0;
-	int16_t u[4];
-
-	fire = 1;
-	DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
-	DBUFF[3] = u[2] = pidExecute(&loadPID);
-
-	if(cnt_task_servo>10){
-	if(start_sw==0){
-		ics_set_pos(2,map(90,180,0,4833,10166));
-	}
-	else{
-		ics_set_pos(2,map(120,180,0,4833,10166));
-	}
-		cnt_task_servo=0;
-	}
-	else{
-		cnt_task_servo++;
-	}
-	u[0]=0;
-	u[1]=0;
-	u[3]=0;
-	driveGimbalMotors(u);
-}
-
-
-void fire_Task(){
 }
 
 void initCanFilter() {
