@@ -30,7 +30,7 @@ TIM_Encoder_InitTypeDef sConfig;
 TIM_MasterConfigTypeDef sMasterConfig ;
 TIM_OC_InitTypeDef sConfigOC;
 TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig ;
-uint8_t Rxbuf_jetson[7],data_Jetson[6],temp_data_Jetson;
+uint8_t Rxbuf_jetson[7],data_Jetson[6],temp_data_Jetson,jetson_connect;
 uint8_t canRxData[8];
 CAN_RxHeaderTypeDef canRxHeader;
 typedef struct
