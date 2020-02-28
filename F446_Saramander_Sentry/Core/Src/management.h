@@ -30,9 +30,8 @@ TIM_Encoder_InitTypeDef sConfig;
 TIM_MasterConfigTypeDef sMasterConfig ;
 TIM_OC_InitTypeDef sConfigOC;
 TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig ;
-uint8_t Rxbuf_jetson[7],data_Jetson[6],temp_data_Jetson,jetson_connect;
-uint8_t canRxData[8];
 CAN_RxHeaderTypeDef canRxHeader;
+
 typedef struct
 {
   int16_t angle;
@@ -52,11 +51,17 @@ struct mecanum_motor_fdb
   float total_ecd;
   float speed_rpm;
 };
-float DBUFF[32];
-float torque_sum;
 wheel_fdb_t wheelFdb[4];
 motor_fdb gimbalYawFdb, gimbalPitchFdb, loadMotorFdb;
+
 int target_X,target_Y,cnt_tartget;
-uint8_t fire;
 int target_place;
+float DBUFF[32];
+float torque_sum;
+
+uint8_t Rxbuf_jetson[7],data_Jetson[6],temp_data_Jetson,jetson_connect;
+uint8_t target_yaw_temp,target_pit_temp,now_pit,now_yaw,target_yaw,target_pit;
+uint8_t canRxData[8];
+uint8_t fire;
+
 #endif /* SRC_MANAGEMENT_H_ */

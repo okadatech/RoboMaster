@@ -161,6 +161,8 @@ int main(void)
   initFriction();
   fire=0;
   torque_sum=0.0;
+  target_pit=90;
+  target_yaw=90;
   target_place=2325;
   HAL_TIM_Base_Start_IT(&htim7);
   program_No=!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9)+!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_8)*2+
@@ -344,25 +346,28 @@ void timerTask() { //call 500Hz
 void driveWheelTask() {
 	int16_t u[4];
 	if(start_sw==0){
-		if(program_No==0){target_place=2325;}
-		else if(program_No==1){
-			if(abs((int)TIM1->CNT-target_place)>10){target_place=100+(int)(rand()*(4500-100+1.0)/(1.0+RAND_MAX));}
+		if(program_No==0){
+			//target_place=2325;
+			target_place=900;
 		}
-		else{target_place=2325;}
+		else if(program_No==1){
+			if(abs((int)TIM1->CNT-target_place)>10){target_place=100+(int)(rand()*(1700-100+1.0)/(1.0+RAND_MAX));}
+		}
+		else{target_place=900;}
 		if(limit_sw1==0){TIM1->CNT=0;}
-		if(limit_sw2==0){TIM1->CNT=4650;}
+		if(limit_sw2==0){TIM1->CNT=1800;}
 
 		if(abs((int)TIM1->CNT-target_place)>10){
 			mecanum.wheel_rpm[0]=0.0;
 			mecanum.wheel_rpm[1]=0.0;
 		}
 		else if(((int)TIM1->CNT-target_place)>0){
-			mecanum.wheel_rpm[0]=(float)map(abs((int)TIM1->CNT-target_place),0,5000,0,3000);
-			mecanum.wheel_rpm[1]=(float)map(abs((int)TIM1->CNT-target_place),0,5000,0,3000);
+			mecanum.wheel_rpm[0]=(float)map(abs((int)TIM1->CNT-target_place),0,3000,0,3000);
+			mecanum.wheel_rpm[1]=(float)map(abs((int)TIM1->CNT-target_place),0,3000,0,3000);
 		}
 		else if(((int)TIM1->CNT-target_place)<0){
-			mecanum.wheel_rpm[0]=(float)-1.0*map(abs((int)TIM1->CNT-target_place),0,5000,0,3000);
-			mecanum.wheel_rpm[1]=(float)-1.0*map(abs((int)TIM1->CNT-target_place),0,5000,0,3000);
+			mecanum.wheel_rpm[0]=(float)-1.0*map(abs((int)TIM1->CNT-target_place),0,3000,0,3000);
+			mecanum.wheel_rpm[1]=(float)-1.0*map(abs((int)TIM1->CNT-target_place),0,3000,0,3000);
 		}
 		else{
 			mecanum.wheel_rpm[0]=0.0;
@@ -401,14 +406,20 @@ void driveWheelTask() {
 	driveWheel(u);
 }
 void Gimbal_Task(){
-	uint8_t target_yaw_temp,target_pit_temp,now_pit,now_yaw;
 	if(cnt_task_servo>10){
 		if(start_sw==0){
 			if(jetson_connect==1){
 				if(cnt_tartget>0){
+					target_pit=target_pit+map(target_X,-480,480,45,-45);
+					target_yaw=target_yaw+map(target_Y,-360,360,90,-90);
 
-					target_pit_temp=map(120,180,0,4833,10166);
-					target_yaw_temp=map(120,180,0,4833,10166);
+					if(target_yaw>180){target_yaw=90;}
+					if(target_yaw<0){target_yaw=0;}
+					if(target_pit>90){target_pit=90;}
+					if(target_pit<45){target_pit=45;}
+
+					target_pit_temp=map(target_pit,180,0,4833,10166);
+					target_yaw_temp=map(target_yaw,180,0,4833,10166);
 					now_pit=ics_set_pos(1,target_pit_temp);
 					now_yaw=ics_set_pos(2,target_yaw_temp);
 					if(abs(target_pit_temp-now_pit)>150 && abs(target_yaw_temp-now_yaw)>150 ){
@@ -421,6 +432,8 @@ void Gimbal_Task(){
 				else{
 					ics_set_pos(1,map(90,180,0,4833,10166));
 					ics_set_pos(2,map(90,180,0,4833,10166));
+					target_pit=90;
+					target_yaw=90;
 					fire=0;
 				}
 			}
@@ -428,6 +441,9 @@ void Gimbal_Task(){
 		else{
 			ics_set_pos(1,map(90,180,0,4833,10166));
 			ics_set_pos(2,map(90,180,0,4833,10166));
+			target_pit=90;
+			target_yaw=90;
+			fire=0;
 		}
 
 
