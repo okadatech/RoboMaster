@@ -5707,7 +5707,6 @@ void MX_TIM2_Init(void)
 {
  8002e5c:	b580      	push	{r7, lr}
  8002e5e:	af00      	add	r7, sp, #0
-
   htim2.Instance = TIM2;
  8002e60:	4b24      	ldr	r3, [pc, #144]	; (8002ef4 <MX_TIM2_Init+0x98>)
  8002e62:	f04f 4280 	mov.w	r2, #1073741824	; 0x40000000
@@ -5950,7 +5949,6 @@ void MX_TIM7_Init(void)
 {
  8002fdc:	b580      	push	{r7, lr}
  8002fde:	af00      	add	r7, sp, #0
-
   htim7.Instance = TIM7;
  8002fe0:	4b14      	ldr	r3, [pc, #80]	; (8003034 <MX_TIM7_Init+0x58>)
  8002fe2:	4a15      	ldr	r2, [pc, #84]	; (8003038 <MX_TIM7_Init+0x5c>)
@@ -6015,6 +6013,7 @@ void MX_TIM8_Init(void)
 {
  8003040:	b580      	push	{r7, lr}
  8003042:	af00      	add	r7, sp, #0
+
   htim8.Instance = TIM8;
  8003044:	4b3c      	ldr	r3, [pc, #240]	; (8003138 <MX_TIM8_Init+0xf8>)
  8003046:	4a3d      	ldr	r2, [pc, #244]	; (800313c <MX_TIM8_Init+0xfc>)
