@@ -27712,3 +27712,265 @@
 2020-03-02 22:55:45,662 [INFO] DbMcus:203 - Set 0 / 0 favorites MCUs
 2020-03-02 22:56:18,809 [INFO] NvicIntPanel:88 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
 2020-03-02 22:56:33,061 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 456069000 Bytes (649068544)
+2020-03-02 22:57:08,860 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 420574680 Bytes (649068544)
+2020-03-02 22:57:09,719 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: TIM6_7
+2020-03-02 22:57:09,719 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: TIM1_8
+2020-03-02 22:57:09,719 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: CAN
+2020-03-02 22:57:09,719 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: TIM1_8
+2020-03-02 22:57:09,719 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: CAN
+2020-03-02 22:57:09,719 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: TIM1_8
+2020-03-02 22:57:09,719 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: SYS
+2020-03-02 22:57:09,720 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: RCC
+2020-03-02 22:57:09,720 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: NVIC
+2020-03-02 22:57:09,720 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: USART
+2020-03-02 22:57:09,720 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: USART
+2020-03-02 22:57:09,720 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: USART
+2020-03-02 22:57:09,720 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: USART
+2020-03-02 22:57:09,720 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: DMA
+2020-03-02 22:57:09,720 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: TIM1_8
+2020-03-02 22:57:09,720 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: UART
+2020-03-02 22:57:09,721 [INFO] BlockDiagram:2751 - set Specific Code input for plugin: GPIO
+2020-03-02 22:57:09,722 [INFO] CodeGenerator:601 - code generatio: config db path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.5.0.201912201511\\db\
+2020-03-02 22:57:10,783 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\MXTmpFiles\license.tmp_save
+2020-03-02 22:57:11,344 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\MXTmpFiles\license.tmp
+2020-03-02 22:57:11,700 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\gpio.c_save
+2020-03-02 22:57:11,960 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\gpio.c
+2020-03-02 22:57:12,021 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\gpio.h_save
+2020-03-02 22:57:12,530 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\gpio.h
+2020-03-02 22:57:13,541 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-03-02 22:57:13,544 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for CAN
+2020-03-02 22:57:13,545 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-03-02 22:57:13,615 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\can.c_save
+2020-03-02 22:57:13,873 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\can.c
+2020-03-02 22:57:13,929 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\can.h_save
+2020-03-02 22:57:14,064 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\can.h
+2020-03-02 22:57:14,067 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-03-02 22:57:14,068 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for DMA
+2020-03-02 22:57:14,069 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-03-02 22:57:14,155 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\dma.c_save
+2020-03-02 22:57:14,301 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\dma.c
+2020-03-02 22:57:14,352 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\dma.h_save
+2020-03-02 22:57:14,495 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\dma.h
+2020-03-02 22:57:14,498 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-03-02 22:57:14,500 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for TIM
+2020-03-02 22:57:14,501 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-03-02 22:57:14,558 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\tim.c_save
+2020-03-02 22:57:14,868 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\tim.c
+2020-03-02 22:57:14,911 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\tim.h_save
+2020-03-02 22:57:15,130 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\tim.h
+2020-03-02 22:57:15,133 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-03-02 22:57:15,135 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2020-03-02 22:57:15,136 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-03-02 22:57:15,230 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\usart.c_save
+2020-03-02 22:57:15,586 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\usart.c
+2020-03-02 22:57:15,621 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\usart.h_save
+2020-03-02 22:57:15,814 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\usart.h
+2020-03-02 22:57:15,819 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2020-03-02 22:57:15,820 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-03-02 22:57:15,911 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\stm32f4xx_it.c_save
+2020-03-02 22:57:16,181 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\stm32f4xx_it.c
+2020-03-02 22:57:16,263 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\stm32f4xx_it.h_save
+2020-03-02 22:57:16,356 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\stm32f4xx_it.h
+2020-03-02 22:57:16,405 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\stm32f4xx_hal_msp.c_save
+2020-03-02 22:57:16,525 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\stm32f4xx_hal_msp.c
+2020-03-02 22:57:16,559 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\MXTmpFiles\system.tmp_save
+2020-03-02 22:57:16,633 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\MXTmpFiles\system.tmp
+2020-03-02 22:57:16,691 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\stm32f4xx_hal_conf.h_save
+2020-03-02 22:57:16,862 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\stm32f4xx_hal_conf.h
+2020-03-02 22:57:16,952 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\main.h_save
+2020-03-02 22:57:17,108 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Inc\main.h
+2020-03-02 22:57:17,158 [INFO] CodeEngine:193 - oldGeneratedFile, C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\main.c_save
+2020-03-02 22:57:17,312 [INFO] CodeEngine:211 - Generated code: C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\Core\Src\main.c
+2020-03-02 22:57:19,014 [INFO] ProjectBuilder:1843 - Time for Copy HAL[1] : 784mS.
+2020-03-02 22:57:19,022 [INFO] ProjectBuilder:2428 - Project Generator version: 3.6.0
+2020-03-02 22:57:19,836 [INFO] ConfigFileManager:1043 - The Die is : DIE421
+2020-03-02 22:57:25,807 [INFO] ProjectBuilder:2595 - Time for Generating toolchain IDE Files: 6785mS.
+2020-03-02 22:57:25,809 [INFO] ProjectBuilder:1703 - Time for Copy CMSIS : 1mS.
+2020-03-02 22:57:25,814 [INFO] ProjectBuilder:1703 - Time for Copy CMSIS : 1mS.
+2020-03-02 23:05:20,131 [INFO] Activator:176 - 
+
+
+2020-03-02 23:05:20,135 [INFO] Activator:177 - !SESSION log4j initialized
+2020-03-02 23:06:02,123 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639
+2020-03-02 23:06:02,139 [INFO] DbMcusXml:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/
+2020-03-02 23:06:02,144 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/boardmanager/
+2020-03-02 23:06:02,144 [INFO] DbMcus:235 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-03-02 23:06:02,144 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-03-02 23:06:02,273 [INFO] DbMcusAds:85 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,275 [INFO] DbMcusDocs:108 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,277 [INFO] DbMcusJson:61 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,278 [INFO] DbBoardsDocs:97 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,279 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,287 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/cs/
+2020-03-02 23:06:02,417 [INFO] RulesReader:52 - Compatibility file has been processed (208 Rules)
+2020-03-02 23:06:02,540 [INFO] MicroXplorer:570 - Detected Java Version = 1.8.0_202
+2020-03-02 23:06:02,540 [INFO] DbMcusXml:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/
+2020-03-02 23:06:02,540 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/boardmanager/
+2020-03-02 23:06:02,541 [INFO] DbMcus:235 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-03-02 23:06:02,542 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-03-02 23:06:02,543 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,543 [INFO] DbMcusAds:85 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,543 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,543 [INFO] DbMcusDocs:108 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,544 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,544 [INFO] DbMcusJson:61 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,544 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,544 [INFO] DbBoardsDocs:97 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,544 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,545 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,545 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,545 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,545 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/cs/
+2020-03-02 23:06:02,634 [INFO] MainPanel:181 - HeapMemory: 363855872
+2020-03-02 23:06:02,713 [INFO] DbMcusXml:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/
+2020-03-02 23:06:02,713 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/boardmanager/
+2020-03-02 23:06:02,714 [INFO] DbMcus:235 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-03-02 23:06:02,714 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-03-02 23:06:02,715 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,716 [INFO] DbMcusAds:85 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,716 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,716 [INFO] DbMcusDocs:108 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,717 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,717 [INFO] DbMcusJson:61 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,717 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,717 [INFO] DbBoardsDocs:97 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,717 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,718 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/
+2020-03-02 23:06:02,718 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,718 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\ryouma\.stmcufinder\plugins\mcufinder/ => C:\Users\ryouma\.stmcufinder\plugins\mcufinder
+2020-03-02 23:06:02,718 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\ryouma\.stmcufinder\plugins\mcufinder//mcu/cs/
+2020-03-02 23:06:02,747 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639
+2020-03-02 23:06:02,751 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=, tutovideos]
+2020-03-02 23:06:02,753 [INFO] PluginManage:292 - Check plugin analytics
+2020-03-02 23:06:02,758 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2020-03-02 23:06:02,759 [INFO] PluginManage:292 - Check plugin clock
+2020-03-02 23:06:02,771 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2020-03-02 23:06:02,771 [INFO] PluginManage:292 - Check plugin ddr
+2020-03-02 23:06:02,774 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2020-03-02 23:06:02,774 [INFO] PluginManage:292 - Check plugin filemanager
+2020-03-02 23:06:02,927 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2020-03-02 23:06:02,928 [INFO] PluginManage:292 - Check plugin ipmanager
+2020-03-02 23:06:02,946 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2020-03-02 23:06:02,947 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2020-03-02 23:06:02,963 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2020-03-02 23:06:02,964 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2020-03-02 23:06:03,015 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2020-03-02 23:06:03,016 [INFO] PluginManage:292 - Check plugin power
+2020-03-02 23:06:03,025 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2020-03-02 23:06:03,026 [INFO] PluginManage:292 - Check plugin projectmanager
+2020-03-02 23:06:03,049 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2020-03-02 23:06:03,049 [INFO] PluginManage:292 - Check plugin thirdparty
+2020-03-02 23:06:03,133 [INFO] ThirdPartyDb:295 - Open Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 41 ms. number of Sw pack : 33
+2020-03-02 23:06:03,163 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2020-03-02 23:06:03,164 [INFO] PluginManage:292 - Check plugin tools
+2020-03-02 23:06:03,168 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2020-03-02 23:06:03,168 [INFO] PluginManage:292 - Check plugin tutovideos
+2020-03-02 23:06:03,169 [INFO] PluginManage:347 - Ignore plugin tutovideos (category:base)
+2020-03-02 23:06:03,169 [INFO] PluginManage:292 - Check plugin updater
+2020-03-02 23:06:03,189 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2020-03-02 23:06:03,191 [INFO] PluginManage:265 - PluginManage : Loaded plugins [12]
+2020-03-02 23:06:03,444 [INFO] PinOutPanel:1420 - setPackage(No Configuration,No Configuration)
+2020-03-02 23:06:03,569 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,569 [INFO] PluginManager:200 - loadIPPluginJar : add adc
+2020-03-02 23:06:03,572 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,573 [INFO] PluginManager:200 - loadIPPluginJar : add aes
+2020-03-02 23:06:03,576 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,576 [INFO] PluginManager:200 - loadIPPluginJar : add can
+2020-03-02 23:06:03,578 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,578 [INFO] PluginManager:200 - loadIPPluginJar : add comp
+2020-03-02 23:06:03,582 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,582 [INFO] PluginManager:200 - loadIPPluginJar : add cryp
+2020-03-02 23:06:03,586 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,586 [INFO] PluginManager:200 - loadIPPluginJar : add dfsdm
+2020-03-02 23:06:03,592 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,593 [INFO] PluginManager:200 - loadIPPluginJar : add dma
+2020-03-02 23:06:03,594 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,595 [INFO] PluginManager:200 - loadIPPluginJar : add fatfs
+2020-03-02 23:06:03,601 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,601 [INFO] PluginManager:200 - loadIPPluginJar : add fmc
+2020-03-02 23:06:03,608 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,608 [INFO] PluginManager:200 - loadIPPluginJar : add freertos
+2020-03-02 23:06:03,610 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,610 [INFO] PluginManager:200 - loadIPPluginJar : add genericplugin
+2020-03-02 23:06:03,613 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,614 [INFO] PluginManager:200 - loadIPPluginJar : add gfxmmu
+2020-03-02 23:06:03,621 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,621 [INFO] PluginManager:200 - loadIPPluginJar : add gic
+2020-03-02 23:06:03,626 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,626 [INFO] PluginManager:200 - loadIPPluginJar : add gpio
+2020-03-02 23:06:03,629 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,629 [INFO] PluginManager:200 - loadIPPluginJar : add gtzc
+2020-03-02 23:06:03,634 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,634 [INFO] PluginManager:200 - loadIPPluginJar : add hash
+2020-03-02 23:06:03,637 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,637 [INFO] PluginManager:200 - loadIPPluginJar : add i2c
+2020-03-02 23:06:03,641 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,642 [INFO] PluginManager:200 - loadIPPluginJar : add i2s
+2020-03-02 23:06:03,646 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,647 [INFO] PluginManager:200 - loadIPPluginJar : add ipddr
+2020-03-02 23:06:03,650 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,650 [INFO] PluginManager:200 - loadIPPluginJar : add ltdc
+2020-03-02 23:06:03,655 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,656 [INFO] PluginManager:200 - loadIPPluginJar : add mdma
+2020-03-02 23:06:03,661 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,661 [INFO] PluginManager:200 - loadIPPluginJar : add nvic
+2020-03-02 23:06:03,667 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,667 [INFO] PluginManager:200 - loadIPPluginJar : add opamp
+2020-03-02 23:06:03,670 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,670 [INFO] PluginManager:200 - loadIPPluginJar : add pdm2pcm
+2020-03-02 23:06:03,679 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,684 [INFO] PluginManager:200 - loadIPPluginJar : add plateformsettings
+2020-03-02 23:06:03,686 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,687 [INFO] PluginManager:200 - loadIPPluginJar : add quadspi
+2020-03-02 23:06:03,690 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,691 [INFO] PluginManager:200 - loadIPPluginJar : add resmgrutility
+2020-03-02 23:06:03,694 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,695 [INFO] PluginManager:200 - loadIPPluginJar : add sai
+2020-03-02 23:06:03,699 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,699 [INFO] PluginManager:200 - loadIPPluginJar : add spi
+2020-03-02 23:06:03,705 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,705 [INFO] PluginManager:200 - loadIPPluginJar : add stm32_wpan
+2020-03-02 23:06:03,707 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,707 [INFO] PluginManager:200 - loadIPPluginJar : add tim
+2020-03-02 23:06:03,711 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,711 [INFO] PluginManager:200 - loadIPPluginJar : add touchsensing
+2020-03-02 23:06:03,714 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,714 [INFO] PluginManager:200 - loadIPPluginJar : add tracer_emb
+2020-03-02 23:06:03,717 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,717 [INFO] PluginManager:200 - loadIPPluginJar : add ts
+2020-03-02 23:06:03,720 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,720 [INFO] PluginManager:200 - loadIPPluginJar : add tsc
+2020-03-02 23:06:03,722 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,722 [INFO] PluginManager:200 - loadIPPluginJar : add ucpd
+2020-03-02 23:06:03,726 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-03-02 23:06:03,726 [INFO] PluginManager:200 - loadIPPluginJar : add usart
+2020-03-02 23:06:04,405 [INFO] BoardConnectionPanel:3472 - [DDR PANEL] STM32CubeIDE environment
+2020-03-02 23:06:04,406 [INFO] MainDdrPanel:103 - [DDR PANEL] GETTER - cubeProgrammerPath is: null
+2020-03-02 23:06:04,611 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-03-02 23:06:04,888 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-03-02 23:06:04,893 [INFO] PinOutPanel:1420 - setPackage(No Configuration,No Configuration)
+2020-03-02 23:06:04,894 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-03-02 23:06:04,900 [INFO] BoardConnectionPanel:3472 - [DDR PANEL] STM32CubeIDE environment
+2020-03-02 23:06:04,901 [INFO] MainDdrPanel:103 - [DDR PANEL] GETTER - cubeProgrammerPath is: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.3.0.202002181050\tools\bin
+2020-03-02 23:06:04,907 [INFO] ProgrammerExecThread:148 - [ProgrammerAPI] CubeProgrammer command construction: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.3.0.202002181050\tools\bin\STM32_Programmer_CLI.exe -l
+2020-03-02 23:06:05,107 [INFO] MainDdrPanel:93 - [DDR PANEL] SETTER - Set cubeProgrammerPath to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.3.0.202002181050\tools\bin
+2020-03-02 23:06:05,114 [INFO] Updater:886 - Updater Version found : 5.6.0
+2020-03-02 23:06:05,137 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639
+2020-03-02 23:06:05,328 [INFO] MainUpdater:452 - Copy updater definitions from MX database
+2020-03-02 23:06:05,938 [INFO] MainUpdater:2230 - connection check result : 10
+2020-03-02 23:06:05,938 [INFO] MainUpdater:2874 - Updater definition file requires update
+2020-03-02 23:06:05,940 [INFO] MainUpdater:236 - Updater Check For Update Now.
+2020-03-02 23:06:05,941 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.60
+2020-03-02 23:06:05,952 [INFO] MainUpdater:2230 - connection check result : 10
+2020-03-02 23:06:05,954 [INFO] MainUpdater:580 - Updater currently busy
+2020-03-02 23:06:06,153 [WARN] MainUpdater:1073 - Updater busy. Cannot search thirdparties
+2020-03-02 23:06:06,434 [INFO] ServerAccessManage:348 - Download File updaters.zip
+2020-03-02 23:06:06,571 [INFO] FileExtend:225 - Unzip File : updaters.zip
+2020-03-02 23:06:06,572 [INFO] FileExtend:240 - Standard Zip Deflate
+2020-03-02 23:06:09,159 [WARN] MainUpdater:1073 - Updater busy. Cannot search thirdparties
+2020-03-02 23:06:10,153 [INFO] ServerAccessManage:348 - Download File PacksControlFlags.xml
+2020-03-02 23:06:10,692 [INFO] ServerAccessManage:348 - Download File cubemx.pidx
+2020-03-02 23:06:10,815 [INFO] LoadServerUpdatesThread:301 - End of LoadServerUpdate Thread
+2020-03-02 23:06:10,871 [INFO] CheckServerUpdateThread:92 - End of CheckServer Thread
+2020-03-02 23:06:12,525 [INFO] ThirdPartyDb:261 - Close Third Party DataBase File (C:/Users/ryouma/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2020-03-02 23:06:12,665 [INFO] IntegrityCheckThread:98 - End integrity checks thread
