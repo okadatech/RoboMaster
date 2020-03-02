@@ -100,7 +100,9 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  //No0:not move any-time shoot
+  //No1:put center use Cam and shoot
+  //No2:put random use Cam and shoot
   /* USER CODE END Init */
 
   /* Configure the system clock */
