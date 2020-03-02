@@ -1,8 +1,6 @@
-23:34:57 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
+17:03:36 **** Incremental Build of configuration Debug for project F446_Saramander_Sentry ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/Kondo_servo.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Kondo_servo.d" -MT"Core/Src/Kondo_servo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Kondo_servo.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/referee_serial_port_protocol.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/referee_serial_port_protocol.d" -MT"Core/Src/referee_serial_port_protocol.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/referee_serial_port_protocol.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
 arm-none-eabi-gcc -o "F446_Saramander_Sentry.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ryouma\Documents\GitHub\RoboMaster_Salamander_okadatech\F446_Saramander_Sentry\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F446_Saramander_Sentry.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: F446_Saramander_Sentry.elf
  
@@ -10,7 +8,7 @@ arm-none-eabi-objdump -h -S  F446_Saramander_Sentry.elf  > "F446_Saramander_Sent
 arm-none-eabi-objcopy  -O binary  F446_Saramander_Sentry.elf  "F446_Saramander_Sentry.bin"
 arm-none-eabi-size   F446_Saramander_Sentry.elf 
    text	   data	    bss	    dec	    hex	filename
-  42328	    484	   3068	  45880	   b338	F446_Saramander_Sentry.elf
+  42400	    484	   3068	  45952	   b380	F446_Saramander_Sentry.elf
 Finished building: default.size.stdout
  
 Finished building: F446_Saramander_Sentry.bin
@@ -18,5 +16,5 @@ Finished building: F446_Saramander_Sentry.bin
 Finished building: F446_Saramander_Sentry.list
  
 
-23:35:03 Build Finished. 0 errors, 0 warnings. (took 5s.246ms)
+17:03:38 Build Finished. 0 errors, 0 warnings. (took 2s.564ms)
 

@@ -154,6 +154,7 @@ int main(void)
   if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK){Error_Handler();}
   HAL_CAN_Start(&hcan2);
   if (HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK){Error_Handler();}
+  HAL_Delay(1000);
   initPID();
   initLoadPID();
   initCanFilter();
@@ -182,11 +183,15 @@ int main(void)
 	 //HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_10);
 	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15,start_sw);
 	  //HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_15);
-
+	  printf("start=%d ",start_sw);
 	  printf(" E1=%d",(int)TIM1->CNT);
 	  printf(" X=%d Y=%d cnt=%d check=%d",target_X,target_Y,cnt_tartget,data_Jetson[5]);
 	  printf(" torque_sum=%f",torque_sum);
+	  //printf(" sw1=%d sw2=%d",limit_sw1,limit_sw2);
+	  //printf(" =%d",ics_set_pos(1,7500));
+	  //printf(" =%d",ics_set_pos(2,7500));
 	  printf("\r\n");
+
   }
   /* USER CODE END 3 */
 }
@@ -262,6 +267,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 			}
 			temp_data_Jetson=data_Jetson[5];
 		}
+
 		cnt_tim++;
 	}
 }
@@ -462,7 +468,7 @@ void fire_Task(){
 		fire=0;
 	}
 	if(start_sw==1){
-		DBUFF[1] = loadPID.error = 0 - loadMotorFdb.rpm;
+		DBUFF[1] = loadPID.error = 0.0 - loadMotorFdb.rpm;
 		DBUFF[3] = u[2] = pidExecute(&loadPID);
 		u[0]=0;
 		u[1]=0;
@@ -482,10 +488,10 @@ void fire_Task(){
 
 
 	if(move_fire==0){
-		 sConfigOC.Pulse = 1800;
+		 sConfigOC.Pulse = 1700;
 		 HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_3);
 		 HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
-		 sConfigOC.Pulse = 1800;
+		 sConfigOC.Pulse = 1700;
 		 HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_4);
 		 HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
 	}
@@ -500,8 +506,8 @@ void fire_Task(){
 }
 
 void initFriction() {
-	for(int i=0;i<100;i++){
-		HAL_Delay(20);
+	for(int i=0;i<2000;i++){
+		HAL_Delay(1);
 		  sConfigOC.Pulse = 2000;
 		  HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_3);
 		  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
@@ -509,7 +515,7 @@ void initFriction() {
 		  HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_4);
 		  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
 	}
-	for(int i=0;i<2000;i++){
+	for(int i=0;i<2300;i++){
 		HAL_Delay(1);
 		  sConfigOC.Pulse = 1500;
 		  HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_3);

@@ -94,6 +94,7 @@ uint8_t rc_SW1_temp,rc_W_temp;
 uint32_t RC_time,cnt_tim_fire_task;
 uint8_t customdataPacket[28];
 uint8_t data_data_form_JetsonNANO_temp;
+uint16_t delay_auto;
 /* USER CODE END 0 */
 
 /**
@@ -646,11 +647,13 @@ void Gimbal_Task(){
 			if(rc_W_temp==0 &&  rc.key_W==1){IMU_yaw_set=imu_attitude.yaw;}
 			if(rc.key_S==1 ||  rc.ch1==660){
 				//Automatic aiming software
+				if(delay_auto>25){
 				if(cnt_tartget>0){
-					target_yaw =target_yaw+map(target_X,-480,480,50,-50)-IMU_yaw+feed_forward_param;
+					target_yaw =target_yaw+map(target_X,-480,480,30,-30)-IMU_yaw+feed_forward_param;
 				}
 				else{
 					target_yaw =target_yaw-IMU_yaw+feed_forward_param;
+				}
 				}
 			}
 			else{
@@ -663,10 +666,9 @@ void Gimbal_Task(){
 			if(rc.key_S==1 ||  rc.ch1==660){
 				//Automatic aiming software
 				if(cnt_tartget>0){
-					target_yaw =target_yaw+map(target_X,-480,480,50,-50);
+					if(delay_auto>25){
+						target_yaw =target_yaw+map(target_X,-480,480,30,-30);
 				}
-				else{
-					target_yaw =target_yaw;
 				}
 			}
 			else{
@@ -692,13 +694,16 @@ void Gimbal_Task(){
 		if(rc.key_S==1  ||  rc.ch1==660){
 			//Automatic aiming software
 			if(cnt_tartget>0){
-				target_pich=target_pich+map(target_Y,-360,360,20,-20);
-			}
-			else{
-				target_pich=target_pich;
+				if(delay_auto>25){
+						target_pich =target_pich+map(target_Y,-360,360,30,-30);
+
+				delay_auto=0;
+				}
+				delay_auto++;
 			}
 		}
 		else{
+			delay_auto=0;
 			target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
 		}
 		if(target_pich>=19){target_pich=19;}
