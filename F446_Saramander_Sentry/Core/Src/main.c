@@ -90,6 +90,7 @@ int cnt_tim1;
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -173,6 +174,12 @@ int main(void)
   program_No=!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9)+!HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_8)*2+
  				!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)*4+!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_14)*8;
 
+
+	target_pit=70;
+	target_yaw=90;
+	target_pit_temp=map(target_pit,180,0,4833,10166);
+	target_yaw_temp=map(target_yaw,180,0,4833,10166);
+
   /* USER CODE END 2 */
  
  
@@ -189,13 +196,18 @@ int main(void)
 	  //HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_15);
 	  printf("start=%d ",start_sw);
 	  printf(" E1=%d",(int)TIM1->CNT);
-	  printf(" X=%d Y=%d cnt=%d check=%d",target_X,target_Y,cnt_tartget,data_Jetson[5]);
-	  printf(" torque_sum=%f cnt_tim1=%d",torque_sum,cnt_tim1);
-	  //printf(" sw1=%d sw2=%d",limit_sw1,limit_sw2);
+	  printf(" X=%d Y=%d cnt=%d check=%d pit=%d yaw=%d",target_X,target_Y,cnt_tartget,data_Jetson[5],target_pit,target_yaw);
+	  printf(" torque_sum=%f cnt_tim1=%d",torque_sum,cnt_tim_servo);
+//	 / printf(" sw1=%d sw2=%d",limit_sw1,limit_sw2);
 	  //printf(" =%d",ics_set_pos(1,7500));
 	  //printf(" =%d",ics_set_pos(2,7500));
 	  printf("\r\n");
+	  target_X=((data_Jetson[0]<<8) | data_Jetson[1])- 32767;
+	  	target_Y=((data_Jetson[2]<<8) | data_Jetson[3])- 32767;
+	  	cnt_tartget=data_Jetson[4];
 
+		if(limit_sw1==0){TIM1->CNT=15000;}
+		if(limit_sw2==0){TIM1->CNT=16800;}
   }
   /* USER CODE END 3 */
 }
@@ -332,9 +344,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
 			}
 		}
 	}
-	target_X=((data_Jetson[0]<<8) | data_Jetson[1])- 32767;
-	target_Y=((data_Jetson[2]<<8) | data_Jetson[3])- 32767;
-	cnt_tartget=data_Jetson[4];
+
 
 }
 
@@ -355,19 +365,21 @@ void timerTask() { //call 500Hz
 
 void driveWheelTask() {
 	int16_t u[4];
-	cnt_tim1=TIM1->CNT-15000;
+	cnt_tim1=15000-TIM1->CNT;
 	if(start_sw==0){
 		if(program_No==0){
 			//target_place=2325;
-			target_place=TIM1->CNT-15000;
+			target_place=15000-TIM1->CNT;
 		}
 		else if(program_No==1){
 			target_place=900;
 		}
 		else if(program_No==2){
-			if(abs((int)target_place-cnt_tim1)<10){target_place=(int)(rand()*(1600.0-100.0+1.0)/(1.0+RAND_MAX));}
+			if(abs((int)target_place-cnt_tim1)<10){target_place=(int)(rand()*(1300.0-500.0+1.0)/(1.0+RAND_MAX));}
+			if(target_place>1300){target_place=1300;}
+			if(target_place<500){target_place=500;}
 		}
-		else{target_place=TIM1->CNT-15000;}
+		else{target_place=15000-TIM1->CNT;}
 
 		if(limit_sw1==0){TIM1->CNT=15000;}
 		if(limit_sw2==0){TIM1->CNT=16800;}
@@ -376,24 +388,24 @@ void driveWheelTask() {
 			mecanum.wheel_rpm[0]=0.0;
 			mecanum.wheel_rpm[1]=0.0;
 		}
-		else if(((int)target_place-cnt_tim1)>0){
+		else if(((int)target_place-cnt_tim1)<0){
 			if((float)abs((int)cnt_tim1-target_place)>1500){
 				mecanum.wheel_rpm[0]=4000;
 				mecanum.wheel_rpm[1]=4000;
 			}
 			else{
-				mecanum.wheel_rpm[0]=(float)map(abs((int)cnt_tim1-target_place),0,1500,0,4000);
-				mecanum.wheel_rpm[1]=(float)map(abs((int)cnt_tim1-target_place),0,1500,0,4000);
+				mecanum.wheel_rpm[0]=(float)map(abs((int)cnt_tim1-target_place),0,1500,1000,4000);
+				mecanum.wheel_rpm[1]=(float)map(abs((int)cnt_tim1-target_place),0,1500,1000,4000);
 			}
 		}
-		else if(((int)target_place-cnt_tim1)<0){
+		else if(((int)target_place-cnt_tim1)>0){
 			if((float)abs((int)cnt_tim1-target_place)>1500){
 				mecanum.wheel_rpm[0]=-4000;
 				mecanum.wheel_rpm[1]=-4000;
 			}
 			else{
-				mecanum.wheel_rpm[0]=(float)-1.0*map(abs((int)cnt_tim1-target_place),0,1500,0,4000);
-				mecanum.wheel_rpm[1]=(float)-1.0*map(abs((int)cnt_tim1-target_place),0,1500,0,4000);
+				mecanum.wheel_rpm[0]=(float)-1.0*map(abs((int)cnt_tim1-target_place),0,1500,1000,4000);
+				mecanum.wheel_rpm[1]=(float)-1.0*map(abs((int)cnt_tim1-target_place),0,1500,1000,4000);
 			}
 		}
 		else{
@@ -404,12 +416,12 @@ void driveWheelTask() {
 		if(sw1==0){
 			mecanum.wheel_rpm[0]=1200;
 			mecanum.wheel_rpm[1]=1200;
-			target_place=TIM1->CNT-15000;
+			target_place=15000-TIM1->CNT;
 		}
 		else if(sw2==0){
 			mecanum.wheel_rpm[0]=-1200;
 			mecanum.wheel_rpm[1]=-1200;
-			target_place=TIM1->CNT-15000;
+			target_place=15000-TIM1->CNT;
 		}
 
 	}
@@ -433,14 +445,13 @@ void driveWheelTask() {
 	driveWheel(u);
 }
 void Gimbal_Task(){
-	if(cnt_task_servo>10){
+	if(cnt_task_servo>30){
 		if(start_sw==0){
 			if(program_No>0){
 				if(jetson_connect==1){
 					if(cnt_tartget>0){
-						if(cnt_task_servo>20){
-							target_pit=target_pit+map(target_X,-480,480,30,-30);
-							target_yaw=target_yaw+map(target_Y,-360,360,30,-30);
+							target_yaw=target_yaw-map(target_X,480,-480,30,-30);
+							target_pit=target_pit-map(target_Y,360,-360,30,-30);
 
 							if(target_yaw>160){target_yaw=160;}
 							if(target_yaw<20){target_yaw=20;}
@@ -452,22 +463,30 @@ void Gimbal_Task(){
 							now_pit=ics_set_pos(2,target_pit_temp);
 							now_yaw=ics_set_pos(1,target_yaw_temp);
 
-							if(abs(target_X)<10 && abs(target_X)<10){
+							if(abs(target_X)<20 && abs(target_X)<20){
 								fire=1.0;
 							}
 							else{
 								fire=0.0;
 							}
-							cnt_tim_servo++;
-						}
+							cnt_tim_servo=0;
 					}
 					else{
-						ics_set_pos(2,map(90,180,0,4833,10166));
-						ics_set_pos(1,map(90,180,0,4833,10166));
-						target_pit=90;
-						target_yaw=90;
+						if(cnt_tim_servo>20){
+							target_pit=70;
+							target_yaw=90;
+							target_pit_temp=map(target_pit,180,0,4833,10166);
+							target_yaw_temp=map(target_yaw,180,0,4833,10166);
+							now_pit=ics_set_pos(2,target_pit_temp);
+							now_yaw=ics_set_pos(1,target_yaw_temp);
+							cnt_tim_servo=0;
+						}
+						else{
+						now_pit=ics_set_pos(2,target_pit_temp);
+						now_yaw=ics_set_pos(1,target_yaw_temp);
 						fire=0.0;
-						cnt_tim_servo=0;
+						cnt_tim_servo++;
+						}
 					}
 				}
 			}

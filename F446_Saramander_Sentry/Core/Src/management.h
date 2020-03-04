@@ -60,7 +60,7 @@ float DBUFF[32];
 float torque_sum;
 
 uint8_t Rxbuf_jetson[7],data_Jetson[6],temp_data_Jetson,jetson_connect;
-uint8_t target_yaw_temp,target_pit_temp,now_pit,now_yaw,target_yaw,target_pit;
+int target_yaw_temp,target_pit_temp,now_pit,now_yaw,target_yaw,target_pit;
 uint8_t canRxData[8];
 float  fire;
 
