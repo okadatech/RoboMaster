@@ -43,6 +43,7 @@ const int yaw_MAX=70;
 const int yaw_magnification=20;
 const int pich_MAX=30;
 const int pich_magnification=50;
+const int pich_offset=29;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -586,7 +587,7 @@ void Gimbal_Task(){
 	int16_t u[4];
 	if (rc.mouse_press_r == 1 ||  rc.ch2==660) {
 		fire = 1;
-		DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
+		DBUFF[1] = loadPID.error = -900.0f*fire*3.0 - loadMotorFdb.rpm;
 		DBUFF[3] = u[2] = pidExecute(&loadPID);
 	}
 	else {
@@ -596,7 +597,7 @@ void Gimbal_Task(){
 			DBUFF[3] = u[2] = pidExecute(&loadPID);
 		}
 		else{
-			DBUFF[1] = loadPID.error = -900.0f*fire*3 - loadMotorFdb.rpm;
+			DBUFF[1] = loadPID.error = -900.0f*fire*3.0 - loadMotorFdb.rpm;
 			DBUFF[3] = u[2] = pidExecute(&loadPID);
 		}
 	}
@@ -632,7 +633,7 @@ void Gimbal_Task(){
 		if(target_pich>=19){target_pich=19;}
 		if(target_pich<-22){target_pich=-22;}
 	}
-	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+29;
+	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0)+pich_offset;
 	if(pich_now>360){pich_now=pich_now-360;}
 
 	if((pich_now+IMU_pich)>-4){HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);}

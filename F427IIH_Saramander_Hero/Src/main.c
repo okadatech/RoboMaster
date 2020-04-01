@@ -95,6 +95,7 @@ uint32_t RC_time,cnt_tim_fire_task;
 uint8_t customdataPacket[28];
 uint8_t data_data_form_JetsonNANO_temp;
 uint16_t delay_auto;
+const float yaw_offset = 60.0;
 /* USER CODE END 0 */
 
 /**
@@ -678,7 +679,7 @@ void Gimbal_Task(){
 			if(target_yaw<-70){target_yaw=-70;}
 		}
 	}
-	yaw_now=((float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0))+60.0;
+	yaw_now=((float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0))+yaw_offset;
 	if(yaw_now>360){yaw_now=yaw_now-360;}
 
 	if((target_yaw-yaw_now)>50){u[0]=30000;}

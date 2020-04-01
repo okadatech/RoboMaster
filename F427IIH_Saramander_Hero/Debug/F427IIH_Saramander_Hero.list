@@ -27,25 +27,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  000201fc  2**0
                   CONTENTS, READONLY
- 12 .debug_info   000232e7  00000000  00000000  0002022c  2**0
+ 12 .debug_info   000232fd  00000000  00000000  0002022c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 0000470a  00000000  00000000  00043513  2**0
+ 13 .debug_abbrev 0000470a  00000000  00000000  00043529  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00011015  00000000  00000000  00047c1d  2**0
+ 14 .debug_loc    00011015  00000000  00000000  00047c33  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_aranges 00000f40  00000000  00000000  00058c38  2**3
+ 15 .debug_aranges 00000f40  00000000  00000000  00058c48  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00002c00  00000000  00000000  00059b78  2**3
+ 16 .debug_ranges 00002c00  00000000  00000000  00059b88  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_macro  00026912  00000000  00000000  0005c778  2**0
+ 17 .debug_macro  00026912  00000000  00000000  0005c788  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_line   00012c0a  00000000  00000000  0008308a  2**0
+ 18 .debug_line   00012c09  00000000  00000000  0008309a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .debug_str    000ddfa7  00000000  00000000  00095c94  2**0
+ 19 .debug_str    000ddfb2  00000000  00000000  00095ca3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 20 .comment      0000007b  00000000  00000000  00173c3b  2**0
+ 20 .comment      0000007b  00000000  00000000  00173c55  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00004900  00000000  00000000  00173cb8  2**2
+ 21 .debug_frame  00004900  00000000  00000000  00173cd0  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -13486,10 +13486,10 @@ void fire_task_push(){
 		if(rc.sw2==1|| rc.key_W==1){
  8005e6c:	2d01      	cmp	r5, #1
  8005e6e:	f994 301a 	ldrsb.w	r3, [r4, #26]
- 8005e72:	f000 81f9 	beq.w	8006268 <Gimbal_Task+0x430>
+ 8005e72:	f000 81fa 	beq.w	800626a <Gimbal_Task+0x432>
  8005e76:	f994 2018 	ldrsb.w	r2, [r4, #24]
  8005e7a:	2a01      	cmp	r2, #1
- 8005e7c:	f000 81bf 	beq.w	80061fe <Gimbal_Task+0x3c6>
+ 8005e7c:	f000 81c1 	beq.w	8006202 <Gimbal_Task+0x3ca>
 			if(rc.key_S==1 ||  rc.ch1==660){
  8005e80:	2b01      	cmp	r3, #1
  8005e82:	f000 823b 	beq.w	80062fc <Gimbal_Task+0x4c4>
@@ -13500,24 +13500,24 @@ void fire_task_push(){
  8005e92:	4bbb      	ldr	r3, [pc, #748]	; (8006180 <Gimbal_Task+0x348>)
  8005e94:	ed9f 7abb 	vldr	s14, [pc, #748]	; 8006184 <Gimbal_Task+0x34c>
  8005e98:	edd3 7a00 	vldr	s15, [r3]
- 8005e9c:	4bba      	ldr	r3, [pc, #744]	; (8006188 <Gimbal_Task+0x350>)
+ 8005e9c:	4aba      	ldr	r2, [pc, #744]	; (8006188 <Gimbal_Task+0x350>)
  8005e9e:	eef8 7ae7 	vcvt.f32.s32	s15, s15
  8005ea2:	ee67 7a87 	vmul.f32	s15, s15, s14
  8005ea6:	eefd 7ae7 	vcvt.s32.f32	s15, s15
- 8005eaa:	ee17 2a90 	vmov	r2, s15
- 8005eae:	b210      	sxth	r0, r2
- 8005eb0:	8018      	strh	r0, [r3, #0]
+ 8005eaa:	ee17 3a90 	vmov	r3, s15
+ 8005eae:	b21b      	sxth	r3, r3
+ 8005eb0:	8013      	strh	r3, [r2, #0]
 			if(target_yaw>70){target_yaw=70;}
- 8005eb2:	2846      	cmp	r0, #70	; 0x46
- 8005eb4:	f8df a31c 	ldr.w	sl, [pc, #796]	; 80061d4 <Gimbal_Task+0x39c>
- 8005eb8:	4fb4      	ldr	r7, [pc, #720]	; (800618c <Gimbal_Task+0x354>)
- 8005eba:	f300 81cc 	bgt.w	8006256 <Gimbal_Task+0x41e>
+ 8005eb2:	2b46      	cmp	r3, #70	; 0x46
+ 8005eb4:	4fb5      	ldr	r7, [pc, #724]	; (800618c <Gimbal_Task+0x354>)
+ 8005eb6:	f8df a320 	ldr.w	sl, [pc, #800]	; 80061d8 <Gimbal_Task+0x3a0>
+ 8005eba:	f300 81cd 	bgt.w	8006258 <Gimbal_Task+0x420>
 			if(target_yaw<-70){target_yaw=-70;}
- 8005ebe:	f110 0f46 	cmn.w	r0, #70	; 0x46
+ 8005ebe:	f113 0f46 	cmn.w	r3, #70	; 0x46
  8005ec2:	f280 8267 	bge.w	8006394 <Gimbal_Task+0x55c>
 		if(target_yaw<-70){target_yaw=-70;}
- 8005ec6:	f64f 72ba 	movw	r2, #65466	; 0xffba
- 8005eca:	801a      	strh	r2, [r3, #0]
+ 8005ec6:	f64f 73ba 	movw	r3, #65466	; 0xffba
+ 8005eca:	8013      	strh	r3, [r2, #0]
  8005ecc:	f06f 0845 	mvn.w	r8, #69	; 0x45
  8005ed0:	e02e      	b.n	8005f30 <Gimbal_Task+0xf8>
 		fire=1;
@@ -13528,7 +13528,7 @@ void fire_task_push(){
  8005ed8:	6833      	ldr	r3, [r6, #0]
  8005eda:	1e5a      	subs	r2, r3, #1
  8005edc:	2a6d      	cmp	r2, #109	; 0x6d
- 8005ede:	f240 81be 	bls.w	800625e <Gimbal_Task+0x426>
+ 8005ede:	f240 81bf 	bls.w	8006260 <Gimbal_Task+0x428>
 		sConfigOC.Pulse = map(130,0,180,500,2500);
 		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
 		HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -13584,13 +13584,13 @@ void fire_task_push(){
 	if(rc.sw2==2|| rc.key_E==1){target_yaw=0;}
  8005f1e:	2d02      	cmp	r5, #2
  8005f20:	d1a0      	bne.n	8005e64 <Gimbal_Task+0x2c>
- 8005f22:	4b99      	ldr	r3, [pc, #612]	; (8006188 <Gimbal_Task+0x350>)
- 8005f24:	f8df a2ac 	ldr.w	sl, [pc, #684]	; 80061d4 <Gimbal_Task+0x39c>
- 8005f28:	4f98      	ldr	r7, [pc, #608]	; (800618c <Gimbal_Task+0x354>)
- 8005f2a:	2000      	movs	r0, #0
- 8005f2c:	8018      	strh	r0, [r3, #0]
- 8005f2e:	4680      	mov	r8, r0
-	yaw_now=((float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0))+60.0;
+ 8005f22:	4a99      	ldr	r2, [pc, #612]	; (8006188 <Gimbal_Task+0x350>)
+ 8005f24:	4f99      	ldr	r7, [pc, #612]	; (800618c <Gimbal_Task+0x354>)
+ 8005f26:	f8df a2b0 	ldr.w	sl, [pc, #688]	; 80061d8 <Gimbal_Task+0x3a0>
+ 8005f2a:	2300      	movs	r3, #0
+ 8005f2c:	8013      	strh	r3, [r2, #0]
+ 8005f2e:	4698      	mov	r8, r3
+	yaw_now=((float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0))+yaw_offset;
  8005f30:	4e9a      	ldr	r6, [pc, #616]	; (800619c <Gimbal_Task+0x364>)
  8005f32:	f9b6 0000 	ldrsh.w	r0, [r6]
  8005f36:	f7fa fb05 	bl	8000544 <__aeabi_i2d>
@@ -13601,242 +13601,241 @@ void fire_task_push(){
  8005f44:	e9d3 2300 	ldrd	r2, r3, [r3]
  8005f48:	f7fa fb66 	bl	8000618 <__aeabi_dmul>
  8005f4c:	f7fa fe3c 	bl	8000bc8 <__aeabi_d2f>
- 8005f50:	f7fa fb0a 	bl	8000568 <__aeabi_f2d>
- 8005f54:	4b93      	ldr	r3, [pc, #588]	; (80061a4 <Gimbal_Task+0x36c>)
- 8005f56:	2200      	movs	r2, #0
- 8005f58:	f7fa f9a8 	bl	80002ac <__adddf3>
- 8005f5c:	f7fa fe0c 	bl	8000b78 <__aeabi_d2iz>
- 8005f60:	b200      	sxth	r0, r0
+ 8005f50:	eddf 7a94 	vldr	s15, [pc, #592]	; 80061a4 <Gimbal_Task+0x36c>
+ 8005f54:	ee07 0a10 	vmov	s14, r0
+ 8005f58:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 8005f5c:	eefd 7ae7 	vcvt.s32.f32	s15, s15
+ 8005f60:	ee17 3a90 	vmov	r3, s15
+ 8005f64:	b21b      	sxth	r3, r3
 	if(yaw_now>360){yaw_now=yaw_now-360;}
- 8005f62:	f5b0 7fb4 	cmp.w	r0, #360	; 0x168
- 8005f66:	bfc9      	itett	gt
- 8005f68:	f5a0 70b4 	subgt.w	r0, r0, #360	; 0x168
-	yaw_now=((float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0))+60.0;
- 8005f6c:	4b8e      	ldrle	r3, [pc, #568]	; (80061a8 <Gimbal_Task+0x370>)
+ 8005f66:	f5b3 7fb4 	cmp.w	r3, #360	; 0x168
+ 8005f6a:	bfc9      	itett	gt
+ 8005f6c:	f5a3 73b4 	subgt.w	r3, r3, #360	; 0x168
+	yaw_now=((float)((gimbalYawFdb.angle-4096.0)/8191.0*360.0))+yaw_offset;
+ 8005f70:	4a8d      	ldrle	r2, [pc, #564]	; (80061a8 <Gimbal_Task+0x370>)
 	if(yaw_now>360){yaw_now=yaw_now-360;}
- 8005f6e:	4b8e      	ldrgt	r3, [pc, #568]	; (80061a8 <Gimbal_Task+0x370>)
- 8005f70:	b200      	sxthgt	r0, r0
- 8005f72:	8018      	strh	r0, [r3, #0]
+ 8005f72:	4a8d      	ldrgt	r2, [pc, #564]	; (80061a8 <Gimbal_Task+0x370>)
+ 8005f74:	b21b      	sxthgt	r3, r3
+ 8005f76:	8013      	strh	r3, [r2, #0]
 	if((target_yaw-yaw_now)>50){u[0]=30000;}
- 8005f74:	eba8 0000 	sub.w	r0, r8, r0
- 8005f78:	2832      	cmp	r0, #50	; 0x32
- 8005f7a:	dc2b      	bgt.n	8005fd4 <Gimbal_Task+0x19c>
+ 8005f78:	eba8 0303 	sub.w	r3, r8, r3
+ 8005f7c:	2b32      	cmp	r3, #50	; 0x32
+ 8005f7e:	dc2b      	bgt.n	8005fd8 <Gimbal_Task+0x1a0>
 	else if((target_yaw-yaw_now)<-50){u[0]=-30000;}
- 8005f7c:	f110 0f32 	cmn.w	r0, #50	; 0x32
- 8005f80:	f2c0 8138 	blt.w	80061f4 <Gimbal_Task+0x3bc>
+ 8005f80:	f113 0f32 	cmn.w	r3, #50	; 0x32
+ 8005f84:	f2c0 8138 	blt.w	80061f8 <Gimbal_Task+0x3c0>
 	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
- 8005f84:	f64e 2360 	movw	r3, #60000	; 0xea60
  8005f88:	4a88      	ldr	r2, [pc, #544]	; (80061ac <Gimbal_Task+0x374>)
- 8005f8a:	3032      	adds	r0, #50	; 0x32
- 8005f8c:	fb03 f000 	mul.w	r0, r3, r0
- 8005f90:	fba2 3000 	umull	r3, r0, r2, r0
- 8005f94:	0940      	lsrs	r0, r0, #5
+ 8005f8a:	f64e 2060 	movw	r0, #60000	; 0xea60
+ 8005f8e:	3332      	adds	r3, #50	; 0x32
+ 8005f90:	fb00 f303 	mul.w	r3, r0, r3
+ 8005f94:	fba2 3003 	umull	r3, r0, r2, r3
+ 8005f98:	0940      	lsrs	r0, r0, #5
 		u[0]=map(target_yaw-yaw_now, -50, 50, -30000, 30000)-(gimbalYawFdb.rpm*60.0);
- 8005f96:	f5a0 40ea 	sub.w	r0, r0, #29952	; 0x7500
- 8005f9a:	3830      	subs	r0, #48	; 0x30
- 8005f9c:	f7fa fad2 	bl	8000544 <__aeabi_i2d>
- 8005fa0:	4680      	mov	r8, r0
- 8005fa2:	f9b6 0002 	ldrsh.w	r0, [r6, #2]
- 8005fa6:	4689      	mov	r9, r1
- 8005fa8:	f7fa facc 	bl	8000544 <__aeabi_i2d>
- 8005fac:	2200      	movs	r2, #0
- 8005fae:	4b7d      	ldr	r3, [pc, #500]	; (80061a4 <Gimbal_Task+0x36c>)
- 8005fb0:	f7fa fb32 	bl	8000618 <__aeabi_dmul>
- 8005fb4:	460b      	mov	r3, r1
- 8005fb6:	4602      	mov	r2, r0
- 8005fb8:	4649      	mov	r1, r9
- 8005fba:	4640      	mov	r0, r8
- 8005fbc:	f7fa f974 	bl	80002a8 <__aeabi_dsub>
- 8005fc0:	f7fa fdda 	bl	8000b78 <__aeabi_d2iz>
+ 8005f9a:	f5a0 40ea 	sub.w	r0, r0, #29952	; 0x7500
+ 8005f9e:	3830      	subs	r0, #48	; 0x30
+ 8005fa0:	f7fa fad0 	bl	8000544 <__aeabi_i2d>
+ 8005fa4:	4680      	mov	r8, r0
+ 8005fa6:	f9b6 0002 	ldrsh.w	r0, [r6, #2]
+ 8005faa:	4689      	mov	r9, r1
+ 8005fac:	f7fa faca 	bl	8000544 <__aeabi_i2d>
+ 8005fb0:	2200      	movs	r2, #0
+ 8005fb2:	4b7f      	ldr	r3, [pc, #508]	; (80061b0 <Gimbal_Task+0x378>)
+ 8005fb4:	f7fa fb30 	bl	8000618 <__aeabi_dmul>
+ 8005fb8:	460b      	mov	r3, r1
+ 8005fba:	4602      	mov	r2, r0
+ 8005fbc:	4649      	mov	r1, r9
+ 8005fbe:	4640      	mov	r0, r8
+ 8005fc0:	f7fa f972 	bl	80002a8 <__aeabi_dsub>
+ 8005fc4:	f7fa fdd8 	bl	8000b78 <__aeabi_d2iz>
 		if(u[0]>30000){u[0]=30000;}
- 8005fc4:	f247 5330 	movw	r3, #30000	; 0x7530
+ 8005fc8:	f247 5330 	movw	r3, #30000	; 0x7530
 		u[0]=map(target_yaw-yaw_now, -50, 50, -30000, 30000)-(gimbalYawFdb.rpm*60.0);
- 8005fc8:	b200      	sxth	r0, r0
+ 8005fcc:	b200      	sxth	r0, r0
 		if(u[0]>30000){u[0]=30000;}
- 8005fca:	4298      	cmp	r0, r3
+ 8005fce:	4298      	cmp	r0, r3
 		u[0]=map(target_yaw-yaw_now, -50, 50, -30000, 30000)-(gimbalYawFdb.rpm*60.0);
- 8005fcc:	f8ad 0000 	strh.w	r0, [sp]
+ 8005fd0:	f8ad 0000 	strh.w	r0, [sp]
 		if(u[0]>30000){u[0]=30000;}
- 8005fd0:	f340 810c 	ble.w	80061ec <Gimbal_Task+0x3b4>
+ 8005fd4:	f340 810c 	ble.w	80061f0 <Gimbal_Task+0x3b8>
 	if((target_yaw-yaw_now)>50){u[0]=30000;}
- 8005fd4:	f247 5330 	movw	r3, #30000	; 0x7530
- 8005fd8:	f8ad 3000 	strh.w	r3, [sp]
- 8005fdc:	4b74      	ldr	r3, [pc, #464]	; (80061b0 <Gimbal_Task+0x378>)
+ 8005fd8:	f247 5330 	movw	r3, #30000	; 0x7530
+ 8005fdc:	f8ad 3000 	strh.w	r3, [sp]
+ 8005fe0:	4b74      	ldr	r3, [pc, #464]	; (80061b4 <Gimbal_Task+0x37c>)
 	if(rc.sw2==2|| rc.key_E==1){target_pich=0;}
- 8005fde:	2d02      	cmp	r5, #2
- 8005fe0:	ed93 8a00 	vldr	s16, [r3]
- 8005fe4:	f000 80bc 	beq.w	8006160 <Gimbal_Task+0x328>
- 8005fe8:	f994 301d 	ldrsb.w	r3, [r4, #29]
- 8005fec:	2b01      	cmp	r3, #1
- 8005fee:	f000 80b7 	beq.w	8006160 <Gimbal_Task+0x328>
+ 8005fe2:	2d02      	cmp	r5, #2
+ 8005fe4:	ed93 8a00 	vldr	s16, [r3]
+ 8005fe8:	f000 80bc 	beq.w	8006164 <Gimbal_Task+0x32c>
+ 8005fec:	f994 301d 	ldrsb.w	r3, [r4, #29]
+ 8005ff0:	2b01      	cmp	r3, #1
+ 8005ff2:	f000 80b7 	beq.w	8006164 <Gimbal_Task+0x32c>
 		if(rc.key_S==1  ||  rc.ch1==660){
- 8005ff2:	f994 301a 	ldrsb.w	r3, [r4, #26]
- 8005ff6:	2b01      	cmp	r3, #1
- 8005ff8:	f000 8097 	beq.w	800612a <Gimbal_Task+0x2f2>
- 8005ffc:	f9b4 3000 	ldrsh.w	r3, [r4]
- 8006000:	f5b3 7f25 	cmp.w	r3, #660	; 0x294
- 8006004:	f000 8091 	beq.w	800612a <Gimbal_Task+0x2f2>
+ 8005ff6:	f994 301a 	ldrsb.w	r3, [r4, #26]
+ 8005ffa:	2b01      	cmp	r3, #1
+ 8005ffc:	f000 8097 	beq.w	800612e <Gimbal_Task+0x2f6>
+ 8006000:	f9b4 3000 	ldrsh.w	r3, [r4]
+ 8006004:	f5b3 7f25 	cmp.w	r3, #660	; 0x294
+ 8006008:	f000 8091 	beq.w	800612e <Gimbal_Task+0x2f6>
 			target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
- 8006008:	4b6a      	ldr	r3, [pc, #424]	; (80061b4 <Gimbal_Task+0x37c>)
- 800600a:	ed9f 7a6b 	vldr	s14, [pc, #428]	; 80061b8 <Gimbal_Task+0x380>
- 800600e:	edd3 7a00 	vldr	s15, [r3]
+ 800600c:	4b6a      	ldr	r3, [pc, #424]	; (80061b8 <Gimbal_Task+0x380>)
+ 800600e:	ed9f 7a6b 	vldr	s14, [pc, #428]	; 80061bc <Gimbal_Task+0x384>
+ 8006012:	edd3 7a00 	vldr	s15, [r3]
 			delay_auto=0;
- 8006012:	4b6a      	ldr	r3, [pc, #424]	; (80061bc <Gimbal_Task+0x384>)
+ 8006016:	4b6a      	ldr	r3, [pc, #424]	; (80061c0 <Gimbal_Task+0x388>)
 			target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
- 8006014:	f8df 81c0 	ldr.w	r8, [pc, #448]	; 80061d8 <Gimbal_Task+0x3a0>
- 8006018:	eef8 7ae7 	vcvt.f32.s32	s15, s15
- 800601c:	eef0 6a48 	vmov.f32	s13, s16
- 8006020:	eed7 6a87 	vfnms.f32	s13, s15, s14
+ 8006018:	f8df 81c0 	ldr.w	r8, [pc, #448]	; 80061dc <Gimbal_Task+0x3a4>
+ 800601c:	eef8 7ae7 	vcvt.f32.s32	s15, s15
+ 8006020:	eef0 6a48 	vmov.f32	s13, s16
+ 8006024:	eed7 6a87 	vfnms.f32	s13, s15, s14
 			delay_auto=0;
- 8006024:	2200      	movs	r2, #0
- 8006026:	801a      	strh	r2, [r3, #0]
+ 8006028:	2200      	movs	r2, #0
+ 800602a:	801a      	strh	r2, [r3, #0]
 			target_pich=((float)PC_mouse_y / pich_magnification)-IMU_pich;
- 8006028:	eefd 7ae6 	vcvt.s32.f32	s15, s13
- 800602c:	ee17 3a90 	vmov	r3, s15
- 8006030:	b21b      	sxth	r3, r3
- 8006032:	f8a8 3000 	strh.w	r3, [r8]
+ 800602c:	eefd 7ae6 	vcvt.s32.f32	s15, s13
+ 8006030:	ee17 3a90 	vmov	r3, s15
+ 8006034:	b21b      	sxth	r3, r3
+ 8006036:	f8a8 3000 	strh.w	r3, [r8]
 		if(target_pich>=19){target_pich=19;}
- 8006036:	2b12      	cmp	r3, #18
- 8006038:	f340 808b 	ble.w	8006152 <Gimbal_Task+0x31a>
- 800603c:	2313      	movs	r3, #19
- 800603e:	f8a8 3000 	strh.w	r3, [r8]
+ 800603a:	2b12      	cmp	r3, #18
+ 800603c:	f340 808b 	ble.w	8006156 <Gimbal_Task+0x31e>
+ 8006040:	2313      	movs	r3, #19
+ 8006042:	f8a8 3000 	strh.w	r3, [r8]
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0);
- 8006042:	4d5f      	ldr	r5, [pc, #380]	; (80061c0 <Gimbal_Task+0x388>)
- 8006044:	4e5f      	ldr	r6, [pc, #380]	; (80061c4 <Gimbal_Task+0x38c>)
- 8006046:	f9b5 0000 	ldrsh.w	r0, [r5]
- 800604a:	f7fa fa7b 	bl	8000544 <__aeabi_i2d>
- 800604e:	2200      	movs	r2, #0
- 8006050:	4b53      	ldr	r3, [pc, #332]	; (80061a0 <Gimbal_Task+0x368>)
- 8006052:	f7fa f929 	bl	80002a8 <__aeabi_dsub>
- 8006056:	a346      	add	r3, pc, #280	; (adr r3, 8006170 <Gimbal_Task+0x338>)
- 8006058:	e9d3 2300 	ldrd	r2, r3, [r3]
- 800605c:	f7fa fadc 	bl	8000618 <__aeabi_dmul>
- 8006060:	f7fa fdb2 	bl	8000bc8 <__aeabi_d2f>
- 8006064:	ee07 0a90 	vmov	s15, r0
- 8006068:	eefd 7ae7 	vcvt.s32.f32	s15, s15
+ 8006046:	4d5f      	ldr	r5, [pc, #380]	; (80061c4 <Gimbal_Task+0x38c>)
+ 8006048:	4e5f      	ldr	r6, [pc, #380]	; (80061c8 <Gimbal_Task+0x390>)
+ 800604a:	f9b5 0000 	ldrsh.w	r0, [r5]
+ 800604e:	f7fa fa79 	bl	8000544 <__aeabi_i2d>
+ 8006052:	2200      	movs	r2, #0
+ 8006054:	4b52      	ldr	r3, [pc, #328]	; (80061a0 <Gimbal_Task+0x368>)
+ 8006056:	f7fa f927 	bl	80002a8 <__aeabi_dsub>
+ 800605a:	a345      	add	r3, pc, #276	; (adr r3, 8006170 <Gimbal_Task+0x338>)
+ 800605c:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8006060:	f7fa fada 	bl	8000618 <__aeabi_dmul>
+ 8006064:	f7fa fdb0 	bl	8000bc8 <__aeabi_d2f>
+ 8006068:	ee07 0a90 	vmov	s15, r0
+ 800606c:	eefd 7ae7 	vcvt.s32.f32	s15, s15
 	if((pich_now+IMU_pich)>-4){HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);}
- 800606c:	eeb9 7a00 	vmov.f32	s14, #144	; 0xc0800000 -4.0
+ 8006070:	eeb9 7a00 	vmov.f32	s14, #144	; 0xc0800000 -4.0
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0);
- 8006070:	ee17 3a90 	vmov	r3, s15
- 8006074:	b21b      	sxth	r3, r3
+ 8006074:	ee17 3a90 	vmov	r3, s15
+ 8006078:	b21b      	sxth	r3, r3
 	if((pich_now+IMU_pich)>-4){HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);}
- 8006076:	ee07 3a90 	vmov	s15, r3
- 800607a:	eef8 7ae7 	vcvt.f32.s32	s15, s15
+ 800607a:	ee07 3a90 	vmov	s15, r3
+ 800607e:	eef8 7ae7 	vcvt.f32.s32	s15, s15
 	else{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);}
- 800607e:	f44f 5180 	mov.w	r1, #4096	; 0x1000
+ 8006082:	f44f 5180 	mov.w	r1, #4096	; 0x1000
 	if((pich_now+IMU_pich)>-4){HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);}
- 8006082:	ee77 7a88 	vadd.f32	s15, s15, s16
+ 8006086:	ee77 7a88 	vadd.f32	s15, s15, s16
 	else{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);}
- 8006086:	4850      	ldr	r0, [pc, #320]	; (80061c8 <Gimbal_Task+0x390>)
+ 800608a:	4850      	ldr	r0, [pc, #320]	; (80061cc <Gimbal_Task+0x394>)
 	pich_now=(float)((gimbalPitchFdb.angle-4096.0)/8191.0*360.0);
- 8006088:	8033      	strh	r3, [r6, #0]
+ 800608c:	8033      	strh	r3, [r6, #0]
 	if((pich_now+IMU_pich)>-4){HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);}
- 800608a:	eef4 7ac7 	vcmpe.f32	s15, s14
- 800608e:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8006092:	bfcc      	ite	gt
- 8006094:	2201      	movgt	r2, #1
+ 800608e:	eef4 7ac7 	vcmpe.f32	s15, s14
+ 8006092:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8006096:	bfcc      	ite	gt
+ 8006098:	2201      	movgt	r2, #1
 	else{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);}
- 8006096:	2200      	movle	r2, #0
- 8006098:	f7fb fe42 	bl	8001d20 <HAL_GPIO_WritePin>
+ 800609a:	2200      	movle	r2, #0
+ 800609c:	f7fb fe40 	bl	8001d20 <HAL_GPIO_WritePin>
 	if((target_pich-pich_now)>19){u[1]=30000;}
- 800609c:	f9b8 3000 	ldrsh.w	r3, [r8]
- 80060a0:	f9b6 2000 	ldrsh.w	r2, [r6]
- 80060a4:	1a9b      	subs	r3, r3, r2
- 80060a6:	2b13      	cmp	r3, #19
- 80060a8:	dc2b      	bgt.n	8006102 <Gimbal_Task+0x2ca>
+ 80060a0:	f9b8 3000 	ldrsh.w	r3, [r8]
+ 80060a4:	f9b6 2000 	ldrsh.w	r2, [r6]
+ 80060a8:	1a9b      	subs	r3, r3, r2
+ 80060aa:	2b13      	cmp	r3, #19
+ 80060ac:	dc2b      	bgt.n	8006106 <Gimbal_Task+0x2ce>
 	else if((target_pich-pich_now)<-19){u[1]=-30000;}
- 80060aa:	f113 0f13 	cmn.w	r3, #19
- 80060ae:	f2c0 8098 	blt.w	80061e2 <Gimbal_Task+0x3aa>
+ 80060ae:	f113 0f13 	cmn.w	r3, #19
+ 80060b2:	f2c0 8098 	blt.w	80061e6 <Gimbal_Task+0x3ae>
 	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
- 80060b2:	f64e 2060 	movw	r0, #60000	; 0xea60
- 80060b6:	3313      	adds	r3, #19
- 80060b8:	fb00 f303 	mul.w	r3, r0, r3
- 80060bc:	4a43      	ldr	r2, [pc, #268]	; (80061cc <Gimbal_Task+0x394>)
- 80060be:	0858      	lsrs	r0, r3, #1
- 80060c0:	fba2 3000 	umull	r3, r0, r2, r0
- 80060c4:	08c0      	lsrs	r0, r0, #3
+ 80060b6:	f64e 2060 	movw	r0, #60000	; 0xea60
+ 80060ba:	3313      	adds	r3, #19
+ 80060bc:	fb00 f303 	mul.w	r3, r0, r3
+ 80060c0:	4a43      	ldr	r2, [pc, #268]	; (80061d0 <Gimbal_Task+0x398>)
+ 80060c2:	0858      	lsrs	r0, r3, #1
+ 80060c4:	fba2 3000 	umull	r3, r0, r2, r0
+ 80060c8:	08c0      	lsrs	r0, r0, #3
 		u[1]=map(target_pich-pich_now, -19, 19, -30000, 30000)-(gimbalPitchFdb.rpm*60.0);//param is not yet
- 80060c6:	f5a0 40ea 	sub.w	r0, r0, #29952	; 0x7500
- 80060ca:	3830      	subs	r0, #48	; 0x30
- 80060cc:	f7fa fa3a 	bl	8000544 <__aeabi_i2d>
- 80060d0:	4680      	mov	r8, r0
- 80060d2:	f9b5 0002 	ldrsh.w	r0, [r5, #2]
- 80060d6:	4689      	mov	r9, r1
- 80060d8:	f7fa fa34 	bl	8000544 <__aeabi_i2d>
- 80060dc:	2200      	movs	r2, #0
- 80060de:	4b31      	ldr	r3, [pc, #196]	; (80061a4 <Gimbal_Task+0x36c>)
- 80060e0:	f7fa fa9a 	bl	8000618 <__aeabi_dmul>
- 80060e4:	460b      	mov	r3, r1
- 80060e6:	4602      	mov	r2, r0
- 80060e8:	4649      	mov	r1, r9
- 80060ea:	4640      	mov	r0, r8
- 80060ec:	f7fa f8dc 	bl	80002a8 <__aeabi_dsub>
- 80060f0:	f7fa fd42 	bl	8000b78 <__aeabi_d2iz>
+ 80060ca:	f5a0 40ea 	sub.w	r0, r0, #29952	; 0x7500
+ 80060ce:	3830      	subs	r0, #48	; 0x30
+ 80060d0:	f7fa fa38 	bl	8000544 <__aeabi_i2d>
+ 80060d4:	4680      	mov	r8, r0
+ 80060d6:	f9b5 0002 	ldrsh.w	r0, [r5, #2]
+ 80060da:	4689      	mov	r9, r1
+ 80060dc:	f7fa fa32 	bl	8000544 <__aeabi_i2d>
+ 80060e0:	2200      	movs	r2, #0
+ 80060e2:	4b33      	ldr	r3, [pc, #204]	; (80061b0 <Gimbal_Task+0x378>)
+ 80060e4:	f7fa fa98 	bl	8000618 <__aeabi_dmul>
+ 80060e8:	460b      	mov	r3, r1
+ 80060ea:	4602      	mov	r2, r0
+ 80060ec:	4649      	mov	r1, r9
+ 80060ee:	4640      	mov	r0, r8
+ 80060f0:	f7fa f8da 	bl	80002a8 <__aeabi_dsub>
+ 80060f4:	f7fa fd40 	bl	8000b78 <__aeabi_d2iz>
 		if(u[1]>30000){u[1]=30000;}
- 80060f4:	f247 5330 	movw	r3, #30000	; 0x7530
+ 80060f8:	f247 5330 	movw	r3, #30000	; 0x7530
 		u[1]=map(target_pich-pich_now, -19, 19, -30000, 30000)-(gimbalPitchFdb.rpm*60.0);//param is not yet
- 80060f8:	b200      	sxth	r0, r0
+ 80060fc:	b200      	sxth	r0, r0
 		if(u[1]>30000){u[1]=30000;}
- 80060fa:	4298      	cmp	r0, r3
+ 80060fe:	4298      	cmp	r0, r3
 		u[1]=map(target_pich-pich_now, -19, 19, -30000, 30000)-(gimbalPitchFdb.rpm*60.0);//param is not yet
- 80060fc:	f8ad 0002 	strh.w	r0, [sp, #2]
+ 8006100:	f8ad 0002 	strh.w	r0, [sp, #2]
 		if(u[1]>30000){u[1]=30000;}
- 8006100:	dd6c      	ble.n	80061dc <Gimbal_Task+0x3a4>
+ 8006104:	dd6c      	ble.n	80061e0 <Gimbal_Task+0x3a8>
 	if((target_pich-pich_now)>19){u[1]=30000;}
- 8006102:	f247 5330 	movw	r3, #30000	; 0x7530
- 8006106:	f8ad 3002 	strh.w	r3, [sp, #2]
+ 8006106:	f247 5330 	movw	r3, #30000	; 0x7530
+ 800610a:	f8ad 3002 	strh.w	r3, [sp, #2]
 	u[3]=0;
- 800610a:	2300      	movs	r3, #0
+ 800610e:	2300      	movs	r3, #0
 	driveGimbalMotors(u);
- 800610c:	4668      	mov	r0, sp
+ 8006110:	4668      	mov	r0, sp
 	u[3]=0;
- 800610e:	f8ad 3006 	strh.w	r3, [sp, #6]
+ 8006112:	f8ad 3006 	strh.w	r3, [sp, #6]
 	driveGimbalMotors(u);
- 8006112:	f000 fc13 	bl	800693c <driveGimbalMotors>
+ 8006116:	f000 fc11 	bl	800693c <driveGimbalMotors>
 	rc_SW1_temp=rc.sw2;
- 8006116:	7ae2      	ldrb	r2, [r4, #11]
+ 800611a:	7ae2      	ldrb	r2, [r4, #11]
 	rc_W_temp=rc.key_W;
- 8006118:	7e23      	ldrb	r3, [r4, #24]
+ 800611c:	7e23      	ldrb	r3, [r4, #24]
 	rc_SW1_temp=rc.sw2;
- 800611a:	703a      	strb	r2, [r7, #0]
+ 800611e:	f88a 2000 	strb.w	r2, [sl]
 	rc_W_temp=rc.key_W;
- 800611c:	f88a 3000 	strb.w	r3, [sl]
+ 8006122:	703b      	strb	r3, [r7, #0]
 }
- 8006120:	b002      	add	sp, #8
- 8006122:	ecbd 8b02 	vpop	{d8}
- 8006126:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+ 8006124:	b002      	add	sp, #8
+ 8006126:	ecbd 8b02 	vpop	{d8}
+ 800612a:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
 			if(cnt_tartget>0){
- 800612a:	4b29      	ldr	r3, [pc, #164]	; (80061d0 <Gimbal_Task+0x398>)
- 800612c:	f8df 80a8 	ldr.w	r8, [pc, #168]	; 80061d8 <Gimbal_Task+0x3a0>
- 8006130:	681a      	ldr	r2, [r3, #0]
- 8006132:	f9b8 3000 	ldrsh.w	r3, [r8]
- 8006136:	2a00      	cmp	r2, #0
- 8006138:	f77f af7d 	ble.w	8006036 <Gimbal_Task+0x1fe>
+ 800612e:	4b29      	ldr	r3, [pc, #164]	; (80061d4 <Gimbal_Task+0x39c>)
+ 8006130:	f8df 80a8 	ldr.w	r8, [pc, #168]	; 80061dc <Gimbal_Task+0x3a4>
+ 8006134:	681a      	ldr	r2, [r3, #0]
+ 8006136:	f9b8 3000 	ldrsh.w	r3, [r8]
+ 800613a:	2a00      	cmp	r2, #0
+ 800613c:	f77f af7d 	ble.w	800603a <Gimbal_Task+0x202>
 				if(delay_auto>25){
- 800613c:	491f      	ldr	r1, [pc, #124]	; (80061bc <Gimbal_Task+0x384>)
- 800613e:	880a      	ldrh	r2, [r1, #0]
- 8006140:	2a19      	cmp	r2, #25
- 8006142:	f200 80fe 	bhi.w	8006342 <Gimbal_Task+0x50a>
- 8006146:	3201      	adds	r2, #1
- 8006148:	b292      	uxth	r2, r2
+ 8006140:	491f      	ldr	r1, [pc, #124]	; (80061c0 <Gimbal_Task+0x388>)
+ 8006142:	880a      	ldrh	r2, [r1, #0]
+ 8006144:	2a19      	cmp	r2, #25
+ 8006146:	f200 80fc 	bhi.w	8006342 <Gimbal_Task+0x50a>
+ 800614a:	3201      	adds	r2, #1
+ 800614c:	b292      	uxth	r2, r2
 		if(target_pich>=19){target_pich=19;}
- 800614a:	2b12      	cmp	r3, #18
+ 800614e:	2b12      	cmp	r3, #18
 				delay_auto++;
- 800614c:	800a      	strh	r2, [r1, #0]
+ 8006150:	800a      	strh	r2, [r1, #0]
 		if(target_pich>=19){target_pich=19;}
- 800614e:	f73f af75 	bgt.w	800603c <Gimbal_Task+0x204>
+ 8006152:	f73f af75 	bgt.w	8006040 <Gimbal_Task+0x208>
 		if(target_pich<-22){target_pich=-22;}
- 8006152:	3316      	adds	r3, #22
- 8006154:	bfbc      	itt	lt
- 8006156:	f64f 73ea 	movwlt	r3, #65514	; 0xffea
- 800615a:	f8a8 3000 	strhlt.w	r3, [r8]
- 800615e:	e770      	b.n	8006042 <Gimbal_Task+0x20a>
+ 8006156:	3316      	adds	r3, #22
+ 8006158:	bfbc      	itt	lt
+ 800615a:	f64f 73ea 	movwlt	r3, #65514	; 0xffea
+ 800615e:	f8a8 3000 	strhlt.w	r3, [r8]
+ 8006162:	e770      	b.n	8006046 <Gimbal_Task+0x20e>
 	if(rc.sw2==2|| rc.key_E==1){target_pich=0;}
- 8006160:	f8df 8074 	ldr.w	r8, [pc, #116]	; 80061d8 <Gimbal_Task+0x3a0>
- 8006164:	2300      	movs	r3, #0
- 8006166:	f8a8 3000 	strh.w	r3, [r8]
- 800616a:	e76a      	b.n	8006042 <Gimbal_Task+0x20a>
- 800616c:	f3af 8000 	nop.w
+ 8006164:	f8df 8074 	ldr.w	r8, [pc, #116]	; 80061dc <Gimbal_Task+0x3a4>
+ 8006168:	2300      	movs	r3, #0
+ 800616a:	f8a8 3000 	strh.w	r3, [r8]
+ 800616e:	e76a      	b.n	8006046 <Gimbal_Task+0x20e>
  8006170:	05a02d01 	.word	0x05a02d01
  8006174:	3fa680b4 	.word	0x3fa680b4
  8006178:	20000374 	.word	0x20000374
@@ -13844,176 +13843,177 @@ void fire_task_push(){
  8006180:	200003f4 	.word	0x200003f4
  8006184:	3d4ccccd 	.word	0x3d4ccccd
  8006188:	200005f0 	.word	0x200005f0
- 800618c:	200003a4 	.word	0x200003a4
+ 800618c:	20000684 	.word	0x20000684
  8006190:	200005c4 	.word	0x200005c4
  8006194:	200007c8 	.word	0x200007c8
  8006198:	200002a8 	.word	0x200002a8
  800619c:	20000398 	.word	0x20000398
  80061a0:	40b00000 	.word	0x40b00000
- 80061a4:	404e0000 	.word	0x404e0000
+ 80061a4:	42700000 	.word	0x42700000
  80061a8:	20000606 	.word	0x20000606
  80061ac:	51eb851f 	.word	0x51eb851f
- 80061b0:	200005dc 	.word	0x200005dc
- 80061b4:	2000048c 	.word	0x2000048c
- 80061b8:	3ca3d70a 	.word	0x3ca3d70a
- 80061bc:	20000662 	.word	0x20000662
- 80061c0:	200005e4 	.word	0x200005e4
- 80061c4:	20000686 	.word	0x20000686
- 80061c8:	40020c00 	.word	0x40020c00
- 80061cc:	6bca1af3 	.word	0x6bca1af3
- 80061d0:	200003bc 	.word	0x200003bc
- 80061d4:	20000684 	.word	0x20000684
- 80061d8:	200003fc 	.word	0x200003fc
+ 80061b0:	404e0000 	.word	0x404e0000
+ 80061b4:	200005dc 	.word	0x200005dc
+ 80061b8:	2000048c 	.word	0x2000048c
+ 80061bc:	3ca3d70a 	.word	0x3ca3d70a
+ 80061c0:	20000662 	.word	0x20000662
+ 80061c4:	200005e4 	.word	0x200005e4
+ 80061c8:	20000686 	.word	0x20000686
+ 80061cc:	40020c00 	.word	0x40020c00
+ 80061d0:	6bca1af3 	.word	0x6bca1af3
+ 80061d4:	200003bc 	.word	0x200003bc
+ 80061d8:	200003a4 	.word	0x200003a4
+ 80061dc:	200003fc 	.word	0x200003fc
 		if(u[1]<-30000){u[1]=-30000;}
- 80061dc:	4b6e      	ldr	r3, [pc, #440]	; (8006398 <Gimbal_Task+0x560>)
- 80061de:	4298      	cmp	r0, r3
- 80061e0:	da93      	bge.n	800610a <Gimbal_Task+0x2d2>
+ 80061e0:	4b6d      	ldr	r3, [pc, #436]	; (8006398 <Gimbal_Task+0x560>)
+ 80061e2:	4298      	cmp	r0, r3
+ 80061e4:	da93      	bge.n	800610e <Gimbal_Task+0x2d6>
 	else if((target_pich-pich_now)<-19){u[1]=-30000;}
- 80061e2:	f648 23d0 	movw	r3, #35536	; 0x8ad0
- 80061e6:	f8ad 3002 	strh.w	r3, [sp, #2]
- 80061ea:	e78e      	b.n	800610a <Gimbal_Task+0x2d2>
+ 80061e6:	f648 23d0 	movw	r3, #35536	; 0x8ad0
+ 80061ea:	f8ad 3002 	strh.w	r3, [sp, #2]
+ 80061ee:	e78e      	b.n	800610e <Gimbal_Task+0x2d6>
 		if(u[0]<-30000){u[0]=-30000;}
- 80061ec:	4b6a      	ldr	r3, [pc, #424]	; (8006398 <Gimbal_Task+0x560>)
- 80061ee:	4298      	cmp	r0, r3
- 80061f0:	f6bf aef4 	bge.w	8005fdc <Gimbal_Task+0x1a4>
+ 80061f0:	4b69      	ldr	r3, [pc, #420]	; (8006398 <Gimbal_Task+0x560>)
+ 80061f2:	4298      	cmp	r0, r3
+ 80061f4:	f6bf aef4 	bge.w	8005fe0 <Gimbal_Task+0x1a8>
 	else if((target_yaw-yaw_now)<-50){u[0]=-30000;}
- 80061f4:	f648 23d0 	movw	r3, #35536	; 0x8ad0
- 80061f8:	f8ad 3000 	strh.w	r3, [sp]
- 80061fc:	e6ee      	b.n	8005fdc <Gimbal_Task+0x1a4>
- 80061fe:	f8df a1dc 	ldr.w	sl, [pc, #476]	; 80063dc <Gimbal_Task+0x5a4>
-			if(rc_SW1_temp==3 && rc.sw2==1){IMU_yaw_set=imu_attitude.yaw;}
+ 80061f8:	f648 23d0 	movw	r3, #35536	; 0x8ad0
+ 80061fc:	f8ad 3000 	strh.w	r3, [sp]
+ 8006200:	e6ee      	b.n	8005fe0 <Gimbal_Task+0x1a8>
  8006202:	4f66      	ldr	r7, [pc, #408]	; (800639c <Gimbal_Task+0x564>)
- 8006204:	f89a 2000 	ldrb.w	r2, [sl]
-			if(rc_W_temp==0 &&  rc.key_W==1){IMU_yaw_set=imu_attitude.yaw;}
- 8006208:	2a00      	cmp	r2, #0
- 800620a:	d03b      	beq.n	8006284 <Gimbal_Task+0x44c>
-			if(rc.key_S==1 ||  rc.ch1==660){
- 800620c:	2b01      	cmp	r3, #1
- 800620e:	d03e      	beq.n	800628e <Gimbal_Task+0x456>
- 8006210:	f9b4 3000 	ldrsh.w	r3, [r4]
- 8006214:	f5b3 7f25 	cmp.w	r3, #660	; 0x294
- 8006218:	d039      	beq.n	800628e <Gimbal_Task+0x456>
-				target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
- 800621a:	4b61      	ldr	r3, [pc, #388]	; (80063a0 <Gimbal_Task+0x568>)
- 800621c:	4a61      	ldr	r2, [pc, #388]	; (80063a4 <Gimbal_Task+0x56c>)
- 800621e:	881b      	ldrh	r3, [r3, #0]
- 8006220:	ed92 7a00 	vldr	s14, [r2]
- 8006224:	ed9f 6a60 	vldr	s12, [pc, #384]	; 80063a8 <Gimbal_Task+0x570>
- 8006228:	ee07 3a90 	vmov	s15, r3
- 800622c:	eeb8 7ac7 	vcvt.f32.s32	s14, s14
- 8006230:	eef8 7ae7 	vcvt.f32.s32	s15, s15
- 8006234:	4b5d      	ldr	r3, [pc, #372]	; (80063ac <Gimbal_Task+0x574>)
- 8006236:	eee7 7a06 	vfma.f32	s15, s14, s12
- 800623a:	edd3 6a00 	vldr	s13, [r3]
- 800623e:	4b5c      	ldr	r3, [pc, #368]	; (80063b0 <Gimbal_Task+0x578>)
- 8006240:	ee77 7ae6 	vsub.f32	s15, s15, s13
- 8006244:	eefd 7ae7 	vcvt.s32.f32	s15, s15
- 8006248:	ee17 2a90 	vmov	r2, s15
- 800624c:	b210      	sxth	r0, r2
- 800624e:	8018      	strh	r0, [r3, #0]
-		if(target_yaw>70){target_yaw=70;}
- 8006250:	2846      	cmp	r0, #70	; 0x46
- 8006252:	f77f ae34 	ble.w	8005ebe <Gimbal_Task+0x86>
- 8006256:	2046      	movs	r0, #70	; 0x46
- 8006258:	8018      	strh	r0, [r3, #0]
- 800625a:	4680      	mov	r8, r0
- 800625c:	e668      	b.n	8005f30 <Gimbal_Task+0xf8>
-		sConfigOC.Pulse = map(130,0,180,500,2500);
- 800625e:	4b55      	ldr	r3, [pc, #340]	; (80063b4 <Gimbal_Task+0x57c>)
-		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
- 8006260:	4855      	ldr	r0, [pc, #340]	; (80063b8 <Gimbal_Task+0x580>)
-		sConfigOC.Pulse = map(130,0,180,500,2500);
- 8006262:	f44f 62f3 	mov.w	r2, #1944	; 0x798
- 8006266:	e646      	b.n	8005ef6 <Gimbal_Task+0xbe>
 			if(rc_SW1_temp==3 && rc.sw2==1){IMU_yaw_set=imu_attitude.yaw;}
- 8006268:	4f4c      	ldr	r7, [pc, #304]	; (800639c <Gimbal_Task+0x564>)
- 800626a:	f8df a170 	ldr.w	sl, [pc, #368]	; 80063dc <Gimbal_Task+0x5a4>
- 800626e:	7839      	ldrb	r1, [r7, #0]
- 8006270:	f89a 2000 	ldrb.w	r2, [sl]
- 8006274:	2903      	cmp	r1, #3
- 8006276:	d079      	beq.n	800636c <Gimbal_Task+0x534>
+ 8006204:	f8df a1d4 	ldr.w	sl, [pc, #468]	; 80063dc <Gimbal_Task+0x5a4>
+ 8006208:	783a      	ldrb	r2, [r7, #0]
 			if(rc_W_temp==0 &&  rc.key_W==1){IMU_yaw_set=imu_attitude.yaw;}
- 8006278:	2a00      	cmp	r2, #0
- 800627a:	d1c7      	bne.n	800620c <Gimbal_Task+0x3d4>
- 800627c:	f994 2018 	ldrsb.w	r2, [r4, #24]
- 8006280:	2a01      	cmp	r2, #1
- 8006282:	d1c3      	bne.n	800620c <Gimbal_Task+0x3d4>
- 8006284:	494d      	ldr	r1, [pc, #308]	; (80063bc <Gimbal_Task+0x584>)
- 8006286:	4a4e      	ldr	r2, [pc, #312]	; (80063c0 <Gimbal_Task+0x588>)
- 8006288:	6889      	ldr	r1, [r1, #8]
- 800628a:	6011      	str	r1, [r2, #0]
- 800628c:	e7be      	b.n	800620c <Gimbal_Task+0x3d4>
+ 800620a:	2a00      	cmp	r2, #0
+ 800620c:	d03b      	beq.n	8006286 <Gimbal_Task+0x44e>
+			if(rc.key_S==1 ||  rc.ch1==660){
+ 800620e:	2b01      	cmp	r3, #1
+ 8006210:	d03e      	beq.n	8006290 <Gimbal_Task+0x458>
+ 8006212:	f9b4 3000 	ldrsh.w	r3, [r4]
+ 8006216:	f5b3 7f25 	cmp.w	r3, #660	; 0x294
+ 800621a:	d039      	beq.n	8006290 <Gimbal_Task+0x458>
+				target_yaw =((float)PC_mouse_x / yaw_magnification)-IMU_yaw+feed_forward_param;
+ 800621c:	4b60      	ldr	r3, [pc, #384]	; (80063a0 <Gimbal_Task+0x568>)
+ 800621e:	4a61      	ldr	r2, [pc, #388]	; (80063a4 <Gimbal_Task+0x56c>)
+ 8006220:	881b      	ldrh	r3, [r3, #0]
+ 8006222:	ed92 7a00 	vldr	s14, [r2]
+ 8006226:	ed9f 6a60 	vldr	s12, [pc, #384]	; 80063a8 <Gimbal_Task+0x570>
+ 800622a:	4a60      	ldr	r2, [pc, #384]	; (80063ac <Gimbal_Task+0x574>)
+ 800622c:	ee07 3a90 	vmov	s15, r3
+ 8006230:	eeb8 7ac7 	vcvt.f32.s32	s14, s14
+ 8006234:	eef8 7ae7 	vcvt.f32.s32	s15, s15
+ 8006238:	4b5d      	ldr	r3, [pc, #372]	; (80063b0 <Gimbal_Task+0x578>)
+ 800623a:	eee7 7a06 	vfma.f32	s15, s14, s12
+ 800623e:	edd3 6a00 	vldr	s13, [r3]
+ 8006242:	ee77 7ae6 	vsub.f32	s15, s15, s13
+ 8006246:	eefd 7ae7 	vcvt.s32.f32	s15, s15
+ 800624a:	ee17 3a90 	vmov	r3, s15
+ 800624e:	b21b      	sxth	r3, r3
+ 8006250:	8013      	strh	r3, [r2, #0]
+		if(target_yaw>70){target_yaw=70;}
+ 8006252:	2b46      	cmp	r3, #70	; 0x46
+ 8006254:	f77f ae33 	ble.w	8005ebe <Gimbal_Task+0x86>
+ 8006258:	2346      	movs	r3, #70	; 0x46
+ 800625a:	8013      	strh	r3, [r2, #0]
+ 800625c:	4698      	mov	r8, r3
+ 800625e:	e667      	b.n	8005f30 <Gimbal_Task+0xf8>
+		sConfigOC.Pulse = map(130,0,180,500,2500);
+ 8006260:	4b54      	ldr	r3, [pc, #336]	; (80063b4 <Gimbal_Task+0x57c>)
+		HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
+ 8006262:	4855      	ldr	r0, [pc, #340]	; (80063b8 <Gimbal_Task+0x580>)
+		sConfigOC.Pulse = map(130,0,180,500,2500);
+ 8006264:	f44f 62f3 	mov.w	r2, #1944	; 0x798
+ 8006268:	e645      	b.n	8005ef6 <Gimbal_Task+0xbe>
+			if(rc_SW1_temp==3 && rc.sw2==1){IMU_yaw_set=imu_attitude.yaw;}
+ 800626a:	f8df a170 	ldr.w	sl, [pc, #368]	; 80063dc <Gimbal_Task+0x5a4>
+ 800626e:	4f4b      	ldr	r7, [pc, #300]	; (800639c <Gimbal_Task+0x564>)
+ 8006270:	f89a 1000 	ldrb.w	r1, [sl]
+ 8006274:	783a      	ldrb	r2, [r7, #0]
+ 8006276:	2903      	cmp	r1, #3
+ 8006278:	d078      	beq.n	800636c <Gimbal_Task+0x534>
+			if(rc_W_temp==0 &&  rc.key_W==1){IMU_yaw_set=imu_attitude.yaw;}
+ 800627a:	2a00      	cmp	r2, #0
+ 800627c:	d1c7      	bne.n	800620e <Gimbal_Task+0x3d6>
+ 800627e:	f994 2018 	ldrsb.w	r2, [r4, #24]
+ 8006282:	2a01      	cmp	r2, #1
+ 8006284:	d1c3      	bne.n	800620e <Gimbal_Task+0x3d6>
+ 8006286:	494d      	ldr	r1, [pc, #308]	; (80063bc <Gimbal_Task+0x584>)
+ 8006288:	4a4d      	ldr	r2, [pc, #308]	; (80063c0 <Gimbal_Task+0x588>)
+ 800628a:	6889      	ldr	r1, [r1, #8]
+ 800628c:	6011      	str	r1, [r2, #0]
+ 800628e:	e7be      	b.n	800620e <Gimbal_Task+0x3d6>
 				if(delay_auto>25){
- 800628e:	4a4d      	ldr	r2, [pc, #308]	; (80063c4 <Gimbal_Task+0x58c>)
- 8006290:	4b47      	ldr	r3, [pc, #284]	; (80063b0 <Gimbal_Task+0x578>)
- 8006292:	8812      	ldrh	r2, [r2, #0]
- 8006294:	f9b3 0000 	ldrsh.w	r0, [r3]
- 8006298:	2a19      	cmp	r2, #25
- 800629a:	d9d9      	bls.n	8006250 <Gimbal_Task+0x418>
- 800629c:	4940      	ldr	r1, [pc, #256]	; (80063a0 <Gimbal_Task+0x568>)
+ 8006290:	4b4c      	ldr	r3, [pc, #304]	; (80063c4 <Gimbal_Task+0x58c>)
+ 8006292:	4a46      	ldr	r2, [pc, #280]	; (80063ac <Gimbal_Task+0x574>)
+ 8006294:	8819      	ldrh	r1, [r3, #0]
+ 8006296:	f9b2 3000 	ldrsh.w	r3, [r2]
+ 800629a:	2919      	cmp	r1, #25
+ 800629c:	d9d9      	bls.n	8006252 <Gimbal_Task+0x41a>
+ 800629e:	4840      	ldr	r0, [pc, #256]	; (80063a0 <Gimbal_Task+0x568>)
 				if(cnt_tartget>0){
- 800629e:	4a4a      	ldr	r2, [pc, #296]	; (80063c8 <Gimbal_Task+0x590>)
- 80062a0:	8809      	ldrh	r1, [r1, #0]
- 80062a2:	6812      	ldr	r2, [r2, #0]
- 80062a4:	ee07 1a10 	vmov	s14, r1
- 80062a8:	4940      	ldr	r1, [pc, #256]	; (80063ac <Gimbal_Task+0x574>)
- 80062aa:	2a00      	cmp	r2, #0
- 80062ac:	eeb8 7ac7 	vcvt.f32.s32	s14, s14
- 80062b0:	edd1 6a00 	vldr	s13, [r1]
- 80062b4:	dd5f      	ble.n	8006376 <Gimbal_Task+0x53e>
+ 80062a0:	4949      	ldr	r1, [pc, #292]	; (80063c8 <Gimbal_Task+0x590>)
+ 80062a2:	8800      	ldrh	r0, [r0, #0]
+ 80062a4:	6809      	ldr	r1, [r1, #0]
+ 80062a6:	ee07 0a10 	vmov	s14, r0
+ 80062aa:	4841      	ldr	r0, [pc, #260]	; (80063b0 <Gimbal_Task+0x578>)
+ 80062ac:	2900      	cmp	r1, #0
+ 80062ae:	eeb8 7ac7 	vcvt.f32.s32	s14, s14
+ 80062b2:	edd0 6a00 	vldr	s13, [r0]
+ 80062b6:	dd5e      	ble.n	8006376 <Gimbal_Task+0x53e>
 					target_yaw =target_yaw+map(target_X,-480,480,30,-30)-IMU_yaw+feed_forward_param;
- 80062b6:	4a45      	ldr	r2, [pc, #276]	; (80063cc <Gimbal_Task+0x594>)
+ 80062b8:	4944      	ldr	r1, [pc, #272]	; (80063cc <Gimbal_Task+0x594>)
 	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
- 80062b8:	4945      	ldr	r1, [pc, #276]	; (80063d0 <Gimbal_Task+0x598>)
- 80062ba:	6812      	ldr	r2, [r2, #0]
- 80062bc:	f502 72f0 	add.w	r2, r2, #480	; 0x1e0
- 80062c0:	eba2 1202 	sub.w	r2, r2, r2, lsl #4
- 80062c4:	0092      	lsls	r2, r2, #2
- 80062c6:	fb81 1802 	smull	r1, r8, r1, r2
- 80062ca:	eb08 0102 	add.w	r1, r8, r2
- 80062ce:	ea4f 78e2 	mov.w	r8, r2, asr #31
- 80062d2:	ebc8 2861 	rsb	r8, r8, r1, asr #9
- 80062d6:	f108 081e 	add.w	r8, r8, #30
+ 80062ba:	4845      	ldr	r0, [pc, #276]	; (80063d0 <Gimbal_Task+0x598>)
+ 80062bc:	6809      	ldr	r1, [r1, #0]
+ 80062be:	f501 71f0 	add.w	r1, r1, #480	; 0x1e0
+ 80062c2:	eba1 1101 	sub.w	r1, r1, r1, lsl #4
+ 80062c6:	0089      	lsls	r1, r1, #2
+ 80062c8:	fb80 0801 	smull	r0, r8, r0, r1
+ 80062cc:	eb08 0001 	add.w	r0, r8, r1
+ 80062d0:	ea4f 78e1 	mov.w	r8, r1, asr #31
+ 80062d4:	ebc8 2860 	rsb	r8, r8, r0, asr #9
+ 80062d8:	f108 081e 	add.w	r8, r8, #30
 					target_yaw =target_yaw+map(target_X,-480,480,30,-30)-IMU_yaw+feed_forward_param;
- 80062da:	eb08 0200 	add.w	r2, r8, r0
- 80062de:	ee07 2a90 	vmov	s15, r2
+ 80062dc:	4443      	add	r3, r8
+ 80062de:	ee07 3a90 	vmov	s15, r3
  80062e2:	ee37 7a66 	vsub.f32	s14, s14, s13
  80062e6:	eef8 7ae7 	vcvt.f32.s32	s15, s15
  80062ea:	ee77 7a87 	vadd.f32	s15, s15, s14
  80062ee:	eefd 7ae7 	vcvt.s32.f32	s15, s15
- 80062f2:	ee17 2a90 	vmov	r2, s15
- 80062f6:	b210      	sxth	r0, r2
- 80062f8:	8018      	strh	r0, [r3, #0]
- 80062fa:	e7a9      	b.n	8006250 <Gimbal_Task+0x418>
+ 80062f2:	ee17 3a90 	vmov	r3, s15
+ 80062f6:	b21b      	sxth	r3, r3
+ 80062f8:	8013      	strh	r3, [r2, #0]
+ 80062fa:	e7aa      	b.n	8006252 <Gimbal_Task+0x41a>
 				if(cnt_tartget>0){
- 80062fc:	4a32      	ldr	r2, [pc, #200]	; (80063c8 <Gimbal_Task+0x590>)
- 80062fe:	4b2c      	ldr	r3, [pc, #176]	; (80063b0 <Gimbal_Task+0x578>)
- 8006300:	6812      	ldr	r2, [r2, #0]
- 8006302:	f9b3 0000 	ldrsh.w	r0, [r3]
- 8006306:	2a00      	cmp	r2, #0
+ 80062fc:	4b32      	ldr	r3, [pc, #200]	; (80063c8 <Gimbal_Task+0x590>)
+ 80062fe:	4a2b      	ldr	r2, [pc, #172]	; (80063ac <Gimbal_Task+0x574>)
+ 8006300:	6819      	ldr	r1, [r3, #0]
+ 8006302:	f9b2 3000 	ldrsh.w	r3, [r2]
+ 8006306:	2900      	cmp	r1, #0
  8006308:	f77f add3 	ble.w	8005eb2 <Gimbal_Task+0x7a>
 					if(delay_auto>25){
- 800630c:	4a2d      	ldr	r2, [pc, #180]	; (80063c4 <Gimbal_Task+0x58c>)
- 800630e:	8812      	ldrh	r2, [r2, #0]
- 8006310:	2a19      	cmp	r2, #25
+ 800630c:	492d      	ldr	r1, [pc, #180]	; (80063c4 <Gimbal_Task+0x58c>)
+ 800630e:	8809      	ldrh	r1, [r1, #0]
+ 8006310:	2919      	cmp	r1, #25
  8006312:	f67f adce 	bls.w	8005eb2 <Gimbal_Task+0x7a>
 						target_yaw =target_yaw+map(target_X,-480,480,30,-30);
- 8006316:	4a2d      	ldr	r2, [pc, #180]	; (80063cc <Gimbal_Task+0x594>)
+ 8006316:	492d      	ldr	r1, [pc, #180]	; (80063cc <Gimbal_Task+0x594>)
 	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
- 8006318:	492d      	ldr	r1, [pc, #180]	; (80063d0 <Gimbal_Task+0x598>)
- 800631a:	6812      	ldr	r2, [r2, #0]
- 800631c:	f502 72f0 	add.w	r2, r2, #480	; 0x1e0
- 8006320:	eba2 1202 	sub.w	r2, r2, r2, lsl #4
- 8006324:	0092      	lsls	r2, r2, #2
- 8006326:	fb81 1802 	smull	r1, r8, r1, r2
- 800632a:	eb08 0102 	add.w	r1, r8, r2
- 800632e:	ea4f 78e2 	mov.w	r8, r2, asr #31
- 8006332:	ebc8 2861 	rsb	r8, r8, r1, asr #9
+ 8006318:	482d      	ldr	r0, [pc, #180]	; (80063d0 <Gimbal_Task+0x598>)
+ 800631a:	6809      	ldr	r1, [r1, #0]
+ 800631c:	f501 71f0 	add.w	r1, r1, #480	; 0x1e0
+ 8006320:	eba1 1101 	sub.w	r1, r1, r1, lsl #4
+ 8006324:	0089      	lsls	r1, r1, #2
+ 8006326:	fb80 0801 	smull	r0, r8, r0, r1
+ 800632a:	eb08 0001 	add.w	r0, r8, r1
+ 800632e:	ea4f 78e1 	mov.w	r8, r1, asr #31
+ 8006332:	ebc8 2860 	rsb	r8, r8, r0, asr #9
  8006336:	f108 081e 	add.w	r8, r8, #30
 						target_yaw =target_yaw+map(target_X,-480,480,30,-30);
- 800633a:	4440      	add	r0, r8
- 800633c:	b200      	sxth	r0, r0
- 800633e:	8018      	strh	r0, [r3, #0]
+ 800633a:	4443      	add	r3, r8
+ 800633c:	b21b      	sxth	r3, r3
+ 800633e:	8013      	strh	r3, [r2, #0]
  8006340:	e5b7      	b.n	8005eb2 <Gimbal_Task+0x7a>
 						target_pich =target_pich+map(target_Y,-360,360,30,-30);
  8006342:	4a24      	ldr	r2, [pc, #144]	; (80063d4 <Gimbal_Task+0x59c>)
@@ -14033,32 +14033,32 @@ void fire_task_push(){
  8006362:	b21b      	sxth	r3, r3
  8006364:	f8a8 3000 	strh.w	r3, [r8]
  8006368:	2201      	movs	r2, #1
- 800636a:	e6ee      	b.n	800614a <Gimbal_Task+0x312>
+ 800636a:	e6f0      	b.n	800614e <Gimbal_Task+0x316>
 			if(rc_SW1_temp==3 && rc.sw2==1){IMU_yaw_set=imu_attitude.yaw;}
  800636c:	4813      	ldr	r0, [pc, #76]	; (80063bc <Gimbal_Task+0x584>)
  800636e:	4914      	ldr	r1, [pc, #80]	; (80063c0 <Gimbal_Task+0x588>)
  8006370:	6880      	ldr	r0, [r0, #8]
  8006372:	6008      	str	r0, [r1, #0]
- 8006374:	e780      	b.n	8006278 <Gimbal_Task+0x440>
+ 8006374:	e781      	b.n	800627a <Gimbal_Task+0x442>
 					target_yaw =target_yaw-IMU_yaw+feed_forward_param;
- 8006376:	ee07 0a90 	vmov	s15, r0
+ 8006376:	ee07 3a90 	vmov	s15, r3
  800637a:	eef8 7ae7 	vcvt.f32.s32	s15, s15
  800637e:	ee77 7ae6 	vsub.f32	s15, s15, s13
  8006382:	ee37 7a87 	vadd.f32	s14, s15, s14
  8006386:	eebd 7ac7 	vcvt.s32.f32	s14, s14
- 800638a:	ee17 2a10 	vmov	r2, s14
- 800638e:	b210      	sxth	r0, r2
- 8006390:	8018      	strh	r0, [r3, #0]
- 8006392:	e75d      	b.n	8006250 <Gimbal_Task+0x418>
- 8006394:	4680      	mov	r8, r0
+ 800638a:	ee17 3a10 	vmov	r3, s14
+ 800638e:	b21b      	sxth	r3, r3
+ 8006390:	8013      	strh	r3, [r2, #0]
+ 8006392:	e75e      	b.n	8006252 <Gimbal_Task+0x41a>
+ 8006394:	4698      	mov	r8, r3
  8006396:	e5cb      	b.n	8005f30 <Gimbal_Task+0xf8>
  8006398:	ffff8ad0 	.word	0xffff8ad0
- 800639c:	200003a4 	.word	0x200003a4
+ 800639c:	20000684 	.word	0x20000684
  80063a0:	200005c0 	.word	0x200005c0
  80063a4:	200003f4 	.word	0x200003f4
  80063a8:	3d4ccccd 	.word	0x3d4ccccd
- 80063ac:	20000394 	.word	0x20000394
- 80063b0:	200005f0 	.word	0x200005f0
+ 80063ac:	200005f0 	.word	0x200005f0
+ 80063b0:	20000394 	.word	0x20000394
  80063b4:	200002a8 	.word	0x200002a8
  80063b8:	200007c8 	.word	0x200007c8
  80063bc:	200003b0 	.word	0x200003b0
@@ -14069,7 +14069,7 @@ void fire_task_push(){
  80063d0:	88888889 	.word	0x88888889
  80063d4:	20000400 	.word	0x20000400
  80063d8:	b60b60b7 	.word	0xb60b60b7
- 80063dc:	20000684 	.word	0x20000684
+ 80063dc:	200003a4 	.word	0x200003a4
 
 080063e0 <timerTask>:
 void timerTask() { //call 500Hz
