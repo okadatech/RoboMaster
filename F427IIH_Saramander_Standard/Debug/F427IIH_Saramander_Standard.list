@@ -14892,7 +14892,6 @@ TIM_HandleTypeDef htim12;
 void MX_TIM1_Init(void)
 {
  80069e0:	b570      	push	{r4, r5, r6, lr}
-
   htim1.Instance = TIM1;
  80069e2:	4c6d      	ldr	r4, [pc, #436]	; (8006b98 <MX_TIM1_Init+0x1b8>)
  80069e4:	4b6d      	ldr	r3, [pc, #436]	; (8006b9c <MX_TIM1_Init+0x1bc>)
